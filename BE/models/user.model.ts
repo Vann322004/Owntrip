@@ -10,6 +10,7 @@ const userSchema = new Schema<IUser>({
   password: { type: String, required: true },
   displayName: { type: String, required: true },
   image: { type: String },
+  phone: { type: String },
   balance: { type: Number, default: 0 },
   points: { type: Number, default: 0 },
   role: { type: String, enum: ['user', 'admin', 'hotel_owner'], default: 'user' },

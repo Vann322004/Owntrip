@@ -2,12 +2,13 @@ import { Document } from 'mongoose';
 
 export interface IRoomType {
   roomTypeId: string;
-  name: string;          // Deluxe, Suite, Family
+  name: string;        
   description: string;
   images: string[];
   capacity: number;
-  basePrice: number;     // Giá gốc
-  amenities: string[];   // ["Wifi", "Bồn tắm"]
+  basePrice: number;    
+  totalRooms: number;  
+  amenities: string[];   
 }
 
 export interface IHotel extends Document {
@@ -24,13 +25,13 @@ export interface IHotel extends Document {
   amenities?: string[];
   rooms: IRoomType[];
   reviewSummary: {
-    score: number;       // Ví dụ: 8.6
-    count: number;       // 6.065 bài đánh giá
+    score: number;     
+    count: number;       
     cleanliness: number;
     service: number;
     facilities: number;
     valueForMoney: number;
   };
-  tags: string[];        // ["Bán chạy nhất", "2024"]
-  ownerId?: string;      // ID của User chủ khách sạn
+  tags: string[];       
+  ownerId?: string;     
 }
