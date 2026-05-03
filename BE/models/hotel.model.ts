@@ -22,6 +22,7 @@ const hotelSchema = new Schema<IHotel>({
     basePrice: Number,
     price: Number,    
     capacity: Number,
+    totalRooms: { type: Number, default: 1 },
     images: [String], 
     amenities: [String] 
   }],

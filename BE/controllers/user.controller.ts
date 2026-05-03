@@ -495,5 +495,40 @@ export const UserController = {
       res.status(500).json({ success: false, message: error.message });
     }
   },
+  
+  /**
+   * API TEST: Nạp 1,000,000 VND vào số dư (Balance) ngay lập tức
+   * POST /api/users/test-topup
+   */
+  testTopUpBalance: async (req: AuthRequest, res: Response) => {
+    try {
+      const userId = req.user?.userId;
+      if (!userId) {
+        return res.status(401).json({ success: false, message: "Bạn cần đăng nhập" });
+      }
 
+      const AMOUNT = 1000000; // 1 Triệu VNĐ
+
+      const updatedUser = await User.findOneAndUpdate(
+        { userId },
+        { $inc: { balance: AMOUNT } },
+        { new: true }
+      ).select('-password');
+
+      if (!updatedUser) {
+        return res.status(404).json({ success: false, message: "Không tìm thấy tài khoản" });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: "Nạp 1,000,000 VND thành công! (Dành cho bản Demo)",
+        data: {
+          addedAmount: AMOUNT,
+          newBalance: updatedUser.balance
+        }
+      });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
 };
