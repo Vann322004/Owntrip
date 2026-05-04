@@ -22,4 +22,7 @@ export interface IBooking extends Document {
   cancellationReason?: string;
   cancelledAt?: Date;
   refundAmount?: number;
+  // PayOS
+  payosOrderCode?: number;
+  payosCheckoutUrl?: string;
 }

@@ -276,6 +276,30 @@ export const HotelController = {
         { new: true }
       );
 
+      // Đồng bộ giá phòng (basePrice) và tổng số lượng (totalRooms) mới sang RoomInventory cho các ngày trong tương lai
+      if (req.body.rooms && Array.isArray(req.body.rooms)) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        for (const room of req.body.rooms) {
+          if (room.roomTypeId && room.basePrice) {
+            await RoomInventory.updateMany(
+              {
+                hotelId: id,
+                roomTypeId: room.roomTypeId,
+                date: { $gte: today }
+              },
+              { 
+                $set: { 
+                  priceAtDate: room.basePrice,
+                  totalInventory: room.totalRooms || 1
+                } 
+              }
+            );
+          }
+        }
+      }
+
       res.status(200).json({
         success: true,
         message: "Cập nhật thông tin thành công!",
