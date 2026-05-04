@@ -16,6 +16,7 @@ const planRoutes = require('./routes/plan.route');
 
 const chatbotRoutes = require ('./routes/chatbot.routes');
 const notificationRoutes = require('./routes/notification.route');
+const paymentRoutes = require('./routes/payment.route');
 const avatarItemRoutes = require('./routes/avatarItem.route');
 const systemRoutes = require('./routes/system.route');
 
@@ -54,6 +55,7 @@ app.use('/api/trips', tripRoutes);
 app.use('/api/plans', planRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/payment', paymentRoutes);
 app.use('/api/avatar-items', avatarItemRoutes);
 app.use('/api/system', systemRoutes);
 
