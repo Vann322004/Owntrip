@@ -8,7 +8,8 @@ import {
   Bell,
   Search,
   Menu,
-  Sparkles
+  Sparkles,
+  ClipboardList
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
@@ -19,6 +20,7 @@ const navItems = [
   { name: 'Người dùng', path: '/users', icon: Users },
   { name: 'Khách sạn', path: '/hotels', icon: Map },
   { name: 'Avatar Shop', path: '/avatar-shop', icon: Sparkles },
+  { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
   { name: 'Cài đặt', path: '/settings', icon: Settings },
 ];
 

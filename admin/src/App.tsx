@@ -8,6 +8,7 @@ import Users from './pages/Users';
 import Hotels from './pages/Hotels';
 import AvatarShop from './pages/AvatarShop';
 import SettingsPage from './pages/Settings';
+import HotelRequests from './pages/HotelRequests';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="hotels" element={<Hotels />} />
             <Route path="avatar-shop" element={<AvatarShop />} />
+            <Route path="hotel-requests" element={<HotelRequests />} />
             <Route path="settings" element={<SettingsPage />} />
             {/* Thêm các trang quản trị khác ở đây */}
           </Route>
