@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import axios from "axios";
 
-const RAPID_API_BASE_URL = "https://google-map-places-new-v2.p.rapidapi.com/v1";
+const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
 
 const WIKIMEDIA_HEADERS = {
@@ -9,11 +9,7 @@ const WIKIMEDIA_HEADERS = {
   "Accept-Language": "en"
 };
 
-const getRapidHeaders = () => ({
-  "Content-Type": "application/json",
-  "X-RapidAPI-Key": process.env.RAPIDAPI_KEY!,
-  "X-RapidAPI-Host": process.env.RAPIDAPI_HOST!
-});
+const getGoongKey = () => process.env.GOONG_API_KEY!;
 
 const isQuotaExceededError = (error: any) => {
   const status = error?.response?.status;
@@ -384,184 +380,11 @@ const buildFallbackRating = (seedBase: string) => {
   };
 };
 
-const toNumberOrNull = (value: any) => {
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : null;
-};
 
-const normalizeGeoapifyPlace = (item: any) => {
-  const geoId = String(item?.properties?.place_id || item?.properties?.datasource?.raw?.osm_id || "").trim();
-  const lat = toNumberOrNull(item?.properties?.lat ?? item?.properties?.result_type === "point" ? item?.geometry?.coordinates?.[1] : item?.properties?.lat);
-  const lon = toNumberOrNull(item?.properties?.lon ?? item?.properties?.result_type === "point" ? item?.geometry?.coordinates?.[0] : item?.properties?.lon);
-  const name = String(item?.properties?.name || item?.properties?.formatted || "").trim() || "Unknown place";
-  const fallbackStats = buildFallbackRating(`${geoId || name}-${lat || ""}-${lon || ""}`);
-  const address = item?.properties?.formatted || "";
-
-  return {
-    placeId: geoId || `geoapify_${toSeed(name)}`,
-    name,
-    address,
-    latitude: lat,
-    longitude: lon,
-    rating: fallbackStats.rating,
-    totalReviews: fallbackStats.totalReviews,
-    types: item?.properties?.result_type ? [String(item.properties.result_type)] : [],
-    mapUrl: lat !== null && lon !== null
-      ? `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`
-      : null,
-    photo: null,
-    photos: [],
-    _nameForWiki: name,
-    _addressForWiki: address
-  };
-};
-
-const normalizeOsmPlace = (place: any) => {
-  const lat = Number(place?.lat);
-  const lon = Number(place?.lon);
-  const osmId = `${place?.osm_type || "osm"}_${place?.osm_id || place?.place_id}`;
-  const wikipediaTag = place?.extratags?.wikipedia;
-  const wikidataTag = place?.extratags?.wikidata;
-  const wikiTitle = parseWikipediaTitle(wikipediaTag);
-  const wikidataId = parseWikidataId(wikidataTag);
-  const fallbackStats = buildFallbackRating(`${osmId}-${place?.display_name || ""}`);
-
-  return {
-    placeId: osmId,
-    name: place?.name || place?.display_name?.split(",")?.[0]?.trim() || "Unknown place",
-    address: place?.display_name || "",
-    latitude: Number.isFinite(lat) ? lat : null,
-    longitude: Number.isFinite(lon) ? lon : null,
-    rating: fallbackStats.rating,
-    totalReviews: fallbackStats.totalReviews,
-    types: place?.type ? [place.type] : [],
-    mapUrl: Number.isFinite(lat) && Number.isFinite(lon)
-      ? `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`
-      : null,
-    photo: null,
-    photos: [],
-    _wikiTitle: wikiTitle,
-    _wikidataId: wikidataId,
-    _nameForWiki: place?.name || place?.display_name?.split(",")?.[0]?.trim() || "",
-    _addressForWiki: place?.display_name || ""
-  };
-};
-
-const normalizePhotonPlace = (feature: any) => {
-  const coords = Array.isArray(feature?.geometry?.coordinates)
-    ? feature.geometry.coordinates
-    : [];
-  const lon = Number(coords[0]);
-  const lat = Number(coords[1]);
-  const props = feature?.properties || {};
-  const osmId = `${props?.osm_type || "osm"}_${props?.osm_id || props?.id || props?.osm_key || "unknown"}`;
-  const wikiTitle = parseWikipediaTitle(props?.wikipedia);
-  const wikidataId = parseWikidataId(props?.wikidata);
-  const fallbackStats = buildFallbackRating(`${osmId}-${props?.name || ""}`);
-  const addressParts = [
-    props?.name,
-    props?.street,
-    props?.district,
-    props?.city,
-    props?.state,
-    props?.country
-  ].filter(Boolean);
-
-  return {
-    placeId: osmId,
-    name: props?.name || "Unknown place",
-    address: addressParts.join(", "),
-    latitude: Number.isFinite(lat) ? lat : null,
-    longitude: Number.isFinite(lon) ? lon : null,
-    rating: fallbackStats.rating,
-    totalReviews: fallbackStats.totalReviews,
-    types: props?.osm_value ? [props.osm_value] : [],
-    mapUrl: Number.isFinite(lat) && Number.isFinite(lon)
-      ? `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}`
-      : null,
-    photo: null,
-    photos: [],
-    _wikiTitle: wikiTitle,
-    _wikidataId: wikidataId,
-    _nameForWiki: props?.name || "",
-    _addressForWiki: addressParts.join(", ")
-  };
-};
-
-const searchPhoton = async (queryText: string, limit: number, lat?: number, lng?: number) => {
-  const response = await axios.get("https://photon.komoot.io/api", {
-    params: {
-      q: queryText,
-      limit,
-      lang: "en",
-      ...(Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lon: lng } : {})
-    },
-    timeout: 10000
-  });
-
-  const features = Array.isArray(response.data?.features) ? response.data.features : [];
-  const places = features.map(normalizePhotonPlace);
-  return enrichPlacesWithWikimedia(places);
-};
-
-const searchNominatim = async (queryText: string, limit: number) => {
-  const response = await axios.get("https://nominatim.openstreetmap.org/search", {
-    params: {
-      q: queryText,
-      format: "jsonv2",
-      addressdetails: 1,
-      extratags: 1,
-      limit,
-      countrycodes: "vn"
-    },
-    headers: {
-      "User-Agent": "OwnTrip/1.0 (contact: owntrip@example.com)",
-      "Accept-Language": "en"
-    },
-    timeout: 10000
-  });
-
-  const places = (Array.isArray(response.data) ? response.data : []).map(normalizeOsmPlace);
-  return enrichPlacesWithWikimedia(places);
-};
-
-const searchOpenPlaces = async (queryText: string, limit: number, lat?: number, lng?: number) => {
-  const merged = new Map<string, any>();
-  const normalizedLimit = Math.min(Math.max(Math.floor(limit), 1), 50);
-
-  const addPlaces = (places: any[]) => {
-    for (const place of places) {
-      const key = String(place?.placeId || "").trim() ||
-        `${toSeed(place?.name || "")}_${place?.latitude || ""}_${place?.longitude || ""}`;
-
-      if (!merged.has(key)) {
-        merged.set(key, place);
-      }
-
-      if (merged.size >= normalizedLimit) {
-        break;
-      }
-    }
-  };
-
-  try {
-    const photonPlaces = await searchPhoton(queryText, normalizedLimit, lat, lng);
-    addPlaces(photonPlaces);
-    if (merged.size >= normalizedLimit) {
-      return Array.from(merged.values()).slice(0, normalizedLimit);
-    }
-  } catch (photonError: any) {
-    console.error("Photon fallback failed:", photonError.response?.data || photonError.message);
-  }
-
-  // Nominatim is intentionally skipped because public endpoint blocks server traffic frequently.
-
-  return Array.from(merged.values()).slice(0, normalizedLimit);
-};
 
 export const getPlacePhoto = async (req: Request, res: Response) => {
   try {
-    const { name, maxHeightPx } = req.query;
+    const { name } = req.query;
 
     if (!name) {
       return res.status(400).json({
@@ -570,30 +393,19 @@ export const getPlacePhoto = async (req: Request, res: Response) => {
       });
     }
 
-    const mediaResponse = await axios.get(
-      `${RAPID_API_BASE_URL}/${name}/media`,
-      {
-        headers: getRapidHeaders(),
-        params: {
-          maxHeightPx: maxHeightPx ? Number(maxHeightPx) : 400
-        },
-        responseType: "arraybuffer"
-      }
-    );
-
-    const contentType = mediaResponse.headers["content-type"] || "image/jpeg";
-    res.setHeader("Content-Type", contentType);
-    return res.status(200).send(Buffer.from(mediaResponse.data));
-  } catch (error: any) {
-    console.error(error.response?.data || error.message);
-
-    if (isQuotaExceededError(error)) {
-      return res.status(429).json({
-        success: false,
-        message: "RapidAPI đã hết quota trong ngày. Vui lòng thử lại ngày mai hoặc nâng gói."
-      });
+    // Goong doesn't have a direct equivalent to Google's media API for photos in the same way.
+    // We will redirect to a fallback or return error if not found.
+    // For now, let's try to use the name as a direct URL if it looks like one, or use fallback.
+    if (String(name).startsWith("http")) {
+      return res.redirect(String(name));
     }
 
+    return res.status(404).json({
+      success: false,
+      message: "Photo not found or Goong API does not support this photo reference"
+    });
+  } catch (error: any) {
+    console.error(error.message);
     return res.status(500).json({
       success: false,
       message: "Get place photo failed"
@@ -603,7 +415,7 @@ export const getPlacePhoto = async (req: Request, res: Response) => {
 
 export const searchPlace = async (req: Request, res: Response) => {
   try {
-    const { q } = req.query;
+    const { q, lat, lng } = req.query;
 
     if (!q) {
       return res.status(400).json({
@@ -612,46 +424,43 @@ export const searchPlace = async (req: Request, res: Response) => {
       });
     }
 
-    const response = await axios.post(
-      "https://google-map-places-new-v2.p.rapidapi.com/v1/places:autocomplete",
+    const response = await axios.get(
+      `${GOONG_API_BASE_URL}/Place/Autocomplete`,
       {
-        input: q,
-        languageCode: "vi",
-        regionCode: "VN",
-        includeQueryPredictions: true
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Goog-FieldMask":
-            "places.id,places.displayName,places.formattedAddress,places.location,places.rating,places.userRatingCount,places.types,places.googleMapsUri,places.photos",
-          "X-RapidAPI-Key": process.env.RAPIDAPI_KEY!,
-          "X-RapidAPI-Host": process.env.RAPIDAPI_HOST!
+        params: {
+          api_key: getGoongKey(),
+          input: String(q),
+          location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
+          limit: 10
         }
       }
     );
 
-    res.json(response.data);
+    console.log("Goong Autocomplete Raw:", JSON.stringify(response.data, null, 2));
+
+    // Transform Goong predictions to match a consistent format if needed,
+    // or return directly if Frontend handles Goong format.
+    // For consistency with searchNearby, we'll return a wrapped object.
+    const predictions = response.data?.predictions || [];
+    const formattedPlaces = predictions.map((p: any) => ({
+      placeId: p.place_id,
+      name: p.structured_formatting?.main_text || p.description,
+      address: p.description,
+      types: p.types || [],
+      source: "goong"
+    }));
+
+    res.json({
+      success: true,
+      source: "goong",
+      predictions: response.data?.predictions, // Keep original for compatibility
+      places: formattedPlaces
+    });
   } catch (error: any) {
-    console.error(error.response?.data || error.message);
-
-    try {
-      const { q } = req.query;
-      const osmPlaces = await searchOpenPlaces(String(q || ""), 10);
-
-      return res.json({
-        success: true,
-        source: "osm-fallback",
-        total: osmPlaces.length,
-        places: osmPlaces
-      });
-    } catch (fallbackError: any) {
-      console.error("OSM fallback failed:", fallbackError.response?.data || fallbackError.message);
-      return res.status(500).json({
-        success: false,
-        message: "Search place failed"
-      });
-    }
+    res.status(500).json({
+      success: false,
+      message: "Search place failed"
+    });
   }
 };
 
@@ -666,106 +475,95 @@ export const searchNearby = async (req: Request, res: Response) => {
       });
     }
 
-    const includedTypes = type ? (type as string).split(",") : ["lodging", "tourist_attraction"];
+    const typeToQuery: Record<string, string> = {
+      restaurant: "nhà hàng",
+      cafe: "cà phê",
+      hotel: "khách sạn",
+      hospital: "bệnh viện",
+      atm: "ATM",
+      school: "trường học",
+      supermarket: "siêu thị",
+      pharmacy: "nhà thuốc",
+    };
 
-    const response = await axios.post(
-      "https://google-map-places-new-v2.p.rapidapi.com/v1/places:searchNearby",
+    const searchQuery = type
+      ? (typeToQuery[String(type).trim().toLowerCase()] || String(type).trim())
+      : "địa điểm";
+
+    // Bước 1: AutoComplete để lấy danh sách place_id
+    const autocompleteRes = await axios.get(
+      `${GOONG_API_BASE_URL}/Place/AutoComplete`,
       {
-        languageCode: "vi",
-        regionCode: "VN",
-        includedTypes: includedTypes,
-        maxResultCount: 20,
-        locationRestriction: {
-          circle: {
-            center: {
-              latitude: parseFloat(lat as string),
-              longitude: parseFloat(lng as string)
-            },
-            radius: radius ? parseFloat(radius as string) : 10000
-          }
-        },
-        rankPreference: 0
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Goog-FieldMask":
-            "places.id,places.displayName,places.formattedAddress,places.location,places.rating,places.userRatingCount,places.types,places.googleMapsUri,places.photos",
-          "X-RapidAPI-Key": process.env.RAPIDAPI_KEY!,
-          "X-RapidAPI-Host": process.env.RAPIDAPI_HOST!
+        params: {
+          api_key: getGoongKey(),
+          input: searchQuery,
+          location: `${String(lat)},${String(lng)}`,
+          radius: radius ? Number(radius) : 1000,
+          limit: 10
         }
       }
     );
 
-    // Chuẩn hóa dữ liệu trả về giống OSM
-    const googlePlaces = Array.isArray(response.data?.places) ? response.data.places : [];
-    const normalizedPlaces = googlePlaces.map((p: any) => {
-      const photo = p.photos && p.photos.length > 0 && p.photos[0]?.name
-        ? `${req.protocol}://${req.get("host")}/api/places/photo?name=${encodeURIComponent(p.photos[0].name)}`
-        : null;
-      return {
-        placeId: p.id,
-        name: p.displayName?.text,
-        address: p.formattedAddress,
-        latitude: p.location?.latitude,
-        longitude: p.location?.longitude,
-        rating: p.rating,
-        totalReviews: p.userRatingCount,
-        types: p.types,
-        mapUrl: p.googleMapsUri,
-        photo: photo,
-        photos: photo ? [photo] : []
-      };
-    });
+    const predictions = autocompleteRes.data?.predictions || [];
+
+    if (predictions.length === 0) {
+      return res.json({ success: true, source: "goong", total: 0, places: [] });
+    }
+
+    // Bước 2: Lấy Detail cho từng place để có coordinates
+    const detailResults = await Promise.allSettled(
+      predictions.slice(0, 10).map((p: any) =>
+        axios.get(`${GOONG_API_BASE_URL}/Place/Detail`, {
+          params: {
+            api_key: getGoongKey(),
+            place_id: p.place_id
+          }
+        })
+      )
+    );
+
+    const places = detailResults
+      .filter((r): r is PromiseFulfilledResult<any> => r.status === "fulfilled")
+      .map((r) => {
+        const d = r.value.data?.result;
+        if (!d) return null;
+        return {
+          placeId: d.place_id,
+          name: d.name,
+          address: d.formatted_address,
+          latitude: d.geometry?.location?.lat,
+          longitude: d.geometry?.location?.lng,
+          rating: d.rating,
+          totalReviews: d.user_ratings_total,
+          types: d.types || [],
+          mapUrl: d.geometry?.location?.lat
+            ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`
+            : null,
+          photo: null,
+          photos: []
+        };
+      })
+      .filter(Boolean);
 
     res.json({
       success: true,
-      source: "google",
-      total: normalizedPlaces.length,
-      places: normalizedPlaces
+      source: "goong",
+      total: places.length,
+      places
     });
   } catch (error: any) {
-    console.error(error.response?.data || error.message);
-
-    try {
-      const { lat, lng, radius } = req.query;
-
-      if (!lat || !lng) {
-        return res.status(400).json({
-          success: false,
-          message: "Vui long cung cap toa do (lat, lng)"
-        });
-      }
-
-      const radiusKm = radius ? Number(radius) / 1000 : 10;
-      const queryText = `dia diem du lich`;
-      const osmPlaces = await searchOpenPlaces(
-        queryText,
-        20,
-        Number(lat),
-        Number(lng)
-      );
-
-      return res.json({
-        success: true,
-        source: "osm-fallback",
-        total: osmPlaces.length,
-        places: osmPlaces
-      });
-    } catch (fallbackError: any) {
-      console.error("OSM fallback nearby failed:", fallbackError.response?.data || fallbackError.message);
-      return res.status(500).json({
-        success: false,
-        message: "Search nearby failed"
-      });
-    }
+    console.error("Goong searchNearby error:", {
+      status: error.response?.status,
+      data: JSON.stringify(error.response?.data),
+      message: error.message
+    });
+    res.status(500).json({ success: false, message: "Search nearby failed" });
   }
 };
 
 export const searchText = async (req: Request, res: Response) => {
   try {
-
-    const { q, lat, lng, radius, type, limit, photoLimit, includePhotoFallback } = req.query;
+    const { q, lat, lng, radius, limit } = req.query;
 
     if (!q) {
       return res.status(400).json({
@@ -774,175 +572,74 @@ export const searchText = async (req: Request, res: Response) => {
       });
     }
 
-    const parsedLimit = Number(limit);
-    const maxResultCount = Number.isFinite(parsedLimit)
-      ? Math.min(Math.max(Math.floor(parsedLimit), 1), 50)
-      : 20;
-
-    const parsedPhotoLimit = Number(photoLimit);
-    const maxPhotoCount = Number.isFinite(parsedPhotoLimit)
-      ? Math.min(Math.max(Math.floor(parsedPhotoLimit), 1), 10)
-      : 5;
-    const shouldFetchPhotoDetails = String(includePhotoFallback || "false") === "true";
+    const maxResultCount = limit ? Math.min(Number(limit), 50) : 20;
 
     const queryList = (Array.isArray(q) ? q : [q])
       .flatMap((item) => String(item).split(","))
       .map((item) => item.trim())
       .filter((item) => item.length > 0);
 
-    if (!queryList.length) {
-      return res.status(400).json({
-        success: false,
-        message: "Missing query"
-      });
-    }
-
-    const requestBodyBase: any = {
-      languageCode: "vi",
-      regionCode: "VN",
-      maxResultCount
-    };
-
-    if (lat && lng) {
-      requestBodyBase.locationBias = {
-        circle: {
-          center: {
-            latitude: parseFloat(lat as string),
-            longitude: parseFloat(lng as string)
-          },
-          radius: radius ? parseFloat(radius as string) : 10000
-        }
-      };
-    }
-
-    if (type) {
-      requestBodyBase.includedType = type;
-    }
-
-    const rapidHeaders = getRapidHeaders();
-
     const searchResults = await Promise.allSettled(
       queryList.map((queryText) =>
-        axios.post(
-          "https://google-map-places-new-v2.p.rapidapi.com/v1/places:searchText",
-          {
-            ...requestBodyBase,
-            textQuery: queryText
-          },
-          {
-            headers: {
-              ...rapidHeaders,
-              "X-Goog-FieldMask":
-                "places.id,places.displayName,places.formattedAddress,places.location,places.rating,places.userRatingCount,places.types,places.googleMapsUri,places.photos",
-            }
+        axios.get(`${GOONG_API_BASE_URL}/Place/Search`, {
+          params: {
+            api_key: getGoongKey(),
+            input: queryText,
+            location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
+            radius: radius ? Number(radius) : undefined
           }
-        )
+        })
       )
     );
 
     const successfulResponses = searchResults
-      .map((result, index) => ({ result, index }))
-      .filter(
-        (entry): entry is { result: PromiseFulfilledResult<any>; index: number } =>
-          entry.result.status === "fulfilled"
-      )
-      .map((entry) => ({
-        query: queryList[entry.index],
-        response: entry.result.value
-      }));
-
-    const failedResponses = searchResults
-      .filter((result): result is PromiseRejectedResult => result.status === "rejected")
-      .map((result) => result.reason);
-
-    if (!successfulResponses.length) {
-      const hasQuotaError = failedResponses.some((err: any) => isQuotaExceededError(err));
-
-      const osmResults = await Promise.all(
-        queryList.map((queryText) =>
-          searchOpenPlaces(
-            queryText,
-            maxResultCount,
-            lat ? Number(lat) : undefined,
-            lng ? Number(lng) : undefined
-          )
-        )
-      );
-
-      const osmPlaces = Array.from(
-        new Map(osmResults.flat().map((place: any) => [place.placeId, place])).values()
-      ).slice(0, maxResultCount);
-
-      return res.json({
-        success: true,
-        source: hasQuotaError ? "osm-fallback-quota" : "osm-fallback",
-        queryCount: queryList.length,
-        partial: false,
-        failedQueries: failedResponses.length,
-        total: osmPlaces.length,
-        places: osmPlaces
+      .filter((result): result is PromiseFulfilledResult<any> => result.status === "fulfilled")
+      .map((result) => {
+        const data = result.value.data;
+        console.log("Goong Search Raw:", JSON.stringify(data, null, 2));
+        // Goong might return results or predictions depending on the exact endpoint behavior
+        return data?.results || data?.predictions || [];
       });
-    }
 
-    const groupedPlaces = successfulResponses.map((entry) => ({
-      query: entry.query,
-      places: Array.isArray(entry.response.data?.places) ? entry.response.data.places : []
-    }));
-
-    // Round-robin merge so multiple keywords contribute results more evenly.
+    const allRawItems = successfulResponses.flat();
     const uniqueById = new Map<string, any>();
-    let cursor = 0;
-    let hasRemaining = true;
 
-    while (hasRemaining && uniqueById.size < maxResultCount) {
-      hasRemaining = false;
-
-      for (const group of groupedPlaces) {
-        if (cursor < group.places.length) {
-          hasRemaining = true;
-          const place = group.places[cursor];
-          if (place?.id && !uniqueById.has(place.id)) {
-            uniqueById.set(place.id, place);
-            if (uniqueById.size >= maxResultCount) {
-              break;
-            }
-          }
-        }
+    for (const item of allRawItems) {
+      const id = item.place_id || item.id;
+      if (id && !uniqueById.has(id)) {
+        uniqueById.set(id, item);
       }
-
-      cursor += 1;
+      if (uniqueById.size >= maxResultCount) break;
     }
-
-    const uniqueRawPlaces = Array.from(uniqueById.values());
 
     const places = await Promise.all(
-      uniqueRawPlaces.map(async (p: any) => {
+      Array.from(uniqueById.values()).map(async (p: any) => {
         let wikiPhoto: string | null = null;
+        const name = p.name || p.structured_formatting?.main_text || p.description;
+        const address = p.formatted_address || p.vicinity || p.description;
 
         try {
-          wikiPhoto = await resolveWikiPhotoByPlaceContext(p.displayName?.text, p.formattedAddress);
-        } catch (wikiError: any) {
-          console.error(
-            `Wikimedia photo failed for place ${p.id || p.displayName?.text || "unknown-place"}:`,
-            wikiError.response?.data || wikiError.message
-          );
-        }
+          wikiPhoto = await resolveWikiPhotoByPlaceContext(name, address);
+        } catch (e) {}
 
-        const fallbackPhoto = buildFallbackPhotoUrl(
-          `${p.id || "place"}-${p.displayName?.text || p.formattedAddress || ""}`
-        );
+        const fallbackPhoto = buildFallbackPhotoUrl(`${p.place_id || p.id}-${name}`);
         const finalPhoto = wikiPhoto || fallbackPhoto;
 
+        // If it's a prediction from Autocomplete, it won't have coordinates.
+        // We could call Place/Detail here, but that might be too many requests.
+        // For now, we'll return what we have.
         return {
-          placeId: p.id,
-          name: p.displayName?.text,
-          address: p.formattedAddress,
-          latitude: p.location?.latitude,
-          longitude: p.location?.longitude,
+          placeId: p.place_id || p.id,
+          name: name,
+          address: address,
+          latitude: p.geometry?.location?.lat || null,
+          longitude: p.geometry?.location?.lng || null,
           rating: p.rating,
-          totalReviews: p.userRatingCount,
-          types: p.types,
-          mapUrl: p.googleMapsUri,
+          totalReviews: p.user_ratings_total,
+          types: p.types || [],
+          mapUrl: p.geometry?.location?.lat 
+            ? `https://www.google.com/maps/search/?api=1&query=${p.geometry.location.lat},${p.geometry.location.lng}`
+            : null,
           photo: finalPhoto,
           photos: [finalPhoto]
         };
@@ -951,31 +648,44 @@ export const searchText = async (req: Request, res: Response) => {
 
     res.json({
       success: true,
-      queryCount: queryList.length,
-      partial: failedResponses.length > 0,
-      failedQueries: failedResponses.length,
-      matchedQueries: groupedPlaces.filter((group) => group.places.length > 0).map((group) => group.query),
-      total: places?.length || 0,
+      source: "goong",
+      total: places.length,
       places
     });
-
   } catch (error: any) {
+    console.error("Goong searchText failed:", error.message);
+    res.status(500).json({ success: false, message: "Search text failed" });
+  }
+};
 
-    console.error(error.response?.data || error.message);
+export const getPlaceChildren = async (req: Request, res: Response) => {
+  try {
+    const { parent_id, has_deprecated_administrative_unit } = req.query;
 
-    if (isQuotaExceededError(error)) {
-      return res.status(429).json({
+    if (!parent_id) {
+      return res.status(400).json({
         success: false,
-        message: "RapidAPI đã hết quota trong ngày. Vui lòng thử lại ngày mai hoặc nâng gói.",
-        total: 0,
-        places: []
+        message: "Missing parent_id"
       });
     }
 
+    const response = await axios.get(
+      "https://rsapi.goong.io/v2/place/children",
+      {
+        params: {
+          parent_id: String(parent_id),
+          api_key: getGoongKey(),
+          has_deprecated_administrative_unit: has_deprecated_administrative_unit === "true"
+        }
+      }
+    );
+
+    res.json(response.data);
+  } catch (error: any) {
+    console.error("Goong getPlaceChildren failed:", error.response?.data || error.message);
     res.status(500).json({
       success: false,
-      message: "Search text failed"
+      message: "Failed to fetch place children"
     });
-
   }
 };

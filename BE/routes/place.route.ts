@@ -1,7 +1,13 @@
 import { Router } from "express";
-import { getPlacePhoto, searchPlace, searchNearby, searchText } from "../controllers/place.controller";
+import { getPlacePhoto, searchPlace, searchNearby, searchText, getPlaceChildren } from "../controllers/place.controller";
 
 const router = Router();
+
+/**
+ * Lấy các địa điểm con (Child ID) của một địa điểm cha (Goong API V2)
+ * GET /api/places/children?parent_id=...&has_deprecated_administrative_unit=false
+ */
+router.get("/children", getPlaceChildren);
 
 /**
  * Tìm kiếm địa điểm theo từ khóa (autocomplete)
