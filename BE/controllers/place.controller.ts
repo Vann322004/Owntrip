@@ -4,12 +4,8 @@ import axios from "axios";
 const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
 
-const WIKIMEDIA_HEADERS = {
-  "User-Agent": "OwnTrip/1.0 (contact: owntrip@example.com)",
-  "Accept-Language": "en"
-};
-
 const getGoongKey = () => process.env.GOONG_API_KEY!;
+const getSerpApiKey = () => process.env.SERPAPI_API_KEY || "";
 
 const isQuotaExceededError = (error: any) => {
   const status = error?.response?.status;
@@ -91,268 +87,58 @@ const buildFallbackPhotoUrl = (seedBase: string) => {
   return `https://picsum.photos/seed/owntrip-place-${seed}/900/600`;
 };
 
-const fetchCommonsImageBySearchTerm = async (searchTerm: string) => {
-  const normalized = String(searchTerm || "").trim();
-  if (!normalized) {
-    return null;
-  }
+const fetchSerpApiPlaceData = async (query: string) => {
+  const apiKey = getSerpApiKey();
+  if (!apiKey) return null;
 
-  const response = await axios.get("https://commons.wikimedia.org/w/api.php", {
-    params: {
-      action: "query",
-      format: "json",
-      generator: "search",
-      gsrsearch: normalized,
-      gsrnamespace: 6,
-      gsrlimit: 1,
-      prop: "imageinfo",
-      iiprop: "url",
-      iiurlwidth: 900
-    },
-    headers: WIKIMEDIA_HEADERS,
-    timeout: 8000
-  });
+  try {
+    const response = await axios.get("https://serpapi.com/search", {
+      params: {
+        engine: "google_maps",
+        q: query,
+        api_key: apiKey,
+        type: "search"
+      },
+      timeout: 10000
+    });
 
-  const pages = response.data?.query?.pages || {};
-  const firstPage = Object.values(pages)[0] as any;
-  return firstPage?.imageinfo?.[0]?.thumburl || firstPage?.imageinfo?.[0]?.url || null;
-};
-
-const parseWikipediaTitle = (wikipediaTag?: string) => {
-  if (!wikipediaTag) {
-    return null;
-  }
-
-  const raw = String(wikipediaTag).trim();
-  if (!raw) {
-    return null;
-  }
-
-  const titlePart = raw.includes(":") ? raw.split(":").slice(1).join(":") : raw;
-  const title = titlePart.replace(/_/g, " ").trim();
-  return title || null;
-};
-
-const parseWikidataId = (wikidataTag?: string) => {
-  if (!wikidataTag) {
-    return null;
-  }
-
-  const value = String(wikidataTag).trim().toUpperCase();
-  if (!/^Q\d+$/.test(value)) {
-    return null;
-  }
-
-  return value;
-};
-
-const wikidataIdCache = new Map<string, string | null>();
-const wikidataImageCache = new Map<string, string | null>();
-
-const fetchCommonsThumbnailFromFileName = async (fileName: string) => {
-  const normalizedFileName = String(fileName || "").replace(/^File:/i, "").trim();
-  if (!normalizedFileName) {
-    return null;
-  }
-
-  const response = await axios.get("https://commons.wikimedia.org/w/api.php", {
-    params: {
-      action: "query",
-      format: "json",
-      prop: "imageinfo",
-      iiprop: "url",
-      iiurlwidth: 900,
-      titles: `File:${normalizedFileName}`
-    },
-    headers: WIKIMEDIA_HEADERS,
-    timeout: 8000
-  });
-
-  const pages = response.data?.query?.pages || {};
-  const firstPage = Object.values(pages)[0] as any;
-  return firstPage?.imageinfo?.[0]?.thumburl || firstPage?.imageinfo?.[0]?.url || null;
-};
-
-const resolveWikidataIdByWikipediaTitle = async (title: string) => {
-  const cacheKey = String(title || "").trim().toLowerCase();
-  if (!cacheKey) {
-    return null;
-  }
-
-  if (wikidataIdCache.has(cacheKey)) {
-    return wikidataIdCache.get(cacheKey) || null;
-  }
-
-  const response = await axios.get("https://en.wikipedia.org/w/api.php", {
-    params: {
-      action: "query",
-      format: "json",
-      prop: "pageprops",
-      redirects: 1,
-      titles: title
-    },
-    headers: WIKIMEDIA_HEADERS,
-    timeout: 8000
-  });
-
-  const pages = response.data?.query?.pages || {};
-  const firstPage = Object.values(pages)[0] as any;
-  const wikidataId = parseWikidataId(firstPage?.pageprops?.wikibase_item) || null;
-  wikidataIdCache.set(cacheKey, wikidataId);
-  return wikidataId;
-};
-
-const fetchWikimediaImageByWikidataId = async (wikidataId: string) => {
-  const parsedId = parseWikidataId(wikidataId);
-  if (!parsedId) {
-    return null;
-  }
-
-  if (wikidataImageCache.has(parsedId)) {
-    return wikidataImageCache.get(parsedId) || null;
-  }
-
-  const response = await axios.get("https://www.wikidata.org/w/api.php", {
-    params: {
-      action: "wbgetentities",
-      format: "json",
-      ids: parsedId,
-      props: "claims"
-    },
-    headers: WIKIMEDIA_HEADERS,
-    timeout: 8000
-  });
-
-  const entity = response.data?.entities?.[parsedId];
-  const p18Claim = entity?.claims?.P18?.[0];
-  const fileName = p18Claim?.mainsnak?.datavalue?.value;
-
-  if (!fileName) {
-    wikidataImageCache.set(parsedId, null);
-    return null;
-  }
-
-  const imageUrl = await fetchCommonsThumbnailFromFileName(fileName);
-  wikidataImageCache.set(parsedId, imageUrl || null);
-  return imageUrl || null;
-};
-
-const fetchWikipediaImageByTitleAndLang = async (title: string, lang: "vi" | "en") => {
-  const response = await axios.get(`https://${lang}.wikipedia.org/w/api.php`, {
-    params: {
-      action: "query",
-      format: "json",
-      prop: "pageimages",
-      piprop: "thumbnail",
-      pithumbsize: 900,
-      redirects: 1,
-      titles: title
-    },
-    headers: WIKIMEDIA_HEADERS,
-    timeout: 8000
-  });
-
-  const pages = response.data?.query?.pages || {};
-  const firstPage = Object.values(pages)[0] as any;
-  return firstPage?.thumbnail?.source || null;
-};
-
-const fetchWikimediaImageByTitle = async (title: string) => {
-  const viImage = await fetchWikipediaImageByTitleAndLang(title, "vi");
-  if (viImage) {
-    return viImage;
-  }
-
-  return fetchWikipediaImageByTitleAndLang(title, "en");
-};
-
-const guessWikiTitlesByPlaceName = (name?: string, address?: string) => {
-  const placeName = String(name || "").trim();
-  if (!placeName) {
-    return [] as string[];
-  }
-
-  const suffix = String(address || "").split(",").map((v) => v.trim()).filter(Boolean);
-  const cityOrProvince = suffix[suffix.length - 1] || "";
-
-  return Array.from(new Set([
-    placeName,
-    cityOrProvince ? `${placeName}, ${cityOrProvince}` : "",
-    cityOrProvince ? `${placeName} (${cityOrProvince})` : ""
-  ].filter(Boolean)));
-};
-
-const enrichPlacesWithWikimedia = async (places: any[]) => {
-  return Promise.all(
-    places.map(async (place) => {
-      const wikidataId = parseWikidataId(place?._wikidataId);
-      const wikiTitle = String(place?._wikiTitle || "").trim();
-      const placeName = String(place?._nameForWiki || place?.name || "").trim();
-      const placeAddress = String(place?._addressForWiki || place?.address || "").trim();
-
-      let wikiPhoto: string | null = null;
-
-      try {
-        if (wikidataId) {
-          wikiPhoto = await fetchWikimediaImageByWikidataId(wikidataId);
-        }
-
-        if (!wikiPhoto && wikiTitle) {
-          wikiPhoto = await fetchWikimediaImageByTitle(wikiTitle);
-        }
-
-        if (!wikiPhoto) {
-          wikiPhoto = await resolveWikiPhotoByPlaceContext(placeName, placeAddress);
-        }
-      } catch (error: any) {
-        console.error(
-          `Wikimedia photo failed for ${placeName || place?.placeId || "unknown-place"}:`,
-          error.response?.data || error.message
-        );
-      }
-
-      const { _wikiTitle, _wikidataId, _nameForWiki, _addressForWiki, photo, photos, ...cleanPlace } = place;
-      const fallbackPhoto = buildFallbackPhotoUrl(
-        `${cleanPlace?.placeId || cleanPlace?.name || "place"}-${cleanPlace?.address || ""}`
-      );
-
-      const finalPhoto = wikiPhoto || fallbackPhoto;
+    const result = response.data?.place_results || response.data?.local_results?.[0];
+    if (!result) {
+      // Fallback to google_images if maps doesn't return a specific place
+      const imgRes = await axios.get("https://serpapi.com/search", {
+        params: {
+          engine: "google_images",
+          q: query,
+          api_key: apiKey
+        },
+        timeout: 8000
+      });
+      const images = imgRes.data?.images_results || [];
+      const jpgImg = images.find((img: any) => String(img.original || "").toLowerCase().includes(".jpg"));
       return {
-        ...cleanPlace,
-        photo: finalPhoto,
-        photos: [finalPhoto]
+        photo: jpgImg?.original || images[0]?.original || images[0]?.thumbnail || null
       };
-    })
-  );
+    }
+
+    return {
+      photo: result.thumbnail || result.gps_coordinates?.image || null,
+      rating: result.rating,
+      reviews: result.reviews,
+      reviews_original: result.reviews_original || (result.reviews ? `(${result.reviews})` : null),
+      position: result.position || 1
+    };
+  } catch (error: any) {
+    console.error("SerpApi place data fetch failed:", error.message);
+    return null;
+  }
 };
 
-const resolveWikiPhotoByPlaceContext = async (name?: string, address?: string) => {
+const resolvePlacePhoto = async (name?: string, address?: string) => {
   const placeName = String(name || "").trim();
   const placeAddress = String(address || "").trim();
-  const titleCandidates = guessWikiTitlesByPlaceName(placeName, placeAddress);
-
-  for (const title of titleCandidates) {
-    const resolvedWikidataId = await resolveWikidataIdByWikipediaTitle(title);
-    if (resolvedWikidataId) {
-      const wikidataPhoto = await fetchWikimediaImageByWikidataId(resolvedWikidataId);
-      if (wikidataPhoto) {
-        return wikidataPhoto;
-      }
-    }
-  }
-
-  for (const title of titleCandidates) {
-    const wikiPhoto = await fetchWikimediaImageByTitle(title);
-    if (wikiPhoto) {
-      return wikiPhoto;
-    }
-  }
 
   if (placeName) {
-    return (
-      await fetchCommonsImageBySearchTerm(`${placeName} Vietnam`) ||
-      await fetchCommonsImageBySearchTerm(placeName)
-    );
+    return await fetchSerpApiPlaceData(`${placeName} ${placeAddress}`.trim());
   }
 
   return null;
@@ -380,8 +166,6 @@ const buildFallbackRating = (seedBase: string) => {
   };
 };
 
-
-
 export const getPlacePhoto = async (req: Request, res: Response) => {
   try {
     const { name } = req.query;
@@ -393,9 +177,6 @@ export const getPlacePhoto = async (req: Request, res: Response) => {
       });
     }
 
-    // Goong doesn't have a direct equivalent to Google's media API for photos in the same way.
-    // We will redirect to a fallback or return error if not found.
-    // For now, let's try to use the name as a direct URL if it looks like one, or use fallback.
     if (String(name).startsWith("http")) {
       return res.redirect(String(name));
     }
@@ -431,29 +212,117 @@ export const searchPlace = async (req: Request, res: Response) => {
           api_key: getGoongKey(),
           input: String(q),
           location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
-          limit: 10
+          limit: 20, // Tăng limit lên 20 để có pool kết quả lớn hơn trước khi lọc
+          more_compound: true
         }
       }
     );
 
-    console.log("Goong Autocomplete Raw:", JSON.stringify(response.data, null, 2));
+    let predictions = response.data?.predictions || [];
+    const lowerQ = String(q).toLowerCase();
 
-    // Transform Goong predictions to match a consistent format if needed,
-    // or return directly if Frontend handles Goong format.
-    // For consistency with searchNearby, we'll return a wrapped object.
-    const predictions = response.data?.predictions || [];
-    const formattedPlaces = predictions.map((p: any) => ({
-      placeId: p.place_id,
-      name: p.structured_formatting?.main_text || p.description,
-      address: p.description,
-      types: p.types || [],
-      source: "goong"
-    }));
+    // Tìm xem có kết quả nào là đơn vị hành chính trùng tên với từ khóa tìm kiếm không (ví dụ: tìm "Đà Lạt" ra "Thành phố Đà Lạt")
+    const adminUnit = predictions.find((p: any) => {
+      const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+      const isLocality = p.types?.some((t: string) => 
+        ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t)
+      );
+      return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+    });
+
+    if (adminUnit) {
+      const targetProvince = adminUnit.compound?.province;
+      if (targetProvince) {
+        // Lọc nghiêm ngặt: Chỉ giữ lại các địa điểm thuộc cùng Tỉnh/Thành phố
+        predictions = predictions.filter((p: any) => {
+          const pProvince = p.compound?.province;
+          return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+        });
+      }
+    }
+
+    // Danh sách các type liên quan đến du lịch/tham quan
+    const touristTypes = [
+      "tourist_attraction",
+      "point_of_interest",
+      "museum",
+      "park",
+      "natural_feature",
+      "establishment",
+      "site",
+      "church",
+      "pagoda",
+      "temple",
+      "monument"
+    ];
+
+    // Các từ khóa gợi ý là địa điểm du lịch trong tiếng Việt
+    const touristKeywords = ["du lịch", "thắng cảnh", "di tích", "chùa", "nhà thờ", "công viên", "bảo tàng", "thác", "hồ"];
+
+    // Ưu tiên các địa điểm du lịch và khớp với khu vực tìm kiếm
+    predictions.sort((a: any, b: any) => {
+      // Ưu tiên 1: Địa điểm du lịch
+      const aTypes = a.types || [];
+      const bTypes = b.types || [];
+      const aDesc = (a.description || "").toLowerCase();
+      const bDesc = (b.description || "").toLowerCase();
+
+      const aIsTourist = 
+        aTypes.some((t: string) => touristTypes.includes(t)) || 
+        touristKeywords.some(k => aDesc.includes(k));
+      const bIsTourist = 
+        bTypes.some((t: string) => touristTypes.includes(t)) || 
+        touristKeywords.some(k => bDesc.includes(k));
+      
+      if (aIsTourist && !bIsTourist) return -1;
+      if (!aIsTourist && bIsTourist) return 1;
+
+      return 0;
+    });
+
+    // Sau khi sắp xếp thì lấy 5 kết quả tốt nhất
+    predictions = predictions.slice(0, 5);
+    const formattedPlaces = await Promise.all(
+      predictions.map(async (p: any) => {
+        const name = p.structured_formatting?.main_text || p.description;
+        const address = p.description;
+
+        let serpData: any = null;
+        try {
+          serpData = await resolvePlacePhoto(name, address);
+        } catch (e) {}
+
+        const fallbackPhoto = buildFallbackPhotoUrl(`${p.place_id}-${name}`);
+        const finalPhoto = serpData?.photo || fallbackPhoto;
+
+        // Gắn thêm thông tin từ SerpApi vào chính object prediction gốc
+        p.photo = finalPhoto;
+        p.photos = [finalPhoto];
+        if (serpData?.rating) p.rating = serpData.rating;
+        if (serpData?.reviews) p.user_ratings_total = serpData.reviews;
+        if (serpData?.reviews_original) p.reviews_original = serpData.reviews_original;
+        if (serpData?.position) p.position = serpData.position;
+
+        return {
+          placeId: p.place_id,
+          name: name,
+          address: address,
+          types: p.types || [],
+          source: "goong",
+          photo: finalPhoto,
+          photos: [finalPhoto],
+          rating: serpData?.rating || p.rating,
+          totalReviews: serpData?.reviews || p.user_ratings_total,
+          reviewsOriginal: serpData?.reviews_original,
+          position: serpData?.position
+        };
+      })
+    );
 
     res.json({
       success: true,
       source: "goong",
-      predictions: response.data?.predictions, // Keep original for compatibility
+      predictions: predictions,
       places: formattedPlaces
     });
   } catch (error: any) {
@@ -490,7 +359,6 @@ export const searchNearby = async (req: Request, res: Response) => {
       ? (typeToQuery[String(type).trim().toLowerCase()] || String(type).trim())
       : "địa điểm";
 
-    // Bước 1: AutoComplete để lấy danh sách place_id
     const autocompleteRes = await axios.get(
       `${GOONG_API_BASE_URL}/Place/AutoComplete`,
       {
@@ -510,7 +378,6 @@ export const searchNearby = async (req: Request, res: Response) => {
       return res.json({ success: true, source: "goong", total: 0, places: [] });
     }
 
-    // Bước 2: Lấy Detail cho từng place để có coordinates
     const detailResults = await Promise.allSettled(
       predictions.slice(0, 10).map((p: any) =>
         axios.get(`${GOONG_API_BASE_URL}/Place/Detail`, {
@@ -522,28 +389,43 @@ export const searchNearby = async (req: Request, res: Response) => {
       )
     );
 
-    const places = detailResults
-      .filter((r): r is PromiseFulfilledResult<any> => r.status === "fulfilled")
-      .map((r) => {
-        const d = r.value.data?.result;
-        if (!d) return null;
-        return {
-          placeId: d.place_id,
-          name: d.name,
-          address: d.formatted_address,
-          latitude: d.geometry?.location?.lat,
-          longitude: d.geometry?.location?.lng,
-          rating: d.rating,
-          totalReviews: d.user_ratings_total,
-          types: d.types || [],
-          mapUrl: d.geometry?.location?.lat
-            ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`
-            : null,
-          photo: null,
-          photos: []
-        };
-      })
-      .filter(Boolean);
+    const places = (await Promise.all(
+      detailResults
+        .filter((r): r is PromiseFulfilledResult<any> => r.status === "fulfilled")
+        .map(async (r) => {
+          const d = r.value.data?.result;
+          if (!d) return null;
+
+          const name = d.name;
+          const address = d.formatted_address;
+
+          let serpData: any = null;
+          try {
+            serpData = await resolvePlacePhoto(name, address);
+          } catch (e) {}
+
+          const fallbackPhoto = buildFallbackPhotoUrl(`${d.place_id}-${name}`);
+          const finalPhoto = serpData?.photo || fallbackPhoto;
+
+          return {
+            placeId: d.place_id,
+            name: name,
+            address: address,
+            latitude: d.geometry?.location?.lat,
+            longitude: d.geometry?.location?.lng,
+            rating: serpData?.rating || d.rating,
+            totalReviews: serpData?.reviews || d.user_ratings_total,
+            reviewsOriginal: serpData?.reviews_original,
+            position: serpData?.position,
+            types: d.types || [],
+            mapUrl: d.geometry?.location?.lat
+              ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`
+              : null,
+            photo: finalPhoto,
+            photos: [finalPhoto]
+          };
+        })
+    )).filter(Boolean);
 
     res.json({
       success: true,
@@ -552,11 +434,7 @@ export const searchNearby = async (req: Request, res: Response) => {
       places
     });
   } catch (error: any) {
-    console.error("Goong searchNearby error:", {
-      status: error.response?.status,
-      data: JSON.stringify(error.response?.data),
-      message: error.message
-    });
+    console.error("Goong searchNearby error:", error.message);
     res.status(500).json({ success: false, message: "Search nearby failed" });
   }
 };
@@ -581,76 +459,136 @@ export const searchText = async (req: Request, res: Response) => {
 
     const searchResults = await Promise.allSettled(
       queryList.map((queryText) =>
-        axios.get(`${GOONG_API_BASE_URL}/Place/Search`, {
+        axios.get(`${GOONG_API_BASE_URL}/Place/AutoComplete`, {
           params: {
             api_key: getGoongKey(),
             input: queryText,
             location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
-            radius: radius ? Number(radius) : undefined
+            radius: radius ? Number(radius) : undefined,
+            more_compound: true
           }
         })
       )
     );
 
-    const successfulResponses = searchResults
+    let allPredictions = searchResults
       .filter((result): result is PromiseFulfilledResult<any> => result.status === "fulfilled")
-      .map((result) => {
-        const data = result.value.data;
-        console.log("Goong Search Raw:", JSON.stringify(data, null, 2));
-        // Goong might return results or predictions depending on the exact endpoint behavior
-        return data?.results || data?.predictions || [];
-      });
+      .flatMap((result) => result.value.data?.predictions || []);
 
-    const allRawItems = successfulResponses.flat();
-    const uniqueById = new Map<string, any>();
+    const lowerQ = String(q).toLowerCase();
+    
+    // Bổ sung lọc đơn vị hành chính cho searchText tương tự searchPlace
+    const adminUnit = allPredictions.find((p: any) => {
+      const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+      const isLocality = p.types?.some((t: string) => 
+        ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t)
+      );
+      return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+    });
 
-    for (const item of allRawItems) {
-      const id = item.place_id || item.id;
-      if (id && !uniqueById.has(id)) {
-        uniqueById.set(id, item);
+    if (adminUnit) {
+      const targetProvince = adminUnit.compound?.province;
+      if (targetProvince) {
+        allPredictions = allPredictions.filter((p: any) => {
+          const pProvince = p.compound?.province;
+          return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+        });
       }
-      if (uniqueById.size >= maxResultCount) break;
     }
 
-    const places = await Promise.all(
-      Array.from(uniqueById.values()).map(async (p: any) => {
-        let wikiPhoto: string | null = null;
-        const name = p.name || p.structured_formatting?.main_text || p.description;
-        const address = p.formatted_address || p.vicinity || p.description;
+    // Danh sách các type liên quan đến du lịch/tham quan
+    const touristTypes = [
+      "tourist_attraction",
+      "point_of_interest",
+      "museum",
+      "park",
+      "natural_feature",
+      "establishment",
+      "site",
+      "church",
+      "pagoda",
+      "temple",
+      "monument"
+    ];
 
-        try {
-          wikiPhoto = await resolveWikiPhotoByPlaceContext(name, address);
-        } catch (e) {}
+    const touristKeywords = ["du lịch", "thắng cảnh", "di tích", "chùa", "nhà thờ", "công viên", "bảo tàng", "thác", "hồ"];
 
-        const fallbackPhoto = buildFallbackPhotoUrl(`${p.place_id || p.id}-${name}`);
-        const finalPhoto = wikiPhoto || fallbackPhoto;
+    // Ưu tiên các địa điểm du lịch
+    allPredictions.sort((a: any, b: any) => {
+      const aTypes = a.types || [];
+      const bTypes = b.types || [];
+      const aIsTourist = aTypes.includes("tourist_attraction") || aTypes.includes("point_of_interest");
+      const bIsTourist = bTypes.includes("tourist_attraction") || bTypes.includes("point_of_interest");
+      
+      if (aIsTourist && !bIsTourist) return -1;
+      if (!aIsTourist && bIsTourist) return 1;
+      return 0;
+    });
 
-        // If it's a prediction from Autocomplete, it won't have coordinates.
-        // We could call Place/Detail here, but that might be too many requests.
-        // For now, we'll return what we have.
-        return {
-          placeId: p.place_id || p.id,
-          name: name,
-          address: address,
-          latitude: p.geometry?.location?.lat || null,
-          longitude: p.geometry?.location?.lng || null,
-          rating: p.rating,
-          totalReviews: p.user_ratings_total,
-          types: p.types || [],
-          mapUrl: p.geometry?.location?.lat 
-            ? `https://www.google.com/maps/search/?api=1&query=${p.geometry.location.lat},${p.geometry.location.lng}`
-            : null,
-          photo: finalPhoto,
-          photos: [finalPhoto]
-        };
-      })
+    const uniquePredictions = new Map<string, any>();
+    for (const p of allPredictions) {
+      if (p.place_id && !uniquePredictions.has(p.place_id)) {
+        uniquePredictions.set(p.place_id, p);
+      }
+      if (uniquePredictions.size >= maxResultCount) break;
+    }
+
+    const detailResults = await Promise.allSettled(
+      Array.from(uniquePredictions.values()).map((p) =>
+        axios.get(`${GOONG_API_BASE_URL}/Place/Detail`, {
+          params: {
+            api_key: getGoongKey(),
+            place_id: p.place_id
+          }
+        })
+      )
     );
+
+    const places = await Promise.all(
+      detailResults
+        .filter((r): r is PromiseFulfilledResult<any> => r.status === "fulfilled")
+        .map(async (r) => {
+          const d = r.value.data?.result;
+          if (!d) return null;
+
+          const name = d.name;
+          const address = d.formatted_address;
+
+          let serpData: any = null;
+          try {
+            serpData = await resolvePlacePhoto(name, address);
+          } catch (e) {}
+
+          const fallbackPhoto = buildFallbackPhotoUrl(`${d.place_id}-${name}`);
+          const finalPhoto = serpData?.photo || fallbackPhoto;
+
+          return {
+            placeId: d.place_id,
+            name: name,
+            address: address,
+            latitude: d.geometry?.location?.lat,
+            longitude: d.geometry?.location?.lng,
+            rating: serpData?.rating || d.rating,
+            totalReviews: serpData?.reviews || d.user_ratings_total,
+            reviewsOriginal: serpData?.reviews_original,
+            position: serpData?.position,
+            types: d.types || [],
+            mapUrl: d.geometry?.location?.lat
+              ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`
+              : null,
+            photo: finalPhoto,
+            photos: [finalPhoto]
+          };
+        })
+    );
+
+    const filteredPlaces = places.filter(Boolean);
 
     res.json({
       success: true,
       source: "goong",
-      total: places.length,
-      places
+      total: filteredPlaces.length,
+      places: filteredPlaces
     });
   } catch (error: any) {
     console.error("Goong searchText failed:", error.message);
