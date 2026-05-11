@@ -18,11 +18,11 @@ export const addPlaceToDay = async (req: Request, res: Response) => {
       mapUrl
     } = req.body;
 
-    const count = await PlanPlace.countDocuments({ dayId });
+    const count = await PlanPlace.countDocuments({ dayId: dayId as any });
 
     const place = await PlanPlace.create({
 
-      dayId,
+      dayId: dayId as any,
 
       placeId,
       name,
@@ -61,7 +61,7 @@ export const deletePlaceFromDay = async (req: Request, res: Response) => {
 
     const { dayId, planPlaceId } = req.params;
 
-    const place = await PlanPlace.findOne({ _id: planPlaceId, dayId });
+    const place = await PlanPlace.findOne({ _id: planPlaceId as any, dayId: dayId as any });
 
     if (!place) {
       return res.status(404).json({
@@ -72,11 +72,11 @@ export const deletePlaceFromDay = async (req: Request, res: Response) => {
 
     const deletedOrder = typeof place.order === "number" ? place.order : 0;
 
-    await PlanPlace.deleteOne({ _id: planPlaceId, dayId });
+    await PlanPlace.deleteOne({ _id: planPlaceId as any, dayId: dayId as any });
 
     if (deletedOrder > 0) {
       await PlanPlace.updateMany(
-        { dayId, order: { $gt: deletedOrder } },
+        { dayId: dayId as any, order: { $gt: deletedOrder } },
         { $inc: { order: -1 } }
       );
     }

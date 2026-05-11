@@ -293,10 +293,11 @@ export const InventoryController = {
       next30Days.setDate(next30Days.getDate() + 30);
 
       // Lấy tất cả inventory cho 30 ngày tới
-      const inventories = await RoomInventory.find({
+      const query: any = {
         hotelId,
         date: { $gte: today, $lt: next30Days }
-      });
+      };
+      const inventories = await RoomInventory.find(query);
 
       // Thống kê theo room type
       const roomTypeStats: any = {};

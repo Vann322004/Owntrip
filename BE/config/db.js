@@ -1,4 +1,9 @@
 const mongoose = require("mongoose");
+const dns = require('dns');
+
+// Force dùng DNS của Google để giải quyết lỗi SRV lookup (ECONNREFUSED)
+dns.setServers(['8.8.8.8']);
+dns.setDefaultResultOrder('ipv4first');
 
 const connectDB = async () => {
   try {
