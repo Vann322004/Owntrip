@@ -9,9 +9,9 @@ const addPlaceToDay = async (req, res) => {
     try {
         const { dayId } = req.params;
         const { placeId, name, address, latitude, longitude, rating, photo, mapUrl } = req.body;
-        const count = await planPlace_model_1.default.countDocuments({ dayId });
+        const count = await planPlace_model_1.default.countDocuments({ dayId: dayId });
         const place = await planPlace_model_1.default.create({
-            dayId,
+            dayId: dayId,
             placeId,
             name,
             address,
@@ -38,7 +38,7 @@ exports.addPlaceToDay = addPlaceToDay;
 const deletePlaceFromDay = async (req, res) => {
     try {
         const { dayId, planPlaceId } = req.params;
-        const place = await planPlace_model_1.default.findOne({ _id: planPlaceId, dayId });
+        const place = await planPlace_model_1.default.findOne({ _id: planPlaceId, dayId: dayId });
         if (!place) {
             return res.status(404).json({
                 success: false,
@@ -46,9 +46,9 @@ const deletePlaceFromDay = async (req, res) => {
             });
         }
         const deletedOrder = typeof place.order === "number" ? place.order : 0;
-        await planPlace_model_1.default.deleteOne({ _id: planPlaceId, dayId });
+        await planPlace_model_1.default.deleteOne({ _id: planPlaceId, dayId: dayId });
         if (deletedOrder > 0) {
-            await planPlace_model_1.default.updateMany({ dayId, order: { $gt: deletedOrder } }, { $inc: { order: -1 } });
+            await planPlace_model_1.default.updateMany({ dayId: dayId, order: { $gt: deletedOrder } }, { $inc: { order: -1 } });
         }
         return res.json({
             success: true,

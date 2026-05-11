@@ -64,7 +64,7 @@ const createTrip = async (req, res) => {
 exports.createTrip = createTrip;
 const getTripDetail = async (req, res) => {
     try {
-        const { tripId } = req.params;
+        const tripId = req.params.tripId;
         const trip = await trip_model_1.default.findById(tripId);
         if (!trip) {
             return res.status(404).json({
@@ -101,7 +101,7 @@ const getTripDetail = async (req, res) => {
 exports.getTripDetail = getTripDetail;
 const getTripDestinations = async (req, res) => {
     try {
-        const { tripId } = req.params;
+        const tripId = req.params.tripId;
         const trip = await trip_model_1.default.findById(tripId);
         if (!trip) {
             return res.status(404).json({
@@ -205,7 +205,7 @@ exports.getProvinceImageCatalog = getProvinceImageCatalog;
 const updateTrip = async (req, res) => {
     try {
         const userId = req.user?.userId;
-        const { tripId } = req.params;
+        const tripId = req.params.tripId;
         const { title, destination, startDate, endDate, description, isPublished } = req.body;
         if (!userId) {
             return res.status(401).json({
@@ -281,7 +281,7 @@ const updateTrip = async (req, res) => {
                 const existingDay = existingDayByNumber.get(dayNumber);
                 if (!existingDay) {
                     await planDay_model_1.default.create({
-                        tripId,
+                        tripId: tripId,
                         dayNumber,
                         date: nextDate
                     });
@@ -367,7 +367,7 @@ exports.getPublishedTrips = getPublishedTrips;
 const updateTripPublishStatus = async (req, res) => {
     try {
         const userId = req.user?.userId;
-        const { tripId } = req.params;
+        const tripId = req.params.tripId;
         const { isPublished } = req.body;
         if (!userId) {
             return res.status(401).json({
@@ -406,7 +406,7 @@ exports.updateTripPublishStatus = updateTripPublishStatus;
 const deleteTripById = async (req, res) => {
     try {
         const userId = req.user?.userId;
-        const { tripId } = req.params;
+        const tripId = req.params.tripId;
         if (!userId) {
             return res.status(401).json({
                 success: false,

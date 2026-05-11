@@ -67,7 +67,10 @@ const bookingSchema = new mongoose_1.Schema({
     },
     cancellationReason: String,
     cancelledAt: Date,
-    refundAmount: Number
+    refundAmount: Number,
+    // PayOS fields
+    payosOrderCode: { type: Number, index: true },
+    payosCheckoutUrl: String
 }, {
     timestamps: true,
     versionKey: false

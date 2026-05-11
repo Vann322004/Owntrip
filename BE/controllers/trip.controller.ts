@@ -89,7 +89,7 @@ export const createTrip = async (req: AuthRequest, res: Response) => {
 
 export const getTripDetail = async (req: AuthRequest, res: Response) => {
   try {
-    const { tripId } = req.params;
+    const tripId = req.params.tripId as any;
 
     const trip = await Trip.findById(tripId);
 
@@ -132,7 +132,7 @@ export const getTripDetail = async (req: AuthRequest, res: Response) => {
 
 export const getTripDestinations = async (req: AuthRequest, res: Response) => {
   try {
-    const { tripId } = req.params;
+    const tripId = req.params.tripId as any;
 
     const trip = await Trip.findById(tripId);
 
@@ -253,7 +253,7 @@ export const getProvinceImageCatalog = async (req: Request, res: Response) => {
 export const updateTrip = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user?.userId;
-    const { tripId } = req.params;
+    const tripId = req.params.tripId as any;
     const { title, destination, startDate, endDate, description, isPublished } = req.body;
 
     if (!userId) {
@@ -354,10 +354,10 @@ export const updateTrip = async (req: AuthRequest, res: Response) => {
 
         if (!existingDay) {
           await PlanDay.create({
-            tripId,
+            tripId: tripId as any,
             dayNumber,
             date: nextDate
-          });
+          } as any);
           continue;
         }
 
@@ -449,7 +449,7 @@ export const getPublishedTrips = async (req: Request, res: Response) => {
 export const updateTripPublishStatus = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user?.userId;
-    const { tripId } = req.params;
+    const tripId = req.params.tripId as any;
     const { isPublished } = req.body;
 
     if (!userId) {
@@ -498,7 +498,7 @@ export const updateTripPublishStatus = async (req: AuthRequest, res: Response) =
 export const deleteTripById = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user?.userId;
-    const { tripId } = req.params;
+    const tripId = req.params.tripId as any;
 
     if (!userId) {
       return res.status(401).json({
