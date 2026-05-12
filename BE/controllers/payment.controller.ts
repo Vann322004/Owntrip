@@ -6,6 +6,7 @@ import User from '../models/user.model';
 import RoomInventory from '../models/roomInventory.model';
 import mongoose from 'mongoose';
 import { sendEmailTemplate } from '../utils/emailService';
+import Notification from '../models/notification.model';
 
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 
@@ -340,10 +341,19 @@ export const PaymentController = {
           });
         }
 
-        totalPrice += inventory.priceAtDate * roomCount;
+      totalPrice += inventory.priceAtDate * roomCount;
       }
 
-      // Tạo Booking với status pending (chờ thanh toán)
+      // 4. Kiểm tra số dư người dùng
+      const user = await User.findOne({ userId }).session(session);
+      if (!user) {
+        await session.abortTransaction();
+        return res.status(404).json({ success: false, message: 'Người dùng không tồn tại' });
+      }
+
+      const isBalanceEnough = user.balance >= totalPrice;
+
+      // 5. Tạo Booking
       const newBooking = new Booking({
         userId,
         hotelId,
@@ -353,15 +363,15 @@ export const PaymentController = {
         nights,
         roomCount,
         totalPrice,
-        status: 'pending',
+        status: isBalanceEnough ? 'confirmed' : 'pending',
         guestInfo,
-        paymentMethod: 'bank_transfer',
-        paymentStatus: 'unpaid',
+        paymentMethod: isBalanceEnough ? 'balance' : 'bank_transfer',
+        paymentStatus: isBalanceEnough ? 'paid' : 'unpaid',
       });
 
       await newBooking.save({ session });
 
-      // Giữ phòng (cập nhật bookedCount)
+      // 6. Giữ phòng (cập nhật bookedCount)
       for (const date of dateRange) {
         await RoomInventory.findOneAndUpdate(
           {
@@ -377,9 +387,75 @@ export const PaymentController = {
         );
       }
 
+      // 7. Nếu dùng số dư: Trừ tiền user & Cộng tiền chủ khách sạn
+      if (isBalanceEnough) {
+        const pointsEarned = Math.floor(totalPrice / 1000);
+        await User.findOneAndUpdate(
+          { userId },
+          { 
+            $inc: { 
+              balance: -totalPrice,
+              points: pointsEarned 
+            }
+          },
+          { session }
+        );
+
+        const hotelDoc = await Hotel.findOne({ hotelId }).session(session);
+        if (hotelDoc && hotelDoc.ownerId) {
+          await User.findOneAndUpdate(
+            { userId: hotelDoc.ownerId },
+            { $inc: { balance: totalPrice } },
+            { session }
+          );
+        }
+      }
+
       await session.commitTransaction();
 
-      // Tạo PayOS payment link sau khi commit
+      // 8. Nếu thanh toán thành công bằng số dư -> Trả kết quả ngay
+      if (isBalanceEnough) {
+        const hotel = await Hotel.findOne({ hotelId });
+        const hotelName = hotel?.name || 'khách sạn';
+
+        // Tạo thông báo trong app
+        await Notification.create({
+          userId,
+          title: "✅ Đặt phòng thành công",
+          message: `Bạn đã đặt thành công ${roomCount} phòng tại ${hotelName} (${nights} đêm). Số tiền ${totalPrice.toLocaleString()} VND đã được trừ từ số dư.`,
+        });
+
+        if (hotel && guestInfo.email) {
+          sendEmailTemplate(
+            guestInfo.email,
+            '✅ Xác nhận đặt phòng thành công',
+            'bookingConfirmation',
+            {
+              fullName: guestInfo.fullName,
+              bookingId: newBooking.bookingId,
+              hotelName: hotel.name,
+              checkIn: checkIn as string,
+              checkOut: checkOut as string,
+              roomCount: roomCount.toString(),
+              totalPrice: totalPrice.toLocaleString()
+            }
+          ).catch((err: any) => console.error('[Balance Payment] Email error:', err));
+        }
+
+        return res.status(201).json({
+          success: true,
+          message: 'Đặt phòng thành công! Số dư của bạn đã được trừ.',
+          data: {
+            bookingId: newBooking.bookingId,
+            totalPrice,
+            nights,
+            status: 'confirmed',
+            paymentMethod: 'balance',
+          },
+        });
+      }
+
+      // 9. Nếu số dư không đủ -> Tạo PayOS payment link
       const hotel = await Hotel.findOne({ hotelId });
       const hotelName = hotel?.name || 'OwnTrip';
       const description = `Dat phong ${hotelName}`.slice(0, 25);
@@ -403,7 +479,6 @@ export const PaymentController = {
           ],
         };
 
-        // v2 SDK: payOS.paymentRequests.create(...)
         const paymentLinkRes = await payOS.paymentRequests.create(payosBody);
         checkoutUrl = paymentLinkRes.checkoutUrl;
         orderCode = paymentLinkRes.orderCode;
@@ -413,12 +488,12 @@ export const PaymentController = {
           { payosOrderCode: orderCode, payosCheckoutUrl: checkoutUrl }
         );
       } catch (payosError: any) {
-        console.error('[PayOS] Tạo link thất bại, booking vẫn được tạo:', payosError.message);
+        console.error('[PayOS] Tạo link thất bại:', payosError.message);
       }
 
       return res.status(201).json({
         success: true,
-        message: 'Tạo đặt phòng thành công. Vui lòng thanh toán để xác nhận.',
+        message: 'Số dư không đủ. Vui lòng thanh toán qua QR để xác nhận đặt phòng.',
         data: {
           bookingId: newBooking.bookingId,
           totalPrice,
@@ -460,6 +535,15 @@ export const PaymentController = {
 
     // Cộng doanh thu cho chủ khách sạn
     const hotel = await Hotel.findOne({ hotelId: booking.hotelId });
+    
+    // Tạo thông báo trong app
+    await Notification.create({
+      userId: booking.userId,
+      title: "✅ Thanh toán thành công",
+      message: `Đơn đặt phòng ${booking.bookingId} tại ${hotel?.name || 'khách sạn'} đã được thanh toán thành công qua PayOS.`,
+    });
+
+
     if (hotel && hotel.ownerId) {
       await User.findOneAndUpdate(
         { userId: hotel.ownerId },
