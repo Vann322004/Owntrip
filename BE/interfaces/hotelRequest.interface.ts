@@ -9,6 +9,21 @@ export interface IHotelRequest extends Document {
   phone: string;
   description: string;
   images: string[];
+  legalDocuments: {
+    businessLicense: string;
+    securityCertificate: string;
+    pcccCertificate: string;
+    identityCard: string;
+    leaseContract?: string;
+  };
+  amenities: string[];
+  businessPolicies: {
+    cancellationPolicy: string;
+    childPolicy: string;
+    checkInTime: string;
+    checkOutTime: string;
+    extraCosts?: string;
+  };
   status: 'pending' | 'approved' | 'rejected';
   adminComment?: string;
   createdAt: Date;

@@ -34,4 +34,11 @@ export interface IHotel extends Document {
   };
   tags: string[];       
   ownerId?: string;     
+  businessPolicies?: {
+    cancellationPolicy: string;
+    childPolicy: string;
+    checkInTime: string;
+    checkOutTime: string;
+    extraCosts?: string;
+  };
 }

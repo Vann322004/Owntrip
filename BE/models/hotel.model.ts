@@ -38,6 +38,13 @@ const hotelSchema = new Schema<IHotel>({
     type: String,
     ref: "User",
     index: true
+  },
+  businessPolicies: {
+    cancellationPolicy: String,
+    childPolicy: String,
+    checkInTime: String,
+    checkOutTime: String,
+    extraCosts: String
   }
 }, { timestamps: true, versionKey: false });
 
