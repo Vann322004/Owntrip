@@ -11,6 +11,21 @@ const hotelRequestSchema = new Schema<IHotelRequest>({
   phone: { type: String, required: true },
   description: { type: String },
   images: [String],
+  legalDocuments: {
+    businessLicense: { type: String },
+    securityCertificate: { type: String },
+    pcccCertificate: { type: String },
+    identityCard: { type: String },
+    leaseContract: { type: String }
+  },
+  amenities: [String],
+  businessPolicies: {
+    cancellationPolicy: { type: String },
+    childPolicy: { type: String },
+    checkInTime: { type: String },
+    checkOutTime: { type: String },
+    extraCosts: { type: String }
+  },
   status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
   adminComment: { type: String }
 }, { timestamps: true, versionKey: false });

@@ -9,7 +9,10 @@ export const HotelRequestController = {
   // User submits a registration request
   submitRequest: async (req: AuthRequest, res: Response) => {
     try {
-      const { hotelName, address, city, phone, description, images } = req.body;
+      const { 
+        hotelName, address, city, phone, description, images,
+        legalDocuments, amenities, businessPolicies
+      } = req.body;
       const userId = req.user?.userId;
 
       if (!userId) {
@@ -29,7 +32,10 @@ export const HotelRequestController = {
         city,
         phone,
         description,
-        images
+        images,
+        legalDocuments,
+        amenities,
+        businessPolicies
       });
 
       await newRequest.save();
@@ -108,7 +114,8 @@ export const HotelRequestController = {
           description: request.description,
           ownerId: request.userId,
           starRating: 4, // Default
-          amenities: [],
+          amenities: request.amenities || [],
+          businessPolicies: request.businessPolicies,
           tags: [],
           rooms: []
         });

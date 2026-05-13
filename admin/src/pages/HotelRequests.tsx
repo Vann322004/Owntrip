@@ -12,6 +12,21 @@ interface HotelRequest {
   phone: string;
   description: string;
   images: string[];
+  legalDocuments: {
+    businessLicense: string;
+    securityCertificate: string;
+    pcccCertificate: string;
+    identityCard: string;
+    leaseContract?: string;
+  };
+  amenities: string[];
+  businessPolicies: {
+    cancellationPolicy: string;
+    childPolicy: string;
+    checkInTime: string;
+    checkOutTime: string;
+    extraCosts?: string;
+  };
   status: 'pending' | 'approved' | 'rejected';
   adminComment?: string;
   createdAt: string;
@@ -176,48 +191,81 @@ export default function HotelRequests() {
       {/* ====== Modal Chi tiết & Xử lý ====== */}
       {isAdminCommentModalOpen && selectedRequest && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl w-full max-w-2xl shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden">
+          <div className="bg-white rounded-3xl w-full max-w-4xl shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
-              <h2 className="text-lg font-bold text-gray-900">Chi tiết đơn đăng ký</h2>
+              <h2 className="text-lg font-bold text-gray-900">Chi tiết đơn đăng ký - {selectedRequest.requestId}</h2>
               <button onClick={() => setIsAdminCommentModalOpen(false)} className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors">
                 <XCircle className="w-5 h-5" />
               </button>
             </div>
             
-            <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto">
-              <div className="space-y-4">
+            <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-8 max-h-[75vh] overflow-y-auto">
+              {/* Cột 1: Thông tin cơ bản */}
+              <div className="space-y-6">
                 <div>
-                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Tên khách sạn</label>
-                  <p className="text-sm font-semibold text-gray-900 mt-1">{selectedRequest.hotelName}</p>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase mb-3">Thông tin cơ sở</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tên khách sạn</label>
+                      <p className="text-sm font-semibold text-gray-900">{selectedRequest.hotelName}</p>
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Địa chỉ</label>
+                      <p className="text-sm text-gray-700">{selectedRequest.address}, {selectedRequest.city}</p>
+                    </div>
+                    <div>
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Số điện thoại</label>
+                      <p className="text-sm text-gray-700">{selectedRequest.phone}</p>
+                    </div>
+                  </div>
                 </div>
+
                 <div>
-                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Địa chỉ</label>
-                  <p className="text-sm text-gray-700 mt-1">{selectedRequest.address}, {selectedRequest.city}</p>
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Số điện thoại</label>
-                  <p className="text-sm text-gray-700 mt-1">{selectedRequest.phone}</p>
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Mô tả</label>
-                  <p className="text-sm text-gray-600 mt-1 whitespace-pre-wrap bg-gray-50 p-3 rounded-xl border border-gray-100">
-                    {selectedRequest.description || 'Không có mô tả'}
-                  </p>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase mb-3">Chính sách kinh doanh</h3>
+                  <div className="space-y-2 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                    <p className="text-xs text-gray-600"><strong>Hủy phòng:</strong> {selectedRequest.businessPolicies?.cancellationPolicy || 'N/A'}</p>
+                    <p className="text-xs text-gray-600"><strong>Check-in:</strong> {selectedRequest.businessPolicies?.checkInTime} - <strong>Check-out:</strong> {selectedRequest.businessPolicies?.checkOutTime}</p>
+                    <p className="text-xs text-gray-600"><strong>Trẻ em:</strong> {selectedRequest.businessPolicies?.childPolicy || 'N/A'}</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Hình ảnh / Giấy tờ</label>
-                <div className="grid grid-cols-2 gap-2 mt-1">
-                  {selectedRequest.images.length > 0 ? (
-                    selectedRequest.images.map((img, i) => (
-                      <a key={i} href={img} target="_blank" rel="noreferrer" className="block relative aspect-video rounded-lg overflow-hidden border border-gray-100 hover:opacity-80 transition-opacity">
+              {/* Cột 2: Hồ sơ & Tiện nghi */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase mb-3">Hồ sơ pháp lý</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <DocThumbnail label="GP Kinh doanh" url={selectedRequest.legalDocuments?.businessLicense} />
+                    <DocThumbnail label="An ninh trật tự" url={selectedRequest.legalDocuments?.securityCertificate} />
+                    <DocThumbnail label="PCCC" url={selectedRequest.legalDocuments?.pcccCertificate} />
+                    <DocThumbnail label="CCCD/Passport" url={selectedRequest.legalDocuments?.identityCard} />
+                    {selectedRequest.legalDocuments?.leaseContract && (
+                      <DocThumbnail label="Hợp đồng/Sổ đỏ" url={selectedRequest.legalDocuments.leaseContract} />
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase mb-3">Tiện nghi</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {selectedRequest.amenities?.map(a => (
+                      <span key={a} className="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-[10px] font-bold">{a}</span>
+                    )) || <span className="text-xs text-gray-400 italic">N/A</span>}
+                  </div>
+                </div>
+              </div>
+
+              {/* Cột 3: Hình ảnh & Phản hồi */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase mb-3">Hình ảnh cơ sở</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {selectedRequest.images.map((img, i) => (
+                      <a key={i} href={img} target="_blank" rel="noreferrer" className="block relative aspect-video rounded-lg overflow-hidden border border-gray-100 hover:ring-2 hover:ring-blue-500 transition-all">
                         <img src={img} alt="Hotel registration" className="w-full h-full object-cover" />
                       </a>
-                    ))
-                  ) : (
-                    <p className="text-xs text-gray-400 italic">Không có hình ảnh</p>
-                  )}
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="pt-2">
@@ -229,7 +277,7 @@ export default function HotelRequests() {
                     value={adminComment}
                     onChange={e => setAdminComment(e.target.value)}
                     placeholder="Lý do từ chối hoặc lời nhắn..."
-                    className="w-full mt-2 px-4 py-3 bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white rounded-xl text-sm outline-none transition-all min-h-[100px]"
+                    className="w-full mt-2 px-4 py-3 bg-gray-50 border border-transparent focus:border-blue-500 focus:bg-white rounded-xl text-sm outline-none transition-all min-h-[80px]"
                   />
                 </div>
               </div>
@@ -268,5 +316,21 @@ export default function HotelRequests() {
         </div>
       )}
     </div>
+  );
+}
+
+// Helper component
+function DocThumbnail({ label, url }: { label: string; url?: string }) {
+  if (!url) return null;
+  return (
+    <a href={url} target="_blank" rel="noreferrer" className="block group">
+      <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden border border-gray-200 group-hover:border-blue-500 transition-colors relative">
+        <img src={url} alt={label} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+          <Eye className="w-5 h-5 text-white" />
+        </div>
+      </div>
+      <p className="text-[10px] font-bold text-gray-500 text-center mt-1 truncate">{label}</p>
+    </a>
   );
 }
