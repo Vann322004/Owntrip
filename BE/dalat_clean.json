@@ -1,0 +1,4180 @@
+[
+  {
+    "placeId": "ChIJJQGeQfkTcTER14Ezv_VNFuY",
+    "name": "Carrot Restaurant - Món Âu ngon Đà Lạt",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "36 Đường Bà Triệu, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9373286,
+      "lng": 108.433532
+    },
+    "rating": 4.2,
+    "reviewCount": 471,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 358 822 422",
+    "website": "https://www.facebook.com/Carotrestaurant/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOb2Hs2eN_Lqi3zSF7J_VftCzVaWohC23JfqGdY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHeRjdVxpgJLrfKIJip8agJK5kYjmTqt0wt_Vloea4Rf6kAtk34kda_C95SdX2PqJT3qZVZgpS8UI2uK5loLWuU9XJplmcjnMGkbGa6VvA0S8mK7cOY0aSwfMaZlMrhcWFbQ0=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 14, 17 to 22, Thứ 5: 11 to 14, 17 to 22, Thứ 6: 11 to 14, 17 to 22, Thứ 7: 11 to 14, 17 to 22, Chủ nhật: 11 to 14, 17 to 22, Thứ 2: 11 to 14, 17 to 22, Thứ 3: 11 to 14, 17 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Mì Ý",
+      "Pumpasoppa",
+      "Rostbiff",
+      "Vitlöksbröd",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJo2WNU68TcTERF0mOJrgrC9s",
+    "name": "Hilly Garden Đà Lạt - BBQ & Private Dinner",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "hẻm 22 Khe Sanh, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9357527,
+      "lng": 108.4620297
+    },
+    "rating": 4.9,
+    "reviewCount": 624,
+    "price": "200–800 tn ₫",
+    "phoneNumber": "+84 906 705 023",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHb4dIKs_nJJzswaChJ954B-GuhG904U1jC9ocnf5zC4ilD3MiXLebYcAta9NQY5X-ivUqsunocOriI36SI4suBgTZLIZ3ZdEwl4gfkOHclXGZmBL-4_TzsvHckZlOimWjYuG2G1PvI9Z28=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8JyR1GCPHs5hAitjaHl5yIziSkcQtZslUZjeoVCsFOO3PaC2uZfQTzY7VCq7GThSwEJ2rSPjIqG67_eaVyCIevbGi0m17D7izLmYT07PNNuOVzuZUAhChELbfY_sN3WYkD3MF5Q=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 17 to 21, Thứ 5: 17 to 21, Thứ 6: 17 to 21, Thứ 7: 17 to 21, Chủ nhật: 17 to 21, Thứ 2: 17 to 21, Thứ 3: 17 to 21",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Polenta",
+      "Mì Ý",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Có lò sưởi",
+      "Bữa tối",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJZyzpgPITcTERfVYyIwwA7Us",
+    "name": "Tiệm nướng Khói Thông",
+    "category": "Grillrestaurang",
+    "city": "Da Lat",
+    "address": "19 Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9292676,
+      "lng": 108.4488825
+    },
+    "rating": 4.7,
+    "reviewCount": 3219,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 397 497 403",
+    "website": "https://tiemnuongkhoithong.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPrdSbMBvgZpyUdvZ910jtrHBBmcubOfNRW5MTo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipM-wSb3CchfJ7wPcPcc0YYedDVI8H29xpYf5xVK=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 22, Thứ 5: 10:30 to 22, Thứ 6: 10:30 to 22, Thứ 7: 10:30 to 22, Chủ nhật: 10:30 to 22, Thứ 2: 10:30 to 22, Thứ 3: 10:30 to 22",
+    "cuisineTags": [
+      "Đồ nướng"
+    ],
+    "detailedPreferences": [
+      "Spenat",
+      "Eldgryta",
+      "Biff",
+      "Grönsak",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Sport",
+      "Takterass",
+      "Có đồ uống cồn",
+      "Vin",
+      "Öl",
+      "Bữa trưa",
+      "Bữa tối"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ9U2rnvwTcTERZkgvggh2nGE",
+    "name": "Quán Nướng Chill in Dalat",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "Hẻm 1 Đường Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9309209,
+      "lng": 108.4511945
+    },
+    "rating": 4.8,
+    "reviewCount": 3508,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 933 070 205",
+    "website": "https://www.facebook.com/quannuongchillindalat/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEJTKL9-kvXgPihChjyrXVYLC1J6LfrasnFXPt73sWjFwpMnJlDAGZHC6i5snPfWzoWAUIrzqsXvwsiRGpF17A_6DZV1ba0AbGsXs0VHJS8Mq58YJzSnGHMK1PwdV9v7KKaLILRx2R6diY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEH87I9jKto43M3zd3kUxcTAurP96mR6c16Fih_Kbo6-c2M6A9_EtMwnGDAGxBzkqXxGmUG6wzmnPsKZxhf8GleSQhpLXVryKr3SMeV9P7_Xa8HXEcVf0Bl-6-_FNw2OMs4AJgeYXfab3oc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22, Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Couscous",
+      "Stekt ris",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Nattmat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJxftfMsYTcTERgc366n5YM78",
+    "name": "Pine's - Tiệm Pizza Trong Rừng Đà Lạt",
+    "category": "Pizzeria",
+    "city": "Da Lat",
+    "address": "38D Đường Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9276514,
+      "lng": 108.452155
+    },
+    "rating": 4.8,
+    "reviewCount": 157,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 707 115 538",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5SigSTVSlMgLyNr1SHyEpzE0dH5BtLNjGZLugy0ryBmKG9UM0DhhHhFcsu_kOOyTzOaUVxsR5XCQfCrAzzGdIOQ8ir7Ad_U-LNW6ZoJn2YTzEbHkUSayVSMRdV3iYxDoO2T9TFkaJAp8=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGuHZoPwdFIaMrEGAipBoFZl5wELTDwZwDziax24PTp4x7d6IPwUhvXKVOwXKP6qDqIQNz446VZcHFBwvHUs45hLATFi23i3_ScyqCDRun4wtCi0am05jw3xRjeSN0DAiOTMGeJS9gW7FA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 21, Thứ 5: 10 to 21, Thứ 6: 10 to 21, Thứ 7: 10 to 21, Chủ nhật: 10 to 21, Thứ 2: 10 to 21, Thứ 3: 10 to 21",
+    "cuisineTags": [
+      "Món Âu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Pesto",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig parkering",
+      "Buffé",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Privat matsal",
+      "Smårätter",
+      "Vegetariska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJw2UTNAUTcTERiJXiJxK5y6Q",
+    "name": "The Hillside- Cafe Đà Lạt",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "26 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9381168,
+      "lng": 108.4634922
+    },
+    "rating": 4.8,
+    "reviewCount": 4,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXoOPyZ8KMS4ShSfweF7di6LL4ipWdGgTa7NX8cNNRUYWSsWE0E2XykfwHsT5oV9IUrG2tk0crTc80jdL5a-Y7VlYbQ3wdo3r8KOKfdqdeqkY3Rh8rDiFgL5voy9gIz3zZpQ_L=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3fuwab5LqA5IHD0ErAHn5rUshu60ZjnWpEQF8rrQiiQvk1LuPYZpzPBGpH_ewIJJgr975CPdRGoufqkvkdogAvi4zxjB8sxrPPIkOcssQ-j81JoNL4zXItWmLD_gYDN3WbBHI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Berg",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJG5gCZ10TcTERSDU31Vhvx8I",
+    "name": "Umami Yatai",
+    "category": "Japansk restaurang",
+    "city": "Da Lat",
+    "address": "2b Đ. Phạm Hồng Thái, Xuân Hương - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9393027,
+      "lng": 108.4510675
+    },
+    "rating": 4.8,
+    "reviewCount": 138,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 867 684 035",
+    "website": "https://www.facebook.com/UmamiRamenGyozabar?mibextid=LQQJ4d",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEFqsq3xysXHSDZ1gJyoCb5-GYCOHF0YcA-QCeJUDmVvDcMut0VC9STf_-bMcH5Oig9L19Zt9nP82VsoNWibNdrnNC5Y3-SsAt1YiBI5ubrZZkaGi0gIXDBEeZ7OJkZhw7tHsRdVk8o6gvO=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJ2HuWmfgY8SAib0iDIKCC6mMmJ98YXbgor22GfH6LnnRqygkzzPoOGZ-vAglInBYlDbb9gBUwMGsR2w2CMepw0Rzaj4ZpgjbXrfWIqm1yAKe2zKhU1xDOkxTwwO3y7qR6u5vzYTF93W3O=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 18 to 23:30, Thứ 5: 18 to 23:30, Thứ 6: 18 to 23:30, Thứ 7: 18 to 23:30, Chủ nhật: 18 to 23:30, Thứ 2: 18 to 23:30, Thứ 3: 18 to 23:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Ramen",
+      "Nudlar",
+      "Yakitori",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJoeL3OiATcTER_mWCjPblZSA",
+    "name": "May Cà Rem Kem",
+    "category": "Glassbar",
+    "city": "Da Lat",
+    "address": "25/1 Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.929957,
+      "lng": 108.4488824
+    },
+    "rating": 4.8,
+    "reviewCount": 79,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 967 972 610",
+    "website": "https://www.facebook.com/May-C%C3%A0-Rem-Kem-106120948036934/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM-6eaXR4Vhh0IMUS8OKz4ktvhJ1iVY-VocDrxA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1VozE0NFm8wHeSw6AVgICQ84auPUliz_MDjjHITTVIiodz5DfM-z9tdc0gJQmst5UbA5c0rx7yLfa8AV2VrHsk1-zfJLenn9QTmG3nkrZ97vP1fgRiGHSkmB2CPeUohBQddBBg04gPhl4=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 18, Thứ 5: 08 to 18, Thứ 6: 08 to 18, Thứ 7: 08 to 18, Chủ nhật: 08 to 18, Thứ 2: 08 to 18, Thứ 3: 08 to 12",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Gelato",
+      "Glass",
+      "Giao hàng",
+      "Upphämtning i butiken",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ7SGgTfsTcTERMNipnXKbjwo",
+    "name": "Thôn",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "Atiso Thanh Huyền, 70B, Hoàng Hoa Thám/Cuối đường ngay, ngã 3, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.926452,
+      "lng": 108.465622
+    },
+    "rating": 4.6,
+    "reviewCount": 22,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 865 467 182",
+    "website": "http://www.facebook.com/thon.cafe",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6e-gZ20ig_MORg0CQDDE0regiZTXGZqczKBvxiY301Ihdg4otN8BECUA7k4x8ouIRjrLZTaQYGTKBxZehMxZEDBqu-v8-cIdexehBdeZIA_qo071gWXVdnqEC0ylD9oLJ4nwP=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjEjp7VGYt3p9CMZTxN1Oj_le-lZBftMUeMay-_5knHNyt1kapjVyZv-bb1QJfWn2era6MMBGSRflgz4uoLGWrzMTb28XbBGBguA8iWvUymN8hKStnRf0R1VED89J2uKIiKYc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 18, Thứ 5: 07 to 18, Thứ 6: 07 to 18, Thứ 7: 07 to 18, Chủ nhật: 07 to 18, Thứ 2: 07 to 18, Thứ 3: 07 to 18",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Trädgård",
+      "Phục vụ tại chỗ",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Passar för barn",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNfVd4NkTcTERdvyUlo5za2w",
+    "name": "Cà phê Tiên Dung",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "18 Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.936078,
+      "lng": 108.451416
+    },
+    "rating": 4.8,
+    "reviewCount": 18,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 969 368 073",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdlD9qE6ZBnjgJxOaeCq8mcV_HTk8BCieod1crKRT4q3teS1whBHbucuqiH0ogNsIPqLbLqSeLHSrCkSniooc4_tm6xjuRBQTOO_hwME_KYZzwxICsG1bBWNCvOpO1r-HCDlZ0=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGn7wrdh7Hrkataz0B7bQoKJVeVKMpIQBEoi__FXHch1X0aLNf-JpId5271fkz7IDPirQdQ8ZLhL7A1F3qHHdfwl5SyzV_cxMz9OuiK-VwKIYwG1IrWx1yMY9LxR5z_7jtRKzdjwA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Rullstolstillgänglig toalett",
+      "Kaffe",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Lãng mạn",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJt0EWeAATcTERkSAcfLZoDBs",
+    "name": "Dalat View cafe",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "49 Khe Sanh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9333888,
+      "lng": 108.4581501
+    },
+    "rating": 4,
+    "reviewCount": 2314,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 888 888 081",
+    "website": "http://dalatview.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO6pfgwn9eh1EZjkFF4ssx1ZSkmkcsWplDdkrAJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8lG9DJbH-XF3FmtzjZECQPUz7-AzdK1grn--6TIADGoyHHMT1t_qzSH6iCVGgP-LKraYL_M1tH0fdr0SPyFwEksJj_byd29EuXgtdgWWqFqI59q9t5alnmc3SbwVCkeCm_zo=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Cappuccino",
+      "Eldgryta",
+      "Berg",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJLaz5xWgTcTERZTp4r7td8Q8",
+    "name": "CROISSANT IN DALAT",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "15A Trần Hưng Đạo, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9379871,
+      "lng": 108.4511778
+    },
+    "rating": 4.7,
+    "reviewCount": 118,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 968 115 005",
+    "website": "http://cafetoiden.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMjj21XAtZkf6nKP-Ssgy75OXdnUoEMvnHq4pmx=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFiyesPufGjF0BxYXfcRrGppWEAsEHHhLAGYZbKD5vH6HXtb-focEsGFht61uAJeTFIqRgO7QshlOQyRbRrBUoEiGoGpf9W3vfZaEtoup81poX1rokbzXEcn298S1Iwgi0hVCQHJgAZ8cvH=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Croissant",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Färdiglagad mat",
+      "Giờ vàng đồ uống",
+      "Kaffe",
+      "Frukost",
+      "Brunch"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJyX8GEeUTcTERznBcM3WvBdk",
+    "name": "Him Cafe",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "2/2, 2 Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9340997,
+      "lng": 108.4496815
+    },
+    "rating": 4.3,
+    "reviewCount": 402,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 939 862 665",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGsBL0etF6rG_6VS7dFtzGAtz1ysysUDzyumUmIngo5ohR_cymTfh1VMp5LvgPEamfQGbkPc8ARgEJ4tTAS_0NbPwUqe1YtU8ERK6dzt-aw_cRBgPIyjaKcjyZrB2zrwb3tXRsJ_68b5TU=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHKLY8U-lViNWK7XDw9y9xWU0KzaflBbKrBHKCvQ02acU1h7PpjxN9PaZtLALSE8HVgxKzZwXWa2PfwDP6J9jj84XlyB-z1XWLo5d7VwUgztCC57Suahig1togtP7S4psXf2Ke3=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 21:30, Thứ 5: 07:30 to 21:30, Thứ 6: 07:30 to 21:30, Thứ 7: 07:30 to 21:30, Chủ nhật: 07:30 to 21:30, Thứ 2: 07:30 to 21:30, Thứ 3: 07:30 to 21:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Snabbmat",
+      "Frukost",
+      "Brunch",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ98eEWMgTcTERKACPsE8bNRA",
+    "name": "Quán Vân Các",
+    "category": "Traditionellt tehus",
+    "city": "Da Lat",
+    "address": "11/2 Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9352507,
+      "lng": 108.4515008
+    },
+    "rating": 5,
+    "reviewCount": 298,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 978 393 797",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_72F6f43gp6gUcbBWEL2b2pxvyENiM7d2uLVVG9Y4zj5Wkhnk6elB9XY86078NiXifvk3MFWYr-28hQGP1vJNgdPVV8SeW8hgknCZxYeuCe_uQViHBRXOHQzdqaNmivjqdtzbJHZKSFPw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipM5ORq4PA0KQ31g4IKQVeEA2sQCIkZRda3REx_k=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 20:30, Thứ 5: 08:30 to 20, Thứ 6: 08 to 20, Thứ 7: 08 to 22, Chủ nhật: 08 to 20, Thứ 2: 08 to 20, Thứ 3: Stängt",
+    "cuisineTags": [
+      "Ăn chay",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Bra om man vill jobba med laptop",
+      "Färdiglagad mat",
+      "Kaffe",
+      "Nattmat",
+      "Smårätter",
+      "Snabbmat",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Frukost",
+      "Brunch",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJFwzBjsQTcTERihn8-fA0Ilk",
+    "name": "Trạm cà phê",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "18 Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng 660000, Vietnam",
+    "location": {
+      "lat": 11.9362943,
+      "lng": 108.4513118
+    },
+    "rating": 4.8,
+    "reviewCount": 16,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 382 801 221",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPtaLbckcpi0jh6LAGcLBTFSoteD5TDYC-DE0SK=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP_uNm94RZVM6Whkawa57iOyXBfS2DqC_YDEht4=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 15, Thứ 5: 08 to 15, Thứ 6: 08 to 15, Thứ 7: 08 to 15, Chủ nhật: 08 to 15, Thứ 2: 08 to 15, Thứ 3: 08 to 15",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNyjkLT0TcTERXICsT96afYc",
+    "name": "Sunshine Coffee Dalat",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "09 Trần Hưng Đạo, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9373542,
+      "lng": 108.4489852
+    },
+    "rating": 4.2,
+    "reviewCount": 407,
+    "price": "$$",
+    "phoneNumber": "+84 911 665 021",
+    "website": "https://www.facebook.com/sunshinecoffeedalat",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNs9sRSfrsM2CwrtN3Gel9cQNvk4irLjSIibl_6=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP2J04mOJnb45X-oqMo6hX5VOKPwP62fQ2obqyI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 22, Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Snabbmat",
+      "Frukost",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJdVIKWQATcTERZa2YJL07ITI",
+    "name": "Afro cafe and brunch",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "2b Đ. Phạm Hồng Thái, Xuân Hương - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9393027,
+      "lng": 108.4510675
+    },
+    "rating": 5,
+    "reviewCount": 2,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGb1qOCAHyNsbj-mulPVAZ_vxamQBOXQ-s7lox0STDu6pYgYLus9X22UqYINkFmBwbTioMB_ldxZqbpCE7x-pC3KFp1YGFcpY-thQD3aYNjNOBy7ySOcp8iPB_LGhpCFRlFBCVf7ZdFs94E=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHCwWj7qF7Qz895SDoruayFtUNTQqwQr5ugXQyHjuFZVzwEuu8R9kitcUIoyFYaKlrRxrfxRTSs_zWM4dS29jN3aDHaQmOXE_EpsqNueQDB4AosGkbUupT2oTatDJXii0E-QiKkhH0fXE4=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 12, Thứ 5: 07 to 12, Thứ 6: 07 to 12, Thứ 7: 07 to 12, Chủ nhật: 07 to 12, Thứ 2: 07 to 12, Thứ 3: 07 to 12",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ0auSaVETcTERn_zqE5Mxz0Q",
+    "name": "Tiệm cà phê Bình Minh Ơi",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "89 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9336278,
+      "lng": 108.4647733
+    },
+    "rating": 4.4,
+    "reviewCount": 4015,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 925 903 634",
+    "website": "https://binhminhoi.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOzgwg8e8zQRvWTwSLAyEpymCIwhLwmBtiqq52V=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLVg9Dw8YJ9IEKooUPDkKHgVI1fy0p6PsoCO2K1giiJj9TqJ9Py208-wb4MVu07wmsmu5gfzrzdeviLqSXqEhCF5lSrpFvikyyv2YyghyIPm_MpRc5q5_VZ2h0ssc2Jawvwj0dqg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 04:30 to 22, Thứ 5: 04:30 to 22, Thứ 6: 04:30 to 22, Thứ 7: 04:30 to 22, Chủ nhật: 04:30 to 22, Thứ 2: 04:30 to 22, Thứ 3: 04:30 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Sangria",
+      "Kaffe",
+      "Iste",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJdQl9mjUTcTERY88tBzCvMAc",
+    "name": "Robinson CoffeenTea",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "16/3 Hẻm 1 - Đ. Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9324282,
+      "lng": 108.4496576
+    },
+    "rating": 4.7,
+    "reviewCount": 95,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 914 527 012",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHQg1PH6Wz_ieFMsnL7_BQQpKoUz6MnrqncQk3HFebE07KgGL5OaPTvf_iEV5yKYR3zE4BMfnNepb1Uy_w3fhdjjIXZX3aTYfpHXoG3bMXkDGNdrPhsGS8Yf9ID-VZ-jTWE-xkn=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTBmdwUAXYem5fFcX3wPpkn0i8g-C8y6JVF301cM14XwHB6DlrrOe0vCa-tSWky52ik3xg4y_zu8iYLz67VBs5N3VL6_G19Ftbk88Vzg_BDzyoKmaGXIcLifKD0ptvwbVHbdOt=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 09 to 22, Thứ 2: 08 to 21, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Cappuccino",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Kaffe",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5QlCZ6MTcTERODxqPibUdc0",
+    "name": "Khu Vườn Mùa Hè",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "27 Hẻm, 1 Đường Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9317664,
+      "lng": 108.4527627
+    },
+    "rating": 4.6,
+    "reviewCount": 843,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 931 864 961",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP3i24XiCLjD9ausOzUUVj-PDkGQjiEANh9wyAW=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8U4P10Dux3sk5b0GxVi-tCl7AOP5kv9xu05DJ_DpIZsMJjh8jSXbuemxi2ALLlMwnnMimvXBSp8H3flcYfFuMPTf_FNpFFANP-Rd7saf7lFnrsT8Y3BU960Gp8jH8iL-Ep8w=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 18, Thứ 5: 08 to 18, Thứ 6: 08 to 18, Thứ 7: 08 to 18, Chủ nhật: 08 to 18, Thứ 2: 08 to 18, Thứ 3: 08 to 18",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Smoothie",
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Hälsosamma alternativ",
+      "Kaffe",
+      "Snabbmat",
+      "Catering",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJt0TnSQATcTERe306p0tupE4",
+    "name": "Pine’s Pizza Quận 7",
+    "category": "Kaffebar",
+    "city": "Ho Chi Minh",
+    "address": "2 Đ. Số 1, Khu dân cư Him Lam, Tân Hưng, Hồ Chí Minh 70000, Vietnam",
+    "location": {
+      "lat": 11.928464,
+      "lng": 108.4513263
+    },
+    "rating": 4.8,
+    "reviewCount": 177,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 989 103 336",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfFLPg1nMLMCftMxj_QuiXPRnYjpJcUn1p7KKECZos1FTZTZUNCR_mi6oYS3_zfnnaz6Aw3nVDrurH1Nz9Uh5nN7AFkaZUxJrCTqtcxiLYCCaCIfBeOetY9n7q5KtrdMBPz2gZ-frvlWLJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFx37TbMMQtH2mlxMlLsQOnwD01-1PADVeO0x7udnx4KffCvKHoiElg7avokN_PJQmtQTrDfJ_3_1V_Ii4TLnBrOihUFF81eub68gpJ_wZfe3zVttlSZU8nEcTMPyi3PzHB8j-i-tMvPbOE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 21, Thứ 5: 09 to 21, Thứ 6: 09 to 21, Thứ 7: 09 to 21:30, Chủ nhật: 09 to 21:30, Thứ 2: 09 to 21, Thứ 3: 09 to 17",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Kaffe",
+      "Phục vụ tại chỗ",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Bankkort",
+      "Kreditkort",
+      "Passar för barn",
+      "Hundar tillåtna",
+      "Hundar är tillåtna utomhus",
+      "Hundar är välkomna"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJWw5ukW8TcTERhGX1TNSFZT0",
+    "name": "Nhà Bên Rừng",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "Tổ Tây Hồ 2, Xuân Trường - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9341893,
+      "lng": 108.4774209
+    },
+    "rating": 4.8,
+    "reviewCount": 3065,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 975 371 124",
+    "website": "https://www.facebook.com/tiemcaphe.nhabenrung",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO8U6kqqqWx-WqsiCedr7CYNq_L45Pba_Sqt2ZS=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipM2jb4ZsLmF502WOa5QLdqm16IXciuWinMuz3dI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 19:30, Thứ 5: 06 to 19:30, Thứ 6: 06 to 19:30, Thứ 7: 06 to 20, Chủ nhật: 06 to 19:30, Thứ 2: 06 to 19:30, Thứ 3: 06 to 19:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Có lò sưởi",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJ0AAFQ8TcTERRPGYTR5geEA",
+    "name": "Weasel coffee farm",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "WFM8+XW3, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9348879,
+      "lng": 108.4673
+    },
+    "rating": 4.3,
+    "reviewCount": 259,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 263 3996 444",
+    "website": "http://www.caphechondalat.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCNHfsREWmZIcB49xM97IPP0sukELdbcthf1XJSftkOje1bF7vhkYvLHSlcAKtNaJ86QbN67Xfqx0SpkEN1XXFgBC3nNsWaiUZDMmexWu9C3xlBLPUXCPRBMlZNgvYU0nKP4wofg=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFPM6I2T4EyiSy_32ROftudxAB5yw1D5dnOCqGB19ZODFfw17HuNQlX2MFrOSK1Vg8jyLvnmqHtKX_vREyqwhOrWypXjwyT8Ruych4zIxbMTOvyp73KkoWPZh6UgeLCRxy8SxIlPA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 17:30, Thứ 5: 07:30 to 17:30, Thứ 6: 07:30 to 17:30, Thứ 7: 07:30 to 17:30, Chủ nhật: 07:30 to 17:30, Thứ 2: 07:30 to 17:30, Thứ 3: 07:30 to 17:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Sibetkaffe",
+      "Kaffe",
+      "Berg",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Wifi",
+      "Thoải mái",
+      "Lugnt och tyst"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1WnGhPMTcTERlgvb5jd8Jl8",
+    "name": "1THEV COFFEE ĐÀ LẠT",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "103 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng 66117, Vietnam",
+    "location": {
+      "lat": 11.9325188,
+      "lng": 108.4648327
+    },
+    "rating": 4.6,
+    "reviewCount": 502,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 384 790 183",
+    "website": "https://www.facebook.com/1thevdalat",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPvSG04HBeS0YbPYUMOSPO4NDtq_DQpM8IVbmUX=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMNDS3WSpNm8xUaP_pZmW--pSQv4GcMwPKhwQgL=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 04:30 to 22, Thứ 5: 04:30 to 22, Thứ 6: 04:30 to 22, Thứ 7: 04:30 to 22, Chủ nhật: 04:30 to 22, Thứ 2: 04:30 to 22, Thứ 3: 04:30 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig ingång",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Öl",
+      "Frukost",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJscvx1kYTcTERrJ4ggdD_sfA",
+    "name": "Moonrise Garden Dalat",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "47 Đường Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9263984,
+      "lng": 108.4522354
+    },
+    "rating": 4.9,
+    "reviewCount": 733,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 969 822 087",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMWD76-nWAFkq1NexqhshoeB0pd9qO2wwQt_05w=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPgYISO0JkjiAfTAfyZw5rD3NWvR0FD98KtIFGV=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Món Âu",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Juice",
+      "Mì Ý",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Có lò sưởi",
+      "Frukost",
+      "Bữa trưa",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJR_chmBwTcTERBZSBEI3qN54",
+    "name": "gió chạm hiên",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "24/1 Đường Khởi Nghĩa Bắc Sơn, Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9332688,
+      "lng": 108.4499414
+    },
+    "rating": 5,
+    "reviewCount": 23,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 986 376 343",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOmw4oRTztF_eg5fI_qx46C898FGVt9w4V_0rDR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEkxDxd1IzNrUKlTN_E2gFW9ukFvd5V0RuyPRtmKNrRbTr-cZoD2kHxB6Q7C-LrQ8BRI2GVzw5Bwg6QtbCH-IP1DLAlIsZ-a_MZpyzOvLbKBRMgnmV2M7NcuFk4hR43DeuzGAk4GsR6qKDD=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 19, Thứ 5: 07 to 19, Thứ 6: 07 to 19, Thứ 7: 07 to 19, Chủ nhật: 07 to 19, Thứ 2: 07 to 19, Thứ 3: 07 to 19",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Trädgård",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Kaffe",
+      "Frukost",
+      "Brunch",
+      "Bữa trưa",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJFdod3_gTcTERkAPvkYpQfK8",
+    "name": "Dreamers: home and coffee",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "19B Đường Đặng Thái Thân, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9292741,
+      "lng": 108.4487053
+    },
+    "rating": 4.5,
+    "reviewCount": 377,
+    "price": "17 US$",
+    "phoneNumber": "+84 865 665 603",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHVk3IOLgY7shJfQXeZWKV-SiHnA_OkHpvdaaexAVoxXlndsOb8imqDewA1hAtjMQ4gDznAiIstLmyfEzqsKHF4ifxvUKKKzkPmB3TbYEduRt9sP1xqPWHgikt4xy1sKiT-oA9P=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEI-qlZx84GsyOibMEWD1QGsIqU_9R73SGaYKZdmgo7LeQY74LstNcKip0PKoAyByWJiww53dD_zl_jz0S7gqv1EtnwDpaB19AEs-CTyO1w5RFcf-RToQeZs4KLlgdaPNfHICs=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 17, Thứ 5: 07 to 17, Thứ 6: 07 to 17, Thứ 7: 07 to 17, Chủ nhật: 07 to 17, Thứ 2: 07 to 17, Thứ 3: 07 to 17",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Croissant",
+      "Caffelatte",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Snabbmat",
+      "Frukost",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJKQkha_YTcTERMX0mbBwIn_8",
+    "name": "Sitooterie - Coffee & Stories",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "2/35, Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9368216,
+      "lng": 108.4535984
+    },
+    "rating": 4.6,
+    "reviewCount": 401,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 327 113 054",
+    "website": "http://www.facebook.com/sitooterie.coffee",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAELWMvhNI8p7MoywjoWgIidTBRoc3dxwMVLpABei3x6RqXhv4pAbEewNZ0tn41iFAzt__1e4TrFYFRfy82j_atSa2VQ7NYgBOrp5QjsDOxEM_P4rArCjK8tnkyJo01_n949eKZkfzPpkhI=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGce5SD5OMpAFR0PRN1PjYGefnXZPeca5CslaaLu5EVH787tenfR6sLVeb5Fkp880PC6uMmCVjpV9sVyDf1Ha1NNHxppeD7uYJAdaiOxUFMur0Ebqyem2pVgsxQNSbVSlLIpds7=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 19, Thứ 5: 08 to 19, Thứ 6: 08 to 19, Thứ 7: 08 to 19, Chủ nhật: 08 to 19, Thứ 2: 08 to 19, Thứ 3: 08 to 19",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Mai tai",
+      "Kaffe",
+      "Croissant",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Snabbmat",
+      "Catering",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJwzR3AskTcTERCqsOBG_wJCA",
+    "name": "HuyEco Coffee & Culture",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "Hẻm 29 3/4, Xuân Hương - Đà Lạt, Lâm Đồng 66116, Vietnam",
+    "location": {
+      "lat": 11.9260984,
+      "lng": 108.4489767
+    },
+    "rating": 5,
+    "reviewCount": 201,
+    "price": "300–400 tn ₫",
+    "phoneNumber": "+84 325 566 351",
+    "website": "https://huyeco.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPZf3WTPuPeaXyWGqL7mksPO8NReAzpEnTUrL4N=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPqkjRumznhZcWaSVA7lnFNFJZbGYhO7vs7cRgk=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 05 to 16, Thứ 5: 05 to 16, Thứ 6: 05 to 16, Thứ 7: 05 to 16, Chủ nhật: 05 to 16, Thứ 2: Stängt, Thứ 3: 05 to 16",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Kaffe",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Sport",
+      "Takterass",
+      "Có lò sưởi"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ27Ct-icTcTERhjWXRTDxoe0",
+    "name": "WEECAFE",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "86 Đường Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9332098,
+      "lng": 108.4646789
+    },
+    "rating": 4.9,
+    "reviewCount": 455,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 708 502 205",
+    "website": "https://www.instagram.com/theweecafe/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF7E6fdJHy6gm6L9NtpZmImA0DPwTn0zfgeh1yFM0FtLM6R8hhM2bbqWSpfK25TdV7hA1gU6qIEs_N8HDViR6sRkxOBFIRG8fee972DItvOx1jTCBPk6cCfKk_5xUgNh3sr_Iu_yw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGpKZ7Eh5tAAFEM_fdME1byjzzeYg8lq4ZGildpYJOf7WjTXScsSBMjvTUSLXnRQfM9iWJBj__oWebpHZ3OWYTbrxNjtd-aUBT1tvOBF-9rYC7aASmbvoGAYQeN8T9ir-sEwzDp=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 18:30, Thứ 5: 07:30 to 18:30, Thứ 6: 07:30 to 18:30, Thứ 7: 07:30 to 18:30, Chủ nhật: 07:30 to 18:30, Thứ 2: 07:30 to 18:30, Thứ 3: 07:30 to 18:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Kaka",
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJsQlOfSQTcTERnTG4wXzurKs",
+    "name": "Blue Parrot Mexican Grill",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "102 Ba Tháng Hai, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9416587,
+      "lng": 108.4334328
+    },
+    "rating": 4.7,
+    "reviewCount": 2060,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 263 6558 686",
+    "website": "https://blueparrotmexicangrill.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMam9e0aEE4j-59G3YJt_mpXmZI2LbSrmjR5Qj4=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipME7it_-iZjS_bkIm429XyfOAWdL0XqECnmYFFr=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 22, Thứ 5: 11 to 22, Thứ 6: 11 to 22, Thứ 7: 11 to 22, Chủ nhật: 11 to 22, Thứ 2: 11 to 22, Thứ 3: 11 to 22",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Guacamole",
+      "Burrito",
+      "Taco",
+      "Nachos",
+      "Juice",
+      "Quesadilla",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJbyltR9QTcTER6uZSITn5EyA",
+    "name": "Down Under Dalat",
+    "category": "Australiensisk restaurang",
+    "city": "Da Lat",
+    "address": "55 Ba Tháng Hai, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9423552,
+      "lng": 108.4343312
+    },
+    "rating": 4.7,
+    "reviewCount": 483,
+    "price": "24 US$",
+    "phoneNumber": "+84 359 937 276",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMM_TnyMrv0NGgPQbv3w5vnrsF9tiJMjU-bfS1D=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_P8OnYAz8F8im392rlCTtq5YBgdNnfaioCaANxz8ocg8GztgdUarQC1rV-sIfqdYnQqYlIOWADWqfLHDxxW21W50Se6muVfz_YmAq8h91VvG6uQYFHy1LyZKoQssfF4j6lU68Aix6Stm7=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: 16 to 22, Thứ 6: 16 to 00, Thứ 7: 16 to 00, Chủ nhật: 16 to 00, Thứ 2: 16 to 22, Thứ 3: 16 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Parmesankyckling",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Sport",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig ingång",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Giờ vàng đồ uống",
+      "Happy hour på mat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ8ZILOCkTcTERCsHEjSUL6PE",
+    "name": "Artist Alley restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "124 / 1 Phan Đình Phùng, Đà Lạt, Lâm Đồng 66109, Vietnam",
+    "location": {
+      "lat": 11.9466797,
+      "lng": 108.4352218
+    },
+    "rating": 4.5,
+    "reviewCount": 682,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 941 662 207",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEUA7jGxFgHeA1N-CgXWdfx1ayLWjytnEIN4p04-7Hn-AUPUiZev445vGFjegzqFMTgz018L1dKKkuBhbZ2Gmr5jZlSq13y10cwUUZ0VdeDZMWp-fWU94i4rclytcbGOmOSn0k=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEmXxNTR72dcuxg6Q2wK3WmPq91eyoXEZdDzeEnH_VhqUR1W3ForKI4PPemUQ65AIxP-8O8iLkaIr3Z431BkOI0_yOU9DgVioeItCXxrAf1EYKH1U1g14WDAdiWVjPfCvnFNRnRtQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 20:30, Thứ 5: 11 to 20:30, Thứ 6: 17:30 to 21, Thứ 7: 11 to 20:30, Chủ nhật: 11 to 20:30, Thứ 2: 11 to 20:30, Thứ 3: 11 to 20:30",
+    "cuisineTags": [
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pumpasoppa",
+      "Sötsur kyckling",
+      "Spenatsoppa",
+      "Vitlöksbröd",
+      "Vårrulle",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJq0VExc4TcTERAsyOeanTtLg",
+    "name": "Amelie Coffee",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "18/3 Lê Văn Tám, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.937338,
+      "lng": 108.4553797
+    },
+    "rating": 4.9,
+    "reviewCount": 250,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 945 762 568",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM4fAZxgN3eD9vfQ-scjcYOu93_6XlB7zbNTTXA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAErKZ65f0ONnhFmmpaqD3qvyzwACE4F8dZEQ3dTegYxSFi2V-aanbIpgD5HPzaVbcdl13YKYVwzr6v2Z4Dz3a7vdd_lSrXpktxREtTWVJhrzHWYvoKqeVpxmucZdhQIotkPRm3V=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 17:30, Thứ 5: 07 to 17:30, Thứ 6: 07 to 17:30, Thứ 7: 07 to 17:30, Chủ nhật: 07 to 17, Thứ 2: 07 to 17, Thứ 3: 07 to 17",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Bữa trưa",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJIQ3O0dttcTERwU80Ib9XQY8",
+    "name": "Moto Laurie Cafe & Bistro",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "8 Đ. Ngô Thì Sỹ, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9327402,
+      "lng": 108.4263717
+    },
+    "rating": 4.8,
+    "reviewCount": 1575,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 908 144 449",
+    "website": "http://www.motolaurie.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMvj-TGmtVXbXnqvu7ekAXrgwUERYojwiOsKMxp=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMyxmsbCuj4AmhASJfdE0-kWRpkCArPMgLgpeSx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: Stängt, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Đồ ăn nhanh",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Pannkaka",
+      "Pumpasoppa",
+      "Ägg Benedict",
+      "Bagel",
+      "Hamburger",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJtfwqqeYTcTEREXwyaKrCUlo",
+    "name": "D'Lart Garden Drinking & Dining",
+    "category": "Fusion, restaurang",
+    "city": "Da Lat",
+    "address": "41 Đ. Đào Duy Từ, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9337461,
+      "lng": 108.4340261
+    },
+    "rating": 4.7,
+    "reviewCount": 960,
+    "price": "1–200 000 ₫",
+    "phoneNumber": "+84 344 125 944",
+    "website": "https://www.dlartgarden.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP5hbBY6l79vgwuULcAJvMhdHO0lsVDwWIAip68=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOnUoEPG7NdZKBq43VXQT02zm5KEEGKCNxZ6npj=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 22, Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Mì Ý",
+      "Kaffe",
+      "Croissant",
+      "Patatas bravas",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNcFG0lwTcTERR0Ndu7-IsWY",
+    "name": "Chef's Dalat",
+    "category": "Modern europeisk restaurang",
+    "city": "Da Lat",
+    "address": "156 Đường Phạm Ngọc Thạch, Cam Ly - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9477289,
+      "lng": 108.4320512
+    },
+    "rating": 4.7,
+    "reviewCount": 828,
+    "price": "300–900 tn ₫",
+    "phoneNumber": "+84 919 069 314",
+    "website": "http://chefsdalat.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOkhg9h4-xoxi8Eia1TB8GlcO99ZHfOefhFPPxo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFzoao4hkc2QH2cUOAcaPmf-oYFpW_uMQO0dznXiXXWQhkqfGDkPBMvU7PmX31Nuq6GkAvF5fiENXkjrMi1W7pFvV3lQNHXDmwK8iu3NK7MV2j17srPXf6UESnXofVHfQNcsURc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22",
+    "cuisineTags": [
+      "Món Âu",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Confiterad anka",
+      "Tiramisu",
+      "Pumpasoppa",
+      "Lammrack",
+      "Pappardelle",
+      "Tagliatelle",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJa7kF1ZUTcTERS2YSxffS_54",
+    "name": "Moon Dining",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "01 Đường Hà Huy Tập, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9365756,
+      "lng": 108.4411566
+    },
+    "rating": 4.9,
+    "reviewCount": 1461,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 901 516 188",
+    "website": "https://m.facebook.com/Moondining/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMicrfelXEXh4U8w3skck-sMG1PlGJG8dJAHAYA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxIHS1S8F3HH1ETCXhiKld9UWR1oOWO7vWinzqrAs7FzLeUEdmS98IcFuFPTNGuJy4m9OLDj-o1bLB3ZlxZh1Jh2gT7tJQeSxZg-K8mQSkq6bQ8NiJnXtI8MJu4YAUxNkcMxD2xw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: 17 to 22, Thứ 6: 17 to 22, Thứ 7: 17 to 22, Chủ nhật: 17 to 22, Thứ 2: 17 to 22, Thứ 3: 17 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Flankstek",
+      "Rökt lax",
+      "Pumpasoppa",
+      "Lammrack",
+      "Biff",
+      "Pappardelle",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJMzXtGY4TcTERzanixs08VxE",
+    "name": "Tiệm ăn Đà Lạt Phố - Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "38 Đường Tăng Bạt Hổ, Xuân Hương - Đà Lạt, Lâm Đồng 66100, Vietnam",
+    "location": {
+      "lat": 11.9442842,
+      "lng": 108.4348971
+    },
+    "rating": 4.7,
+    "reviewCount": 1470,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 327 606 839",
+    "website": "https://vietchallenge.com/restaurant",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM3qjkX120lz-ZJ9CVbPpwzPaZhXEa8MSALdiF-=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOxHjBQdVsJQqw-Zw0ldXPAA9ndrKjEUfvJfeuK=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09:30 to 21:30, Thứ 5: 09:30 to 21:30, Thứ 6: 09:30 to 21:30, Thứ 7: 09:30 to 21:30, Chủ nhật: 09:30 to 21:30, Thứ 2: 09:30 to 21:30, Thứ 3: 09:30 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Ägg",
+      "Räka",
+      "Iste",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Cà phê ngon",
+      "Takterass"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_zUSn80TcTERWdeOCmm_Ch4",
+    "name": "Mì Quảng Đà Lạt, Bún Riêu",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "WFR7+86F, 2 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9407482,
+      "lng": 108.462992
+    },
+    "rating": 5,
+    "reviewCount": 14,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaJ07LweKZ_8SzKkouJ2EJiEVRHbs7hkzBw_H4OT_ds_V3BWNf3B9rPBT-B45foz5Sduiop_Nb2GhtzP1hOdiwGZQcy4K_ILMo3qEV9slzPLzxI_MTk7y2Qw74MQnV5CJyaIkgMUS08nXs=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGAcOglKQFRFhXmaoe532PK3ZBUE5uTn0rqZqZFviCk434XLn4nqEN-Z8UMn6CVFztRN0wxbnQHMdm_V0sKSXRR1v8UzaAvql0KTd5e94slx2KVsvad5qZVoAZhSjPy9_GI93Unpg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 05 to 10, Thứ 5: 05 to 10, Thứ 6: 05 to 10, Thứ 7: 05 to 10, Chủ nhật: 05 to 10, Thứ 2: 05 to 10, Thứ 3: 05 to 10",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJN3Qme0ETcTERckpDnLvbx_0",
+    "name": "Peace Bistro",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "29/8 Yersin, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9419783,
+      "lng": 108.4513329
+    },
+    "rating": 4.8,
+    "reviewCount": 818,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 362 561 338",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHQ96VNa77OcN8v5RHIzE7NGstOx3JoKOOwVrmKsQGjran00PqzZ5p2K6Ah6UVDOBmnQqWslu0eUCDvS9lLSaBnlFF3dgF2MGGGpEHsUpy_e4brJ-hKn9CHognnAAhRfbcZ2tpkKQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGj0xPLrvf0rYMnMjd_ScKWmhdSUkrPc6OQlMCgB28r9g5FlCB7r-lgI5MnF0CLGXsYCN7Fjb1u2PQyADshz80wk-4oieFNX_F_JgBRIcR6aqeivum_26Tr7oNss2UCVShNB6ZtYcQaD35r=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: 08 to 23, Thứ 6: 08 to 23, Thứ 7: 08 to 23, Chủ nhật: 08 to 23, Thứ 2: 08 to 23, Thứ 3: 08 to 23",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Mì Ý",
+      "Pumpasoppa",
+      "Crème brûlée",
+      "Lasagne",
+      "Biff",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJlcslEnwTcTER4uXho5MgP14",
+    "name": "Blue Rose - Cocktails & Spirits",
+    "category": "Cocktailbar",
+    "city": "Da Lat",
+    "address": "26/4 Lê Văn Tám, Xuân Hương - Đà Lạt, Lâm Đồng 66117, Vietnam",
+    "location": {
+      "lat": 11.9375918,
+      "lng": 108.4553446
+    },
+    "rating": 5,
+    "reviewCount": 122,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 917 689 538",
+    "website": "https://www.facebook.com/bluerosedalat",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPewClTTzEgeHVq9DNN1Nn6d5bXnz3Yk2pW4il2=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHcO3u-_9NixZUNojP3WA1XLHiS8pMF7RIdjUmA7N3PBJvO4XbWj5S6PCN3I3yLd6sd-Rl_zZSte3usDClAEa1E49gQotIbR6USKeVm5Pb7BWUSFJKZiKs-Az7av-IVLkFCMk73o3_90iU=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 18:30 to 01, Thứ 5: 18:30 to 01, Thứ 6: 18:30 to 01, Thứ 7: 18:30 to 01, Chủ nhật: 18:30 to 01, Thứ 2: Stängt, Thứ 3: 18:30 to 01",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Whisky",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Giờ vàng đồ uống",
+      "Mat",
+      "Mat i baren",
+      "Starksprit",
+      "Vin",
+      "Öl",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_YyOiuETcTERAUTn8RqtyDk",
+    "name": "Specialty Coffee Đà Lạt",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "4/2, Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.933609,
+      "lng": 108.4486669
+    },
+    "rating": 4.7,
+    "reviewCount": 45,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 931 063 020",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNkMA0hCY-hvBlZEyDPSMTkfVqvyv4qbLV_pXv2=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9VOpJu8lyiskzn8BysBJLhs1A-CzZAbAIJr_e3pu6JQXc4LmdOF2V59-QNjHMFL3WfJaj6AHK6Xneh-5Wu9t7rBOhFW7N13VuWMREjgYRxWb7BZ03OI_z8R404_hEMapVLxNx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 19 to 23, Thứ 5: 19 to 23, Thứ 6: 19 to 23, Thứ 7: 07 to 23, Chủ nhật: 07 to 23, Thứ 2: 19 to 23, Thứ 3: 19 to 23",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cold brew",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Catering",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJDXdicWoTcTERIhlvYKQgFLM",
+    "name": "Émai Valley B&B and Café Prélude",
+    "category": "Bed & Breakfast",
+    "city": "Da Lat",
+    "address": "88, 86/2 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng 66117, Vietnam",
+    "location": {
+      "lat": 11.9331597,
+      "lng": 108.4645895
+    },
+    "rating": 4.4,
+    "reviewCount": 117,
+    "price": "56 US$",
+    "phoneNumber": "+84 989 469 246",
+    "website": "http://www.emaivalley.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHoVlfZ_IJxnZizGqGYUbsylc6Bg1rvj6J3B5jV5upYEzjBZLC9CUVYo9b2jIYtnmrdjSRUsO_GxUW7D51_PI0hi5aB0xX5WCW8qJPrt44uNs2GjCRuyXv49jFtLTp5nCaP-n94gQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtMzjXpT697a1qz9c3zunroKsB7CnC1lry10BCmkYM9iq5x1ODkE5S1f3qDdm4FDqSBYlXXOqbIOQlTTIM408O7Zl9Y25a9LxgFPYD-dMb2E5cZs3KK7-N8s5yLUVv76YMoCxcSA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Från besökare",
+      "Hbtq+-vänlig",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Gratis parkering",
+      "Tvättservice",
+      "Rökfritt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJO8pnG7ATcTER2zNICgdwTPs",
+    "name": "Tiệm Cà Phê Trứng Cô Ba - Đà Lạt",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "105 Đường Hai Bà Trưng, Cam Ly - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.945054,
+      "lng": 108.433109
+    },
+    "rating": 4.8,
+    "reviewCount": 2810,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 945 209 079",
+    "website": "http://cobacaphedalat.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOIC_gWwNF-XIv_CnKg5ymntpZG2Qp87ZweZbB4=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlWCvCViALlFSKQso31NDJePKFUDf14jPrgZmRK7AmuERP9eGETBohOL_Zl4nrAfMHa1B1gsFotrd025rkoME-nREbEGpZ7MbWBcAk5s7u9EkwICDStHB8UKLBMm2pjWW03diXmw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 23:30, Thứ 5: 06:30 to 23:30, Thứ 6: 06:30 to 23:30, Thứ 7: 06:30 to 23:30, Chủ nhật: 06:30 to 23:30, Thứ 2: 06:30 to 23:30, Thứ 3: 06:30 to 23:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Croissant",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Có lò sưởi"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJSQoyBAATcTER1kmqKcUoNMc",
+    "name": "Bếp Thông",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "20 Đường Khởi Nghĩa Bắc Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9363559,
+      "lng": 108.4518753
+    },
+    "rating": 4.7,
+    "reviewCount": 282,
+    "price": "14 US$",
+    "phoneNumber": "+84 768 278 515",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNndswYOz_dNYK4lhq_o_8qlYO0hX35NmwKGITL=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHrpqbycY75Bh6Kg88xXguvf5gWh68n7NIgnTDZxGG70YsFpfCcF6Sl2fyOEMmdIllDGy7ByRgwqwg8pQ7id2qqMboQLl6qZUsiEtZPiMquYqVagT_cGN1MylZIyhW0Qhbqk2KFPP1mBOjE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22, Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Eldgryta",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Levande musik",
+      "Có lò sưởi",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Happy hour på mat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ8VsAFCMTcTER5tEaOIKArKs",
+    "name": "Dream House - Cà phê thú cưng",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "25B Khe Sanh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9309956,
+      "lng": 108.4589418
+    },
+    "rating": 4.2,
+    "reviewCount": 112,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 855 505 519",
+    "website": "https://www.facebook.com/dreamhousedl?mibextid=LQQJ4d",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBPY6GqT0-EuPWqz7P6Y5n0qzWrWS-TUC_OJ15St8aK6usAFtMd_bELDBeY8pHGCp8RhOKifjGp9cZ1rQkbCaNf_O2zAna94HLMENWlEkSOS5PNePA22I_qHBjY8HkXQ_u_RF_kUE9lrZK=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPRjHnkZusfeiN28vrtuHN8wUAYQhb8Kq-2nu8gS9QPYgtutDZ5diceMNF9t76K0Uf8hO4umK15nOi0rRmnfzu6Q9vh7fMjIAqktCXVf6WSrSxDUrM5eIGOJTy2xs8o9Vb98GDnDArCwc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 18, Thứ 5: 08 to 18, Thứ 6: 08 to 18, Thứ 7: 08 to 18, Chủ nhật: 08 to 18, Thứ 2: 08 to 18, Thứ 3: 08 to 18",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Tar emot bokningar",
+      "Passar för barn",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJc78jQegTcTERPvuWnxDW1lU",
+    "name": "Santosha Yoga Home (Yoga, Tiệm Chay Vegetarian, retreat))",
+    "category": "Vegetarisk restaurang",
+    "city": "Da Lat",
+    "address": "5/5A, Khe Sanh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9364723,
+      "lng": 108.4592267
+    },
+    "rating": 4.9,
+    "reviewCount": 45,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 868 158 283",
+    "website": "https://www.facebook.com/profile.php?id=100087239755562&mibextid=ZbWKwL",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOnEyykhxTrqgP5JV97W7hmz9CjimGNRvbzCsTj=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOOOQqpMszky4baSuCDxMrD0Jn0-FLqDQjqDJzu=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Ekologiska rätter",
+      "Kaffe",
+      "Smårätter",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Brunch",
+      "Bữa tối",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJeeXV-TITcTER2ptbrQLwdxg",
+    "name": "Coffee Em và Trịnh",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "9/1 Hẻm Cầu Đúc, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9374997,
+      "lng": 108.4484205
+    },
+    "rating": 4.9,
+    "reviewCount": 1543,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 785 762 738",
+    "website": "https://www.facebook.com/profile.php?id=100088800944493&mibextid=ZbWKwL",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNKwBeXzfjXduV-_Eh-hrE5n7nkwvOMUcNkoeye=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHr0bJr7vUkcCQMQ1bOFQmfp4Ixt4180h9z6x5syEcDrXzZPmCWsK98hVmOFcqEEZHr3XoPXQOqQW3lp5J99NpGqTbv8czEkqsCGnRKr_YjQvhZ-fLJ0MfBkDD2Y6P8fpSaUxaq=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 22:30, Thứ 5: 06:30 to 22:30, Thứ 6: 06:30 to 22:30, Thứ 7: 06:30 to 22:30, Chủ nhật: 06:30 to 22:30, Thứ 2: 06:30 to 22:30, Thứ 3: 06:30 to 22:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cortado",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Liveframträdanden",
+      "Có lò sưởi",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgängliga sittplatser",
+      "Färdiglagad mat",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJEZDRxEYTcTERiNvHAZomwIY",
+    "name": "Anna's Coffee House",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "9B Dong Da Street Ward 3 (di len Doi Ro Bin: Cap Treo), Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9233329,
+      "lng": 108.4445704
+    },
+    "rating": 4.7,
+    "reviewCount": 908,
+    "price": "$$",
+    "phoneNumber": "+84 975 033 773",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMmsRQkpEbOEnzL7_ZPu6N8LxcZ4mxCMf_w4gBJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPBw_lfOBIaOndbf1hkgwrb3BN0RN4tvjkZQKTE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 17, Thứ 5: 07:30 to 17, Thứ 6: 07:30 to 17, Thứ 7: 07:30 to 17, Chủ nhật: 07:30 to 17, Thứ 2: 07:30 to 17, Thứ 3: Stängt",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Banan",
+      "Trädgård",
+      "Iskaffe",
+      "Juice",
+      "Våffla",
+      "Kaffe",
+      "Quesadilla",
+      "Caffelatte",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJawxt4R4TcTERR3yVdgtMhbI",
+    "name": "Still Cafe",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "59 Nguyễn Trãi, Lâm Viên - Đà Lạt, Lâm Đồng 66111, Vietnam",
+    "location": {
+      "lat": 11.9443445,
+      "lng": 108.4543587
+    },
+    "rating": 4.5,
+    "reviewCount": 2973,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 869 275 079",
+    "website": "https://www.facebook.com/still.dalat",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPogroazMq3rLIQJk3eXCEJgKuwu-wY1VRzgU0G=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFDnfhkt4OXxVkxgoj1RY9ywNMYQFMsDrmYwCup3Wo352RlUlkV0v_XIKf3FkyTzI90zmfgce3Y5OUVqaHDwU4rfVv4ZCBtH9m1teacpdc9iv2k5RyE0JFWvHV9qG9I5yK2d1OQIjdvyClI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 08 to 21, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Kaka",
+      "Ramen",
+      "Cappuccino",
+      "Kyckling katsu",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Phù hợp ăn một mình",
+      "Bra om man vill jobba med laptop"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJqbm5UwATcTERpQFdHcwpiSQ",
+    "name": "Lẩu Chay Hằng Thiện",
+    "category": "Veganrestaurang",
+    "city": "Da Lat",
+    "address": "51 Đ. Phạm Hồng Thái, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9399844,
+      "lng": 108.4545566
+    },
+    "rating": 4.9,
+    "reviewCount": 379,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 338 224 379",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEhPHL24VM_9bWJYH152JGkMHCbAsJXVEejecIkbG5P3Z4SU9dnoKeOkaVKvvGdN3jgsQjyRLmWj9aR7QrQtNPSLN2H9CEM2Qo7Bi65ny11LjLo27KyEDLOs9hW4HzpUa4T9YGLMheNVcxZ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG_p4Kjh7ImSjgYFUy252nRTiw550PAM8XVmn9K9jI02nNuD7JQNYjHoNcNyqwxNS2KVZ4wlPxjQ4M8Rh3cy4gQFRo1rAzxnnSRgocSF70rBn7YyLvP6Y6z4jIYLX3CYK-SHQN4aUSiICw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21:30, Thứ 5: 08 to 21:30, Thứ 6: 08 to 21:30, Thứ 7: 08 to 21:30, Chủ nhật: 08 to 21:30, Thứ 2: 08 to 21:30, Thứ 3: 08 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Lẩu"
+    ],
+    "detailedPreferences": [
+      "Quinoa",
+      "Eldgryta",
+      "Soppa",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Levande musik",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Buffé",
+      "Kaffe",
+      "Snabbmat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJDfFGxicTcTER-6ocP25lAmk",
+    "name": "Cà phê Tỏi Đen",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "15A Trần Hưng Đạo, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9379871,
+      "lng": 108.4511778
+    },
+    "rating": 4.6,
+    "reviewCount": 3357,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 968 115 005",
+    "website": "http://cafetoiden.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM2b3O4RWoLy1PHXrEnz4GM3YB9jIFuSPjtxshy=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFpp7RUWf9Sc4F6kEaZH7Lv-KAN57-ylN5VADGwR8hGCiX77Nyq7OcEljcZXOyXaiQHfwcqu-hSJ9RqnSIwAeAoCkH0myn8piPxDO64XyFOlVvswriEEmfFsGL-aIFNpzcmU3aA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Iste",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJixQz3VMTcTERy9b6x1AcN8E",
+    "name": "In The Forest Đà Lạt",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "31d Khe Sanh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9281547,
+      "lng": 108.4553952
+    },
+    "rating": 4.5,
+    "reviewCount": 714,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 877 919 180",
+    "website": "https://www.facebook.com/intheforestdalat",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2CVyuT9iuHCj-wbqZm8i0KRpC0EWeBiN4Jii8caitxA91f6WB2O27kd12fRzb73wF9xq41TK9CoKy7_wHz4VLMK78x-CmFwKZRCt2DjGD7IFXttGTQ2k6PcA4yW33j-MGy5evY-AqmuD1=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE7MqD1zgDMksPHovZ2k9ppmjV6nF2BWmbY8Qp1JF6sJdRoHEJCXYToyUSj4-PXhP8KNAeozB2qZKvpR8VF-aCWC5rYjtj-c7QCCN_osmnk9_iirBIhLiMolUpsQ0VXCPin6Ho=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 08 to 21, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Berg",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Bra om man vill jobba med laptop"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ4wXFH_ITcTERD_a0xbcLg4I",
+    "name": "Émai Italian Restaurant & Gardens",
+    "category": "Italiensk restaurang",
+    "city": "Da Lat",
+    "address": "88 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9331454,
+      "lng": 108.4645884
+    },
+    "rating": 4.6,
+    "reviewCount": 998,
+    "price": "200–800 tn ₫",
+    "phoneNumber": "+84 866 646 246",
+    "website": "https://emaivalley.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO_IrLkTANeRXE1lKxgDnEpARe14WcRc_EtbAFj=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEc6ABEoKD0Abcit2qn9Mwlxpx-ZuHz1Hgsx6TZrhofhBRh03Xr_VSmJH4WA57qx6lMNOSolxZzjGHgWHRC3zqruhTXsItAPVt-xZuNTToukp7bdArOkx5QrRj0y8QESVMNbS0tDQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: 07:30 to 22, Thứ 6: 07:30 to 22, Thứ 7: 07:30 to 22, Chủ nhật: 07:30 to 22, Thứ 2: 07:30 to 22, Thứ 3: 07:30 to 22:30",
+    "cuisineTags": [
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Cappuccino",
+      "Panna cotta",
+      "Tiramisu",
+      "Mì Ý",
+      "Pumpasoppa",
+      "Tagliatelle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJxprLIQTcTERofArpAanDL4",
+    "name": "Le J' cafe",
+    "category": "Kafé",
+    "city": "Da Lat",
+    "address": "Hẻm 51 Yersin, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9421896,
+      "lng": 108.4517296
+    },
+    "rating": 4.8,
+    "reviewCount": 403,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 378 750 757",
+    "website": "https://lejcafe.com/pages/contact-us",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO9K7ZO-hZwdNKIzanyGESouAc1-VMgwA32H9Bq=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFVwKuDqzLuRIx2DRJPEg1NLAYJWa6lxrjY4-LjV-zSaXkAffo2uZdq1bLE0-3S1VXjmXLSDThZshkeCEMH_Th2ruS3Kevq9azpVkWzYYSR4c-WPKxPC06kd3042dtRGTROHoPO=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: 07:30 to 17, Thứ 6: 07:30 to 17, Thứ 7: 07:30 to 17, Chủ nhật: 07:30 to 17, Thứ 2: 07:30 to 17, Thứ 3: 07:30 to 17",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Cortado",
+      "Matcha",
+      "Kaffe",
+      "Cold brew",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJvUxHHVcTcTER-hyN0y6gvbE",
+    "name": "thich cafenmore",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "11 Hoàng Hoa Thám, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9400366,
+      "lng": 108.4631866
+    },
+    "rating": 4.9,
+    "reviewCount": 113,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 931 165 996",
+    "website": "https://www.facebook.com/thich.cafenmore",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHuJB4SisXIpn_cEVwyhE7KlB0Xf0e2K-R2-w2qlq58H1XkVuGjoXzAT9sAw3yffOY8Yv1sOmHU3Sfjk0RgjDgX6-YvUz89HpzsFTpMwn6Tv4qgVV8l7gyHv_-32gdh0xIc8oU_QtpM-eE=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2BddRaDOtTM1CmYl5kJoQwCMgbVvwH5HgQUklJjezKUniITuBD5Ro6enA4ZeS4Y-1-Fq0dN547k2aoj40peHfk0blexr55sSE9PwlRWJEdCDijmbrV5duCTl0Ac8RapS3ORrVsA6Jh788=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 17, Thứ 5: 07 to 17, Thứ 6: 07 to 17, Thứ 7: 07 to 17, Chủ nhật: 07 to 17, Thứ 2: 07 to 17, Thứ 3: 07 to 17",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Könsneutral toalett",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJxWsJlPUTcTER5IKjqaZuq3s",
+    "name": "Hè Maison Boutique hotel - Cafe & Cocktails bar - Bistro",
+    "category": "Hotell",
+    "city": "Da Lat",
+    "address": "Đoàn Kết/57 Khe Sanh, gần chùa Tàu, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.930051,
+      "lng": 108.4617839
+    },
+    "rating": 4.8,
+    "reviewCount": 355,
+    "price": "44 US$",
+    "phoneNumber": "+84 977 416 604",
+    "website": "https://he.maison/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAERmKVU8Jv90QwcHddHdVDROTxsP2VhaZhsKSDSZOtHNgFv1o1AyKfoa8nOjEJCvGAjRij2925DbT2tjrohMYkyW_chaXoH3up7pHiGK39O5qBk3N1IwKMnXZTiOrSrp2G0CF6TSA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFqqRnoY7XFaoIZwRfdvCLbn7F_76Gad8dvMSzUbnTMO7aOKZTD1fVJD1KsswSECyAsv3q7xCqu8YObzH_bMWMHfrQbT7NxKMn9ScJAVy6yFT9reEjR8n2cAwINilPlIImPecuwEw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Från besökare",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Gratis parkering",
+      "Luftkonditionering",
+      "Tvättservice",
+      "Rumsservice",
+      "Nhà hàng",
+      "Flygbuss",
+      "Quán Bar/Club",
+      "Rökfritt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJzeL-20QTcTERdN5YkW4pulk",
+    "name": "Tiệm cà phê phía tây mặt trời - Specialty Coffee Roastery",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "12/6 Lê Văn Tám, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9371777,
+      "lng": 108.4544327
+    },
+    "rating": 4.7,
+    "reviewCount": 764,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 772 277 444",
+    "website": "https://www.instagram.com/tiemcafephiataymattroi/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOgsyTK-01D_IPDhFe9pKGsR49_AVFYjPAQDnal=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY15Xix43QOBGVJS5_vFlFIOuGXZWH8rGHqkL7_fb2SPn7yffo3rXWr5gUM7iQDwJcFRhn477okNEsu8RQlu5jZ6yweZs5foToTob41t0FWY_Eym1hysSJXTVQ0rk7L1hjgb4SeQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 19, Thứ 5: 07 to 19, Thứ 6: 07 to 19, Thứ 7: 07 to 19, Chủ nhật: 07 to 19, Thứ 2: 07 to 19, Thứ 3: 07 to 19",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Matcha",
+      "Cappuccino",
+      "Juice",
+      "Cocktail",
+      "Caffelatte",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJXNUruUTcTERsTxIO4vykOY",
+    "name": "Từ Sen vegetarian and cafe Đà Lạt",
+    "category": "Veganrestaurang",
+    "city": "Da Lat",
+    "address": "4 Đường Lương Thế Vinh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9338509,
+      "lng": 108.4412199
+    },
+    "rating": 4.9,
+    "reviewCount": 621,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 911 262 545",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwznZ_ASjcfx63jUi6nUbfb7mQ-rHtTFXc-2BoHxB0iVYjU-yNucvRO8RD31KZkyJkfO8vzc9_Br8F1jm9K2o-cEsFCqF9dyDXh-32MquI9LfLT5miPoRxvhrxpQo4e_NdF5fktw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH7SiJ2dmGchNgYMaUoy819DDAjIrv3zgO-vmOfQLjS6diCPwEW1H2RIxoQLMkRWMTIKmH8n-W-ssm1wxEZbenNQ8JPRUm3VtiNnqZmzDR_flF8UzFJHVxOMvcZqT0HAa8fCu2S-Nhiyig=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 20, Thứ 5: 08 to 20, Thứ 6: 08 to 20, Thứ 7: 08 to 20, Chủ nhật: 08 to 20, Thứ 2: 08 to 20, Thứ 3: 08 to 20",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Vårrulle",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgängliga sittplatser",
+      "Hälsosamma alternativ",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJj8xa1L8TcTER7FHPHDIdT9c",
+    "name": "강남비비큐 달랏점 Gangnam BBQ Dalat",
+    "category": "Koreansk restaurang",
+    "city": "Da Lat",
+    "address": "khu QH Công viên văn hóa và đô thị, Xuân Hương - Đà Lạt, Lâm Đồng 66046, Vietnam",
+    "location": {
+      "lat": 11.9478726,
+      "lng": 108.4407144
+    },
+    "rating": 4.9,
+    "reviewCount": 127,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 353 994 746",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMzKJV4kdO3Kog2u3dlo-d8B2emLu07NWpPZYuu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEtZ8QFxn8VJdxtdpQpZv13CqaylT2VkaxxXEt2ToKKQIMuwmOwmyvGGcHrMO9NngAEOL1YpDqq1jSKnHFHDaoYGAzl3ZGAXqAw9qKGd_iL_Ew8QwaURL8iIiLgDVWezrLclMZDoAZgzMd8=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 23, Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23",
+    "cuisineTags": [
+      "Đồ nướng"
+    ],
+    "detailedPreferences": [
+      "Kött",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJgVH94mETcTERznUgkkpqT5E",
+    "name": "Restaurant Da Quy, Nhà Hàng Dã Quỳ .Bò né - Bánh mì chảo Dã Quỳ",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "119 Đường Phan Đình Phùng, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9448503,
+      "lng": 108.4343426
+    },
+    "rating": 4.7,
+    "reviewCount": 641,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 263 3510 883",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHVKYbwR3PtXFO51GaOQC_lMuQ5nSMxUlqF0NskmDp9wY20r5OMxPRHK9lTFbO9KnvsnglteBxpBNzzSO01FdTDztqfPY5cBRdIyvFw-UIbI028buuMNy1vCg2fiJ0AjFBoXz9K=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGkG_dZFwiGNZNMsNUke03EH2OCclTBSSsw0cHZqUI9sbj_ccRT7xEMPD2s8-ugDLqMfXdW6d7mvL_B8i9fKuZigyDvoYTOD9a4XEUPNAelVDJ1n60nySeAGwPWTc_10gNlPmWL=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 22, Thứ 5: 07:30 to 22, Thứ 6: 07:30 to 22, Thứ 7: 07:30 to 22, Chủ nhật: 07:30 to 22, Thứ 2: 07:30 to 22, Thứ 3: 07:30 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Vitlöksräkor",
+      "Vårrulle",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Vegetariska alternativ",
+      "Vin"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJzV_uB14TcTERePs7cZG3ySA",
+    "name": "Hoa Thông Brewing ( Craft beer - Micro Brewery - xưởng bia rượu thủ công)",
+    "category": "Bryggeri",
+    "city": "Da Lat",
+    "address": "45 Đinh Tiên Hoàng, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9533526,
+      "lng": 108.4421317
+    },
+    "rating": 4.7,
+    "reviewCount": 1286,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 983 807 554",
+    "website": "http://hoathong.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH90anP_SHkyDMMrqm2PNhf8ES4I6iN_EUJTGoemzAnpPK9P7XA05aF1ajblHhHRPK6sJ7orJBO1CrzNWnf7DQqPr6xvwvfkZUTnaOzk5_9FnhUQstk8_Ccls80ItEX25bn58jdtA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP7PrtdqUJsAnW7a4Z4Bp28bBT-pqIv9rvte4P-=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 23, Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Öl",
+      "Pub",
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Bar på plats",
+      "Könsneutral toalett",
+      "Hbtq+-vänlig",
+      "Trygg plats för transpersoner",
+      "Bankkort",
+      "Kreditkort",
+      "Mobilbetalningar med NFC",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJF9sZ8KUTcTERettDIWm7JRM",
+    "name": "KHÓI - Lẩu & Nướng",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "206 Xô Viết Nghệ Tĩnh, Lang Biang - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.965199,
+      "lng": 108.4325822
+    },
+    "rating": 4.8,
+    "reviewCount": 199,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 978 228 193",
+    "website": "https://khoidalat.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP32TbPrJ5JldB9H9JLHyHn5os-TAdziYzphi_K=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGO7D00kU4MvzSYqIkE5enFuq1YmtoZpsI2eAnt1sHGl1yg7ZA1aUpaGGCDNneWx7xDXrY3-SmIIgY8to1aUv84LyzdZPKf6QzihsHcuX5HUZiBx87ilCXIC-nbp2Yb-VgNIxFs=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 23, Thứ 5: 11 to 23, Thứ 6: 11 to 23, Thứ 7: 11 to 23, Chủ nhật: 11 to 23, Thứ 2: 11 to 23, Thứ 3: 11 to 23",
+    "cuisineTags": [
+      "Lẩu",
+      "Đồ nướng",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Bento",
+      "Eldgryta",
+      "Stekt ris",
+      "Barbecue",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJpUxspckTcTERQotRcaVt_VE",
+    "name": "Trang's Cookery Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "211 Phan Đình Phùng, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9471866,
+      "lng": 108.4354851
+    },
+    "rating": 4.7,
+    "reviewCount": 1174,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 972 897 227",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMaGxapn0-YrTxJ2uWoQVtzx7GZMsS6wNS3eliL=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5kE7L_5eD06jMe1z_DI4M2KI82zLf6mGRo3_en-CPjzlb_BvO8lAVMAYRGVXz94pSxD3hx_ou9Wj2uF3l0mBHqUem5mioqDiHbqXvapZ1x8BQMM7cY5xFDapUPaVlem3h9pJeaX28O78=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21:30, Thứ 5: 08 to 21:30, Thứ 6: 08 to 21:30, Thứ 7: 08 to 21:30, Chủ nhật: 08 to 21:30, Thứ 2: 08 to 21:30, Thứ 3: 08 to 21:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Müsli",
+      "Juice",
+      "Pumpasoppa",
+      "Ägg Benedict",
+      "Lasagne",
+      "Pommes frites",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJIb-5IywTcTERuR8T7aCBCLk",
+    "name": "Đôi Đũa",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "96 Đường Phù Đổng Thiên Vương, Lâm Viên - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9613986,
+      "lng": 108.4429215
+    },
+    "rating": 4.8,
+    "reviewCount": 1669,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 847 969 796",
+    "website": "https://www.facebook.com/doiduadalat",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGFtM2BzVYPK6fMsOphbhyyRGDCbBBE9KOXHC5xCFDkX-u0WSAk9sKLNc-k2nb8Le1IayEuSBmcfv_FGx3Sw7nyWcVByiAzge2DRNBwkJYbF8xJNwEXIuTwDJBKONSBP34f200=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFyuvW2BxI73YsQ0vD7piVHRtfxbt4JGboeFgOkiSLH8HbuQdmIGVbCIQ0JjuguFEQl6LxZUME6QxOjjBoaFcDi3k2Eadj6NFQEH_CJwpJ-YRjvCy_oE7fLSMEGEG-m3qlcb1_5vA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 15, 17 to 21, Thứ 5: 10 to 15, 17 to 21, Thứ 6: 10 to 15, 17 to 21, Thứ 7: 10 to 15, 17 to 21, Chủ nhật: 10 to 15, 17 to 21, Thứ 2: 10 to 15, 17 to 21, Thứ 3: 10 to 15, 17 to 21",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Lemonad",
+      "pad kee mao",
+      "Äkta björnbär",
+      "Eldgryta",
+      "Kycklingsoppa",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Catering",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJk7d6ThkTcTERaJ9uVfTgzy4",
+    "name": "Cardinal Bistro_Wedding-Dalat",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "Le Soleil Boutique Hotel, 115 Vạn Hạnh, Lâm Viên - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.964579,
+      "lng": 108.4436821
+    },
+    "rating": 4.6,
+    "reviewCount": 156,
+    "price": "200–600 tn ₫",
+    "phoneNumber": "+84 385 640 057",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMFmzanjjPAYsl4YxRmKbYzG0YlO7i6Y2I-n375=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOs9HZG0Dyw8tDm7KBrQnyHsccITzvk_GHn47ld=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 17 to 22, Thứ 5: 17 to 22, Thứ 6: 17 to 22, Thứ 7: 17 to 22, Chủ nhật: 17 to 22, Thứ 2: 17 to 22, Thứ 3: 17 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Bucatini",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Takterass",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJS7Y0dQATcTERgvkOJUUVwtk",
+    "name": "Nướng Ngói 71 Đà Lạt",
+    "category": "Grillrestaurang",
+    "city": "Da Lat",
+    "address": "2 Đ. Nguyễn Đình Chiểu, Lâm Viên - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9508351,
+      "lng": 108.4562659
+    },
+    "rating": 4.9,
+    "reviewCount": 110,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 763 415 468",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEdam7sCCGzMgCoxmnD_NAdL4iAZyH2J_u2Xs3Ni3dTtF0gl37fmvR0eogd-QksxKXlrOXjVfL9b9ipg8EK4O29U0hflfxAoEmh2Nr8S4wad4_UBFxVOC6_WyVujwmLnOeKh-2yvwVaA60=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEiM1ttUCiDmi0fOx_BPdESnEv8CzqNP0m-mDGD5GWK6ZfoKqJCmIuB7Ir_kRV0MrIcFewcCd388QmyiMr27GFqjgG7D2xrT5aBQLd1vIte0AO5RlbYMb4Q-EwT6cokTHPBI0D4zPWAz1Ia=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 23, Thứ 5: 10:30 to 23, Thứ 6: 10:30 to 23, Thứ 7: 10:30 to 23, Chủ nhật: 10:30 to 23, Thứ 2: 10:30 to 23, Thứ 3: 10:30 to 23",
+    "cuisineTags": [
+      "Đồ nướng"
+    ],
+    "detailedPreferences": [],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ0d93bDATcTERPXytyXAPgkU",
+    "name": "Quán ăn Chiêng",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "232 Đường Phù Đổng Thiên Vương, Lâm Viên - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9696856,
+      "lng": 108.443745
+    },
+    "rating": 4.7,
+    "reviewCount": 496,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 263 6516 179",
+    "website": "https://www.facebook.com/diemhentaynguyen",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMNaWXq74vjlKmJGlS-_cW3bzJ0ea7ic6HJo-9i=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjTIFtFxuXeSvi4vBDqgds89LxWcycnZrf8QjKfLw5Avoq92x76_r1uL_FWVhjSLvVVV7eSrYavQG9lS-OfMj1kSZ9YlARWNBbxgzzphXcBnlNCJI9Wea7dmiLuwQXJwZJjRw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22:30, Thứ 5: 10 to 22:30, Thứ 6: 10 to 22:30, Thứ 7: 10 to 22:30, Chủ nhật: 10 to 22:30, Thứ 2: 10 to 22:30, Thứ 3: 10 to 22:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Spenat",
+      "Eldgryta",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJf90HRsoTcTERbkIVW7Czh5g",
+    "name": "Chill Garden Buffet",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "2c Đường Vạn Kiếp, Lang Biang - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9620188,
+      "lng": 108.4342294
+    },
+    "rating": 4.9,
+    "reviewCount": 3123,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 362 664 762",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFgjecUdul1_68TqNoySfAlGmH0SyMvAID1RePiDxev-ni_3y5vUHGxwogXygz4kVpNMuVoyBXUhEy0mOUMteiDQXgZcvTvPztJItNslZ2SpqHhzxebl-0rbNr1weBTaEQPVOj7wA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGu24U1trBLQu5xendW-6zdinuVC9iyEjuLNBJ9e8mprR_W9fLXMfckej42px243-_vOoAGknqP9gHgYvRx72IMPvGe5doYrC16NU3nnTrC_i9VCbBxn_sRKmubPFwb5QfpyJz-ldVbmk=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 16:30 to 22:30, Thứ 5: 16:30 to 22:30, Thứ 6: 16:30 to 22:30, Thứ 7: 16:30 to 22:30, Chủ nhật: 16:30 to 22:30, Thứ 2: 16:30 to 22:30, Thứ 3: 16:30 to 22:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Fisk och skaldjur",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Smårätter",
+      "Öl",
+      "Catering",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJT3RAYAsTcTERNK3JwmKaavQ",
+    "name": "Pasta Fresca Da Lat",
+    "category": "Italiensk restaurang",
+    "city": "Da Lat",
+    "address": "BL10, KQH Yersin, Ward 9, Lâm Viên - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9468834,
+      "lng": 108.4550008
+    },
+    "rating": 4.8,
+    "reviewCount": 270,
+    "price": "200–400 tn ₫",
+    "phoneNumber": "+84 969 145 670",
+    "website": "https://pastafrescasaigon.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-jcRM2kfQ0ke20xz-6dWWqqHEW9N_ME-ozmdJO3EbvL4tEB9-YGQ1BFJVZX4RkfwP6pLNfLCAxNaEd4bjAj4rs6qzqP1OFuwN5puyiiow2xSHifihyLNCgXgsSEAuQ72vQTSWkI7la6U_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFlRG64hDPDcObI6UQc9IjjzIogE9JiuKvNzl_mQ1yJ-HBV5rCqfUyBkgx6LB4YNJE6WDGEZ1XV6Ct7jsSa8L-lYAcN_42cT9Iq0rAly5BKIVAprr95gVjMgstbJgS-kVzT_mwq9RlnXgjM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 22, Thứ 5: 10:30 to 22, Thứ 6: 10:30 to 22, Thứ 7: 10:30 to 22, Chủ nhật: 10:30 to 22, Thứ 2: 10:30 to 22, Thứ 3: 10:30 to 22",
+    "cuisineTags": [
+      "Món Âu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Mì Ý",
+      "Salami",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJe8uUqQATcTERn1LE8uC_XvM",
+    "name": "Tiệm Nướng Ú Nu",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "39 Đường Trần Đại Nghĩa, Lâm Viên - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9721106,
+      "lng": 108.4515073
+    },
+    "rating": 4.8,
+    "reviewCount": 947,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 981 234 102",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHpv1VGz7nhHEk00dm-w6wEDWnrcygJqf-ekp69qHNRBiw1ASLyA5H6gcZVuA793h9w-kXlYP1Of8Yzmg7-ucCT6xvwrZuqxpl2ADGSAJE9-IJjbpwxqe5gCGP337Ckh66d7Cl=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8L2nme0m5NOAS7HkLvbEybGUm0tdFULGOkEIgP6yzIlCPJW85w75zgTlqDs0KABmhqa4AuwGEMXPOA2D2RY_LjUdS1prrnFQrd2PF95oilscYrNAopKhR96epn3BAiDE1gnhp8nuxrvcA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 23, Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Barbecue",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Öl",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJfTc_NNITcTER_DWcdMWFLJ0",
+    "name": "Quán Chay Thiên An Trụ",
+    "category": "Vegetarisk restaurang",
+    "city": "Da Lat",
+    "address": "222/22 Đường Mai Anh Đào, Lâm Viên - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9755315,
+      "lng": 108.4461302
+    },
+    "rating": 5,
+    "reviewCount": 352,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 918 767 369",
+    "website": "https://thienantru.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNXOvlzpxwJeu53THH_hC53xA2Jvgj3jb3cNG3n=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNFBHVfK9jUWkAh_Fftd3LK0VnfCvqYjpaOfqkW=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 17, Thứ 5: 08 to 17, Thứ 6: 08 to 17, Thứ 7: 08 to 17, Chủ nhật: 08 to 18, Thứ 2: 08 to 17, Thứ 3: 08 to 17",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Soppa",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Kaffe",
+      "Snabbmat",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJU5IDlDUTcTERESudLxscnZQ",
+    "name": "Rừng Lá Kim Resort",
+    "category": "Resorthotell",
+    "city": "Da Lat",
+    "address": "144B Đường Vòng Lâm Viên, Lâm Viên - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9782281,
+      "lng": 108.4613818
+    },
+    "rating": 4.5,
+    "reviewCount": 425,
+    "price": "16 US$",
+    "phoneNumber": "+84 263 3888 879",
+    "website": "https://runglakimresort.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNjrE3CSauGkz5qYtMu7seW5w04ywbGodr0gQox=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHTfdWwV10tcKx464ieLnkEkxwZ95C0tv1ejWp13DU_K6_w80OtEhATb-2nEnkhbMpdat99jqs2lgRuuQuxBFlRhzOUjkWzneyaUJxMyrv99MoVvR9AuKq4ADQ3gsJ_0QS7S8Pk6zJNi4h=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Från besökare",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Gratis parkering",
+      "Tvättservice",
+      "Nhà hàng",
+      "Flygbuss"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJG5d8D2wTcTERDzOyPSdLx04",
+    "name": "Tuk Tuk grilled chicken restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "39 Đường Trần Đại Nghĩa, Lâm Viên - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.972013,
+      "lng": 108.4515108
+    },
+    "rating": 4.7,
+    "reviewCount": 8759,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 814 302 507",
+    "website": "http://1phutdalat.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAElUh0pKvLK79zY_vgTg4uBvjUkCk89Onyqmuo3Cw8hYz6Vkk1kIB3OzwIrZd9fUSxUKR1q37DNvqvh0QHdX_-qkWPvdDzEkydVRdFT-UmTT3Jdfu6AOtisnSwWwM4pz3S0KOaYs1fuY1kQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8cnWtDzg1em1U53KKGbreYGVlKr8yF1spWTVPFN4VBlHlFlsroB7AfAmsounEaK5MYpvxGiFlvG_VJAdGurWREsdNTEeMw-mmb32BuYikBrZWX_K7N6OuDQwnWSptDWL1LnoK_dZUjuOF=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 23, Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23",
+    "cuisineTags": [
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Hendl",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Takterass",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJq5H9k1AVcTERKCItON2Hn5A",
+    "name": "THE SEEN HOUSE",
+    "category": "Kaffebar",
+    "city": "Da Lat",
+    "address": "KDL HỒ TUYỀN LÂM, TỔ 18, Xuân Hương - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9008538,
+      "lng": 108.4342016
+    },
+    "rating": 4.6,
+    "reviewCount": 291,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "https://www.facebook.com/theseenhouse/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOR46PmlcYz_p-jzj-Zp4LqVl-q0d7wxG_xMnvJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEH_limbAszC41gQXjvXAr5x1C6WKjquxe1qk6kLXvqQKFrGommn2Te8XkRMLAsM74zhDfNeIqF68NvIdRi37DYv5MbFpg_lR6p5xZqG5d9dM5K1nxHR499VSMekBC8MJfT5vKTnw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 19, Thứ 5: 07:30 to 19:30, Thứ 6: 07:30 to 19, Thứ 7: 07:30 to 19, Chủ nhật: 07:30 to 19, Thứ 2: 07:30 to 19, Thứ 3: 07:30 to 19",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Club sandwich",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Vegetariska alternativ",
+      "Öl",
+      "Frukost"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJf2NupgsTcTERU0n7y6Hk8SA",
+    "name": "German Beer House Dalat",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "72 Đường Mai Anh Đào, Lâm Viên - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9769456,
+      "lng": 108.4463987
+    },
+    "rating": 4.6,
+    "reviewCount": 294,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 931 279 746",
+    "website": "https://www.facebook.com/germanhouse.restaurant.dalat/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMGUf920mIDirvgOHp5nPZ65R644qwsc6Jhg1zv=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFj0sgI9OEdt5FBYe374naBxqQZ-24cmdnXdqu876ih_Agh4vAy-f8XMuLIsf4S_kn6ZTVVONFQ1Xz1nIgCcyWpCfyeB3FrPjxtyatJlxo0uOs44snF6oHFVscH9TZ3ToSfVbJt=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 14 to 22, Thứ 5: 14 to 22, Thứ 6: 14 to 22, Thứ 7: 14 to 22, Chủ nhật: 14 to 22, Thứ 2: 14 to 22, Thứ 3: 14 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Öl",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Nattmat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJzWicFNltcTERhhPi0uCBnZc",
+    "name": "Brooklyn Bagels",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "14 Đ. Trần Nhật Duật, Cam Ly - Đà Lạt, Lâm Đồng 66000, Vietnam",
+    "location": {
+      "lat": 11.943576,
+      "lng": 108.428913
+    },
+    "rating": 5,
+    "reviewCount": 181,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 326 897 432",
+    "website": "https://order.ipos.vn/menu?pos_parent=BRAND-Q0LI&pos_id=103735",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMTd4PI9vLHDnHWKOaLbcdqMHC-0qEazllTqRMF=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFoFhr2jQwz9FkK2r0tTqhgxID6NPBfgbhs4NfcDoxx8SpyY5AVNtdOwqRc8xjmob58zVelW4mqao6uL7h0D9L4cW6AMU-1xsCLDaaZdxdH5mcLWenS71wpGBUNCUZNMIniGi3j1Y9EoIoq=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 14, Thứ 5: 09 to 14, Thứ 6: 09 to 14, Thứ 7: 09 to 14, Chủ nhật: 09 to 14, Thứ 2: 09 to 14, Thứ 3: Stängt",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Bagel",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Ekologiska rätter",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Veganska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJZztcl1drcTER72ktoloG91Y",
+    "name": "Thùy Dương quán",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "WC38+WQ6, Unnamed Road, Tp., Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9047845,
+      "lng": 108.4168982
+    },
+    "rating": 4,
+    "reviewCount": 299,
+    "price": "1–200 000 ₫",
+    "phoneNumber": "+84 919 419 835",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH83QYtJ3kQygRW5RI-iFvRtxfVdApwRhOo51G9OGaKeX5QZLtiCWfUNMS89EnvMGL1PVIwFdDolhCXTZMesvQKwd3dgCLavu3DqhoAdsg105FvOpaPFNB41IL3AcatYCGlbGoVv25a1SWx=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFVTwaHKUarmn_5cFVygVlWzOkE0FyXX9p-EcW5akWxSY3-bsR5KzHrK3tRc4bt05PXp74Lusn360IFvCuL0_PlaCK4G1ZKP1SjFDJ82CeLQx5yAinMt72xVsikNRbYQ-C5nKW3fw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 22, Thứ 5: 07:30 to 22, Thứ 6: 07:30 to 22, Thứ 7: 07:30 to 22, Chủ nhật: 07:30 to 22, Thứ 2: 07:30 to 22, Thứ 3: 07:30 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Vegetariska alternativ",
+      "Öl",
+      "Frukost",
+      "Bữa tối",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJD6Okv-ATcTERKpkjrfIjuhI",
+    "name": "Mr. Happy's Kitchen",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "4 Đ. Hoàng Diệu, Cam Ly - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9427684,
+      "lng": 108.4304388
+    },
+    "rating": 4.8,
+    "reviewCount": 149,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 865 966 279",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipN9W7iLIttUNC9uGpufzd-XVUQEcTzSjin_CsmA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEKwoybhhorwNHuzioH9Mnm6yUSCNuc0HpNGt2_HZF_suGQMBtL5Xbng5_T4GZzV3kbvveTebd9mcc5suiFySYm1lfycIuVNQ6IVv5rxXnNzIetEYUurkoEEiAXm9kTJP7HtpXqUQQA8ppX=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: Stängt, Thứ 5: Stängt, Thứ 6: Stängt, Thứ 7: 07:30 to 22, Chủ nhật: 07:30 to 22, Thứ 2: 07:30 to 22, Thứ 3: 07:30 to 22",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Currygryta",
+      "Kycklingsoppa",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJE5GVewATcTER5NZo0lf8S1w",
+    "name": "Cơm Tấm Lão Trư",
+    "category": "Asiatisk restaurang",
+    "city": "Da Lat",
+    "address": "WCPM+H75, Đ. Trần Phú, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.936373,
+      "lng": 108.4332381
+    },
+    "rating": 4.6,
+    "reviewCount": 1080,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHhaYxHvKhudCIyVv7qiLfCmyiWmdcwjnIE4A54MCep2i9sALnrTuKXdyq8bJUAnjGh-XMhk-PrHnPrcWOICw7k8pj8RW-XKn9jhfR6lZAju-lSyQsx_3T4zpYrXAWPungwdfvp=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6fUR56cm0u9hIbCEYFLfaLUh8FN8az_wj-7I826k1dcfX9E8nnooIzNiFIlTqrmQcDZijHeI22Y07aesa3z0e-_osIBRDw2aMW2Oy-_SROnHQRNsJ_NI6tv8V8-wfTe5vm1a_6Q=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 14:30, Thứ 5: 07 to 14:30, Thứ 6: 07 to 14:30, Thứ 7: 07 to 14:30, Chủ nhật: 07 to 14:30, Thứ 2: 07 to 14:30, Thứ 3: 07 to 14:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat",
+      "Öl",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJsaOTyzoTcTER6R4eb6lHTh4",
+    "name": "Quán Bò Tơ Ông Minh",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "49 Lê Hồng Phong, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.933063,
+      "lng": 108.4284473
+    },
+    "rating": 4.6,
+    "reviewCount": 2754,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 968 731 697",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFEA5kbEwwNbmhWRVCfxa92mWVg8ZS-Uz4SjQ7iWphM_03a7L8GlH_cg3rXD_SU-RMhHSyoHBb6Myx_Y1IaJunYhjEPLBjpukvEX_lxbRKmlQP_-7PoR88jRkHEvXFz8Q96ijGw2CIKgTM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3EukVYzjZICDtWBJy1xUrgxSgXr5GXTEEfn_IfqXeRUdxhaFbZsg9Lv8zLoYy96-UEOdN0QNSWDdh_2meTG9Dtg7J8g_8Q2DlD6MLgMEOncYVR_nF7aQ9J6N0Ctbe9XvEIZ1j=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 00, Thứ 5: 10 to 00, Thứ 6: 10 to 00, Thứ 7: 10 to 00, Chủ nhật: 10 to 00, Thứ 2: 10 to 00, Thứ 3: 10 to 00",
+    "cuisineTags": [
+      "Ăn chay",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Nötkött",
+      "Eldgryta",
+      "Pumpa",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Sport",
+      "Có lò sưởi",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRVyQLABtcTERnWFLT4ZBjkc",
+    "name": "Quán Chay Tu Tâm (Tu Tâm Vegan foods & coffee)",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "B2 kqh Đ. An Sơn, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9244259,
+      "lng": 108.4242577
+    },
+    "rating": 5,
+    "reviewCount": 209,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 939 908 322",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMTLANdcVLPbl7CGekRSl93Ako0Bljih9nS7RlM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6Ni2GnRZQjaOLhj4EnFooVAuIkIcrVfL8k_LzbEY2rNh8fe-r28iHaG_qRy2Bhr43Bqrbl1RKoNfb20rQRXnD07hK-RR38Hrm4sfzagkFFnc48SFCAr2uvp9UbwX2tgL6c4fRXVP8DigE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 20, Thứ 5: 07 to 20, Thứ 6: Stängt, Thứ 7: 07 to 20, Chủ nhật: 08 to 20, Thứ 2: 07 to 20, Thứ 3: 07 to 20",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Kaffe",
+      "Snabbmat",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Frukost",
+      "Bữa tối"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJe2uyX2ITcTERymGQZvELAO8",
+    "name": "The Brunch Box",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "33 Đ. Thủ Khoa Huân, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9410643,
+      "lng": 108.432939
+    },
+    "rating": 4.9,
+    "reviewCount": 192,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 915 193 319",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOplERUkVL5EGo1FwubP_-s714CtL8tbDf7OyLE=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPuyEjivg0C7GP_j-4sJNHLq42dfPueJpD41DvH=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 16:30, Thứ 5: 08 to 16:30, Thứ 6: 08 to 16:30, Thứ 7: 08 to 16:30, Chủ nhật: 09:15 to 16:30, Thứ 2: 08 to 16:30, Thứ 3: 08 to 16:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Pommes frites",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat",
+      "Öl",
+      "Frukost",
+      "Brunch",
+      "Bữa trưa",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJSaAwGLITcTER1DMDEs-fwyA",
+    "name": "Cơm chay/ nhà hàng chay Mandala",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "Tổ 20 Đ. An Sơn, Xuân Hương - Đà Lạt, Lâm Đồng 66115, Vietnam",
+    "location": {
+      "lat": 11.9262235,
+      "lng": 108.4296183
+    },
+    "rating": 4.8,
+    "reviewCount": 189,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 973 803 719",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-3dZGmvoo8h9xzp7n9Vby63mFJtXLUASqr4eb2tSonkHMVxccBlZjJrEkSVeQxrUI65Yx7qYT1Ae1BNqdpGu0FPUww55-MH4m8D_STykECLcl1VQ8Dz2bHtCCkx6QIe4PN53H=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_ci44mb1Pgs9fPifYlrMv2bmF1aOnIi7cxbPrh59-nsKJ2BbuG0o6LgdfOecFuAVktfEYsxY61CS9hqxW7oRJ-JSzf7eVQSUHG_wnVZVj2DpvEpn7nNYEvyCMfk4FSmdPwl9ViQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 21, Thứ 5: 07:30 to 21, Thứ 6: 07:30 to 21, Thứ 7: 07:30 to 21, Chủ nhật: 07:30 to 21, Thứ 2: 07:30 to 21, Thứ 3: 07:30 to 21",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Hälsosamma alternativ",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Veganska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJYTpdfVQTcTER7eheKnDZgkU",
+    "name": "NẬM NƯỚNG 1900",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "32 Đ. Trần Phú, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9364905,
+      "lng": 108.4333546
+    },
+    "rating": 5,
+    "reviewCount": 10244,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 1900 4516",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNEt8Pifs8xnzBAX_QHauhZw22G08ByUOrDRNca=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPpoDtoE6CaMGvf4C2GGJwHLqfHHl__rkyCK_ql=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 16 to 22, Thứ 5: 16 to 22, Thứ 6: 16 to 22, Thứ 7: 16 to 22, Chủ nhật: 16 to 22, Thứ 2: 16 to 22, Thứ 3: 16 to 22",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Paella",
+      "Eldgryta",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Có lò sưởi",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Happy hour på mat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJmxZmkywTcTERr6tA9pjotxc",
+    "name": "Chạm Bistro & Cafe",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "72 Đường An Bình, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.924192,
+      "lng": 108.4367477
+    },
+    "rating": 4.7,
+    "reviewCount": 42,
+    "price": "100–700 tn ₫",
+    "phoneNumber": "+84 966 813 635",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH03GEP2znOc1DXmICC9tbscvusJJd5vzgthGfhj4xPE833GjCvxk8Entrqqy7fOY7pqErthnZqS8TTRRuINrgahaLnaea3zkfGhVmTKcgDV0-VzUDPxrWZX6sZdG2ogi5BGe9d=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfA8prgLdIaZvAwBbrAxHJvzTzYvh1b_jVypB-4ce-aT6l6iATmlP7It7eyZQb8Fd67AtxgCqfFkttAtps4pFJNrbTkg4fsFLNw-aTFM6gLOzDPr84EgwmWN5qkqAKxZ-a7LwujQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Kaffe",
+      "Vin",
+      "Öl",
+      "Bữa tối",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJleYlUbYTcTERaldebTBJarE",
+    "name": "Bếp Chay Thiên Bình",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "84D Đ. Nguyễn Chí Thanh, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9398838,
+      "lng": 108.4347458
+    },
+    "rating": 4.7,
+    "reviewCount": 362,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 785 555 216",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPhHODxkM-SmYJROoft6UR0sOjpHr-jL0Lr8Qo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMCY2xvK8sj5EN4WVbzyXHaWhClzSN7TUIjhHc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 21, Thứ 5: 09 to 21, Thứ 6: 09 to 21, Thứ 7: 09 to 21, Chủ nhật: 09 to 21, Thứ 2: 09 to 21, Thứ 3: 09 to 21",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Hälsosamma alternativ",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Veganska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJXUF6-yYTcTERwoytlxhyMms",
+    "name": "Bánh mì - Xôi cô Hà",
+    "category": "Risrestaurang",
+    "city": "Da Lat",
+    "address": "2 Đường Bà Triệu, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9389599,
+      "lng": 108.4339193
+    },
+    "rating": 4.9,
+    "reviewCount": 183,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 357 179 197",
+    "website": "https://www.facebook.com/profile.php?id=100069088358758&mibextid=LQQJ4d",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGswvJts3ohY_lZU31L2G9vDivYIXX1jR_SWCuEXlbtd4wKJWloBv34GCNqTXEoTwxGjtGTx4kiQIMBCFUSGniWmWKdZj-vpoICcNBnFd6q7H8yCFDJV0Vo-F-lAi6Sl17sKYM9pdMpN-5Y=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4KPkzSih_O2Jw2_eO_b9cfr2J850dQAx7qCkoJjSa726JGiXXRjRoVOKx6C_JdnXjacjVCBcHwWqzTZpUc9zWLNEhQIIcA7-2gmnbSIMHs-AqYcbtqwpT122NaafjrCZKwHfgOg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 23, Thứ 5: 06:30 to 23, Thứ 6: 06:30 to 23, Thứ 7: 06:30 to 23:30, Chủ nhật: 06:30 to 23, Thứ 2: 06:30 to 23, Thứ 3: 06:30 to 23",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Hörslinga",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Giờ vàng đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJO8fUN4ETcTERvJk_GiCVZxk",
+    "name": "Yummy Noodle - Các Món Xào Chảo Châu Á Fushion",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "19/10 Đ. Đào Duy Từ, Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9349769,
+      "lng": 108.4346768
+    },
+    "rating": 4.7,
+    "reviewCount": 256,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 927 788 778",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO1Tgtl-olbTbqHzK8JoaU3LvykM4L2lfWpeU6P=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMzuT_gqqnyr8puak4D5Zn3M5rHAwZdRweRysE9=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 20, Thứ 5: 11 to 20, Thứ 6: 11 to 20, Thứ 7: 11 to 20, Chủ nhật: 11 to 20, Thứ 2: 11 to 20, Thứ 3: 11 to 18:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Yakisoba",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Halalmat",
+      "Giờ vàng đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNwthukZtcTERkbSQr5IpF98",
+    "name": "Phở Hòa",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "6 Huyền Trân Công Chúa, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9386971,
+      "lng": 108.4249053
+    },
+    "rating": 4.9,
+    "reviewCount": 167,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 972 635 499",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG8VjCnHZNWLNQuBcFU2LR56IWMyrOMWkvcYxK2zo6E2DOo4KhUUwLgyiLpJ5hFH6U_v1PlaLI9kdMMIW44zPIIRtQ5JRV2KoELxXJy7530A8wwgSYrYA9Sp7LvKM-mim6xBEoQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEhRPQaiXTkzsLBkiH2Vuh87leEFCth1AgtqTYGRfzRFKe-XCO7A6kcbtjgPghLTHYvLoAND-kDFl5DrhuqFzvBxl_BFlVdQQ51pq5Wy5pvZwiwWZyi1pzEw8-YLHUsUnRfl9eB1w=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 18:30, Thứ 5: 06 to 18:30, Thứ 6: 06 to 18:30, Thứ 7: 06 to 18:30, Chủ nhật: 06 to 18:30, Thứ 2: 06 to 18:30, Thứ 3: 06 to 18:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat",
+      "Öl",
+      "Frukost",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJE7JvoWkTcTERJdxSfm4ePys",
+    "name": "Tiệm Cơm Núng Nính",
+    "category": "Risrestaurang",
+    "city": "Da Lat",
+    "address": "nhà hàng chay Vegan Heaven Đối diện, 40 Đoàn Thị Điểm ( mặt bờ kè Nguyễn Văn Cừ Mặt sau 40, Bờ kè Nguyễn Văn Cừ/Đoàn Thị Điểm/43 Nguyễn Văn Cừ, đối diện, Đà Lạt, Lâm Đồng 66000, Vietnam",
+    "location": {
+      "lat": 11.9390736,
+      "lng": 108.4332157
+    },
+    "rating": 4.9,
+    "reviewCount": 127,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 916 344 076",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOrRr88OKSc0PN2srftI9l7karQ7q_v0qkUO8S-=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEpu_xL9xE7vVV_vmIIW3twVWNEOVr3cYLsaoQz59xUpOKmrJa0O38Sq3evUnxg42dyiwL3JuV74O_Fq8xnP9Qg-glYr5B-dr_2QbWcWFnqAzzOpkyWy3OJ9XivU_rx_5dVlXrx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 21, Thứ 5: 11 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 21, Thứ 2: 10:30 to 22, Thứ 3: Stängt",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Passar för barn",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJtb2r224TcTERwdRBSEr95LM",
+    "name": "Nhà hàng hấp thuỷ nhiệt - Bina Bina",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Lat",
+    "address": "30 Đ. Huỳnh Thúc Kháng, Xuân Hương - Đà Lạt, Lâm Đồng 66000, Vietnam",
+    "location": {
+      "lat": 11.9352617,
+      "lng": 108.4281302
+    },
+    "rating": 4.9,
+    "reviewCount": 1426,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 784 979 567",
+    "website": "https://www.facebook.com/profile.php?id=61560567276030",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGQw88Wb7qBnhoqAuFvVfyo7zRbTTA2guQiRPy2AlGVUYIZSxGEZQ_j0E7Q6kaDuOd7UEWD7Tre-oLCyFEg4Ez-lRvWQTJ8umD1xxN49OvkVQ25dxt7Drkj7iXjACPT81F92uz-DVyC2-Yy=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9SHFc7Zn2JUapmT8ZJQc343l2XvxRTUMjF-4OIqK6bCJjaQB_bVhJT9S5G5Rk4YVPwoTcUbBiHgI-cq-YhOwa4CLgOKfZPhjMiHS4sa7tTLw6i9dNxsZ6pfYNAVJsWwfln6nY=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 14, 17 to 22, Thứ 5: 11 to 14, 17 to 22, Thứ 6: 11 to 14, 17 to 22, Thứ 7: 11 to 14, 17 to 22, Chủ nhật: 11 to 14, 17 to 22, Thứ 2: 11 to 14, 17 to 22, Thứ 3: 11 to 14, 17 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Dim sum",
+      "Rissoppa",
+      "Nötkött",
+      "Juice",
+      "Eldgryta",
+      "Soppa",
+      "Nudlar",
+      "Grönsak",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Hälsosamma alternativ",
+      "Privat matsal",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJa7yBekYTcTEReXHwAXZLJOw",
+    "name": "Happy Thái Đà Lạt - Món Thái Ngon Tuyệt",
+    "category": "Thailändsk restaurang",
+    "city": "Da Lat",
+    "address": "21 Đ. Nguyễn Văn Cừ, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9404877,
+      "lng": 108.4321184
+    },
+    "rating": 4.7,
+    "reviewCount": 1420,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 908 939 033",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO8MlvGTSa2F3NjIRRMY-c72lh7zqwD8owh_yZy=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdILNs__mNCd-QrnxUJGfhVuBLdOga6k-3msz2NE34hr4uf70h1am63sze9z6Si59Et8fMie4ZsYw6qZzHmbzYxchfpZpg7oR2sqqrdRKDCx8_nGO8gX9wGBK5AOJGN75jcZQ-dzMkmwYW=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 22, Thứ 5: 11 to 22, Thứ 6: 11 to 22, Thứ 7: 11 to 22, Chủ nhật: 11 to 22, Thứ 2: 11 to 22, Thứ 3: 11 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Juice",
+      "Fisk och skaldjur",
+      "Tom yum",
+      "Eldgryta",
+      "Nudlar",
+      "Pad Thai",
+      "Vårrulle",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Takterass"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJqSAsT99tcTERerq-EPmQDHs",
+    "name": "Khoai Lang Nướng",
+    "category": "Nhà hàng",
+    "city": "Da Lat",
+    "address": "70 Pasteur, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9341879,
+      "lng": 108.426007
+    },
+    "rating": 4.9,
+    "reviewCount": 3174,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 1900 636570",
+    "website": "https://khoailangnuong.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP51RP5_vQ5CtDtgHW1MUAe_dWVTF9YwmAxPUES=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFuwCr9aTDhSeFEGO2kdgqgj0Odwgd8uE4C-bcnJ69vhElVlXGA6-N1Rozp-EhvKQnDEwkKXgZWNZDh4XSKOhWI_yVplO-e7WqFIZ0H7Errmwy_SY3x7pPSgoJBt4508FrJnAZk227yPi2Y=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 16:30 to 23, Thứ 5: 16:30 to 23, Thứ 6: 16:30 to 23, Thứ 7: 16:30 to 23, Chủ nhật: 16:30 to 23, Thứ 2: 16:30 to 23, Thứ 3: 16:30 to 23",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Cobbler",
+      "Juice",
+      "Eldgryta",
+      "Cider",
+      "Raclette",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Snabbmat",
+      "Starksprit",
+      "Vin"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJdeU7rsJtcTERzO_ylj443jE",
+    "name": "The Workshop Cafe Gaming Bistro",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "70/2 Pasteur, Xuân Hương - Đà Lạt, Lâm Đồng 67000, Vietnam",
+    "location": {
+      "lat": 11.9341331,
+      "lng": 108.425919
+    },
+    "rating": 5,
+    "reviewCount": 40,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 775 777 524",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFN7k6aDrbGAUX4IDsbaKZRqzzUpHDC0ZL2lWm96p_dhLnfnu18ZE59SUGNeLAMD8pVZmUbjSxsSJq1DTmuFpPJm4R2EM3qwwZSu9H_Y7Y2ejVs2alSI_FK0j4v1M4HGP9ZGrt5vSW8F0A=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvzUAcUFeb4pZ1JyYqYxQnY7W8YEoCXSAFdP7Wx-KEA_coo6jGqZHpq0RCggZhiZLCPFLF1a60gj1Lh8HtEaoUmOdIBz1STMUkKmNbUzuebTtLRvbFCe36itjRWYWHUliRV5Vu7fHDAB6r=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 23, Chủ nhật: 08 to 23, Thứ 2: Stängt, Thứ 3: Stängt",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Takterass",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Frukost",
+      "Bữa trưa",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Bar på plats",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJFaXTcMv3czERiBs-kcd5_B8",
+    "name": "Nhà hàng thuần chay Vegan Heaven",
+    "category": "Veganrestaurang",
+    "city": "Da Lat",
+    "address": "43 Đ. Nguyễn Văn Cừ, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.939504,
+      "lng": 108.4332221
+    },
+    "rating": 4.9,
+    "reviewCount": 928,
+    "price": "1–200 000 ₫",
+    "phoneNumber": "+84 819 039 303",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOkShoGrmN8mdUbNplGr6q34XdGuV2yyMgOAVx4=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipN0zCHWSyHEvlCsLO5LQWUxznV4VaXz56fIhiQV=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 14:15, 16:30 to 21, Thứ 5: 07 to 14:15, 16:30 to 21, Thứ 6: 07 to 14:15, 16:30 to 21, Thứ 7: 07 to 14:15, 16:30 to 21, Chủ nhật: 07 to 14:15, 16:30 to 21, Thứ 2: 07 to 14:15, 16:30 to 21, Thứ 3: 07 to 14:15, 16:30 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Soppa",
+      "Stekt ris",
+      "Vermiceller",
+      "Quesadilla",
+      "Vårrulle",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJLxZyYKQTcTERNq17tP6vxUo",
+    "name": "Ưu Đàm Tịnh Quán",
+    "category": "Hälsokostrestaurang",
+    "city": "Da Lat",
+    "address": "26 Đ. Huỳnh Thúc Kháng, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9354118,
+      "lng": 108.4286347
+    },
+    "rating": 4.9,
+    "reviewCount": 694,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 947 725 686",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPuXn2CUSoASpECtGngwu9zBSHhbedX6jH4EvMQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEHDN8Ot3j-QBY8RICaEKMd_pe2hKEgOWbFlciIR0tM3hbudmZ2Zn0YuMHXOW4Q3FiDbPbU2lx_4GD7BzoQ5kPHOVwlpcexM1-H6I5CkjRI1a2cDfF2wi6gOme1FT7PThO1MXg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21:30, Thứ 5: 08 to 21:30, Thứ 6: 08 to 21:30, Thứ 7: 08 to 21:30, Chủ nhật: 08 to 21:30, Thứ 2: 08 to 21:30, Thứ 3: 08 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Eldgryta",
+      "Soppa",
+      "Kycklingsoppa",
+      "Stekt ris",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJgQm2DZITcTERG_Wjc2z1bi4",
+    "name": "NOW Bistro - Coffee",
+    "category": "Bistro",
+    "city": "Da Lat",
+    "address": "18 Đ. Huỳnh Thúc Kháng, Xuân Hương - Đà Lạt, Lâm Đồng, Vietnam",
+    "location": {
+      "lat": 11.9356085,
+      "lng": 108.4298389
+    },
+    "rating": 4.8,
+    "reviewCount": 2129,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMTOSLMsRWen7Mojb9LS76Q-pCg2YIAEmcTZKkF=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCpQUVdZz1Nd6KJTWuOtQfsn0mwupUIupk-53HjBP0b1dYMcTuVTo0XLmn7uOpwFbcKFeEaNZt2Cz0FpK0hb8VTRF7wBY62dXiCpHflTsr5sFp3sGMCEC5ruT547OFljtQGWlcsg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Äppelpaj",
+      "Morotskaka",
+      "Croissant",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJd3qkrGgTcTERd1T98qhhAvM",
+    "name": "SORA Ramen Dalat",
+    "category": "Japansk restaurang",
+    "city": "Da Lat",
+    "address": "38 Đ. Trần Phú, Xuân Hương - Đà Lạt, Lâm Đồng 670000, Vietnam",
+    "location": {
+      "lat": 11.9365415,
+      "lng": 108.432477
+    },
+    "rating": 4.8,
+    "reviewCount": 106,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 772 021 991",
+    "website": "https://mqv1bf.short.gy/insta",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhaQuOfBmm1bx-fN51EJkNbA__KyaiE8kAkilfpgWhmhz0fy2Dv2Q5CEgCez3-Q7jHK6dDhzqWbURIoIyKoDlGdz-pDnF32_kibrh4MFUWofPCM7c6mn-QQWW0jt4o_TZQn57s34yTUccs=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG7FScSsv3eU0LsHrtVygsiN0vBqhIA1hVJbsuwqvLHBySDyD1iDCwOuvIbor9s-NddLcRQZoWD39OpraJDYn0rhPIHBp4UyYnDqRVvKPtgeZWlCg66T3BfX7bGyno-2oQH53dUryF26bg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11:30 to 14:30, 17:30 to 21:30, Thứ 5: 11:30 to 14:30, 17:30 to 21:30, Thứ 6: 11:30 to 14:30, 17:30 to 21:30, Thứ 7: 11:30 to 14:30, 17:30 to 21:30, Chủ nhật: 11:30 to 14:30, 17:30 to 21:30, Thứ 2: 11:30 to 14:30, 17:30 to 21:30, Thứ 3: Stängt",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Soppa",
+      "Nudlar",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Có đồ uống cồn",
+      "Giờ vàng đồ uống",
+      "Privat matsal",
+      "Smårätter",
+      "Vegetariska alternativ",
+      "Öl",
+      "Catering",
+      "Bordsservering",
+      "Bar på plats",
+      "Könsneutral toalett",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  }
+]
