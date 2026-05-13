@@ -1,0 +1,4150 @@
+[
+  {
+    "placeId": "ChIJmRi8DpndQTERnGtejzzn5as",
+    "name": "Quán Bánh Xèo,Cháo Vịt,Bún Thịt Nướng",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "WJFX+GMX, Đông Giang, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.923856,
+      "lng": 107.6492309
+    },
+    "rating": 3.9,
+    "reviewCount": 38,
+    "price": "$$",
+    "phoneNumber": "+84 888 029 011",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvowHYDxpGsyEMtt2nENGypRyX_ClVzeb0jQ5enwy67YvhBKZcnqT31zqxDVBHSZZGyjNC_seqfj2or8S8_9-nh0wK5ZG3XBvcXf8PKaaxblKz7AohnJFTFGRWiZWOob9k=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFmJPF3heKBH07AAGztLPRgEcohialczme_56KIW1iWYCcVQLYcgqNwP6eufvQUhLfvUgDCp4a44ukRf8NKLZ5iwnY6wdMIb58OltCiOCVmiV3cZpb59aNmSsUQsNOW4V7cB4M=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 15 to 00, Thứ 5: 15 to 00, Thứ 6: 15 to 00, Thứ 7: 15 to 00, Chủ nhật: 15 to 00, Thứ 2: 15 to 00, Thứ 3: 15 to 00",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Nattmat",
+      "Öl",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJB3OuOSYPQjERtq4o8CU3wCE",
+    "name": "Phở Trâm",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "43-45 Điện Biên Phủ, Nam Phước, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8455562,
+      "lng": 108.2813769
+    },
+    "rating": 3.6,
+    "reviewCount": 70,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 817 350",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP5VE9N3tRw4p8uRPqy5zgASeRTbej752-Qb7pD=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMNExGp5x1UXWB9oYzU7ArYPGZ4urLM96Pdc572=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 23, Thứ 5: 07:30 to 23, Thứ 6: 07:30 to 23, Thứ 7: 07:30 to 23, Chủ nhật: 07:30 to 23, Thứ 2: 07:30 to 23, Thứ 3: 07:30 to 23",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Nattmat",
+      "Snabbmat",
+      "Öl",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJxSG9dgAPQjERVDq-fU_raCo",
+    "name": "Hủ tiếu Nam Vang A Hào",
+    "category": "Nudelrestaurang",
+    "city": "Da Nang",
+    "address": "330 Hùng Vương, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8793122,
+      "lng": 108.3058868
+    },
+    "rating": 4,
+    "reviewCount": 8,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 917 590 678",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFuaqXj5kzMkud32YrDuLvFogkVQwZFKRMaTP7plC6abiR_Z594oJUwwt6HgmyfVecwbXQ-MMDizJl139EUzjo-F6TU5YYsvdvE7k0-77yNGGxEEpr8ce_Ap5w5f0PyvpIzpRjbB8hl_CgP=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGc2_d96Zr6E6eS8kEspPfLodY7DaYmSUXNjuqwdKZ7lOhJIX3IYCX8QyA-HRzMdNShSmOPsI18WOjTs8cbcNlqqOF6No9x45KGz6bJhPF419yoWBLtxf4bd910k2kpZqT-N9Vn7ym-RXXc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 05:30 to 11, 16 to 23, Thứ 5: 05:30 to 11, 16 to 23, Thứ 6: 05:30 to 11, 16 to 23, Thứ 7: 05:30 to 11, 16 to 23, Chủ nhật: 05:30 to 11, 16 to 23, Thứ 2: 05:30 to 11, 16 to 23, Thứ 3: 05:30 to 11, 16 to 23",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Soppa",
+      "Nudlar",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bordsservering",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJw2DHFAD7QTERM2gsqZgWSBY",
+    "name": "Nuoc Mia Cafe with Pig Toilet",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "VVCV+R26, Thượng Đức, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8720446,
+      "lng": 107.8925185
+    },
+    "rating": 5,
+    "reviewCount": 2,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 387 638 400",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2ZKKcQpfAlFpd7m9Ws7iiXQFtr0rYhxbVdCnSujUM9lrj_hPVXAi-hTFQIk9l-bTLigYztaaGWrHISUA9PZb18LPXFABlYdwo_i7hJWVDiX9ozJXukR4TeHaYF3_fi_EldRZuKwmRHVFE=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGU2OQFUCnm0oQPkiM9kvvjnfs7wHGkH6tXqVQJRkV1dW-CxlaaO1cCPXi9zx0roNpNXmRb1VEVTT7_Ecgz1im0ibkHT7t_KJWKbzcwWcG9iuzLf1jcxUiqwLPr9uq9HuFmtqjTBYCFuWUy=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 21, Thứ 5: 06 to 21, Thứ 6: 06 to 21, Thứ 7: 06 to 21, Chủ nhật: 06 to 21, Thứ 2: 06 to 21, Thứ 3: 06 to 21",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Kaffe",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJv5_gqFEPQjEREdZXl1W55qI",
+    "name": "Quán cafe Win",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "Trường Sa, Nam Phước, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8418891,
+      "lng": 108.3073868
+    },
+    "rating": 4.4,
+    "reviewCount": 44,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 285 801",
+    "website": "https://www.facebook.com/huavanhung",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF4XoWh7MG7_0DvKMIaMImzpJuKFy5e7jmMqQs3GrL-xBsZIgXWxzmUBAwKLf8Bwg9N87RjGZd-2W1rYwh3nNuIGrPehtagDsx4htpf3NDlhqhwCATlsMBEXK8QbnlDRBN72jmLi4AEmDwv=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEi49Y2ZTaxOHSYw6FepLPgh-XAFEeT-tc6U1zsG1gsdQtws0dLSr4K5LrLe7NAyQd6jaODoAwgNNGE_ApFDdesb0gOUyNIuMTCM9_P5Rq0jXfAo2Yx6KBTjVQhoyN6Fo7Dz94=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 22, Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Endast kontanter",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJORZIIwAPQjERmsRAOsD7yTk",
+    "name": "Cafe Thư Viện HA",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "Kim Bồng Tây, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8678999,
+      "lng": 108.3104181
+    },
+    "rating": 5,
+    "reviewCount": 18,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 982 641 112",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMBgT3H1R6LINOk-JCojRpFDRAG4GyCgHXQBmMa=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPeO9aYwx-bwDNK4Hy6nb2iWRdpsMLy5A1db9i2=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 22, Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJOajgh1gOQjER2EKqDG_qBis",
+    "name": "Ben coffee , food and poterry handmade",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "03 Phạm Phán, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8771933,
+      "lng": 108.300062
+    },
+    "rating": 5,
+    "reviewCount": 30,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 934 716 300",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNGvAbHbqhAxbQI0o8W7AiIwINX2Qfj-9EmIKE=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGIaPcbb35dKwxochC36boCYB9KFnEhE5vOOBVkBU7R-NVYYKhaJWJRBlDpgs2wiKP9W-6nhVeXrQWoDgCAhHOTP9kWIaFAxdKRCsS4p-kem-js6tJL6fSwaoVKwBk7eI_vqnVzlX1gvuYl=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 17, Thứ 5: 08 to 17, Thứ 6: 08 to 17, Thứ 7: 08 to 17, Chủ nhật: 08 to 17, Thứ 2: 08 to 17, Thứ 3: 08 to 17",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJnWLuGYsOQjERiKBZp67rtHQ",
+    "name": "Me Xanh restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Ngõ ME XANH, Làng Triêm Tây,, Điện Phương,, Điện Bàn, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8720502,
+      "lng": 108.3106226
+    },
+    "rating": 4.4,
+    "reviewCount": 139,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 319 451",
+    "website": "http://facebook.com/dulichmexanh",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG1IFyxU0OZ0txfv3Nhgvp3L9j5AxZo3StvFYYzLCYPMF-Tqr6Jt4htYmFrR56djWQxwWsgo3KXYkupdo7ug3UwPFAykiZ-7qvu5_28c002CKEBxiJXdAqBkE2kjtgBlyBLJOV3rw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJNauF_v4xiUbLpSJeRVmxMzyKrxza5GQbccCLCHr3Vw5XCLTfYGpcxlBybzIFLd1Ig4eohFXHJ-DxESXTJtKBipRkmdCGwr8mTAqBQVDgqPs8Oa7yIFZY7CiWPoVl97cxBYB0OQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 17, Thứ 5: 09 to 17, Thứ 6: 09 to 17, Thứ 7: 09 to 17, Chủ nhật: 09 to 17, Thứ 2: 09 to 17, Thứ 3: 09 to 17",
+    "cuisineTags": [
+      "Ăn chay",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa trưa",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Snabbmat",
+      "Starksprit",
+      "Veganska alternativ",
+      "Vegetariska alternativ",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJYdDcTWEOQjERNPrYtkLws3Q",
+    "name": "Mỳ Quảng Bích",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "272 Hùng Vương, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8794787,
+      "lng": 108.3081657
+    },
+    "rating": 4.4,
+    "reviewCount": 404,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 898 184",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGANclRdS97fgOEqgnyR5J2Oru38oEI2G7PFqm9mTfj2rpXVOYaNT1-AwfLPgfKJWoWiLpQdumHYXQTFLCEYGose0Fi2_y9WoTLRA745FnDEeW96OmuFzjjCdtM1g32oazSePwx6gGRNaHI=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8b2aDqTjFFPcdn1rtRbKPCnAIQ8fiUVJGWK0zX1zsg2oEpcUu-L-FTKT0nNKPpbLpXzorJMgR2Hn3Xikl7AunQeKUib6wNjrdfc7ND3w-kgt4p7GbaOTZoagREbaIEL7C1AY3=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 19:30, Thứ 5: 07:30 to 19:30, Thứ 6: 07:30 to 19:30, Thứ 7: 07:30 to 19:30, Chủ nhật: 07:30 to 19:30, Thứ 2: 07:30 to 19:30, Thứ 3: 07:30 to 19:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Nudlar",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat",
+      "Öl",
+      "Brunch",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRT6qzxEPQjERIz0dz90XUlk",
+    "name": "Bê Thui Cầu Mống Mười",
+    "category": "Bistro",
+    "city": "Khác",
+    "address": "Dien Ban, Da Nang, Vietnam",
+    "location": {
+      "lat": 15.8668859,
+      "lng": 108.2699271
+    },
+    "rating": 4.3,
+    "reviewCount": 2083,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 914 020 719",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMxHSZCxRTktxiQ0FpJ7MTOY5_ok3Ei4kK4N9w=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1FxVG_E73Y3XOY-dCQevJto72G7oHugyiRUA0bgt2SIz7er3fv2gxsIhgGGksfcETC3BcDQrz561V9eas3EshXTc4KzgnfaGtG1lGGoqT2eK39eol27by4YXTypD_F8odonem=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 05 to 20, Thứ 5: 05 to 20, Thứ 6: 05 to 20, Thứ 7: 05 to 20, Chủ nhật: 05 to 20, Thứ 2: 05 to 20, Thứ 3: 05 to 20",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Kött",
+      "Chilipeppar",
+      "Eldgryta",
+      "Gurka",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ8TZZb1gOQjERU1JKMuxvC6w",
+    "name": "Terracotta Terracotta Homestay",
+    "category": "Lưu trú nhà dân",
+    "city": "Da Nang",
+    "address": "Tổ 24 Nam Diêu, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8775626,
+      "lng": 108.2993057
+    },
+    "rating": 4.9,
+    "reviewCount": 144,
+    "price": "16 US$",
+    "phoneNumber": "+84 935 744 644",
+    "website": "",
+    "images": [
+      "https://lh5.googleusercontent.com/proxy/wVwf-_WrM4BYATsPuX72qxn02xPXv8M8HihATJWYwKn_MXrNpPG7_wgYdoF0sSJpZYtKSZQL3suBNBLBIIsfpRb08Tpp7txg93Rdwd0QqgxQdQqoTOQ7CWZ62kwe7aHWoagusDIsj11x8JWuAMOOSbIdDoERzQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGAVDuAAYWaMQzLMCs6-dQgVtGN7VVibvDHZdVYGqrrLiUkLl6vFdOu5m_QRlTKc1_x1dpDfhrTmmeYU7602qei63nQRxMhsthfvUYT37Ha3WhOKs5G3Y-HaIWMxNTjuOLUfqXX-uR1vTc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Från besökare",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Gratis parkering",
+      "Luftkonditionering",
+      "Tvättservice",
+      "Barnvänligt",
+      "Nhà hàng",
+      "Kök i vissa rum",
+      "Flygbuss"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJh3idTHwOQjER6a4kO3NDC2w",
+    "name": "Cộng Cà Phê",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "64 Công Nữ Ngọc Hoa, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8771677,
+      "lng": 108.3247957
+    },
+    "rating": 4.3,
+    "reviewCount": 3679,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 949 792 152",
+    "website": "http://congcaphe.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO9hUxuluXYoHqeuvxEEdlZaxTxsl2WYAeRiqW9=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-QXqlIf6ezfo9au_byhd8L0Vmw4ZQKWTwcOVXe8F_36SdQ_8E8ZsHppSJ_7G8mBTwCXzNY6NP9TObEJ0Hi1FwkilRufbHzkU6hyznzPPJuFb9Q4_yV5Cr9ziAIz4HwrNtcqAWTg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 23, Thứ 5: 07 to 23, Thứ 6: 07 to 23, Thứ 7: 07 to 23, Chủ nhật: 07 to 23, Thứ 2: 07 to 23, Thứ 3: 07 to 23",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Kaffe",
+      "Cold brew",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJKxEux9cRQjERskg_0lQkCuQ",
+    "name": "Phúc Lâm - Coffee & Tea",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "Phan Huy Ích Phố Câu Hà, Phường, Điện Bàn Đông, Đà Nẵng 51411, Vietnam",
+    "location": {
+      "lat": 15.964528,
+      "lng": 108.2557475
+    },
+    "rating": 4.9,
+    "reviewCount": 150,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 933 994 777",
+    "website": "http://trungnguyenlegend.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMfHPfYNyy6-vQQQXz-5j63Y_bQdd_x3JqDlQXM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPu9ezPJJwtJRI6DYtDXuY7ukUDo4iNaOyQKuV1=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 22, Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Mango",
+      "Cold brew",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJsfB2ouAPQjERfqrFo5tniYQ",
+    "name": "Phin Lab Roastery",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "27B Chè Tàu 1, Triêm Tây, Điện Bàn, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8709061,
+      "lng": 108.3093085
+    },
+    "rating": 4.4,
+    "reviewCount": 14,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 919 882 783",
+    "website": "https://phincoffeehoian.com/coffee-class/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEX-P2jxIe_mEUuv4zWAcHzXMeOCXtd_-eyoThgcW_lhpwjdKzi4gQLa5WZzP98Xln556GQE5bgLK2GDY7jPUyeEpDg6lznkvtNvAp4NeJwQ8MxB74YPRsYmapFNsi54keOsDMzFg=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipN_wBGWO8HsbpDZsJcD0q_9iGqm0JujmahSH-l7=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 11:30, Thứ 5: 09 to 11:30, Thứ 6: 09 to 11:30, Thứ 7: Stängt, Chủ nhật: Stängt, Thứ 2: 09 to 11:30, Thứ 3: 09 to 11:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Identifierar sig som ägt av kvinnor",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Kaffe",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Trendigt",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1xD_JF4OQjERzuYmqaUf8wg",
+    "name": "Hoi An - Minh Quang Noodle",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "268 Hùng Vương, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8794657,
+      "lng": 108.3083049
+    },
+    "rating": 4.6,
+    "reviewCount": 214,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 708 123 009",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPdtZ2-lkZR4yidpoIxderZyWPl99NCa3Xk9Kl3=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHRSgGh2IRy6gBKO4sUMuXa7yUYLR-JoYVeEERjbpwGIy10GwHg31SsvnCCEFEvCwD5jSiXNu8CvYHOKGO_-AJ37gy9FRU7szdLYMHwZcdRvD8rBp8N91XNd1_tFmCxVWnAGMOC2uNGgXk=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 15, Thứ 5: 07 to 15, Thứ 6: 07 to 15, Thứ 7: 07 to 15, Chủ nhật: 07 to 15, Thứ 2: 07 to 15, Thứ 3: 07 to 15",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Frukost",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Snabbmat",
+      "Brunch",
+      "Bữa tối",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ-d8EDxcPQjERYTDCyFPoipI",
+    "name": "Hammock Coffee",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "V8JG+86P, Trần Hưng Đạo, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8808365,
+      "lng": 108.3255866
+    },
+    "rating": 4.7,
+    "reviewCount": 79,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 356 268 490",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_JYoSDMRYIOjh_2XhVmgp39LxnKZZaHpazjzZ96mHDgJn8mn7rYA5oUfErbJJpJJrFRcYtdGZTs8PA1y0I4bhRXJfSrfb05heLlkB7VBmqJFkulXNV3uQuucHoME3rTMoq2ODzwua07BI=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWb5twN3_pCvIc65d3xH1yTilimHu5pQYoge66Skh0yWpZL-t6GPZ01_j7fKtbpack7VwNaGxAhhb1wb7yKz-I3WRDiQIV0qfQ4Vd-uKljP6D7QsGYFF6kYAJjVwpcolzjlTKGtQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 23, Thứ 5: 06 to 23, Thứ 6: 06 to 23, Thứ 7: 06 to 23, Chủ nhật: 06 to 23, Thứ 2: 06 to 23, Thứ 3: 06 to 23",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ-9SMW3kPQjERc3UAqBhJN3k",
+    "name": "Trí Long Coffee",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "88 Đ. Phan Chu Trinh, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8785868,
+      "lng": 108.3254271
+    },
+    "rating": 5,
+    "reviewCount": 4836,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 824 823",
+    "website": "http://trilongcoffee.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMp6Gb2nNyd7SCEdeeOPaz1QffYSYz-fgRKvnrZ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtbOcFUW6J5jhwrJIwPClN4etFpwG7mZfd03e-aIsDAPI28eJ6XeHAm1VgpP2qNq1B1eqxxrxbdOM--cnE2gZW7uhs1XpjlR7zeVJxXAG1PalbSV3B-SGHHuz3qRZ4hB4X14DQEA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Müsli",
+      "Sibetkaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJ9exqToNQjERSgCq6s9ghZ8",
+    "name": "Café Slow Hội An",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "Thôn Trà Quế, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.9022847,
+      "lng": 108.3396308
+    },
+    "rating": 4.5,
+    "reviewCount": 720,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 936 731 103",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZCARjFZ7T2vNEAfyWmLvnsXH3gErVDO7qjJPzle0TBI15tG6ucr8dOiQuiQ-exnm5ZfK4u7ptbOK_ylRMEmTMUAa5csmihPbM3KRl4hBY7HkMydEhoJ8T05Tc88zzGmGx69Dqs87FBtY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuojnRnTwgHkUq0tUIMLKNCSUkk-l_CHZFCsnkxL_4Q_U4zyBsZTXHmtWUQ3yP3eIoGK3E1l9AwDf0aEG31gtEuXhHqvjHJnEPSoAn2lWisHJlbIQepYYeS_j3TBE60iHYlBccnZO8F5S_=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 18:30, Thứ 5: 07:30 to 18:30, Thứ 6: 07:30 to 18:30, Thứ 7: 07:30 to 18:30, Chủ nhật: 07:30 to 18:30, Thứ 2: 07:30 to 18:30, Thứ 3: 07:30 to 18:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Bananbröd",
+      "Kaffe",
+      "Kanelbulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJSfjTeHwOQjERTlJXundW3eM",
+    "name": "Olivier Coffee",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "9 Trần Trung Tri, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8721956,
+      "lng": 108.3318154
+    },
+    "rating": 4.9,
+    "reviewCount": 1213,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 259 966",
+    "website": "http://oliviercoffee.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlZqLFmpas5MoMaSmVUK4WFnzn7muC_6ugjpBf3jCSV8LaNOBuRgsdAHGKHQeW0sICuc-CUQoBeccrioeBY6vh_uBpGSkFL26bBA_w_ea5wscZ-h9oaD_eF9YHVaXD1-nw7FHN2A=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMf_A5MelJ3Sc9BRpUR-4EMUQZAyfOSoe4WpfdWgAPIqliJ8FHfYzA7UnOrbt1GnnFLA68pRZx334Njo59Ej8eDzCct-AToQnPkm3JUjTILXrGEf1W4w8SSvT1WlNHkS4JprI5=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 17:30, Thứ 5: 08 to 17:30, Thứ 6: 08 to 17:30, Thứ 7: 08 to 17:30, Chủ nhật: 08 to 17:30, Thứ 2: 08 to 17:30, Thứ 3: 08 to 17:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cortado",
+      "Iskaffe",
+      "Juice",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJHSD5NXkOQjERASr5gIrwKDo",
+    "name": "The Espresso Station",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "28/2 Trần Hưng Đạo, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8801455,
+      "lng": 108.3282775
+    },
+    "rating": 4.7,
+    "reviewCount": 1217,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 325 505 506",
+    "website": "https://www.facebook.com/TheEspressoStation/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPyroNgqZx0HBEVNMXcRMl62zFw8cdXqRqqFpuL=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP4g6nnyK5hknudOPdblfgwk_6AN9NX4J4FDqYx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 17:15, Thứ 5: 07:30 to 17:15, Thứ 6: 07:30 to 17:15, Thứ 7: 07:30 to 17:15, Chủ nhật: 07:30 to 17:15, Thứ 2: 07:30 to 17:15, Thứ 3: 07:30 to 17:15",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Cappuccino",
+      "Affogato",
+      "Kaffe",
+      "Kanelbulle",
+      "Caffelatte",
+      "Cold brew",
+      "Glass",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJuXUoAQoNQjERAVBmDdegCiI",
+    "name": "Su Deli Restaurant & Coffee",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "11 Nguyễn Tri Phương, Hội An, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.8739679,
+      "lng": 108.3331179
+    },
+    "rating": 4.8,
+    "reviewCount": 267,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOtbJgSsuUakt5qfMRajDd8OECZ0OO2U2uYdsTz=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaJDf4OxQCIPmUXgtpRXlA6dluteeOAJKZY6PiIImJ8kQNRwAL0roFGlZFAlVN9Q98P2YuYkW7A17dqUF4nEissHW-LsK5rjf7FfCbsoHM2YRmTgPyYVSvsEC4aC_nlGL1lNq9=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 21, Thứ 5: 06 to 21, Thứ 6: 06 to 21, Thứ 7: 06 to 21, Chủ nhật: 06 to 21, Thứ 2: 06 to 21, Thứ 3: 06 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Ekologiska rätter",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJL6nxsZMPQjER_wMr9mDqSj8",
+    "name": "POISON CAFÉ - The Original Herbal Coffee Lounge",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "7 Nguyễn Thị Minh Khai, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8769984,
+      "lng": 108.3257006
+    },
+    "rating": 4.8,
+    "reviewCount": 1654,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 914 044 034",
+    "website": "http://booking.tastevietnam.asia/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEqIAkkUSR2FZKFZlqNmd3MebaQj_wDHQ3J5No3e1gwRrDgh2sMr1gjKFusKT0ORExw8UE6xcsMdBB9FRWT-qOabhowcH0DGlSDabDCT-EibjvyLxT1luXjxi7H67YQtg0x5_Dsa8G4Gs=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRFkcPY3WOEIYxBMxxXKTYrX5usHbOCApWMcSJ6G6gq8JFgDxJTLPr-f8MOToZBy26O3zRiMswT04rkzLoivk9aSVGiBvux8YOHXGaeqOsp2d_G7-CU1zHl4tTtvcuhdErSc76bxrtON0=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Baguette",
+      "Iskaffe",
+      "Affogato",
+      "Kaffe",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJxwWOB8ANQjERCN-BYPpA_uI",
+    "name": "An Bang Beach Villas",
+    "category": "Hotell",
+    "city": "Da Nang",
+    "address": "174 Nguyễn Phan Vinh, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.9154685,
+      "lng": 108.3360191
+    },
+    "rating": 4.8,
+    "reviewCount": 167,
+    "price": "39 US$",
+    "phoneNumber": "+84 911 206 012",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHGfgSc5uPOE_5Tr6PE0F2fMMIxovVAX2YFfy8dyZYuQbQ5TErvFAj9c9t-I8ZK9P_lXidpi04Fz1iO7fzBKu-v9K-A-THRnDBFPQ1fDlkZSYRRccpozifKHwwBIeNqjrcgXoB_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFlC5-ohTkuVKtKmjXZjRJAbRaxcYeZ6B8-SICndGY3bEUZLkoaOX0IHcgy9p-0bxxVGWnmf8lksGDXpri5mMpSY5RH5i9EkymBhMjokFKkANgz0C_Krb3S15NW9MX1pzeCoAy8RQOM3tcJ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Komfort",
+      "Från besökare",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Utomhuspool",
+      "Luftkonditionering",
+      "Tvättservice",
+      "Tillträde till stranden",
+      "Barnvänligt",
+      "Nhà hàng",
+      "Kök i vissa rum",
+      "Flygbuss",
+      "Jacuzzi"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ08TGt1VzajERhtFpD2agWBc",
+    "name": "Ca Phe And Good View",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "MMG2+PV4, QL14D, Bến Giằng, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.6768066,
+      "lng": 107.6521245
+    },
+    "rating": 5,
+    "reviewCount": 1,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHWeP9kgF9HmpJTGgtf03IOWB58mcpXeJVSyr4xTrrDXZwzFhYAOlcnvp_NqutDq0dHnKbg4egnlFS29MXqf6KZdiORnbZJxoWodCkj-k-Vlsb0orqqD6J-4WHvRSF05uUXTY_23A=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-JU5fkdB7O9TDAXG3pcjAVBkojwnFhG8ddJxtWWlNRYfy40u-pxwpQz0U2CNEt1QiZWvadv3OlRG5HASPIVAyIgY-8moL_syKgU_H_MccwxcgPe5E9dneQ9ViIH0YFVd-Lb0j=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJI2mK0H4PQjER6_p6vRNEnIw",
+    "name": "Nhà Hàng Spice Việt Hội An",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "187 Ly Thuong Kiet, Hoi An Ward, 187 Lý Thường Kiệt, Street, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8833211,
+      "lng": 108.3276551
+    },
+    "rating": 4.7,
+    "reviewCount": 496,
+    "price": "100–400 tn ₫",
+    "phoneNumber": "+84 235 6269 999",
+    "website": "http://www.eatspiceviet.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMEIjmdU2qM9wkODYsmYbfrtQDLElXs--2QVy7G=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEcilAS6a6dCOdRx8YCHBZs-fXWpo9PFsaY4xFj6RtllOv7e0jjP6bg_mH-u6nJvRDiX2LJZ1FTgppHwilfhX39Fdv_voFTum9fovySGsjli1kRBRprh5GJ68aBHGAmbdl62P0=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 22, Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJeTslKdkXQjERPFZeN_Ta-Ek",
+    "name": "Quán Hải Sản Bé Nữ",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Da Nang",
+    "address": "267/12 Ng. Quyền, Sơn Trà, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0880852,
+      "lng": 108.2422972
+    },
+    "rating": 4.9,
+    "reviewCount": 342,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 975 921 006",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOB-rNWi0zNd0kQ3aaSwWkGSVaXCQT8QypO5loR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPkDh4sZHQDQbpWiJdL5bztl1tFz0vzSQJMNv9i=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09:30 to 21:30, Thứ 5: 09:30 to 21:30, Thứ 6: 09:30 to 21:30, Thứ 7: 09:30 to 21:30, Chủ nhật: 09:30 to 21:30, Thứ 2: 09:30 to 21:30, Thứ 3: 09:30 to 21:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Rissoppa",
+      "Fisk och skaldjur",
+      "Eldgryta",
+      "Räka",
+      "Fisk",
+      "Mussla",
+      "Barbecue",
+      "Fisksoppa",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJufwylrEBQjERj3XupPrYMmw",
+    "name": "MySon Cham Restaurant, Bar & Coffee",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Thánh địa Mỹ Sơn, Thu Bon, Da Nang, Vietnam",
+    "location": {
+      "lat": 15.7750204,
+      "lng": 108.1089999
+    },
+    "rating": 3.4,
+    "reviewCount": 77,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 976 810 768",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtzfDS4JVCSbnjeSf5t18HWrbxkiVr7U387wMQ_Rh5xVhnXmGmG_KCgLYwSlolshc5IqNdGHHDQ5s6quF7nqY2fMQ5sOk_2DPGTbtIt9lG3wKhiQoikkGhj80z8gq2E4mgNEcf53qmEurc=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF20opJiyt2VMgQfcNUj_WVBMtcvugb010LFVUy2WVNKEJCzgKLP1c5JX6fwJY90XWnzo--kHPcRz-eksAP0NwbgaezyqVi2fjnv1UTDEa-W00i8MPtrR__2q_64_x-JGsvn0k8fVYAt75x=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 17:30, Thứ 5: 07 to 17:30, Thứ 6: 07 to 17:30, Thứ 7: 07 to 17:30, Chủ nhật: 07 to 17:30, Thứ 2: 07 to 17:30, Thứ 3: 07 to 17:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5fXngZIBQjERpSIPB8p_eoI",
+    "name": "Mì quảng Đại Nam",
+    "category": "Asiatisk restaurang",
+    "city": "Da Nang",
+    "address": "R485+CWM, ĐT. 610, Thu Bồn, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8160871,
+      "lng": 108.1097921
+    },
+    "rating": 4.9,
+    "reviewCount": 198,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 750 267",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEy4TZ71AqgHe3BQUQmO_6tJQbgJFhkCKaK-l24H2RHxrUrzX3SffRJ42tA-FVxGLWdXLHhv0RcbeF_N40SXQRTz45wwHFqHGHb0NxU49km8syi0f5DhUc2xxhTzGgGpRtcFBRr=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEczwZhIrc0klLqPp4OfKqOsxRX6Ldvej7uj9JUVQt44tMsvpa9hV1_sseWphpVFLkWFvqxJEInmioQjhqaQFEEeeFdJePChnFgJ-Df_R71NS2fIjqfFb0IWgZ9ASvT_2iIWA5a8L8ielyx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Soppa",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Kaffe",
+      "Snabbmat",
+      "Frukost",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJy8NQDAAZQjERJp34tOXKV30",
+    "name": "Phở Hưng",
+    "category": "Familjerestaurang",
+    "city": "Da Nang",
+    "address": "234 Đ. 30/4, Hòa Cường, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0401553,
+      "lng": 108.2142362
+    },
+    "rating": 4.9,
+    "reviewCount": 45,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 703 674 046",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE712ZEwL0H6n_uI4FAKO2vet6wKWSD02Y5Y_AjDb-NpizsNiheVwtSwtyaCZzIIXP0TORcS9IB-KmPK8piFhIZaw74EQ28xKcZ0tZBRaO1cH_tdZUhqmO9gH_s-cxgWAHOrEtugE6oaFA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_eLuFZ3FpHiZF2g841GT6c_u-2W7oQP-IZvfr2cjdD8IBB7_tGUeWWQoFBZ2ZWFd-dOezmCwQTtIAzLaol_rxK8Aq_H4MTFvcK_nNs2i7NuIgvycRW6vJXAmcZBKtGExv6WC6X74lwyCm=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 12:30, Thứ 5: 06 to 12:30, Thứ 6: 06 to 12:30, Thứ 7: 06 to 12:30, Chủ nhật: 06 to 12:30, Thứ 2: 06 to 12:30, Thứ 3: 06 to 12:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5SrSfV8BQjERookKPaVAYzo",
+    "name": "Ganesa Restaurant",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "Q4F5+WHQ, Đường vào Mỹ Sơn, Thánh địa Mỹ Sơn, Thu Bồn, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.7748359,
+      "lng": 108.1089856
+    },
+    "rating": 3.4,
+    "reviewCount": 17,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 976 810 768",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGxon9FvCAuiPswoxl0d03SSdNgd-dfBEBoXrxWHT5DomqhaVZhUk8ubWMPVwbdy8QxiVzjB6tRLg2c2ezQugdU-ow5frlcn5L9imMfi79TfUO-vFUhldSekUwZ72jqopyVKJkSgI8MFvmu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0vIctAMN5B-qL0iTZwRyp8dv82geQnMIpwcsWG3GmqFVyKfPX-hkg93xwtGUptnhcaVFxlICjXGyjiXMBhRJwdFtF9l1xEZgiVNXaFCsxUj8-zLt_fc19bSuEtv1spC5Bl-phEA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Tar emot bokningar",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJH3IOkBQRQjERU0v0wPrfmSY",
+    "name": "Lá Sen",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "Block Ha My Dong B, Dien Ban Dong, Ward, Điện Bàn Đông, Đà Nẵng 50000, Vietnam",
+    "location": {
+      "lat": 15.9296821,
+      "lng": 108.3183285
+    },
+    "rating": 4.8,
+    "reviewCount": 66,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 235 3959 879",
+    "website": "https://www.fourseasons.com/hoian/dining/restaurants/la-sen/?utm_source=google&utm_medium=organicsearch&utm_campaign=tor-nmh-fab-mid-seo-na&utm_content=na-na&utm_term=na",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMLgn2J5RebOCXV6QO0iLW_4x3bFz0V72K6IxNh=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExuuuvqzuOJVg7ptFThreu5zVZHYwI5m6HDL_nWF8tXmlo9QFDGc5zvA6NhuldLq8KBtHV_gyahaxP47SeVSm9M1dH4D2gv2HUOxOBPrc5-yHaGZ8vRb-Bf91DYPRyPiUblGLTmQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 12 to 15:30, 18 to 22, Thứ 5: 12 to 15:30, 18 to 22, Thứ 6: 12 to 15:30, 18 to 22, Thứ 7: 12 to 15:30, 18 to 22, Chủ nhật: 12 to 15:30, Thứ 2: 12 to 15:30, 18 to 22, Thứ 3: 12 to 15:30, 18 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJEaS9tqTJaTERzEgt-7K4AcA",
+    "name": "Nhà hàng đường tàu 3",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Unnamed, Road, Núi Thành, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.4387422,
+      "lng": 108.6509165
+    },
+    "rating": 3.8,
+    "reviewCount": 106,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 935 571 108",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEeetMjuvibub0b9VF-fqQr7aMYGos0bSzKf1UQE93NVEE-0bbz80ldZ-leBWC-yDyLtkll34ThoGaAnDYtRB22dx_wnz2DTNePIzCUVCfDNW9Duzi_ZbJaAtxnwsoejs-QSOXI1g=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZKSgoncNAqbRWCtmOjQzTh9gsbNtyDVBTTNPrYjtx7n6ELch33j3r87e6tXTA0z3-ex3VfPCyUQVUR-6kv8A9ZE59yzD7H50ZeOSpcuZgBeE85Ea4nUwZs7HmZmD8N-lFbJHb8UXlFS5S=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 22, Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Nattmat",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJOzDZTtwZQjER6EiOZ7qdCe4",
+    "name": "Passion Café",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "16 An Thượng 5, Ngũ Hành Sơn, Đà Nẵng 50000, Vietnam",
+    "location": {
+      "lat": 16.0487146,
+      "lng": 108.2453449
+    },
+    "rating": 4.9,
+    "reviewCount": 1423,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 824 946 789",
+    "website": "https://www.facebook.com/Passion-Caf%C3%A9-28-Ho%C3%A0i-Thanh-104574644245862/?eid=ARAOpECXCthgms_CdkHWSM1qw4bB7x13Bvf14LOcmbc_Rpo5xpmCqf-Tb5oVCPNtKFqjJluZSLzUFdsZ",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPyoZZ9jbhNToX9tPQympTLIKieUPRugHKlEEK2=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJCtKCt3LBxdpnoSeupDy0XfoxU9PJpFyo2O56kKQGxWFprLgKrenGhT38yM9WUArM7_NJaJdbVLTFoV0n9kfvJ1oK5ZUsPY-nntR612_UX3pV3dPWIYvzFsUGVOK7TQJPA3BH=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22, Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Kaffe",
+      "Caffelatte",
+      "Cold brew",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJsfvt39DdaTERuculuOBJKy4",
+    "name": "Cơm Gà DÌ ÚT Top Quán Cơm Gà ngon nhất Tam Kỳ",
+    "category": "Kycklingrestaurang",
+    "city": "Da Nang",
+    "address": "51 Lê Lợi, Tam Kỳ, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.566862,
+      "lng": 108.4749285
+    },
+    "rating": 4.7,
+    "reviewCount": 27,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 932 566 002",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHnERv0Jv1M0M7OkkQOJpSpfy-O783CcvqRofYIgA8D9h8mf96C7CjaElu5R2UWHFjHA5GTQoagA31x8e_BarW_J4X-0QB5qiyZQrA4x-uIJ1rfsywG37yTnkBQ_nSGQoNBuvN29g=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH-PKaQ0mOCu9Gepwe3_oNbkorq7I30EMXKdxuClQwKL2CrAmyeUjYvq_D2jBwxUSydyObDi6frf2GbCiH6vygJpsdpnfkFAqb1id0iwsQ6JdEEoqrVFxz3Z76vW3Rl1n04ah5O=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Sport",
+      "Có đồ uống cồn",
+      "Ekologiska rätter",
+      "Giờ vàng đồ uống",
+      "Kaffe",
+      "Nattmat",
+      "Salladsbar",
+      "Smårätter",
+      "Vin",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJjxHnPkANQjER6yp47eKlHfs",
+    "name": "Good Pages - Hoi An bookstore & cafe",
+    "category": "Bokhandel",
+    "city": "Da Nang",
+    "address": "303 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8829492,
+      "lng": 108.3466381
+    },
+    "rating": 4.8,
+    "reviewCount": 74,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPcRWf9IKhF-mCxPFQsPr54gK4u-_J7iaaI2IFh=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMzxca-Lgcpqr0pC9j6nkJY-Gl61YrhLwsa_O0I=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 17, Thứ 5: 08 to 17, Thứ 6: 08 to 17, Thứ 7: 08 to 17, Chủ nhật: 08 to 17, Thứ 2: Stängt, Thứ 3: 08 to 17",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Inuti",
+      "Identifierar sig som ägt av kvinnor",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgängliga sittplatser",
+      "Wifi",
+      "Gratis wifi",
+      "Hbtq+-vänlig",
+      "Trygg plats för transpersoner",
+      "Går snabbt",
+      "Bankkort",
+      "Kreditkort",
+      "Mobilbetalningar med NFC"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJkSl2230NQjER8nZZNYswPBQ",
+    "name": "L’Annam Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Cua Dai Beach, Au Co Street, Hoi An Dong Ward, Âu Cơ, Street, Hội An Đông, Đà Nẵng 840511, Vietnam",
+    "location": {
+      "lat": 15.8952542,
+      "lng": 108.3700864
+    },
+    "rating": 5,
+    "reviewCount": 176,
+    "price": "200–600 tn ₫",
+    "phoneNumber": "+84 235 3927 040",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMWNgIAhGqqX3GmZzvaIzeAjl87q3oRYlEo9i4F=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEz6buDOQtTAg7-eLezzhTaB8_HjnrpUvE5JaE0RzByBNLbAznnSSvgxJ7NzggSsnJCqLPv6czh9SZEmfV5gsowEV7ajGuMz4ZqvrDi4ADs6j2Cg7DbWMBcH5O0EKrmlyDJI6xvhb5FyhQ-=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 22, Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Smårätter",
+      "Starksprit"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJkWQr5nYOQjER8g3Th2PZaJU",
+    "name": "9 Grains Bakery and Cafe",
+    "category": "Bageri",
+    "city": "Da Nang",
+    "address": "411 Đ. Hai Bà Trưng, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8905816,
+      "lng": 108.3293491
+    },
+    "rating": 4.6,
+    "reviewCount": 432,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 908 708 256",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNRWvnehESCwhi57dIgvMGFCyfd0sp6UkKzDkeO=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_s--pt_LeSHRUm6SOLer2BGJbtQLQ82DpxDm9BcmqhHzq9lhrD-zr4knMKNi45_m9LSLwCqf5TUYsL3B38IIY8NXoAIvoaUUgFzxK_lVYr71wJb140QvoZCtbDKHYBp9Bzw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 16, Thứ 5: 07 to 16, Thứ 6: 07 to 16, Thứ 7: 07 to 16, Chủ nhật: 07 to 16, Thứ 2: 07 to 16, Thứ 3: 07 to 16",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Wrap",
+      "Muffins",
+      "Ägg Benedict",
+      "Kaffe",
+      "Croissant",
+      "BLT-smörgås",
+      "Giao hàng",
+      "Upphämtning i butiken",
+      "Möjlighet till köp i butik",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig ingång"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ10Qh-GsOQjERf-jq39O5Ze0",
+    "name": "Sunshine Garden Restaurant, Hội An",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "200 Nguyễn Chí Thanh, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8928958,
+      "lng": 108.3145108
+    },
+    "rating": 4.9,
+    "reviewCount": 68,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 935 618 442",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOUiRGj5aq9NgM14Ci-CwpAlWmzp4PTnv8oe1H_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP2KgkCzjZZpoLmFEJtaOrtGdWPanvjXgU_fdWn=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 20:30, Thứ 5: 08 to 20:30, Thứ 6: 08 to 20:30, Thứ 7: 08 to 20:30, Chủ nhật: 08 to 20:30, Thứ 2: 08 to 20:30, Thứ 3: 08 to 20:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Ekologiska rätter",
+      "Kaffe",
+      "Nattmat",
+      "Smårätter",
+      "Starksprit",
+      "Veganska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJcUnk9AEPQjERHEqaKjzmDWM",
+    "name": "XUA ZONE Coffee & Craft - 커피와 수공예",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "131/2 Nguyễn Phúc Tần, Hội An, Đà Nẵng 51309, Vietnam",
+    "location": {
+      "lat": 15.8743717,
+      "lng": 108.3218153
+    },
+    "rating": 5,
+    "reviewCount": 338,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 989 451 455",
+    "website": "http://xuazone.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMSz-9LsFNqL_pqtk35g2UB2TK2anloaRC2SyJX=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP4JjJskNBXJDOhyH6BUSRE8JvPaEkPhnFTNTWM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 16, Thứ 5: 07:30 to 16, Thứ 6: 07:30 to 10:30, Thứ 7: 07:30 to 16, Chủ nhật: 07:30 to 16, Thứ 2: 07:30 to 16, Thứ 3: 07:30 to 16",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Koffein",
+      "Caffelatte",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Bordsservering",
+      "Bar på plats"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJm1owKsUNQjER3VKgyy1ZtvY",
+    "name": "Port City Bagels (PCB) – Hoi An",
+    "category": "Bagelförsäljare",
+    "city": "Da Nang",
+    "address": "10, ngo 2 Lê Lợi, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8796152,
+      "lng": 108.3284925
+    },
+    "rating": 4.7,
+    "reviewCount": 653,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 352 454 595",
+    "website": "http://www.portcitybagels.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOQUjIymtunh2M8oVSltyis6xH7zU_dkIZxh4L9=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMdV_WKIxYy2-pmOW-Xrxrv6NSQVWXk_d4mlpCi=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 15:45, Thứ 5: 08 to 18:45, Thứ 6: 08 to 18:45, Thứ 7: 08 to 18:45, Chủ nhật: 08 to 18:45, Thứ 2: 08 to 15:45, Thứ 3: 08 to 15:45",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Kycklingsmörgås",
+      "Bagel",
+      "Frukostsmörgås",
+      "Pastrami",
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng",
+      "Upphämtning i butiken",
+      "Möjlighet till köp i butik",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgängliga sittplatser",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ3bddseYPQjERqtqC9G4AuyQ",
+    "name": "COCOPLUS - THE ARTISAN HOUSE",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "Lê Lợi, Hội An, Đà Nẵng 51306, Vietnam",
+    "location": {
+      "lat": 15.8795194,
+      "lng": 108.3284239
+    },
+    "rating": 4.7,
+    "reviewCount": 357,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 877 331 919",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNN3zIiOl8jc2MMMHWDaJ8Dp6wTxSQQ0ceadTWc=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipN0YLxBeyucydW2ZuBPx3BhGwmhothzty8iWjQd=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 09 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Juice",
+      "Soppa",
+      "Nudlar",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJZ6-Wc2gNQjERQ0jJCR0nPWs",
+    "name": "Song Khiêm Bakery",
+    "category": "Bageri",
+    "city": "Da Nang",
+    "address": "303 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8829492,
+      "lng": 108.3466381
+    },
+    "rating": 4.8,
+    "reviewCount": 123,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 823 622 922",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEQARxY3EgYpOutkPYf_6JsS-vFF-WkwnKfNrlx4Z3Js731_DtLxSbzMhu8Ov-j-5UGU7x6P28-rCWprwKzfZMXmBPcxZxXFywLp_5C0bn-ev8JbfNyoWv_bRi0QlY8wmIXzc3HUw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5AGhcqjERJ5nCqUJ7e1VmrEI_k8EMcEsoMSjrC_TYf3w319_3bkIqr3degO5OKWGAL5_xUW4Zx8WLH7H-EPBM6kVqE7Hd-UOcfozM5_ulgQzK2-fM_c92vKDIuMIdPmc-ehYNPg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 20, Thứ 5: 06 to 20, Thứ 6: 06 to 20, Thứ 7: 06 to 20, Chủ nhật: 06 to 20, Thứ 2: 06 to 20, Thứ 3: 06 to 20",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Vitrinskåp",
+      "Mua mang về",
+      "Kaffe",
+      "Går snabbt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJz7ERFwAPQjERiIn02dY6G_Q",
+    "name": "Coffee & Tea 128",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "V8JH+GJ5, Thái Phiên, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8812425,
+      "lng": 108.3290842
+    },
+    "rating": 5,
+    "reviewCount": 21,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRO_h_4a7v6sOyezRdjVL_Aa_RsGE_GsW07SSirKxOX7RY0sQQjgCdR6XL-04wFR4_WppiwjRAHttOO_0ZUSFbNnRgjfpFP4VE9vhQALuo_BK3rJeeeqaFGmPrakdFndPkysGJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFP593AusvDKW2R09lnFg97cEsLgerGoqCgz5QUp8JsrMHsO3hKzc4Boin3oHmDywbpGV08-SRe8kntuLEqgQUvU5jRVwjXSvnOO__KgM_TVDE8U6HOaZk99Q_PZ9MOf_f0dmKdew=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJD6TOqVQNQjERRk6_F75foiw",
+    "name": "Restaurant and Coffee",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Âu Cơ, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8900839,
+      "lng": 108.3768093
+    },
+    "rating": 4.7,
+    "reviewCount": 38,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 368 972 304",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUWF8k5IsKR1Otjv7FuEoiAjCOHfAOLPmz-R8sAbnvyDEAMZhB10JtzJhWhHIPE1avbDlSdmoq-Un5oe4QXSKcflgsdotaNaGd-Ho9_H_EP7TAAibtavhu4fQE4kiyocdloXIPLA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFsNI0Lymrf00_jtFYr1Sk8SwnQV0mrwtU6pkULIFwihJ2aoq-AP8CxA41myL4gesiq9r8ImyoeMHNKrAT3b6Z_mtjGBz213NoiZEXYptMFOHHzSnyTtUI9px0_FgNaYloeU9sWk3weqw8=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 22, Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 20",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Pommes frites",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Öl",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ00CDc9sNQjERDG_bTf832q4",
+    "name": "An's coffee and restaurants",
+    "category": "Asiatisk restaurang",
+    "city": "Da Nang",
+    "address": "164/5 Lý Thường Kiệt, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8816663,
+      "lng": 108.3342364
+    },
+    "rating": 4.8,
+    "reviewCount": 17,
+    "price": "1–200 000 ₫",
+    "phoneNumber": "+84 973 951 733",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGFhvc_dIvGVrdOEZLUImxj0fJ0Pbihp85SSh86wP1bIeVJzxzEPXdLbh1cs2hzkLL0GNDfswtJxqxNWPOzmZaOzRhuJkMBSo4Bsm4vkwWBqZApA0LnOpgcVb9QOgTgEMSDH8P=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXhm86HTfliDr4p4QYij1j1XDuStocuU1G8ETwasDaYc8MRdrDNiYFNpTM86x93zEl5NuJXiMql4IJ_8QTDljIPDd3mbkO_b_Bpj0uaRM8R65p18MycvstAaXg8HS1hC7NNez_tA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 20, Thứ 5: 06:30 to 20, Thứ 6: 06:30 to 20, Thứ 7: 06:30 to 20, Chủ nhật: 06:30 to 20, Thứ 2: 06:30 to 20, Thứ 3: 06:30 to 20",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Frukost",
+      "Bữa tối",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJD2ElRdoNQjERenMJFK9IB1M",
+    "name": "EM’s Bakery",
+    "category": "Bageri",
+    "city": "Da Nang",
+    "address": "313 Nguyễn Duy Hiệu, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8778794,
+      "lng": 108.3341941
+    },
+    "rating": 4.7,
+    "reviewCount": 646,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 703 121 240",
+    "website": "http://emsbakeryhoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHePw9YPRz0-8Fv6C3giuT_ldBCciQhq0thiaAX7rmR4l6QE5sSh12p7fhCGy1mR2ZzEp-Jd2q18EpsvyCF02jfijB3FYOfM2OUqK5bv4aC2Aya8hwThOucReWmuaoQfksasP7KsS-LdVZT=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFktqk_XCEmp8X5vbRsUaYDs1Z-Pbn6fgAUWkOZEkuG7zfJzNzOXk3HVrv0XNau5IBI7R5EuxujCwS9hHY77M3LSeLeBM9h_ZuSDr9E2u97pEd6EzSYlrH-Dexl8OOFoKhErcd3ig=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 20, Thứ 5: 07 to 20, Thứ 6: 07 to 20, Thứ 7: 07 to 20, Chủ nhật: 07 to 20, Thứ 2: 07 to 20, Thứ 3: 07 to 20",
+    "cuisineTags": [
+      "Món Âu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Iskaffe",
+      "Cappuccino",
+      "Vitrinskåp",
+      "Croissant",
+      "Kaka",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Kaffe",
+      "Frukost",
+      "Toalett",
+      "Går snabbt",
+      "Bankkort"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJUe6EhNUNQjERHkXs7eJe9qc",
+    "name": "ANA 32 Coffee Shop & Cafe",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "32 Đ. Phan Bội Châu, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8770725,
+      "lng": 108.3340905
+    },
+    "rating": 4.8,
+    "reviewCount": 76,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 908 860 836",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6Uf6QVBUg0TwFbhX6KVXrZRPop2mWU_Z1qfphPRM_Hb1GriTJPSVIsrSxW1ekpem7ysHA6B5-WKzWzaAVrkOPU5O4hHp4hoKKvCL8iZ9Wb46LBNryOv5YfjfnlOp7tmCnAJBgOw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHP3u3wRZrAUmJYzwy4jGRYmCF0Ru8cngSJY0co3Dst169ppZbW8B52goXv6zaVhl46bF2PBAAWIUFvbPwq4twfUVPpzfptlmhstlk2WlXbdrduRjyMDWspB0QHB8QJMcU53Y6h9-mfJCQ2=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 17, Thứ 5: 06 to 17, Thứ 6: 06 to 17, Thứ 7: 06 to 17, Chủ nhật: 06 to 17, Thứ 2: 06 to 17, Thứ 3: 06 to 17",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình",
+      "Bra om man vill jobba med laptop",
+      "Snabbmat",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJUUeQ67oNQjERVGnQDi5IQ94",
+    "name": "Mate Restaurant and Coffee",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Hẻm 120 Trần Nhân Tông, Phường, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8789427,
+      "lng": 108.3440162
+    },
+    "rating": 5,
+    "reviewCount": 2348,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 349 786 659",
+    "website": "https://materes.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNBZeCC9tLrOrSwLqtZPWcsWDwz2ErogIkxeAva=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP2A2eVQVR3G87Vz041gIZTvY8SoXT0PGIC8HRn=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 21:30, Thứ 5: 10:30 to 21:30, Thứ 6: 10:30 to 21:30, Thứ 7: 10:30 to 21:30, Chủ nhật: Stängt, Thứ 2: 10:30 to 21:30, Thứ 3: 10:30 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Stekt ris",
+      "Passionsfrukt",
+      "Vårrulle",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJlXrl460NQjERxa_cBKrvS_M",
+    "name": "PlantLab Restaurant",
+    "category": "Veganrestaurang",
+    "city": "Da Nang",
+    "address": "V9M2+8X9, Hội An Đông, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.8832854,
+      "lng": 108.3525666
+    },
+    "rating": 4.9,
+    "reviewCount": 185,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 383 541 871",
+    "website": "https://plantlabhoian.my.canva.site/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOooXgnA64T-jeByZXnpmmPHC83Mr6qi1kwtypN=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoX1-xmrRHqsqfFJ6sfIgSlPe4RjQSRyGOU5dIiiBTCh4UIEhC50p0eV2XJ1tBuVD2tSwEoWuixJ8nuJ7Lm1i4mxhGFqLdQ0mnHRv8-DOK65QBQ6wJXlFr2lGLddu7t8B8hUY4pA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09:30 to 21:30, Thứ 5: 09:30 to 21:30, Thứ 6: 09:30 to 21:30, Thứ 7: 09:30 to 21:30, Chủ nhật: 09:30 to 21:30, Thứ 2: 09:30 to 21:30, Thứ 3: Stängt",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Có lò sưởi",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Ekologiska rätter",
+      "Hälsosamma alternativ",
+      "Kaffe",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJf_zxBNEPQjERiqMM4LiCRJA",
+    "name": "Chin coffee & juice",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "Lê Lợi, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8789505,
+      "lng": 108.3281316
+    },
+    "rating": 4.8,
+    "reviewCount": 150,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 222 842",
+    "website": "https://www.facebook.com/TiemnuocChin",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNP6Cjd-J6OXV1yiHxw2-8fc6K5Mo3yMUixJ7JY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOKr8HfPwXmo7VWnT4_xiyNnnaqoWJJpRv7qNeX=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 18, Thứ 5: 07 to 18, Thứ 6: 07 to 18, Thứ 7: 07 to 18, Chủ nhật: 07 to 18, Thứ 2: 07 to 18, Thứ 3: 07 to 18",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Snabbmat",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJCU-MlbANQjERm_ZwLcdK_GM",
+    "name": "The Basket Boat Cafe & Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "Thôn Vạn Lăng, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8767977,
+      "lng": 108.3757714
+    },
+    "rating": 4.8,
+    "reviewCount": 570,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 906 406 840",
+    "website": "http://thebasketboat.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOXyoFj6MX9cIEp2u497S7Q7m102R6mxuF3YH2l=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP9XYjTR2WQTRqmBNeK08yf6wdxT017LuhEVLIZ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 18, Thứ 5: 09 to 18, Thứ 6: 09 to 18, Thứ 7: 09 to 18, Chủ nhật: 09 to 18, Thứ 2: 09 to 18, Thứ 3: 09 to 18",
+    "cuisineTags": [
+      "Cà phê",
+      "Đồ ăn nhanh",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Affogato",
+      "Hamburger",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJg6yeyawPQjERjap-ugbOLRA",
+    "name": "KAYO COFFEE HOUSE",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "445 Đ. Hai Bà Trưng, Hội An Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8885152,
+      "lng": 108.3283676
+    },
+    "rating": 4.8,
+    "reviewCount": 316,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH6W8E4zF2URc2TcgxS4GMA9Mlzx7iByOmtUrW3pG0H44EDthpbQuuGa1TW7D_rwZL2bq5LwA5MJO9qgNxAudDo6z-by7CU6Aw1WWyX2CuhU9pQAy_O-dkhyW3yBKponzhZl6VP_4KjS6Ta=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSY9ccpTt3skoOCo2nCwfrlnX2PURDAv0xMz3rHTD5I-PdzRB1Lc2p0BPhIkormfqTzlxxgEnOzOiTQFO0bkaOFUMb0h4Qaieh37euYGmUyRubmVWUvkBz6RvgkClvXtPIa0DW=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 22, Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJXZ94iX4OQjERa9cw8aruYhs",
+    "name": "Hoi An Roastery Espresso & Coffee House I",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "135 Trần Phú, Old Town, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8770589,
+      "lng": 108.3270778
+    },
+    "rating": 4.2,
+    "reviewCount": 1499,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 235 3927 772",
+    "website": "http://hoianroastery.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOF2yTs940dRo1UQHE_MRoQMPtS2dOvl6NaX4YJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEDQVYy2uOWbXwOoAp3o_v5lMAd8XJHxgv_U1IAOsr6FEwDtKgKPNC9oc-lLzMhLXBbytxXiuGwAdAGv2euGlYxCYyFgAAQXkLULVk5FGjIbMyJ_4VlAbWs6Q1msDhcJarYFRpc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 20:30, Thứ 5: 07:30 to 20:30, Thứ 6: 07:30 to 20:30, Thứ 7: 07:30 to 20:30, Chủ nhật: 07:30 to 20:30, Thứ 2: 07:30 to 20:30, Thứ 3: 07:30 to 20:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Panino",
+      "Iskaffe",
+      "Cappuccino",
+      "Juice",
+      "Kaffe",
+      "Citronmarängpaj",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ8Yx3hsMNQjER9NFfpAYtA0w",
+    "name": "La Quinn Bakery",
+    "category": "Bageri",
+    "city": "Da Nang",
+    "address": "Lane 229 Cửa Đại, Street, Hội An Đông, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.8853933,
+      "lng": 108.3507688
+    },
+    "rating": 5,
+    "reviewCount": 232,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 789 482 979",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnUrzrxlPXyNJVi4SZn6LkP5TgtB8F8YejH_awkWNVCmScMxt0FU2fw8GTKL55hPacjCO79wcl6FaUyaGj1knl1KUnreh_HKfTB4-XydmCGy982FLqQLwRK6m4MObP24aKJJE_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGuYqFBouXLDrHFVQvZcgxlpIHyBuWbTKNY8O_znSmss-nrEcSuEoR2he0YmXyJo0VcXLgF5BBDK4C9gC0c6P80B4wdHcW0gzgHa0uW91IA5cxT8oyOs_7krVQ2tDZnyD-isDbDG3i_xNnx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 16, Thứ 5: 07 to 16, Thứ 6: 07 to 16, Thứ 7: 07 to 16, Chủ nhật: 07 to 16, Thứ 2: 07 to 16, Thứ 3: 07 to 16",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Flan",
+      "Iskaffe",
+      "Muffins",
+      "Croissant",
+      "Kaka",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Kaffe",
+      "Frukost",
+      "Toalett",
+      "Går snabbt",
+      "Mobilbetalningar med NFC",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJN3vC10ENQjERjV7zHi6IlGQ",
+    "name": "RICE PADDY HOUSE. | Breakfast & Brunch",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "23 Lý Thường Kiệt, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8822851,
+      "lng": 108.3419399
+    },
+    "rating": 5,
+    "reviewCount": 1004,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 245 045",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOBiqTd0Y3XGLu9obR5vUsdWPHSjs6aDnT5l7bv=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPLoI9Cb3ZGxsSUmNklZnaNs-qXPV7wKicIGzkc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 13, Thứ 5: 08 to 15:30, Thứ 6: 08 to 15:30, Thứ 7: 08 to 15:30, Chủ nhật: Stängt, Thứ 2: 08 to 15:30, Thứ 3: 08 to 15:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Shakshuka",
+      "Granola",
+      "Affogato",
+      "Våffla",
+      "Kaffe",
+      "Croissant",
+      "Caffelatte",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJsY2r-MUPQjERLoSEVjAG1gg",
+    "name": "Bibo Caphe and Restaurant ( Breakfast - Brunch - Dinner)",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "71/20 Đ. Phan Chu Trinh, Old Town, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8779835,
+      "lng": 108.3281546
+    },
+    "rating": 5,
+    "reviewCount": 689,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 774 391 658",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuwyTRYbQZLcKewGnLDWbLyWaD9axsg-TzhEqWc9RzyDoNgp9DUIGFeNTlm1l6fgPgzEhP8_XCSyy6Vp8TjPJEkQaKev0lpYmzqrbPhuW6A4OjJpo8V5fK6pDJ6tI3g1usdpI=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH6GArFe-JDbS3qxTF7bEg5_CwJ1EHDBVP1IabcsrywdFZf12IdnlTri2LFOEt5dx9z7GEAHMj_EE3EP2DiFiGuBMI7NfgZo58ieLazopzp5O1w1CuVmGaeCcJ5EROSoycqhmXUlz8Tznli=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 08 to 21, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Juice",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1f1FQ0UPQjERsABjp9C4WuA",
+    "name": "Cafe Bi",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "V8FG+978, An Hội, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8734055,
+      "lng": 108.3257049
+    },
+    "rating": 4.8,
+    "reviewCount": 39,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5QiOmGcyM0YQXE-wwkIioa5BjIGUs5kODyuA60RvVLL3AdwttH7X33ff1TpC3IlEKSTPjiKPrfNUpnr3tHJeecrKDl1IQPfk4zJAL3lRYrDSBByBvqM1ZhOTxcqpu1wAEspUgRPvqlYmU=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKKQt3_Ki7SkT17PKy7I5DS6thgOiLvpr69vGHTVERw_VKeNvi1lbc1SW_uXZnByVgaJh3Tqh6KWICvG7jO4T68kQSYOQsXObmJBp6UF37bnqw8y0R2pdZZ47THF9G8LACf_A=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 21, Thứ 5: 07 to 21, Thứ 6: 07 to 21, Thứ 7: 07 to 21, Chủ nhật: 07 to 21, Thứ 2: 07 to 21, Thứ 3: 07 to 21",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Öl",
+      "Sittplatser",
+      "Bar på plats",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJUddqOjQPQjER-qs4pAyR2Rk",
+    "name": "River Square Cafe- Breakfast- Brunch- Lunch",
+    "category": "Brunchrestaurang",
+    "city": "Da Nang",
+    "address": "10/3 Đường Cao Hồng Lãnh, Hội An, Đà Nẵng 51309, Vietnam",
+    "location": {
+      "lat": 15.877599,
+      "lng": 108.3226322
+    },
+    "rating": 5,
+    "reviewCount": 893,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 921 001",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2u9SaTS3KnG6SgFgqbR8tRhOkMb8yeSrRgEbMXRit_Z9OAImT3FzEnS_NY_vEHw8SjwhWlNCdBo9TMdPFLJKJ8Kxq5pByOX9qKlXKp33zO6RitXxMTPhD6YDjbC-InnE15WEf=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFXyzxP3Be7d-j5ei-SYJTMlCRRwsHRo5ottnRQ-KWBEBsc85pLrOIXc1GO-qRxCEn7ohAOErEMQ-7-OhFB2wi_VIaNoXKzbXVfMLMo_HPzwv2YP1MS6VOkLTKOn7dkZZFiVl0C-w=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 15, Thứ 5: Stängt, Thứ 6: 08 to 15, Thứ 7: 08 to 15, Chủ nhật: 08 to 15, Thứ 2: 08 to 15, Thứ 3: 08 to 15",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Müsli",
+      "Sandwich",
+      "Brunch",
+      "Kaffe",
+      "Bagel",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5QyCObsZQjERdDRJT7jycjA",
+    "name": "Shelter Cafe Hội An",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "19 Châu Thượng Văn, Phường, Hội An, Đà Nẵng 70000, Vietnam",
+    "location": {
+      "lat": 15.8753832,
+      "lng": 108.3266095
+    },
+    "rating": 5,
+    "reviewCount": 292,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 913 453 245",
+    "website": "http://www.sheltercafe.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO96lnICBo6BamCllUQhFOtI3QU7XuqD2liyAS9=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEDDXthBm-qpEX5vUHl4c4MJ7JLSVWmGbrAe1NxqGumfSXuFNf7nMABNGJ8VAJNYC5GQfeBdrYPZGYFkxD6w21hEqBLRZ66EfRwWdTHDMPuajuP8n7yg2Kq2dwncCRl_iQ7eDhq7nO-Nyun=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22, Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Müsli",
+      "Juice",
+      "Kaffe",
+      "Caffelatte",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Frukost",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJSyTr-s8PQjERRIPHe-6tiqA",
+    "name": "Buttercup by Rosie's Cafe | Coffee & Brunch",
+    "category": "Brunchrestaurang",
+    "city": "Da Nang",
+    "address": "12/9 Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8767339,
+      "lng": 108.332081
+    },
+    "rating": 4.7,
+    "reviewCount": 999,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 312 433",
+    "website": "https://buttercuphoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPqtnEAv3VrJ0JVCM_IXfyBcwfaqNHkdLiXH7q6=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMQDRB_CAzzPvcHQxn_mGb2gsAHkcwUhytsr-6y=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 16, Thứ 5: 08 to 16, Thứ 6: 08 to 16, Thứ 7: 08 to 15, Chủ nhật: Stängt, Thứ 2: 08 to 16, Thứ 3: 08 to 16",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Granola",
+      "Müsli",
+      "Sandwich",
+      "Kaffe",
+      "Bagel",
+      "Croissant",
+      "Caffelatte",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJL0tifpsNQjERsePF7DlDeh0",
+    "name": "nourish eatery. / Café & Restaurant",
+    "category": "Frukostrestaurang",
+    "city": "Da Nang",
+    "address": "220a Nguyễn Duy Hiệu, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8789973,
+      "lng": 108.3414351
+    },
+    "rating": 4.9,
+    "reviewCount": 1643,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 501 185",
+    "website": "https://nourisheatery.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMdKZdue_5RWvKT7w9umeqUlXyaM1KbvfWgwwAo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNC81gJ-putPgWaTgMumAUfNVItnAkQPdiC8387=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 16, Thứ 5: 09 to 16, Thứ 6: 09 to 16, Thứ 7: 09 to 16, Chủ nhật: 09 to 16, Thứ 2: Stängt, Thứ 3: 09 to 16",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Vegoburgare",
+      "Iskaffe",
+      "Cappuccino",
+      "Granola",
+      "Falafel",
+      "Kaffe",
+      "Äggröra",
+      "Pommes frites",
+      "Frukost",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJg2etBvsNQjER7PKuzeO8zRo",
+    "name": "LAGOM - Bakery & Cafe",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "409B Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8802095,
+      "lng": 108.3405677
+    },
+    "rating": 4.8,
+    "reviewCount": 523,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 968 307 120",
+    "website": "https://instagram.com/lagom_hoian?igshid=YTQwZjQ0NmI0OA==",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNKEZrq6qad068_0Nsk9I8lNRhvo6tyyY9a7MHR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOjg5uA6DfJvXX7VmFS1fZY0rKcaDkeGPWz3g2O=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 18, Thứ 5: 09 to 18, Thứ 6: 09 to 18, Thứ 7: 09 to 18, Chủ nhật: 09 to 18, Thứ 2: 09 to 16, Thứ 3: 09 to 18",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Granola",
+      "Affogato",
+      "Morotskaka",
+      "Kaffekaka",
+      "Kaffe",
+      "Bagel",
+      "Cheesecake",
+      "Caffelatte",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJq6NdpgSFSG8R7HR7FotfDQ0",
+    "name": "Good Eats",
+    "category": "Vegetarisk restaurang",
+    "city": "Da Nang",
+    "address": "409 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8803473,
+      "lng": 108.340558
+    },
+    "rating": 4.8,
+    "reviewCount": 790,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 788 656 704",
+    "website": "https://goodeatsvietnam.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOqHxTUyDgFV3IhS0mgRv-w1HlDL8JFl92TXV6N=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEkk9snT0DVT-6KG6V2ofB7ZNiGE6563g6w8wTAUbalw8H2VLK_YdhUB9cC0V1tWWkn9RS9BMqWMnBmkp7PDbKilp4CoepoNESqiZCvZAuU4Mx9jNDXskOZgUqnCtRiRE5tqJ3F=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 16, Thứ 5: 08 to 16, Thứ 6: 08 to 16, Thứ 7: 08 to 16, Chủ nhật: 08 to 16, Thứ 2: 08 to 16, Thứ 3: 08 to 16",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Vegoburgare",
+      "Iskaffe",
+      "Cappuccino",
+      "Granola",
+      "Juice",
+      "Omelett",
+      "Pesto",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRW-PNHwOQjERTw4B2HveDW0",
+    "name": "Rosie's cafe / Coffee & Brunch",
+    "category": "Kafé",
+    "city": "Da Nang",
+    "address": "02 Mạc Đĩnh Chi, Hội An Tây, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8877761,
+      "lng": 108.3303339
+    },
+    "rating": 4.7,
+    "reviewCount": 1915,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 774 599 545",
+    "website": "https://rosiecafe.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMTt-J2zHyvTTRGTf2nCuY1-HpujFbxPlYk3LqnDzqyGqBFOSnPTv-NIojgKdu6q4PQaiOJxKQ9Dss3BXRfzLagQA5izFfY2kPCEBY8ggGhVywelI3NCIkiCzLXRFsMtTrbMza=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMPin37tarbhEgDIz-LqGG3XChksmqUmWEkiPKECbV-0A5z3PpPCD_xiFRKfGEFpEPvwqO2EpReGXoBg7XaflBZgQGdp3ZVQIFpl9KkwgsbLzDrepyTCBpZ5hplrrF58aVysrG=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 16, Thứ 5: 08 to 16, Thứ 6: 08 to 16, Thứ 7: 08 to 15, Chủ nhật: Stängt, Thứ 2: 08 to 16, Thứ 3: 08 to 16",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Granola",
+      "Juice",
+      "Pannkaka",
+      "Rostat bröd",
+      "Kaffe",
+      "Cold brew",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJKXserdINQjERC5BLeCApDmU",
+    "name": "Rivia Coffee - Breakfast & Brunch",
+    "category": "Frukostrestaurang",
+    "city": "Da Nang",
+    "address": "116 Huyền Trân Công Chúa, Hội An Đông, Đà Nẵng 56000, Vietnam",
+    "location": {
+      "lat": 15.8767029,
+      "lng": 108.3420255
+    },
+    "rating": 4.9,
+    "reviewCount": 351,
+    "price": "1–200 000 ₫",
+    "phoneNumber": "+84 931 429 532",
+    "website": "https://www.facebook.com/TheOldPortCafe/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGD5RdB8MnciLfTV81Ui2QOsykM5it3BWAdNiBVIiWtu5gsfXSY4zN_k4F8Kr_NDs14-uv7DbZrg7XOQBTpilcK5sbSAInxBn8nKKJ2zQ8o3gUMecMlHXLfo-7RjseFMVJ_3MAQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsbgIuaHcySnXRg34VUhjo4JqigSelf6dWFjOmQEkH-mbiX-w20CRxaSzMDRFGtuxsEEjiEhHiRmnD8zSW5qaVEmtmXb_uxlX-ArOTWxLBzoJpr4Zjabb4JShyt6QjaoMCHJAG=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 16:30, Thứ 5: 08 to 16:30, Thứ 6: 08 to 16:30, Thứ 7: 08 to 16:30, Chủ nhật: 08 to 16:30, Thứ 2: 08 to 16:30, Thứ 3: 08 to 16:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Đồ ăn nhanh"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Granola",
+      "Affogato",
+      "Juice",
+      "Kaffe",
+      "Frukost",
+      "Hamburger",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ48QjrbsXQjERrcjkjA6kd5Y",
+    "name": "Vietnom Local Eatery",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "97 Mai Thúc Lân, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0478143,
+      "lng": 108.2438148
+    },
+    "rating": 4.9,
+    "reviewCount": 1646,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 389 742 095",
+    "website": "http://vietnom.kitchen/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMHhsxhet7nxQ6R_koStPRJ0_RY5BVmi1nUDUYZ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPZOmoE27TaWowTMGuq6YYHSyx-YnAPAE68b65e=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07:30 to 21:45, Thứ 5: 07:30 to 21:45, Thứ 6: 07:30 to 21:45, Thứ 7: 07:30 to 21:45, Chủ nhật: 07:30 to 21:45, Thứ 2: 07:30 to 21:45, Thứ 3: 07:30 to 21:45",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Granola",
+      "Soppa",
+      "Poke",
+      "Bulgogi",
+      "Nudlar",
+      "Pulled pork",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJu6Pkk2YZQjER6ID6f0tNyJI",
+    "name": "Riverside Terrace Restaurant",
+    "category": "Italiensk restaurang",
+    "city": "Da Nang",
+    "address": "493 Đ. Trần Hưng Đạo, An Hải, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0632508,
+      "lng": 108.2302591
+    },
+    "rating": 4.9,
+    "reviewCount": 1335,
+    "price": "200–600 tn ₫",
+    "phoneNumber": "+84 911 500 440",
+    "website": "https://www.riversideterracerestaurant.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP71XmXwT1FPcfPyMO4S9wtYh7ezgBlvDhzN8hO=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMMIOuT-3ZmOyAU7vm2IrW6jWlnKSWVEcZLAcsn=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 16 to 23, Thứ 5: 16 to 23, Thứ 6: 16 to 23, Thứ 7: 16 to 23, Chủ nhật: 16 to 23, Thứ 2: 16 to 23, Thứ 3: 16 to 23",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Calzone",
+      "Cappuccino",
+      "Panna cotta",
+      "Mì Ý",
+      "Bruschetta",
+      "Lasagne",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ-UgnY_QXQjERJTTHpNvcFNw",
+    "name": "Bếp Cuốn Đà Nẵng",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "31-33 Trần Bạch Đằng, An Hải, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0579628,
+      "lng": 108.2451505
+    },
+    "rating": 4.9,
+    "reviewCount": 16347,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 702 689 989",
+    "website": "https://www.facebook.com/DINNER.LUNCH.BEPCUON/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFqWe6IJmMVk64MQLcQr3mSwZpBmtp-YwML44_2XG_yZyRhayhC0EEYu-wBpFzP83LcWdv5zJ7p7bn1Cyq9NA1pCH_K_qaT-AW0h658gisYT65OkZFvqruxkO-BLwXDvaiUfczu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFBxn1-pBZpdirw9qPYbXLElF_vK8tZw0OtcvLJujjqonFr0cX3muOfPXy2wMA2BfKIWP68p75oK-mujvIn8cBtSxeXo7T_CGXK5iLYKa1yirmyvsq92vdRqYcAmMoW4e-HbAldsleYDZkx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 21, Thứ 5: 10:30 to 21, Thứ 6: 10:30 to 21, Thứ 7: 10:30 to 21, Chủ nhật: 10:30 to 21, Thứ 2: 10:30 to 21, Thứ 3: 10:30 to 21",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Satay",
+      "Mojito",
+      "Öl",
+      "Soppa",
+      "Biryani",
+      "Stekt ris",
+      "Nudlar",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJw-jjo3IXQjERjDCm-Yd0EAA",
+    "name": "Le Comptoir",
+    "category": "Fransk restaurang",
+    "city": "Da Nang",
+    "address": "16 Chế Lan Viên, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0426746,
+      "lng": 108.2454296
+    },
+    "rating": 4.9,
+    "reviewCount": 2112,
+    "price": "1 000 000 ₫+",
+    "phoneNumber": "+84 708 040 560",
+    "website": "https://lecomptoirdng.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOwcfjWJZupdI6OXGEcqKN02rv-bgSdRB-wvXpb=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFY7FuztxLvkEm7sbt6EkEyJCNxFhExmPTWZ-_68CRz7kzwO7kmBrL5q8-5WnpgCpBRwPe_CJY766LRLw-FHJIoc19pQZ7gRtJmcRzW7XvEqD_WHQeyM0tgH506oH5Lz4Af67WzWntZ4s78=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 17 to 21, Thứ 5: 17 to 21, Thứ 6: 17 to 21, Thứ 7: 17 to 21, Chủ nhật: 17 to 21, Thứ 2: 17 to 21, Thứ 3: 17 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Ostron",
+      "Vin",
+      "Råbiff",
+      "Havsabborre",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Privat matsal"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJhX4YnlUPQjERx5eDC83Jr14",
+    "name": "Chops Hoi An Riverside",
+    "category": "Traditionell amerikansk restaurang",
+    "city": "Da Nang",
+    "address": "96A Đ. Bạch Đằng, Old Town, Hội An, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.8762344,
+      "lng": 108.3281174
+    },
+    "rating": 4.8,
+    "reviewCount": 694,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 978 887 496",
+    "website": "https://chops.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPpxhrKG45SgoWAnkSfgV8FVG_IhtKpdCNm7UAB=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF3JIsB4jm1X6P1hTYbvj7kO0GIbHdUnWY132hPznW1HD0z81gEO96n0oWA724CGkTE2WXut9RgnSyF83Kx7cvRHnUiCGd3cduEfdpGInPAR8kkJ74HdP25TpE9YcwYQ1jYmkD2MtPVDfw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 23, Thứ 5: 11 to 23, Thứ 6: 11 to 23, Thứ 7: 11 to 23, Chủ nhật: 11 to 23, Thứ 2: 11 to 23, Thứ 3: 11 to 23",
+    "cuisineTags": [
+      "Đồ ăn nhanh",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Öl",
+      "Hamburger",
+      "Pommes frites",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Levande musik",
+      "Sport",
+      "Bữa trưa",
+      "Bữa tối"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJyRDxZ7oXQjER7oSuC94Li7A",
+    "name": "The Nomad Kitchen",
+    "category": "Medelhavsrestaurang",
+    "city": "Da Nang",
+    "address": "21-23 An Thượng 32, Ngũ Hành Sơn, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0507892,
+      "lng": 108.2463792
+    },
+    "rating": 4.7,
+    "reviewCount": 1114,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 961 061 173",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNLRSblyOfqLQR-DM5DcSntwy8V1p-8GD1av7s0=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipM2CXiU9o5Zn_abeFMkF2GPExsj51-EBwOEaHUs=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 22, Thứ 5: 09 to 22, Thứ 6: 09 to 22, Thứ 7: 09 to 22, Chủ nhật: 09 to 22, Thứ 2: 09 to 22, Thứ 3: 09 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Flankstek",
+      "Juice",
+      "Vitlöksräkor",
+      "Våffla",
+      "Arancini",
+      "Pesto",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ76XtSwwZQjERJapWgs-OVhQ",
+    "name": "Gypsy Rooftop Restaurant & Bar",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "20 Đống Đa, Street, Hải Châu, Đà Nẵng 550000, Vietnam",
+    "location": {
+      "lat": 16.0826849,
+      "lng": 108.2212587
+    },
+    "rating": 4.9,
+    "reviewCount": 2189,
+    "price": "1 000 000 ₫+",
+    "phoneNumber": "+84 767 194 074",
+    "website": "https://thegypsydng.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO99k0p_TrRZfVPh9SUOyn2St_UhZO1UwMQQxvb=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNozOGRbbN3XdA632Ci-dzMSqE2yApS7XcHniN9=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 17 to 23:30, Thứ 5: 17 to 23:30, Thứ 6: 17 to 23:30, Thứ 7: 17 to 23:30, Chủ nhật: 17 to 23:30, Thứ 2: 17 to 23:30, Thứ 3: 17 to 23:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Vin",
+      "Mì Ý",
+      "Rigatoni",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJzyhyEtAPQjERbmmyIK_wfyc",
+    "name": "Mộc Garden Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "326 Lý Thường Kiệt, Hội An Tây, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8839186,
+      "lng": 108.3273576
+    },
+    "rating": 4.8,
+    "reviewCount": 303,
+    "price": "100–600 tn ₫",
+    "phoneNumber": "+84 235 3666 100",
+    "website": "https://mocgardenhoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAETH4DgaZz5B9AbvPOErkcuScpyb91H8SBCIkaD5gVwZ6o_a8PYbUhwNR9R9Hvg0acVRrL_ihHkCJH_Bt6wECPjhuDJ0owx_Ffo3fTnDogAugWjpB5y_B55oYRdorUYtOKEVBYVtXhmCruW=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3EuiXps1-d85MP7a73pNlt_EeDO9EASJBbojd4Jo7bffZA4ZOq-s7T_fI2fDzazvAWrAT7gdLV_CPijRePA0DhM4JVyx3p121XAYNjWrzziRDXgF2Pb_4lGLbHOgn-sNlRJHA7L3FltZz=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 23:30, Thứ 5: 06:30 to 23:30, Thứ 6: 06:30 to 23:30, Thứ 7: 06:30 to 23:30, Chủ nhật: 06:30 to 23:30, Thứ 2: 06:30 to 23:30, Thứ 3: 06:30 to 23:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Paella",
+      "Pumpasoppa",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJGZ_NmjANQjER6B1_yunqlPQ",
+    "name": "PADDY FIELD Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "215 Lê Thánh Tông, Street, Hội An Đông, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.88299,
+      "lng": 108.3507941
+    },
+    "rating": 4.9,
+    "reviewCount": 55,
+    "price": "200–700 tn ₫",
+    "phoneNumber": "+84 865 582 846",
+    "website": "https://www.facebook.com/profile.php?id=61550070836628&mibextid=ZbWKwL",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfDEhnEw1MbnHNzFR4jyYkTxmUUq1xhBIgzsqYgYm119oy7faBquIb6Al-DX1tSA427K_aHhglr6VjwUkI4dC2he_7M1MKXgPTQB80XiEl-L5vhDLm83LaMmQ2h-iJwml5xKeR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE5wPolsvNGnsYIK3xseU8HQXT0hXBWeA2RTqCg0HHZKYIFsozIKQ2e2vNZxYMRJP5IBisMHielCwJw_8SEJw4QgzG6llHrdpk6qFU_X58o34X4JbafBET3UoFaoxpbBt2bjf-yttoEZH8=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 22, Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Giờ vàng đồ uống",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJZ30xKuINQjERW7Bbt-PrmNU",
+    "name": "Firefly Restaurant & Bar",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "178 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8760728,
+      "lng": 108.3462668
+    },
+    "rating": 4.9,
+    "reviewCount": 2662,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 475 400",
+    "website": "https://www.facebook.com/fireflyrestaurantbar/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMrF3QcjUylLTc4SvqeEpJPBsfG9lBk8pQgK_ob=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOVaG-A60F_oAakkuanOvF3nFJVh2Z4KBonDp9v=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 21:30, Thứ 5: 11 to 21:30, Thứ 6: 11 to 21:30, Thứ 7: 11:30 to 21:30, Chủ nhật: 11 to 21:30, Thứ 2: 11 to 21:30, Thứ 3: 11 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Satay",
+      "Nasi goreng",
+      "Currygryta",
+      "Pad Thai",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJW2ZQBOENQjERyhur280Tsfk",
+    "name": "Memories Bistro & Cafe Hoi An",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "30 Nguyễn Thái Học, Old Town, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8767567,
+      "lng": 108.3302429
+    },
+    "rating": 4.7,
+    "reviewCount": 1089,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 983 369 995",
+    "website": "https://www.instagram.com/memoriescafe.hoian/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPFcUBZQjry60ttdk5gEi-CII4PCbmA8fr6EJ-j=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNGyIK29WgFO8D7BR8tt8fEGRuWFhHpVtCj0SUI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 07 to 22, Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Mojito",
+      "Mì Ý",
+      "Croissant",
+      "Cocktail",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ19R37tMPQjERq-q48CcRnHk",
+    "name": "The Temple Restaurant & Lounge",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "132 Hùng Vương, Hội An Tây, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8800539,
+      "lng": 108.316486
+    },
+    "rating": 5,
+    "reviewCount": 668,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 902 022 444",
+    "website": "http://thetemplerestaurant.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNvB9keZs2r1CVbZQxiIIZrzDWIBDFDN5cBaHgy=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExr6kEEy96uWj54wBEEG2MVk8XUvKAWvwx-GVXgjlRVDSUWbZvDfaqmzCndIYoLo6iqVAym8meVuEtVNcZzNSL1k3a3qaMqLcXyKCdGsvghHesOyD_21Jki3CfDdn2mcpQztYjHsOmgyc=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06:30 to 22:30, Thứ 5: 06:30 to 22:30, Thứ 6: 06:30 to 22:30, Thứ 7: 06:30 to 22:30, Chủ nhật: 06:30 to 22:30, Thứ 2: 06:30 to 22:30, Thứ 3: 06:30 to 22:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pumpasoppa",
+      "Ägg Benedict",
+      "Mango",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJP4O5EukNQjERvpstDmbij5c",
+    "name": "The Soul Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "47 Thoại Ngọc Hầu, Hội An, Đà Nẵng 51300, Vietnam",
+    "location": {
+      "lat": 15.8755385,
+      "lng": 108.3194734
+    },
+    "rating": 4.9,
+    "reviewCount": 740,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 905 882 477",
+    "website": "https://thesoulhoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPbsWUvVjR8xWGA-Wb5NZ7XnKRsV3I99_x-8K0W=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjRatwJRWd2NyBt7QQq8HZ5gIu5Q0U_T85ttvNX1Ybkxi7Gwt3nfSPx_JP7SZ7TmrQgjYy_Q37-JEWQvzIQJTfqd-wVuj1Cqu_AJ4uX9RkLIC3UDSsKQ1Wq_CwgPpGqux-7U5V9zSZfFLX=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22, Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Cappuccino",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJS-59-6oPQjERiUkrXx3yGHU",
+    "name": "The Noodle House - Signature",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "55 Lê Lợi, st, Hội An, Đà Nẵng 51000, Vietnam",
+    "location": {
+      "lat": 15.8766621,
+      "lng": 108.3287538
+    },
+    "rating": 4.8,
+    "reviewCount": 421,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 902 943 773",
+    "website": "https://www.thenoodlehousehoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO1pw6v--3Vxy8XDBMcf-t3RnOpUJ7Ha6fH9r-4=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFj6jgvVhsZ8H0OEHL5ckJbhxFyK86QIcAOF9iX-2SgDysFAaWS6bYuK5u70NP1ACa5fOktySjQkIlB7-0LTrhrbyUp8gfEcjOlA9Qtb0uNanx9-BJRfa5Cb31HzmEsyWm81UlYpopy-UqS=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22, Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Risnudlar",
+      "Soppa",
+      "Nudlar",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Giờ vàng đồ uống",
+      "Kaffe",
+      "Snabbmat",
+      "Veganska alternativ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJYfxcGAAPQjER1HyrlhEZ6WE",
+    "name": "MẸT Hội An - Vietnamese restaurant & Vegetarian Food 6",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "72b Đ. Bạch Đằng, Phường, Hội An, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8760935,
+      "lng": 108.3294151
+    },
+    "rating": 4.9,
+    "reviewCount": 14621,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 862 187 549",
+    "website": "https://metvietnameserestaurant.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMQLx46lm1oF1mOTx80BQ820qCvEOl3znSiCz9e=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTe8bQuzQsRfJH-QMPT1V0ttuZSU2sUXI77eVuWtd_oXfsRT-IHBXRFmK0Ndlp6XgYsV777ZdBKlNQIwzLv0Z_4CV8FYH3y2CoL_CAPYAoxNRuV2NgS9LlEJ1S405gOjkkuSSi_g=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 22:30, Thứ 5: 10 to 22:30, Thứ 6: 10 to 22:30, Thứ 7: 10 to 22:30, Chủ nhật: 10 to 22:30, Thứ 2: 10 to 22:30, Thứ 3: 10 to 22:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Juice",
+      "Currygryta",
+      "Soppa",
+      "Stekt ris",
+      "Nudlar",
+      "Klimp",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJQWsH6u4NQjERwUtZGLF4X3c",
+    "name": "Alma Tropical Coffee & Brunch",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "393 Cửa Đại, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.880418,
+      "lng": 108.342122
+    },
+    "rating": 4.9,
+    "reviewCount": 376,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 943 529 179",
+    "website": "https://www.instagram.com/alma_tropicalcoffeenbrunch",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMI0Pyg73T4Px89GgUTLfYurUojgGSqvDfEZLwJ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSuRY_9capVN2zkxs6mpSUJpF7XyJ4PecoNhJGCPWQY4drFdqk_e5l6v2kmfLXBJ4VI2oShOVDJEZeHgpHLbvYQaQmKH1ta1VN-rgmEkvhVSYFuhkh1T87Z9zhZ-bZQXzk2pdvsg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 17, Thứ 5: 08 to 17, Thứ 6: 08 to 17, Thứ 7: 08 to 17, Chủ nhật: 08 to 17, Thứ 2: 08 to 17, Thứ 3: 08 to 17",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cortado",
+      "Iskaffe",
+      "Juice",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRdkCfq4PQjERCnIakaFgdjo",
+    "name": "An thoi",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "40 Nguyễn Phúc Tần, An Hội, Hội An, Đà Nẵng 51306, Vietnam",
+    "location": {
+      "lat": 15.8752469,
+      "lng": 108.3260811
+    },
+    "rating": 4.9,
+    "reviewCount": 1687,
+    "price": "100–600 tn ₫",
+    "phoneNumber": "+84 905 500 572",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHp6aL6d6WdmpVijypuJrTY0lsggQRRjb2WCo3Tm3S47ykcj5LNFkH4NPx8_bKQAO0egIRKi3_iY972FyjZpDZ9kj16ITFez7_3TX1DLO3z3yRet2rCfy2A4Koh4F8winWyplULikwZYjiR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-HIhV_E-LKXghCfyiaXo_Phstt2aFoKBm8nxfS9T96gQ8DvNT1Niib0H-OQ2CfPcdn7qjH7nL62NdRAunI7mvrYDyNm_twccIyXpFFx05iIHDflDTmXF1w0v6AgqBy2QocRf_5w7R-pYx=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10:30 to 21:30, Thứ 5: 10:30 to 21:30, Thứ 6: 10:30 to 21:30, Thứ 7: 10:30 to 21:30, Chủ nhật: 10:30 to 21:30, Thứ 2: 10:30 to 21:30, Thứ 3: 10:30 to 21:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Paella",
+      "Satay",
+      "Juice",
+      "Nudlar",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Öl",
+      "Bữa trưa",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJcZr5nQPQjERsZ50fpslBgw",
+    "name": "The Son Bistro – Vietnamese Restaurant, Craft Beer & Bar",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "98 Lê Lợi, Old Town, Hội An, Đà Nẵng 51300, Vietnam",
+    "location": {
+      "lat": 15.876442,
+      "lng": 108.3285699
+    },
+    "rating": 4.8,
+    "reviewCount": 1534,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 935 377 798",
+    "website": "https://www.facebook.com/TheSonBistro/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhZbnogcacIat5RnhVe0gB514XuHX7ZPvDU7ZqxExjN3rovIOWPHH7jiQtsP_SvgXbDUStYEsDM3QWW-hy7jm2zzegycfhDRc34BhXiA6qEpeNIGWHSXn2pEfQxtB1skhkRsC-aQ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSzztNmHqwPK6QGwp76HiKSoJ1BJSlyVc0BdvgKCeae9H1VR3Dm7xnvVbOvIJh_sK04jPeF5gKM6NoZC7qMtZZ60tD4MZ2_Ea-w2D0wWuBJw2938HScuUNMADV0i5eMV9drmTLLlzbzv3v=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 23, Thứ 5: 08 to 23, Thứ 6: 08 to 23, Thứ 7: 08 to 23, Chủ nhật: 08 to 23, Thứ 2: 08 to 23, Thứ 3: 08 to 23",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Satay",
+      "Iskaffe",
+      "Juice",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJmS8hHkUNQjER-UTT8ymknk4",
+    "name": "Le Petit Bistro Hội An",
+    "category": "Fransk restaurang",
+    "city": "Da Nang",
+    "address": "476 Cửa Đại, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8805892,
+      "lng": 108.3413644
+    },
+    "rating": 4.9,
+    "reviewCount": 986,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 394 608 397",
+    "website": "https://www.lepetitbistrohoian476.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNU6V5oum0Ll7ToTYHwl13NcGJcJ2zZVVkIS4_N=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMl5xSGQSShYtuEh8_shWb_53HQTTtNG_Q6RK9J=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 17 to 22, Thứ 5: 17 to 22, Thứ 6: 17 to 22, Thứ 7: 17 to 22, Chủ nhật: 17 to 22, Thứ 2: Stängt, Thứ 3: 17 to 22",
+    "cuisineTags": [
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Confiterad anka",
+      "Escargot",
+      "Kräm",
+      "Mì Ý",
+      "Råbiff",
+      "Biff",
+      "Charkvaror",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJb_HrObEPQjER6_deT8uf0sY",
+    "name": "Mê Hội An Rooftop Coffee & Kitchen",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "166 Trần Phú, Old Town, Hội An, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8771366,
+      "lng": 108.3269249
+    },
+    "rating": 4.9,
+    "reviewCount": 2217,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 374 099 375",
+    "website": "https://mehoian.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMBmBCPol-_t25LSGjPz1L4LxTQVeRWNNAgQgZC=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEJQxBuq6N6lo7cQxlL92RzwCA12sCE3UdMpYrtzIgADu-AwOZN8vjDldtrOVTrPKf6QutDdn7DOOTCF1hI1W7xMgcdbXObyfD-IoI9smQIFwTaA3xiV_cCfzDkC_syYbguQQSRyA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 22:30, Thứ 5: 08 to 22:30, Thứ 6: 08 to 22:30, Thứ 7: 08 to 22:30, Chủ nhật: 08 to 22:30, Thứ 2: 08 to 22:30, Thứ 3: 08 to 22:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Müsli",
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Takterass",
+      "Bữa trưa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJPUtaKAB_ajER-SXu-Ii5Vsc",
+    "name": "Tạp hoá Trưng phi",
+    "category": "Livsmedelsbutik",
+    "city": "Khác",
+    "address": "Thôn aroi, Hung Son, Da Nang, Vietnam",
+    "location": {
+      "lat": 15.7681123,
+      "lng": 107.2936958
+    },
+    "rating": 4.8,
+    "reviewCount": 27,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 367 525 252",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyHNqwd1Zu3mEtFT2quJrGFLi0wwcB0iqFben9vBwYyWXvtaPYtCidjBKCwL8oiyWEWjhnLwIMdCOdXZNuyIuMp6fJ6tLOhBM3NBQLjhtwJZkBk6MZLjtTNPCvzvSNAD55-Eet=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEDsgEkJFUlUWmLjwke7INgSWh_6xtUx7-i6P46puiYfQZCDfejaN1fykOOKSfG6gvon2d0Z9-_XLPlp0ChzIFlVuDYaq7jWWsPOjH05X7E_N_IsscU76o7Oyn_wrn7KOA07P7J7z8uBbXO=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Inuti",
+      "Går snabbt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJc713bQANQjERgkNE_AilSWQ",
+    "name": "Phan Gia Riverside Restaurant",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "95 Trần Quang Khải, Hội An Đông, Đà Nẵng 84000, Vietnam",
+    "location": {
+      "lat": 15.8772469,
+      "lng": 108.3397059
+    },
+    "rating": 4.9,
+    "reviewCount": 1630,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 466 416",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMgG0zrnTNZIH_N3VO58xp2a3whQUuBYVsC7V6q=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTChkRmIykh-WkvuVORJX3vpxbu04-f4zokbM5FWRsAQNJu135VBHGGcZ4kRGenVcaWtS1-LnGEASl4jbg_AkKipZh1Fp9jFOAdmZ-1dahKtXEWNeFIBNxfCPm784msh3Dho-r=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 11 to 22:30, Thứ 5: 11 to 22:30, Thứ 6: 11 to 22:30, Thứ 7: 11 to 22:30, Chủ nhật: 11 to 22:30, Thứ 2: 11 to 22:30, Thứ 3: 11 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Juice",
+      "Öl",
+      "Kycklingsoppa",
+      "Stekt ris",
+      "Vårrulle",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJfxJ6eUMPQjERpI34bbliED8",
+    "name": "Nom Cafe and Bistro",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "98/2 Trần Phú, Old Town, Hội An, Đà Nẵng 56000, Vietnam",
+    "location": {
+      "lat": 15.8774976,
+      "lng": 108.3291293
+    },
+    "rating": 4.9,
+    "reviewCount": 681,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 999 147",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP5J1yA-v83RAh4QYopGnDZ12JbtLfXqgaSAqAo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMOAkQKdVPDeM02FXeDMna8_vZGK7e6831htNzy=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 21, Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 00 to 21, Thứ 3: 08 to 21",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Vattenmelon",
+      "Iskaffe",
+      "Juice",
+      "Mojito",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ6fB6B84NQjERfBVBuTN3xDU",
+    "name": "Nhan's kitchen",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "167 Trần Nhân Tông, Hội An Đông, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8782307,
+      "lng": 108.3451337
+    },
+    "rating": 4.9,
+    "reviewCount": 5471,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 905 186 867",
+    "website": "http://facebook.com/pages/category/Vietnamese-Restaurant/Nhans-Kitchen-Hoi-An-1148784298600736",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTCSvh6wbVFL6NbSDjksbK1N74jg0h9JI9JFJZ-EvME7kTE803v8FOECDI61OSdNDXRM5tlhvE7mUig5L3l9Cpc3-Fs-Ih2E9Iqw39E2Q1BJYour3LZ5ywI22R8yXR1LHuQjCd3UqqBQOW=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFi2XeOTx0DUiD-dWK3NFF5og_DHl35yAmFcjpwH2yRcasvm4-OtCI8WXstPxgkZU-VYGGRmfyXfDp6jSomikXgzaU7HQwz6C5GdDncspq3S3-4AVnAa1Ebbk68rYM0FSIBkKCS=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 10 to 21:20, Thứ 5: 10 to 21:20, Thứ 6: 10 to 21:20, Thứ 7: 10 to 21:20, Chủ nhật: 10 to 21:20, Thứ 2: 10 to 21:20, Thứ 3: 10 to 21:20",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Juice",
+      "Kycklingsoppa",
+      "Stekt ris",
+      "Stekt fisk",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJfRVrE_HJaTERwxGU5zRb7RE",
+    "name": "Jena Home Cafe",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "171 Nguyễn Văn Linh, Núi Thành, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.4349478,
+      "lng": 108.6524127
+    },
+    "rating": 3.1,
+    "reviewCount": 14,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFsz9O_NfuFtm1jVkULDDD5YjBR56nra20d0_ttIS272z6wcDf9jvVv-iawNoC86BVXj3KTrlJeK9huKGDDqaqQwVkih9ovNUWirbD9fsWkJQxp1D8P7l1raMMz3CENqYlwi26_RA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZzFyQXu2Z92-GqI8roMlZJwxVCGN7NNV53BG1eV5C1HOYCbw437pUrmkl-49tqVQ0DvP8L-2ZPBm-spw96y64vkWVOc7GJrONEkfn45Dntne1oKYFegw-pn_zRcB7u3lTrRSvCg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJC4H2feYNQjERdlo2lcigp8U",
+    "name": "TOAN 's Restaurant Coffee Garden",
+    "category": "Nhà hàng",
+    "city": "Da Nang",
+    "address": "171/3 Trần Nhân Tông, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.8776365,
+      "lng": 108.3457547
+    },
+    "rating": 5,
+    "reviewCount": 636,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 702 374",
+    "website": "https://www.facebook.com/toanrestaurantgarden/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_AH4JjHuQIcrPR0v7vnGrGiKCYvjK1k2yudtPVDjqnWC3ltiId88DsvkZ14jCh77-_FfB-0W1BF2zug-nhRwHCdimipvMcEVoRIjpNvmmPnNfByXNPvs_FE3TLp9L8bj2xhCZxg=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0TaVb3llYkmLRiLISGloBO7hQ8PwNw3XsdRjvhTSZdYoPOtwWUxy-xJPko5ree02ohyQVl4XCRdZhxYirr3ON0SMBqyST_H8B3qMgQrqrdEtaSf9avJaWvjqjb7KB0pUpKfxb=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 22, Thứ 5: 09 to 22, Thứ 6: 09 to 22, Thứ 7: 09 to 22, Chủ nhật: 09 to 22, Thứ 2: 09 to 22, Thứ 3: 09 to 22",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Satay",
+      "Vårrulle",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig ingång",
+      "Có đồ uống cồn",
+      "Buffé"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJPeq-HioNQjERnmKwp8lsFB4",
+    "name": "Vietnom Local Eatery Hoi An",
+    "category": "Vietnamesisk restaurang",
+    "city": "Da Nang",
+    "address": "119 Trần Quang Khải, Hội An Đông, Đà Nẵng 560000, Vietnam",
+    "location": {
+      "lat": 15.877239,
+      "lng": 108.3384894
+    },
+    "rating": 4.9,
+    "reviewCount": 286,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 986 717 812",
+    "website": "https://vietnom.kitchen/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM64KTk0bqioHkrur9So4EtgA3SXPhsnmFpRzAu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtLRlCtHdoBWXtUZU0tn3_QQDfB_0KXavk5kSvfIbMX6vUWUaQb2KiA5cqxrSpJtUz36BIROlS2h2y7peAfn0gBybI789U_duwBif7RJQyBtUIFQqAPaEuIBAN0UAyoCduLKuqJYUKAN3E=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 22, Thứ 5: 09 to 22, Thứ 6: 09 to 22, Thứ 7: 09 to 22, Chủ nhật: 09 to 22, Thứ 2: 09 to 22, Thứ 3: 09 to 22",
+    "cuisineTags": [
+      "Ăn chay"
+    ],
+    "detailedPreferences": [
+      "Soppa",
+      "Poke",
+      "Nudlar",
+      "Pad Thai",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Ekologiska rätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJZe8LfBDdaTERAfsB8kCVIJ8",
+    "name": "Lòng Thả Thành Ngọc",
+    "category": "Bistro",
+    "city": "Da Nang",
+    "address": "535 Trần Cao Vân, Tam Kỳ, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.552723,
+      "lng": 108.4853028
+    },
+    "rating": 4.4,
+    "reviewCount": 10,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 777 405 174",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEf5ZoMncXcLwDBEYVVn1wGhjKREvhhCk4NQkX4DCkl5ltMyF-3UeLs5nwgNKT4QZIUv0gA2jPEySvxitIL-wJneRYL1YBK1urhH2hmHP9_w32KoIxJ8hEJJ4VvrTL9o70AIx5V2w=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGobJHfydt7NRpPJzN9pkwYOaZYqaHjgiP7NfuD9NtbjSRBlwfFwqLlvtzsiVpB2ox-MI8NmpmdGWUPeIOT9IQpklxR__u06ZLHTNGfTwjUeAJIZSKCYz2uKgj8GDaIPuUMIBoLFg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 06 to 19, Thứ 5: 06 to 19, Thứ 6: 06 to 19, Thứ 7: 06 to 19, Chủ nhật: 06 to 19, Thứ 2: 06 to 19, Thứ 3: 06 to 19",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Kaka",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJr6lsExzdaTER3w2zo8qyxfo",
+    "name": "Khách sạn Lê Dung",
+    "category": "Hotell",
+    "city": "Da Nang",
+    "address": "32 Trần Phú, Bàn Thạch, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.5749307,
+      "lng": 108.4710148
+    },
+    "rating": 4.1,
+    "reviewCount": 367,
+    "price": "53 US$",
+    "phoneNumber": "+84 235 2249 999",
+    "website": "http://ledunghotel.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMlhNzXwKcnV7AOr9DXPYHRMtghOZWtEsy9yI7Z=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAELE8H3Jni1zHO9j6WfKduUhBkPtMA2b5i6OHkmnF_D61nKL0rq3MpcfZEkHYUzBHGlx7x6xff0a98Qi4XV2wRxfWOv4q3cNAvPbpJKzQNLXUZrFEdI279EGLnlqc8SMmnwKoSC=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Från besökare",
+      "Gratis wifi",
+      "Gratis frukost",
+      "Gratis parkering",
+      "Luftkonditionering",
+      "Tvättservice",
+      "Rumsservice",
+      "Barnvänligt",
+      "Nhà hàng",
+      "Flygbuss",
+      "Jacuzzi",
+      "Spa",
+      "Quán Bar/Club"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJaeJwPwLdaTERKX7tRtqVATg",
+    "name": "Quán Bé Thương",
+    "category": "Bryggeripub",
+    "city": "Da Nang",
+    "address": "55 Lam Sơn, Bàn Thạch, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.5839533,
+      "lng": 108.4732298
+    },
+    "rating": 4.1,
+    "reviewCount": 87,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 015 042",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNpe1Sj14o1iGxFOTWwF6TdLdzQdNKxGU8BA5Cz=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGiXx2ZZHhJo-V9szsEANErm7LB48Nvh1-CTaWKvKwgn2A-GZtKvbz0pXBybJjbtF-gX6a_wDYSSKmIl5NjhXkeNwMdJ51QuPmYHln1imXR1_6SJVVOdyQl_ppXN2FfkUhNP6M=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09 to 22, Thứ 5: 09 to 22, Thứ 6: 09 to 22, Thứ 7: 09 to 22, Chủ nhật: 09 to 22, Thứ 2: 09 to 22, Thứ 3: 09 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Có đồ uống cồn",
+      "Mat",
+      "Starksprit",
+      "Öl",
+      "Efterrätt",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Tar emot bokningar"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRWR-j5rbaTERNeZ4WssnsaU",
+    "name": "Homestay Cafe - Rio's Gió Biển Làng Bích Họa",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Da Nang",
+    "address": "JG2V+WJF Đường bờ biển làng Bích Họa, Thanh Niên, Quảng Phú, Đà Nẵng 51100, Vietnam",
+    "location": {
+      "lat": 15.6023092,
+      "lng": 108.5440424
+    },
+    "rating": 4.4,
+    "reviewCount": 44,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 935 199 159",
+    "website": "https://coffeerios.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGsm-jjnBltd5gADpmIg5RCHzCeMQ8u3t_vGgddZ3YqjDc7ambjr0K5uK1bMB7PSfGZ-vK4ktQv_wzmkkgbGGmLD9Kyyb79VeG2nE7rd-4_ni-oIu7gegU07QU7sNuTL6-cbRHxEJJMA2jd=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVo69qMut1oYLnOMov6uowtQbcUEo6pgDratceacCjX7K1yJL0MdRx4rhZ03FMPsz_vP5NLVReEgTjbX1nCvgAhC-dauKwRDBp4VwEeQK6MkH_iyuWxF76dLgjQb-aZrTWRxhsYZnmU-0p=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Snabbmat",
+      "Öl",
+      "Bữa trưa",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJvR7qt7n5NjERo_gHdBnmUJ8",
+    "name": "Ruby Karaoke Tam Kỳ Quảng Nam",
+    "category": "Karaokebar",
+    "city": "Da Nang",
+    "address": "D4- D5 Nguyễn Du, Bàn Thạch, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.5742361,
+      "lng": 108.4826984
+    },
+    "rating": 4.9,
+    "reviewCount": 66,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 905 888 444",
+    "website": "https://www.facebook.com/share/1F68zGWSyT/?mibextid=wwXIfr",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGrDCW_NzTQa1G2LtGH0Sfp937Mq2KBoLkxil0O3gXxsnHAWR0C9CXVIKhusSRSxuVsRGVi_uIG4eaduK3VNL6iTW29SswFHFyJ2CDWSMW84XVPF12f87BPSPmUnLkxvR0iuijDndWZa6qO=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlDtOtObR_D2UgBA48TuIBL32TPKz7bf1G0VTFvFXkrO-LPAjzAJpiF6FYtio-tWgwfGY__bNSr6V0k2pQD7Pf1LrHFTtEgvkYmyF6eHjdWrprW2pxyuz1FMABgwSqJFCuUUe6mgMpmPY=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 08 to 02, Thứ 5: 08 to 02, Thứ 6: 08 to 02, Thứ 7: 08 to 02, Chủ nhật: 08 to 02, Thứ 2: 08 to 02, Thứ 3: 08 to 02",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Quán Bar/Club",
+      "Phục vụ tại chỗ",
+      "Có đồ uống cồn",
+      "Dans",
+      "Mat",
+      "Öl",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJb-Q4ZgDdaTERZXOoYiQPlnE",
+    "name": "Quán Cơm Gà Xối Mỡ Bà Hà",
+    "category": "Kycklingrestaurang",
+    "city": "Da Nang",
+    "address": "295 Hùng Vương, Tam Kỳ, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.564673,
+      "lng": 108.4815371
+    },
+    "rating": 4.9,
+    "reviewCount": 55,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 986 991 214",
+    "website": "https://www.facebook.com/share/15YbKRbZVq/?mibextid=LQQJ4d",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSzlxGBRElVDCJjXwrAF2E92k7-a8zbnaCetTUV268_jr1YawSyV_8i5Ek9a_oJ6jCER18rmpCSMTTJ0Lk_G4dNECndzsLDJYmlVbce3nYPCFpx_Qrn205pBDG0A52RsSQEyrP=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3-B5xQ-FDiWERPXMHWgsDYgjckgmmLBgvAgrdpgg5tyQ9S76LFtPmgPiIu7Im1R0qu3FGiHJULMtoQwxh5XSraQpUaC4x_OpvHxmT1rcdWwLYUeUpEQ1PBoEPtH92MurwVUk=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 4: 09:30 to 21, Thứ 5: 09:30 to 21, Thứ 6: 09:30 to 21, Thứ 7: 09:30 to 21, Chủ nhật: 09:30 to 21, Thứ 2: 09:30 to 21, Thứ 3: 09:30 to 21",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Passar för barn",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJI9pGkwIFQjERyJHvAAPiJFU",
+    "name": "Milano Điện Phước",
+    "category": "Kaffebar",
+    "city": "Da Nang",
+    "address": "V6H6+73, Điện Bàn Tây, Đà Nẵng, Vietnam",
+    "location": {
+      "lat": 15.8781383,
+      "lng": 108.2101339
+    },
+    "rating": 4,
+    "reviewCount": 13,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGA9guBS9qkNNg7Dw9QdtKmNLsrfOR2IwlOWKIxC5bhvLNMa6jVG3so2IKas7C12jWBQ_oci6xJfBuT4aFXjfz9ks8bqbO_wKzW_EZRBL16HUp9gPICguOS0IDPM3NE3XZ1ADEP9w=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGHZZxtSeUi7Tm51hJIP9IIbwhE0JRkbv1K8DhL_W0gndtR_Od4LIuOvgXx3Qyo7p0vnaIUCnj-aOGmTf3xaKdgBhb4bcmemwE7ZWwqJzLexC40a1BoO8zscI15BsU8rOL3k58q=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering",
+      "Hundar tillåtna"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJb_-QSY0PQjERlkV-Ib_7d70",
+    "name": "Rosemary Company- butcher shop online",
+    "category": "Slaktare",
+    "city": "Da Nang",
+    "address": "Võ Văn Kiệt, Hội An Tây, Đà Nẵng 56000, Vietnam",
+    "location": {
+      "lat": 15.8933445,
+      "lng": 108.2973508
+    },
+    "rating": 5,
+    "reviewCount": 20,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 393 206 493",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMxgl8bTr7On8-rmPqJAQt0khzO020OTbg5PSS_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPfLnvD94a3VCXNzb5LZCG_6V8IIc1tyBbZSMDy=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Inuti",
+      "Kött",
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng",
+      "Hbtq+-vänlig",
+      "Trygg plats för transpersoner",
+      "Tidsbokning krävs",
+      "Går snabbt",
+      "Mobilbetalningar med NFC"
+    ],
+    "source": "Google Maps via Apify"
+  }
+]
