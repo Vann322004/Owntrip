@@ -20,4 +20,5 @@ router.post('/pay-with-points', auth_middleware_1.verifyToken, user_controller_1
 // VNPay
 router.post('/vnpay/create-payment', auth_middleware_1.verifyToken, user_controller_1.UserController.vnpayCreatePayment);
 router.get('/vnpay/return', user_controller_1.UserController.vnpayReturn);
+router.post('/test-topup', auth_middleware_1.verifyToken, user_controller_1.UserController.testTopUpBalance);
 module.exports = router;

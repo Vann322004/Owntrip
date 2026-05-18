@@ -5,5 +5,6 @@ const plan_controller_1 = require("../controllers/plan.controller");
 const auth_middleware_1 = require("../middlewares/auth.middleware");
 const router = (0, express_1.Router)();
 router.post("/day/:dayId/place", auth_middleware_1.verifyToken, plan_controller_1.addPlaceToDay);
+router.patch("/reorder", auth_middleware_1.verifyToken, plan_controller_1.reorderPlacesInDay);
 router.delete("/day/:dayId/place/:planPlaceId", auth_middleware_1.verifyToken, plan_controller_1.deletePlaceFromDay);
 module.exports = router;

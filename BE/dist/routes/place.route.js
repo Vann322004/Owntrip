@@ -4,6 +4,11 @@ const express_1 = require("express");
 const place_controller_1 = require("../controllers/place.controller");
 const router = (0, express_1.Router)();
 /**
+ * Lấy các địa điểm con (Child ID) của một địa điểm cha (Goong API V2)
+ * GET /api/places/children?parent_id=...&has_deprecated_administrative_unit=false
+ */
+router.get("/children", place_controller_1.getPlaceChildren);
+/**
  * Tìm kiếm địa điểm theo từ khóa (autocomplete)
  * GET /api/places/search?q=cafe dalat
  */

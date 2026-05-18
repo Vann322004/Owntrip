@@ -22,6 +22,7 @@ const hotelSchema = new mongoose_1.Schema({
             basePrice: Number,
             price: Number,
             capacity: Number,
+            totalRooms: { type: Number, default: 1 },
             images: [String],
             amenities: [String]
         }],

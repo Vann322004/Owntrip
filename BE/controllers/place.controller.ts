@@ -122,10 +122,18 @@ const fetchSerpApiPlaceData = async (query: string) => {
 
     return {
       photo: result.thumbnail || result.gps_coordinates?.image || null,
+      thumbnail: result.thumbnail || null,
+      thumbnail_large: result.thumbnail_large || result.gps_coordinates?.image || null,
       rating: result.rating,
       reviews: result.reviews,
       reviews_original: result.reviews_original || (result.reviews ? `(${result.reviews})` : null),
-      position: result.position || 1
+      position: result.position || 1,
+      price: result.price || null,
+      type: result.type || null,
+      gps_coordinates: result.gps_coordinates || null,
+      address: result.address || null,
+      place_id: result.place_id || null,
+      provider_id: result.provider_id || null
     };
   } catch (error: any) {
     console.error("SerpApi place data fetch failed:", error.message);
@@ -206,7 +214,7 @@ export const searchPlace = async (req: Request, res: Response) => {
     }
 
     const response = await axios.get(
-      `${GOONG_API_BASE_URL}/Place/Autocomplete`,
+      `${GOONG_API_BASE_URL}/v2/place/autocomplete`,
       {
         params: {
           api_key: getGoongKey(),
@@ -302,6 +310,12 @@ export const searchPlace = async (req: Request, res: Response) => {
         if (serpData?.reviews) p.user_ratings_total = serpData.reviews;
         if (serpData?.reviews_original) p.reviews_original = serpData.reviews_original;
         if (serpData?.position) p.position = serpData.position;
+        if (serpData?.price) p.price = serpData.price;
+        if (serpData?.type) p.type = serpData.type;
+        if (serpData?.thumbnail_large) p.thumbnail_large = serpData.thumbnail_large;
+        if (serpData?.gps_coordinates) p.gps_coordinates = serpData.gps_coordinates;
+        if (serpData?.place_id) p.serp_place_id = serpData.place_id;
+        if (serpData?.provider_id) p.provider_id = serpData.provider_id;
 
         return {
           placeId: p.place_id,
@@ -314,7 +328,13 @@ export const searchPlace = async (req: Request, res: Response) => {
           rating: serpData?.rating || p.rating,
           totalReviews: serpData?.reviews || p.user_ratings_total,
           reviewsOriginal: serpData?.reviews_original,
-          position: serpData?.position
+          position: serpData?.position,
+          price: serpData?.price,
+          type: serpData?.type,
+          thumbnailLarge: serpData?.thumbnail_large,
+          gpsCoordinates: serpData?.gps_coordinates,
+          serpPlaceId: serpData?.place_id,
+          providerId: serpData?.provider_id
         };
       })
     );
@@ -360,7 +380,7 @@ export const searchNearby = async (req: Request, res: Response) => {
       : "địa điểm";
 
     const autocompleteRes = await axios.get(
-      `${GOONG_API_BASE_URL}/Place/AutoComplete`,
+      `${GOONG_API_BASE_URL}/v2/Place/AutoComplete`,
       {
         params: {
           api_key: getGoongKey(),
@@ -380,7 +400,7 @@ export const searchNearby = async (req: Request, res: Response) => {
 
     const detailResults = await Promise.allSettled(
       predictions.slice(0, 10).map((p: any) =>
-        axios.get(`${GOONG_API_BASE_URL}/Place/Detail`, {
+        axios.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
           params: {
             api_key: getGoongKey(),
             place_id: p.place_id
@@ -417,6 +437,12 @@ export const searchNearby = async (req: Request, res: Response) => {
             totalReviews: serpData?.reviews || d.user_ratings_total,
             reviewsOriginal: serpData?.reviews_original,
             position: serpData?.position,
+            price: serpData?.price,
+            type: serpData?.type,
+            thumbnailLarge: serpData?.thumbnail_large,
+            gpsCoordinates: serpData?.gps_coordinates,
+            serpPlaceId: serpData?.place_id,
+            providerId: serpData?.provider_id,
             types: d.types || [],
             mapUrl: d.geometry?.location?.lat
               ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`
@@ -434,7 +460,7 @@ export const searchNearby = async (req: Request, res: Response) => {
       places
     });
   } catch (error: any) {
-    console.error("Goong searchNearby error:", error.message);
+    console.error("Goong searchNearby error:", error?.response?.data || error?.message || error);
     res.status(500).json({ success: false, message: "Search nearby failed" });
   }
 };
@@ -459,7 +485,7 @@ export const searchText = async (req: Request, res: Response) => {
 
     const searchResults = await Promise.allSettled(
       queryList.map((queryText) =>
-        axios.get(`${GOONG_API_BASE_URL}/Place/AutoComplete`, {
+        axios.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
           params: {
             api_key: getGoongKey(),
             input: queryText,
@@ -535,7 +561,7 @@ export const searchText = async (req: Request, res: Response) => {
 
     const detailResults = await Promise.allSettled(
       Array.from(uniquePredictions.values()).map((p) =>
-        axios.get(`${GOONG_API_BASE_URL}/Place/Detail`, {
+        axios.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
           params: {
             api_key: getGoongKey(),
             place_id: p.place_id
@@ -572,6 +598,12 @@ export const searchText = async (req: Request, res: Response) => {
             totalReviews: serpData?.reviews || d.user_ratings_total,
             reviewsOriginal: serpData?.reviews_original,
             position: serpData?.position,
+            price: serpData?.price,
+            type: serpData?.type,
+            thumbnailLarge: serpData?.thumbnail_large,
+            gpsCoordinates: serpData?.gps_coordinates,
+            serpPlaceId: serpData?.place_id,
+            providerId: serpData?.provider_id,
             types: d.types || [],
             mapUrl: d.geometry?.location?.lat
               ? `https://www.google.com/maps/search/?api=1&query=${d.geometry.location.lat},${d.geometry.location.lng}`

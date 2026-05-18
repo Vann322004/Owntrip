@@ -199,6 +199,11 @@ exports.BookingController = {
                         points: pointsEarned
                     }
                 }, { session });
+                // 7.5 Cộng tiền cho chủ khách sạn (Revenue)
+                const hotelDoc = await hotel_model_1.default.findOne({ hotelId }).session(session);
+                if (hotelDoc && hotelDoc.ownerId) {
+                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: totalPrice } }, { session });
+                }
             }
             // 8. Commit transaction
             await session.commitTransaction();
@@ -397,6 +402,167 @@ exports.BookingController = {
         }
         finally {
             session.endSession();
+        }
+    },
+    /**
+     * API 6: Lấy danh sách booking cho khách sạn (dành cho Hotel Owner)
+     * GET /api/bookings/hotel/:hotelId
+     */
+    getHotelBookings: async (req, res) => {
+        try {
+            const { hotelId } = req.params;
+            const userId = req.user.userId;
+            const userRole = req.user.role;
+            const { page = 1, limit = 20, status } = req.query;
+            // Kiểm tra quyền: phải là owner hoặc admin
+            const hotel = await hotel_model_1.default.findOne({ hotelId });
+            if (!hotel) {
+                return res.status(404).json({ success: false, message: "Khách sạn không tồn tại" });
+            }
+            if (userRole !== 'admin' && hotel.ownerId !== userId) {
+                return res.status(403).json({ success: false, message: "Bạn không có quyền xem booking của khách sạn này" });
+            }
+            const query = { hotelId };
+            if (status)
+                query.status = status;
+            const bookings = await booking_model_1.default.find(query)
+                .sort({ createdAt: -1 })
+                .limit(Number(limit))
+                .skip((Number(page) - 1) * Number(limit));
+            // Populate thông tin user
+            const enrichedBookings = await Promise.all(bookings.map(async (booking) => {
+                const user = await user_model_1.default.findOne({ userId: booking.userId })
+                    .select('displayName email image phone');
+                // Tìm tên loại phòng
+                const roomType = hotel.rooms.find((r) => r.roomTypeId === booking.roomTypeId);
+                return {
+                    bookingId: booking.bookingId,
+                    guest: user ? {
+                        name: user.displayName || booking.guestInfo?.fullName,
+                        email: user.email || booking.guestInfo?.email,
+                        phone: booking.guestInfo?.phone,
+                        avatar: user.image,
+                    } : {
+                        name: booking.guestInfo?.fullName,
+                        email: booking.guestInfo?.email,
+                        phone: booking.guestInfo?.phone,
+                    },
+                    roomTypeName: roomType?.name || booking.roomTypeId,
+                    roomTypeId: booking.roomTypeId,
+                    checkIn: booking.checkIn,
+                    checkOut: booking.checkOut,
+                    nights: booking.nights,
+                    roomCount: booking.roomCount,
+                    totalPrice: booking.totalPrice,
+                    status: booking.status,
+                    paymentMethod: booking.paymentMethod,
+                    paymentStatus: booking.paymentStatus,
+                    specialRequests: booking.guestInfo?.specialRequests,
+                    createdAt: booking.createdAt,
+                };
+            }));
+            const total = await booking_model_1.default.countDocuments(query);
+            // Thống kê nhanh
+            const allBookings = await booking_model_1.default.find({ hotelId });
+            const stats = {
+                total: allBookings.length,
+                confirmed: allBookings.filter(b => b.status === 'confirmed').length,
+                completed: allBookings.filter(b => b.status === 'completed').length,
+                cancelled: allBookings.filter(b => b.status === 'cancelled').length,
+                pending: allBookings.filter(b => b.status === 'pending').length,
+                totalRevenue: allBookings
+                    .filter(b => b.status !== 'cancelled' && b.paymentStatus === 'paid')
+                    .reduce((sum, b) => sum + b.totalPrice, 0),
+            };
+            res.status(200).json({
+                success: true,
+                data: enrichedBookings,
+                stats,
+                pagination: {
+                    total,
+                    page: Number(page),
+                    limit: Number(limit),
+                    totalPages: Math.ceil(total / Number(limit))
+                }
+            });
+        }
+        catch (error) {
+            res.status(500).json({ success: false, message: error.message });
+        }
+    },
+    /**
+     * API 7: Lấy lịch sử giao dịch cho khách sạn (dành cho Hotel Owner)
+     * GET /api/bookings/hotel/:hotelId/transactions
+     */
+    getHotelTransactions: async (req, res) => {
+        try {
+            const { hotelId } = req.params;
+            const userId = req.user.userId;
+            const userRole = req.user.role;
+            const { page = 1, limit = 20 } = req.query;
+            // Kiểm tra quyền
+            const hotel = await hotel_model_1.default.findOne({ hotelId });
+            if (!hotel) {
+                return res.status(404).json({ success: false, message: "Khách sạn không tồn tại" });
+            }
+            if (userRole !== 'admin' && hotel.ownerId !== userId) {
+                return res.status(403).json({ success: false, message: "Bạn không có quyền xem giao dịch" });
+            }
+            // Lấy tất cả bookings đã thanh toán (là giao dịch)
+            const bookings = await booking_model_1.default.find({
+                hotelId,
+                paymentStatus: { $in: ['paid', 'refunded'] }
+            })
+                .sort({ createdAt: -1 })
+                .limit(Number(limit))
+                .skip((Number(page) - 1) * Number(limit));
+            const transactions = await Promise.all(bookings.map(async (booking) => {
+                const user = await user_model_1.default.findOne({ userId: booking.userId })
+                    .select('displayName email');
+                const roomType = hotel.rooms.find((r) => r.roomTypeId === booking.roomTypeId);
+                return {
+                    bookingId: booking.bookingId,
+                    guestName: user?.displayName || booking.guestInfo?.fullName || 'N/A',
+                    roomTypeName: roomType?.name || booking.roomTypeId,
+                    checkIn: booking.checkIn,
+                    checkOut: booking.checkOut,
+                    nights: booking.nights,
+                    amount: booking.totalPrice,
+                    paymentMethod: booking.paymentMethod,
+                    paymentStatus: booking.paymentStatus,
+                    bookingStatus: booking.status,
+                    refundAmount: booking.refundAmount || 0,
+                    createdAt: booking.createdAt,
+                };
+            }));
+            const total = await booking_model_1.default.countDocuments({
+                hotelId,
+                paymentStatus: { $in: ['paid', 'refunded'] }
+            });
+            // Tổng doanh thu
+            const paidBookings = await booking_model_1.default.find({ hotelId, paymentStatus: 'paid', status: { $ne: 'cancelled' } });
+            const refundedBookings = await booking_model_1.default.find({ hotelId, paymentStatus: 'refunded' });
+            const totalRevenue = paidBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+            const totalRefunded = refundedBookings.reduce((sum, b) => sum + (b.refundAmount || 0), 0);
+            res.status(200).json({
+                success: true,
+                data: transactions,
+                summary: {
+                    totalRevenue,
+                    totalRefunded,
+                    netRevenue: totalRevenue - totalRefunded,
+                    transactionCount: total,
+                },
+                pagination: {
+                    total,
+                    page: Number(page),
+                    limit: Number(limit),
+                    totalPages: Math.ceil(total / Number(limit))
+                }
+            });
+        }
+        catch (error) {
+            res.status(500).json({ success: false, message: error.message });
         }
     }
 };
