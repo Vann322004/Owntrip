@@ -13,8 +13,14 @@ router.get('/my-hotels', verifyToken, HotelController.getMyHotels);
 // Route lấy dữ liệu tổng hợp cho UI (Không cần đăng nhập)
 router.get('/:id/page', HotelController.getHotelFullPage);
 
-// Route đăng đánh giá (Bắt buộc đăng nhập)
+// Route đăng đánh giá (Bắt buộc đăng nhập) (Thêm mới/Cập nhật)
 router.post('/review', verifyToken, HotelController.postReview);
+
+// Route lấy đánh giá của tôi cho một khách sạn cụ thể
+router.get('/:id/my-review', verifyToken, HotelController.getMyReview);
+
+// Route xóa đánh giá của tôi cho khách sạn
+router.delete('/:id/review', verifyToken, HotelController.deleteReview);
 
 // Route gán chủ sở hữu cho khách sạn (Chỉ Admin)
 router.post('/assign-owner', verifyToken, authorizeRole(['admin']), HotelController.assignOwner);
