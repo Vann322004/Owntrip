@@ -30,7 +30,14 @@ const planPlaceSchema = new Schema(
   order: {
     type: Number,
     default: 1
+  },
+
+  timeOfDay: {
+    type: String,
+    enum: ['morning', 'afternoon', 'evening'],
+    default: 'morning'
   }
+
 
 },
 { timestamps: true }

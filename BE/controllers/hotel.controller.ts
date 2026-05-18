@@ -71,16 +71,44 @@ export const HotelController = {
         $expr: { $gt: ["$totalInventory", "$bookedCount"] } // Chỉ lấy ngày còn phòng
       }).sort({ priceAtDate: 1 });
 
-      // 3. Lấy 3 đánh giá tiêu biểu nhất để hiện khối "Điểm nổi bật"
-      const topReviews = await Review.find({ targetId: id })
-        .sort({ rating: -1 }) // Lấy đánh giá điểm cao trước
-        .limit(3)
-        .select('userId comment rating criteria createdAt');
+      // 3. Lấy 10 đánh giá tiêu biểu nhất để hiện khối "Điểm nổi bật"
+      const topReviews = await Review.aggregate([
+        { $match: { targetId: id } },
+        { $sort: { createdAt: -1 } },
+        { $limit: 10 },
+        {
+          $lookup: {
+            from: "users",
+            localField: "userId",
+            foreignField: "userId",
+            as: "user"
+          }
+        },
+        {
+          $unwind: {
+            path: "$user",
+            preserveNullAndEmptyArrays: true
+          }
+        },
+        {
+          $project: {
+            userId: 1,
+            comment: 1,
+            rating: 1,
+            criteria: 1,
+            createdAt: 1,
+            userName: { $ifNull: ["$user.displayName", "Khách ẩn danh"] },
+            userAvatar: { $ifNull: ["$user.image", "https://i.pravatar.cc/100"] }
+          }
+        }
+      ]);
 
       // 4. Trả về cấu trúc JSON "Full Option" cho React
       res.status(200).json({
         success: true,
         data: {
+          hotelId: hotel.hotelId,
+          _id: hotel._id,
           header: {
             name: hotel.name,
             stars: hotel.starRating,
@@ -110,23 +138,31 @@ export const HotelController = {
   },
 
   /**
-   * API Đăng đánh giá & Tự động cập nhật Dashboard điểm khách sạn
+   * API Đăng đánh giá & Tự động cập nhật Dashboard điểm khách sạn (Upsert: Thêm/Sửa)
    */
   postReview: async (req: Request, res: Response) => {
     try {
       const { targetId, rating, criteria, comment } = req.body;
       const userId = (req as any).user.userId; // Lấy từ verifyToken middleware
 
-      // 1. Lưu review mới
-      const newReview = new Review({
-        userId,
-        targetId,
-        targetType: 'hotel',
-        rating,
-        criteria,
-        comment
-      });
-      await newReview.save();
+      // 1. Lưu review mới hoặc cập nhật
+      let review = await Review.findOne({ userId, targetId });
+      if (review) {
+        review.rating = rating;
+        review.criteria = criteria;
+        review.comment = comment;
+        await review.save();
+      } else {
+        review = new Review({
+          userId,
+          targetId,
+          targetType: 'hotel',
+          rating,
+          criteria,
+          comment
+        });
+        await review.save();
+      }
 
       // 2. Dùng Aggregation để tính toán lại toàn bộ Dashboard điểm số
       const stats = await Review.aggregate([
@@ -155,7 +191,79 @@ export const HotelController = {
         }
       );
 
-      res.status(201).json({ success: true, message: "Cảm ơn bạn đã đánh giá!" });
+      res.status(200).json({ success: true, message: "Cập nhật đánh giá thành công!" });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  /**
+   * Lấy đánh giá của tôi cho khách sạn này
+   */
+  getMyReview: async (req: AuthRequest, res: Response) => {
+    try {
+      const { id } = req.params;
+      const userId = req.user?.userId;
+      const review = await Review.findOne({ userId, targetId: id });
+      res.status(200).json({ success: true, data: review });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  /**
+   * Xóa đánh giá của tôi
+   */
+  deleteReview: async (req: AuthRequest, res: Response) => {
+    try {
+      const { id } = req.params;
+      const userId = req.user?.userId;
+      
+      const review = await Review.findOneAndDelete({ userId, targetId: id });
+      if (!review) {
+        return res.status(404).json({ success: false, message: "Đánh giá không tồn tại" });
+      }
+
+      // Cập nhật lại Dashboard
+      const stats = await Review.aggregate([
+        { $match: { targetId: id } },
+        {
+          $group: {
+            _id: "$targetId",
+            avgScore: { $avg: "$rating" },
+            avgClean: { $avg: "$criteria.cleanliness" },
+            avgService: { $avg: "$criteria.service" },
+            avgFacilities: { $avg: "$criteria.facilities" },
+            count: { $sum: 1 }
+          }
+        }
+      ]);
+
+      if (stats.length > 0) {
+        await Hotel.findOneAndUpdate(
+          { hotelId: id },
+          {
+            "reviewSummary.score": stats[0].avgScore,
+            "reviewSummary.count": stats[0].count,
+            "reviewSummary.cleanliness": stats[0].avgClean,
+            "reviewSummary.service": stats[0].avgService,
+            "reviewSummary.facilities": stats[0].avgFacilities
+          }
+        );
+      } else {
+        await Hotel.findOneAndUpdate(
+          { hotelId: id },
+          {
+            "reviewSummary.score": 0,
+            "reviewSummary.count": 0,
+            "reviewSummary.cleanliness": 0,
+            "reviewSummary.service": 0,
+            "reviewSummary.facilities": 0
+          }
+        );
+      }
+
+      res.status(200).json({ success: true, message: "Xóa đánh giá thành công" });
     } catch (error: any) {
       res.status(500).json({ success: false, message: error.message });
     }

@@ -15,7 +15,8 @@ export const addPlaceToDay = async (req: Request, res: Response) => {
       longitude,
       rating,
       photo,
-      mapUrl
+      mapUrl,
+      timeOfDay
     } = req.body;
 
     const count = await PlanPlace.countDocuments({ dayId: dayId as any });
@@ -33,9 +34,8 @@ export const addPlaceToDay = async (req: Request, res: Response) => {
 
       rating,
       photo,
-
       mapUrl,
-
+      timeOfDay,
       order: count + 1
     });
 
@@ -53,6 +53,27 @@ export const addPlaceToDay = async (req: Request, res: Response) => {
 
   }
 
+};
+
+export const reorderPlaces = async (req: Request, res: Response) => {
+  try {
+    const { dayId } = req.params;
+    const { placeIds } = req.body; 
+
+    if (!Array.isArray(placeIds)) {
+      return res.status(400).json({ success: false, message: "Invalid data" });
+    }
+
+    const updates = placeIds.map((id, index) => 
+      PlanPlace.updateOne({ _id: id, dayId: dayId as any }, { order: index + 1 })
+    );
+
+    await Promise.all(updates);
+
+    res.json({ success: true, message: "Reordered successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Reorder failed" });
+  }
 };
 
 export const deletePlaceFromDay = async (req: Request, res: Response) => {

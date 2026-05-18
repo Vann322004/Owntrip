@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import axios from "axios";
+import Place from "../models/place.model";
 
 const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
@@ -210,6 +211,35 @@ export const searchPlace = async (req: Request, res: Response) => {
       return res.status(400).json({
         success: false,
         message: "Missing query"
+      });
+    }
+
+    // 1. Tìm kiếm trong database local trước (Ưu tiên tuyệt đối nếu có dữ liệu)
+    const localPlaces = await Place.find({
+      $or: [
+        { name: { $regex: String(q), $options: "i" } },
+        { address: { $regex: String(q), $options: "i" } }
+      ]
+    }).limit(20);
+
+    if (localPlaces.length > 0) {
+      return res.json({
+        success: true,
+        source: "local-db",
+        total: localPlaces.length,
+        places: localPlaces.map(p => ({
+          id: p.placeId,
+          displayName: { text: p.name, languageCode: "vi" },
+          formattedAddress: p.address,
+          location: {
+            latitude: p.location?.lat,
+            longitude: p.location?.lng
+          },
+          rating: p.rating,
+          userRatingCount: p.reviewCount,
+          types: p.category ? [p.category] : [],
+          photos: p.images?.map(img => ({ name: img }))
+        }))
       });
     }
 
@@ -482,6 +512,50 @@ export const searchText = async (req: Request, res: Response) => {
       .flatMap((item) => String(item).split(","))
       .map((item) => item.trim())
       .filter((item) => item.length > 0);
+
+    if (!queryList.length) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing query"
+      });
+    }
+
+    // 1. Thử tìm kiếm trong database local trước
+    const dbResults = await Place.find({
+      $or: queryList.map(queryText => ({
+        $or: [
+          { name: { $regex: queryText, $options: "i" } },
+          { address: { $regex: queryText, $options: "i" } },
+          { city: { $regex: queryText, $options: "i" } }
+        ]
+      }))
+    }).limit(maxResultCount);
+
+    if (dbResults.length > 0) {
+      const formattedPlaces = dbResults.map(p => ({
+        placeId: p.placeId,
+        name: p.name,
+        address: p.address,
+        latitude: p.location?.lat,
+        longitude: p.location?.lng,
+        rating: p.rating,
+        totalReviews: p.reviewCount,
+        types: p.category ? [p.category] : [],
+        photo: p.images?.[0],
+        photos: p.images
+      }));
+
+      // Trả về ngay nếu có bất kỳ kết quả nào trong DB local
+      if (formattedPlaces.length > 0) {
+        return res.json({
+          success: true,
+          source: "local-db",
+          queryCount: queryList.length,
+          total: formattedPlaces.length,
+          places: formattedPlaces
+        });
+      }
+    }
 
     const searchResults = await Promise.allSettled(
       queryList.map((queryText) =>
