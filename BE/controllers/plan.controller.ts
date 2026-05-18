@@ -118,3 +118,89 @@ export const deletePlaceFromDay = async (req: Request, res: Response) => {
   }
 
 };
+
+export const reorderPlacesInDay = async (req: Request, res: Response) => {
+  try {
+    const { dayId, orderedPlaceIds, orderedPlanPlaceIds, placeIds } = req.body;
+
+    const targetDayId = dayId ?? req.body.dayId;
+    const orderedIds = orderedPlaceIds ?? orderedPlanPlaceIds ?? placeIds;
+
+    if (!targetDayId) {
+      return res.status(400).json({
+        success: false,
+        message: "dayId is required"
+      });
+    }
+
+    if (!Array.isArray(orderedIds) || orderedIds.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "orderedPlaceIds must be a non-empty array"
+      });
+    }
+
+    const normalizedIds = orderedIds.map((value) => String(value));
+    const uniqueIds = new Set(normalizedIds);
+
+    if (uniqueIds.size !== normalizedIds.length) {
+      return res.status(400).json({
+        success: false,
+        message: "orderedPlaceIds contains duplicate values"
+      });
+    }
+
+    const places = await PlanPlace.find({ dayId: targetDayId });
+
+    const placeByDocId = new Map<string, (typeof places)[number]>();
+    const placeByPlaceId = new Map<string, (typeof places)[number]>();
+
+    for (const place of places) {
+      placeByDocId.set(String(place._id), place);
+      placeByPlaceId.set(String(place.placeId), place);
+    }
+
+    const orderedPlaces = normalizedIds.map((id) => {
+      return placeByDocId.get(id) ?? placeByPlaceId.get(id) ?? null;
+    });
+
+    const missingIds = normalizedIds.filter((id, index) => !orderedPlaces[index]);
+
+    if (missingIds.length > 0) {
+      return res.status(400).json({
+        success: false,
+        message: "Some places in orderedPlaceIds do not belong to this day",
+        missingIds
+      });
+    }
+
+    if (orderedPlaces.length !== places.length) {
+      return res.status(400).json({
+        success: false,
+        message: "orderedPlaceIds must contain all places of the day"
+      });
+    }
+
+    await PlanPlace.bulkWrite(
+      orderedPlaces.map((place, index) => ({
+        updateOne: {
+          filter: { _id: place!._id, dayId: targetDayId },
+          update: { $set: { order: index + 1 } }
+        }
+      }))
+    );
+
+    return res.json({
+      success: true,
+      message: "Reorder places successfully",
+      dayId: targetDayId,
+      totalPlaces: orderedPlaces.length,
+      orderedPlaceIds: normalizedIds
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Reorder places failed"
+    });
+  }
+};
