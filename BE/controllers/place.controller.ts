@@ -410,7 +410,7 @@ export const searchNearby = async (req: Request, res: Response) => {
       : "địa điểm";
 
     const autocompleteRes = await axios.get(
-      `${GOONG_API_BASE_URL}/v2/Place/AutoComplete`,
+      `${GOONG_API_BASE_URL}/v2/place/autocomplete`,
       {
         params: {
           api_key: getGoongKey(),
@@ -430,7 +430,7 @@ export const searchNearby = async (req: Request, res: Response) => {
 
     const detailResults = await Promise.allSettled(
       predictions.slice(0, 10).map((p: any) =>
-        axios.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
+        axios.get(`${GOONG_API_BASE_URL}/v2/place/detail`, {
           params: {
             api_key: getGoongKey(),
             place_id: p.place_id
@@ -635,7 +635,7 @@ export const searchText = async (req: Request, res: Response) => {
 
     const detailResults = await Promise.allSettled(
       Array.from(uniquePredictions.values()).map((p) =>
-        axios.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
+        axios.get(`${GOONG_API_BASE_URL}/v2/place/detail`, {
           params: {
             api_key: getGoongKey(),
             place_id: p.place_id
