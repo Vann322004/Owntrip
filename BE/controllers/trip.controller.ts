@@ -260,7 +260,7 @@ export const updateTrip = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user?.userId;
     const tripId = req.params.tripId as any;
-    const { title, destination, startDate, endDate, description, isPublished } = req.body;
+    const { title, destination, startDate, endDate, description, isPublished, notes, budget } = req.body;
 
     if (!userId) {
       return res.status(401).json({
@@ -301,6 +301,16 @@ export const updateTrip = async (req: AuthRequest, res: Response) => {
       trip.accommodation = req.body.accommodation;
       // Đảm bảo mongoose nhận biết trường này đã thay đổi
       trip.markModified('accommodation');
+    }
+
+    if (notes !== undefined) {
+      (trip as any).notes = notes;
+      trip.markModified('notes');
+    }
+
+    if (budget !== undefined) {
+      (trip as any).budget = budget;
+      trip.markModified('budget');
     }
 
     const nextStartDate = startDate ? new Date(startDate) : new Date(trip.startDate);
