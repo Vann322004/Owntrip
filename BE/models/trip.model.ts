@@ -56,6 +56,44 @@ const tripSchema = new Schema<ITrip>(
       checkIn: Date,
       checkOut: Date,
       totalPrice: Number
+    },
+    
+    // Marketplace Fields
+    isForSale: {
+      type: Boolean,
+      default: false
+    },
+    price: {
+      type: Number,
+      default: 0
+    },
+    soldCount: {
+      type: Number,
+      default: 0
+    },
+    averageRating: {
+      type: Number,
+      default: 0
+    },
+    totalReviews: {
+      type: Number,
+      default: 0
+    },
+    isTrusted: {
+      type: Boolean,
+      default: false
+    },
+    isPurchasedClone: {
+      type: Boolean,
+      default: false
+    },
+    originalTripId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Trip'
+    },
+    originalCreatorId: {
+      type: String,
+      ref: 'User'
     }
   },
   { timestamps: true }
