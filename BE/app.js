@@ -21,6 +21,7 @@ const avatarItemRoutes = require('./routes/avatarItem.route');
 const systemRoutes = require('./routes/system.route');
 const hotelRequestRoutes = require('./routes/hotelRequest.route');
 const creatorPackageRoutes = require('./routes/creatorPackage.routes');
+const checkinRoutes = require('./routes/checkin.route');
 
 var app = express();
 connectDB();
@@ -62,6 +63,7 @@ app.use('/api/avatar-items', avatarItemRoutes);
 app.use('/api/system', systemRoutes);
 app.use('/api/hotel-requests', hotelRequestRoutes);
 app.use('/api/creator-packages', creatorPackageRoutes);
+app.use('/api/checkins', checkinRoutes);
 
 
 app.use(function(req, res, next) {
