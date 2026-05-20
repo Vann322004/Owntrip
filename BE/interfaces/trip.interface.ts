@@ -20,4 +20,13 @@ export interface ITrip extends Document {
     checkOut: Date
     totalPrice: number
   }
+  isForSale?: boolean
+  price?: number
+  soldCount?: number
+  averageRating?: number
+  totalReviews?: number
+  isTrusted?: boolean
+  isPurchasedClone?: boolean
+  originalTripId?: Types.ObjectId
+  originalCreatorId?: string
 }

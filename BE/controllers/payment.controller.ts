@@ -7,6 +7,8 @@ import RoomInventory from '../models/roomInventory.model';
 import mongoose from 'mongoose';
 import { sendEmailTemplate } from '../utils/emailService';
 import Notification from '../models/notification.model';
+import Order from '../models/order.model';
+import { processTripOrder } from './trip.controller';
 
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 
@@ -192,7 +194,12 @@ export const PaymentController = {
         if (topup) {
           await PaymentController._handleSuccessfulTopup(webhookData);
         } else {
-          await PaymentController._handleSuccessfulPayment(webhookData);
+          const tripOrder = await Order.findOne({ orderCode: webhookData.orderCode });
+          if (tripOrder) {
+            await processTripOrder(webhookData.orderCode);
+          } else {
+            await PaymentController._handleSuccessfulPayment(webhookData);
+          }
         }
       }
 
@@ -239,6 +246,42 @@ export const PaymentController = {
             checkoutUrl: null,
           },
         });
+      }
+
+      // Check for trip order
+      if (!isNaN(Number(bookingId))) {
+        const order = await Order.findOne({ orderCode: Number(bookingId) });
+        if (order) {
+          let payosStatus = null;
+          let clonedTripId = null;
+
+          try {
+            payosStatus = await payOS.paymentRequests.get(order.orderCode);
+            if (payosStatus.status === 'PAID' && order.status !== 'SUCCESS') {
+              await processTripOrder(order.orderCode);
+              order.status = 'SUCCESS';
+            }
+          } catch (e) {}
+
+          if (order.status === 'SUCCESS') {
+            const TripModel = require('../models/trip.model').default;
+            const clonedTrip = await TripModel.findOne({ originalTripId: order.tripTemplateId, userId: order.buyerId, isPurchasedClone: true }).sort({ createdAt: -1 });
+            clonedTripId = clonedTrip?._id;
+          }
+
+          return res.status(200).json({
+            success: true,
+            data: {
+              bookingId: order.orderCode.toString(),
+              paymentStatus: order.status === 'SUCCESS' ? 'paid' : 'unpaid',
+              bookingStatus: order.status,
+              totalPrice: order.amount,
+              payosStatus: payosStatus?.status || null,
+              checkoutUrl: null,
+              newTripId: clonedTripId
+            },
+          });
+        }
       }
 
       const booking = await Booking.findOne({ bookingId });
