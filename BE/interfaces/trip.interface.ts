@@ -10,6 +10,13 @@ export interface ITrip extends Document {
   endDate: Date
   totalDays: number
   description?: string
+  notes?: string[]
+  budget?: {
+    accommodation: number
+    food: number
+    transport: number
+    activities: number
+  }
   isPublished: boolean
   accommodation?: {
     hotelId: string
