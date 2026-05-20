@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { 
   User, Lock, Trophy, Info, Save, Loader2, 
   CheckCircle2, AlertCircle, Shield, Database, 
-  Cpu, HardDrive, RefreshCw
+  Cpu, HardDrive, RefreshCw, Package, Plus, Edit, Trash2
 } from 'lucide-react';
 import api from '../lib/axios';
 import { useAuth } from '../context/AuthContext';
 
 export default function Settings() {
   const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState<'profile' | 'password' | 'points' | 'system'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'password' | 'points' | 'packages' | 'system'>('profile');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
@@ -33,9 +33,16 @@ export default function Settings() {
   // System Info State
   const [systemInfo, setSystemInfo] = useState<any>(null);
 
+  // Creator Packages State
+  const [packages, setPackages] = useState<any[]>([]);
+  const [showPkgModal, setShowPkgModal] = useState(false);
+  const [editingPkgId, setEditingPkgId] = useState<string | null>(null);
+  const [pkgForm, setPkgForm] = useState({ name: '', durationInMonths: 1, price: 0, description: '', isActive: true });
+
   useEffect(() => {
     if (activeTab === 'points') fetchPointsConfig();
     if (activeTab === 'system') fetchSystemInfo();
+    if (activeTab === 'packages') fetchPackages();
   }, [activeTab]);
 
   const fetchPointsConfig = async () => {
@@ -126,6 +133,50 @@ export default function Settings() {
     }
   };
 
+  const fetchPackages = async () => {
+    try {
+      setLoading(true);
+      const res = await api.get('/creator-packages/admin');
+      if (res.data?.success) setPackages(res.data.data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSavePackage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess('');
+    setError('');
+    try {
+      if (editingPkgId) {
+        await api.put(`/creator-packages/admin/${editingPkgId}`, pkgForm);
+      } else {
+        await api.post('/creator-packages/admin', pkgForm);
+      }
+      setSuccess(editingPkgId ? 'Cập nhật gói thành công!' : 'Tạo gói mới thành công!');
+      setShowPkgModal(false);
+      fetchPackages();
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Lỗi lưu gói');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDeletePackage = async (id: string) => {
+    if (!window.confirm('Bạn có chắc muốn xóa gói này?')) return;
+    try {
+      await api.delete(`/creator-packages/admin/${id}`);
+      setSuccess('Đã xóa gói!');
+      fetchPackages();
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Lỗi xóa gói');
+    }
+  };
+
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <div>
@@ -140,6 +191,7 @@ export default function Settings() {
             { id: 'profile',  label: 'Hồ sơ Admin', icon: User },
             { id: 'password', label: 'Mật khẩu',    icon: Lock },
             { id: 'points',   label: 'Cấu hình Điểm', icon: Trophy },
+            { id: 'packages', label: 'Gói Creator', icon: Package },
             { id: 'system',   label: 'Thông tin hệ thống', icon: Info },
           ].map((tab) => {
             const Icon = tab.icon;
@@ -335,6 +387,112 @@ export default function Settings() {
                   Cập nhật cấu hình
                 </button>
               </form>
+            )}
+
+            {/* Creator Packages Tab */}
+            {activeTab === 'packages' && (
+              <div className="space-y-5">
+                <div className="flex justify-between items-center">
+                  <div className="p-4 bg-amber-50 text-amber-700 rounded-xl text-sm flex gap-2 flex-1">
+                    <Package className="w-5 h-5 shrink-0" />
+                    <p>Quản lý các gói đăng ký Creator. Người dùng mua gói để được quyền bán lịch trình trên Marketplace.</p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setEditingPkgId(null);
+                      setPkgForm({ name: '', durationInMonths: 1, price: 0, description: '', isActive: true });
+                      setShowPkgModal(true);
+                    }}
+                    className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-medium flex items-center gap-2 transition-colors whitespace-nowrap"
+                  >
+                    <Plus className="w-4 h-4" />
+                    Thêm gói
+                  </button>
+                </div>
+
+                {loading ? (
+                  <div className="flex justify-center py-8"><Loader2 className="w-6 h-6 animate-spin text-blue-600" /></div>
+                ) : packages.length === 0 ? (
+                  <p className="text-center text-gray-400 py-8">Chưa có gói Creator nào. Bấm "Thêm gói" để tạo.</p>
+                ) : (
+                  <div className="space-y-3">
+                    {packages.map((pkg) => (
+                      <div key={pkg._id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-sm transition-shadow">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3">
+                            <h3 className="font-bold text-gray-900">{pkg.name}</h3>
+                            <span className={`px-2 py-0.5 text-[10px] font-bold rounded-full ${pkg.isActive ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-200 text-gray-600'}`}>
+                              {pkg.isActive ? 'Đang bán' : 'Đã ẩn'}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-500 mt-1">
+                            {pkg.durationInMonths} tháng · <span className="font-semibold text-green-600">{pkg.price.toLocaleString()}đ</span>
+                            {pkg.description ? ` · ${pkg.description}` : ''}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-2 ml-4">
+                          <button
+                            onClick={() => {
+                              setEditingPkgId(pkg._id);
+                              setPkgForm({ name: pkg.name, durationInMonths: pkg.durationInMonths, price: pkg.price, description: pkg.description || '', isActive: pkg.isActive });
+                              setShowPkgModal(true);
+                            }}
+                            className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => handleDeletePackage(pkg._id)}
+                            className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Package Modal */}
+                {showPkgModal && (
+                  <div className="fixed inset-0 bg-black/40 z-50 flex justify-center items-center backdrop-blur-sm">
+                    <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+                      <h2 className="text-lg font-bold mb-4">{editingPkgId ? 'Chỉnh sửa gói' : 'Thêm gói mới'}</h2>
+                      <form onSubmit={handleSavePackage} className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Tên gói</label>
+                          <input required type="text" value={pkgForm.name} onChange={(e) => setPkgForm({...pkgForm, name: e.target.value})} className="w-full px-4 py-2 border rounded-xl text-sm" placeholder="VD: Gói Creator 1 Tháng" />
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Thời hạn (Tháng)</label>
+                            <input required type="number" min="1" value={pkgForm.durationInMonths} onChange={(e) => setPkgForm({...pkgForm, durationInMonths: Number(e.target.value)})} className="w-full px-4 py-2 border rounded-xl text-sm" />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">Giá (VNĐ)</label>
+                            <input required type="number" min="0" value={pkgForm.price} onChange={(e) => setPkgForm({...pkgForm, price: Number(e.target.value)})} className="w-full px-4 py-2 border rounded-xl text-sm" />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Mô tả quyền lợi</label>
+                          <textarea rows={2} value={pkgForm.description} onChange={(e) => setPkgForm({...pkgForm, description: e.target.value})} className="w-full px-4 py-2 border rounded-xl text-sm" placeholder="Được đăng bán lịch trình..." />
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <input type="checkbox" id="pkgActive" checked={pkgForm.isActive} onChange={(e) => setPkgForm({...pkgForm, isActive: e.target.checked})} className="w-4 h-4 rounded border-gray-300 text-blue-600" />
+                          <label htmlFor="pkgActive" className="text-sm font-medium text-gray-700">Đang bán (Hiển thị trên App)</label>
+                        </div>
+                        <div className="flex justify-end gap-3 pt-4 border-t">
+                          <button type="button" onClick={() => setShowPkgModal(false)} className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-xl font-medium text-sm">Hủy</button>
+                          <button type="submit" disabled={loading} className="px-4 py-2 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 text-sm flex items-center gap-2">
+                            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                            Lưu lại
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
 
             {/* System Info Tab */}
