@@ -13,7 +13,8 @@ const userSchema = new Schema<IUser>({
   phone: { type: String },
   balance: { type: Number, default: 0 },
   points: { type: Number, default: 0 },
-  role: { type: String, enum: ['user', 'admin', 'hotel_owner'], default: 'user' },
+  role: { type: String, enum: ['user', 'admin', 'hotel_owner', 'creator'], default: 'user' },
+  creatorSubscriptionEndsAt: { type: Date },
   otp: { type: String },
   otpExpires: { type: Date },
   isVerified: { type: Boolean, default: false }

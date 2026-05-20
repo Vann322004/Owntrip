@@ -8,5 +8,6 @@ const router = Router();
 router.get('/info', verifyToken, authorizeRole(['admin']), SystemController.getSystemInfo);
 router.get('/config', verifyToken, authorizeRole(['admin']), SystemController.getConfig);
 router.post('/config', verifyToken, authorizeRole(['admin']), SystemController.updateConfig);
+router.get('/dashboard-stats', verifyToken, authorizeRole(['admin']), SystemController.getDashboardStats);
 
 module.exports = router;

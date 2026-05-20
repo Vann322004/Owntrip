@@ -11,6 +11,7 @@ import {
 
 import Notification from "../models/notification.model";
 import Review from "../models/review.model";
+import User from "../models/user.model";
 
 export const createTrip = async (req: AuthRequest, res: Response) => {
 
@@ -676,6 +677,16 @@ export const publishToMarketplace = async (req: AuthRequest, res: Response) => {
 
     if (trip.userId !== userId) {
       return res.status(403).json({ success: false, message: "Bạn không có quyền bán lịch trình của người khác." });
+    }
+
+    const user = await User.findOne({ userId });
+    const now = new Date();
+    if (!user || user.role !== 'creator' || !user.creatorSubscriptionEndsAt || user.creatorSubscriptionEndsAt < now) {
+      return res.status(403).json({ 
+        success: false, 
+        message: "Bạn cần đăng ký hoặc gia hạn gói Creator để được phép bán lịch trình trên Marketplace!",
+        code: "CREATOR_REQUIRED"
+      });
     }
 
     // Anti-Resell Rule
