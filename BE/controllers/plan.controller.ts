@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 import PlanPlace from "../models/planPlace.model";
 
 export const addPlaceToDay = async (req: Request, res: Response) => {
@@ -184,7 +185,7 @@ export const reorderPlacesInDay = async (req: Request, res: Response) => {
     await PlanPlace.bulkWrite(
       orderedPlaces.map((place, index) => ({
         updateOne: {
-          filter: { _id: place!._id, dayId: targetDayId },
+          filter: { _id: place!._id, dayId: new mongoose.Types.ObjectId(targetDayId) },
           update: { $set: { order: index + 1 } }
         }
       }))
