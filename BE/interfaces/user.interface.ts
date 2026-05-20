@@ -9,7 +9,8 @@ export interface IUser extends Document {
   phone?: string;
   balance: number;
   points: number;
-  role: 'user' | 'admin' | 'hotel_owner';
+  role: 'user' | 'admin' | 'hotel_owner' | 'creator';
+  creatorSubscriptionEndsAt?: Date;
   otp?: string;
   otpExpires?: Date;
   isVerified: boolean;

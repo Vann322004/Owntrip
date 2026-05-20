@@ -9,6 +9,9 @@ import { sendEmailTemplate } from '../utils/emailService';
 import Notification from '../models/notification.model';
 import Order from '../models/order.model';
 import { processTripOrder } from './trip.controller';
+import CreatorSubscriptionTransaction from '../models/creatorSubscriptionTransaction.model';
+import CreatorPackage from '../models/creatorPackage.model';
+import Wallet from '../models/wallet.model';
 
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 
@@ -89,6 +92,47 @@ export const PaymentController = {
         message: 'Không thể tạo link thanh toán',
         error: error.message,
       });
+    }
+  },
+
+  _handleSuccessfulCreatorSubscription: async (webhookData: any) => {
+    try {
+      const tx = await CreatorSubscriptionTransaction.findOne({ orderCode: webhookData.orderCode }).populate('packageId');
+      if (!tx || tx.status === 'success') return;
+
+      const pkg = tx.packageId as any;
+      if (!pkg) return;
+
+      const user = await User.findOne({ userId: tx.userId });
+      if (!user) return;
+
+      // Tính ngày hết hạn
+      const now = new Date();
+      let newEndsAt = new Date();
+      if (user.creatorSubscriptionEndsAt && user.creatorSubscriptionEndsAt > now) {
+        newEndsAt = new Date(user.creatorSubscriptionEndsAt);
+      }
+      newEndsAt.setMonth(newEndsAt.getMonth() + pkg.durationInMonths);
+
+      user.role = 'creator';
+      user.creatorSubscriptionEndsAt = newEndsAt;
+      await user.save();
+
+      tx.status = 'success';
+      await tx.save();
+
+      // Update admin wallet (revenue)
+      let adminWallet = await Wallet.findOne({ isSystem: true });
+      if (!adminWallet) {
+        adminWallet = new Wallet({ isSystem: true, balance: 0 });
+      }
+      adminWallet.balance += tx.amount;
+      await adminWallet.save();
+
+      console.log(`[PayOS] Mua goi Creator thanh cong cho user: ${user.userId}`);
+    } catch (error) {
+      console.error('[PayOS] handleSuccessfulCreatorSubscription error:', error);
+      throw error;
     }
   },
 
@@ -198,7 +242,12 @@ export const PaymentController = {
           if (tripOrder) {
             await processTripOrder(webhookData.orderCode);
           } else {
-            await PaymentController._handleSuccessfulPayment(webhookData);
+            const creatorTx = await CreatorSubscriptionTransaction.findOne({ orderCode: webhookData.orderCode });
+            if (creatorTx) {
+              await PaymentController._handleSuccessfulCreatorSubscription(webhookData);
+            } else {
+              await PaymentController._handleSuccessfulPayment(webhookData);
+            }
           }
         }
       }
@@ -242,6 +291,35 @@ export const PaymentController = {
             paymentStatus: topup.status === 'paid' ? 'paid' : 'unpaid',
             bookingStatus: topup.status,
             totalPrice: topup.amount,
+            payosStatus: payosStatus?.status || null,
+            checkoutUrl: null,
+          },
+        });
+      }
+
+      if (String(bookingId).startsWith('creator_')) {
+        const orderCode = Number(String(bookingId).split('_')[1]);
+        const tx = await CreatorSubscriptionTransaction.findOne({ orderCode });
+        if (!tx) {
+          return res.status(404).json({ success: false, message: 'Không tìm thấy giao dịch mua gói Creator' });
+        }
+
+        let payosStatus = null;
+        try {
+          payosStatus = await payOS.paymentRequests.get(tx.orderCode);
+          if (payosStatus.status === 'PAID' && tx.status !== 'success') {
+            await PaymentController._handleSuccessfulCreatorSubscription({ orderCode: tx.orderCode });
+            tx.status = 'success';
+          }
+        } catch (e) {}
+
+        return res.status(200).json({
+          success: true,
+          data: {
+            bookingId: `creator_${tx.orderCode}`,
+            paymentStatus: tx.status === 'success' ? 'paid' : 'unpaid',
+            bookingStatus: tx.status,
+            totalPrice: tx.amount,
             payosStatus: payosStatus?.status || null,
             checkoutUrl: null,
           },
