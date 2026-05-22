@@ -11,7 +11,8 @@ import {
   Sparkles,
   ClipboardList,
   Package,
-  CreditCard
+  CreditCard,
+  Image
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
@@ -22,6 +23,7 @@ const navItems = [
   { name: 'Người dùng', path: '/users', icon: Users },
   { name: 'Khách sạn', path: '/hotels', icon: Map },
   { name: 'Avatar Shop', path: '/avatar-shop', icon: Sparkles },
+  { name: 'Khung hình', path: '/frames', icon: Image },
   { name: 'Gói Creator', path: '/creator-packages', icon: Package },
   { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
   { name: 'Duyệt Rút Tiền', path: '/withdrawals', icon: CreditCard },
