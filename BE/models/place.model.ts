@@ -20,7 +20,8 @@ const placeSchema = new Schema<IPlace>(
     images: [String],
     openingHours: String,
     preferences: [String],
-    source: { type: String, default: "Google Maps" }
+    source: { type: String, default: "Google Maps" },
+    addedCount: { type: Number, default: 0 }
   },
   { timestamps: true }
 );

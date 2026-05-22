@@ -19,4 +19,5 @@ export interface IPlace extends Document {
   openingHours: string;
   preferences: string[];
   source: string;
+  addedCount: number;
 }
