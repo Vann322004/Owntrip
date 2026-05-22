@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import mongoose from "mongoose";
 import PlanPlace from "../models/planPlace.model";
+import Place from "../models/place.model";
 
 export const addPlaceToDay = async (req: Request, res: Response) => {
 
@@ -21,6 +22,16 @@ export const addPlaceToDay = async (req: Request, res: Response) => {
     } = req.body;
 
     const count = await PlanPlace.countDocuments({ dayId: dayId as any });
+
+    // Cập nhật bộ đếm độ phổ biến của địa điểm
+    await Place.findOneAndUpdate(
+      { placeId },
+      {
+        $inc: { addedCount: 1 },
+        $setOnInsert: { name, address, location: { lat: latitude, lng: longitude } }
+      },
+      { upsert: true, new: true }
+    );
 
     const place = await PlanPlace.create({
 

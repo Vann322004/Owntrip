@@ -220,7 +220,7 @@ export const searchPlace = async (req: Request, res: Response) => {
         { name: { $regex: String(q), $options: "i" } },
         { address: { $regex: String(q), $options: "i" } }
       ]
-    }).limit(20);
+    }).sort({ addedCount: -1 }).limit(20);
 
     if (localPlaces.length > 0) {
       return res.json({
@@ -238,7 +238,8 @@ export const searchPlace = async (req: Request, res: Response) => {
           rating: p.rating,
           userRatingCount: p.reviewCount,
           types: p.category ? [p.category] : [],
-          photos: p.images?.map(img => ({ name: img }))
+          photos: p.images?.map(img => ({ name: img })),
+          addedCount: p.addedCount || 0
         }))
       });
     }
@@ -529,7 +530,7 @@ export const searchText = async (req: Request, res: Response) => {
           { city: { $regex: queryText, $options: "i" } }
         ]
       }))
-    }).limit(maxResultCount);
+    }).sort({ addedCount: -1 }).limit(maxResultCount);
 
     if (dbResults.length > 0) {
       const formattedPlaces = dbResults.map(p => ({
@@ -542,7 +543,8 @@ export const searchText = async (req: Request, res: Response) => {
         totalReviews: p.reviewCount,
         types: p.category ? [p.category] : [],
         photo: p.images?.[0],
-        photos: p.images
+        photos: p.images,
+        addedCount: p.addedCount || 0
       }));
 
       // Trả về ngay nếu có bất kỳ kết quả nào trong DB local
