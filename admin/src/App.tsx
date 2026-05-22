@@ -11,6 +11,7 @@ import SettingsPage from './pages/Settings';
 import HotelRequests from './pages/HotelRequests';
 import CreatorPackages from './pages/CreatorPackages';
 import Withdrawals from './pages/Withdrawals';
+import Frames from './pages/Frames';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="hotels" element={<Hotels />} />
             <Route path="avatar-shop" element={<AvatarShop />} />
+            <Route path="frames" element={<Frames />} />
             <Route path="creator-packages" element={<CreatorPackages />} />
             <Route path="hotel-requests" element={<HotelRequests />} />
             <Route path="withdrawals" element={<Withdrawals />} />

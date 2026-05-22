@@ -23,6 +23,7 @@ const hotelRequestRoutes = require('./routes/hotelRequest.route');
 const creatorPackageRoutes = require('./routes/creatorPackage.routes');
 const checkinRoutes = require('./routes/checkin.route');
 const withdrawalRoutes = require('./routes/withdrawal.route');
+const frameRoutes = require('./routes/frame.route');
 
 var app = express();
 connectDB();
@@ -66,6 +67,7 @@ app.use('/api/hotel-requests', hotelRequestRoutes);
 app.use('/api/creator-packages', creatorPackageRoutes);
 app.use('/api/checkins', checkinRoutes);
 app.use('/api/withdrawals', withdrawalRoutes);
+app.use('/api/frames', frameRoutes);
 
 
 app.use(function(req, res, next) {
