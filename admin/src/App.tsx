@@ -10,6 +10,7 @@ import AvatarShop from './pages/AvatarShop';
 import SettingsPage from './pages/Settings';
 import HotelRequests from './pages/HotelRequests';
 import CreatorPackages from './pages/CreatorPackages';
+import Withdrawals from './pages/Withdrawals';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="avatar-shop" element={<AvatarShop />} />
             <Route path="creator-packages" element={<CreatorPackages />} />
             <Route path="hotel-requests" element={<HotelRequests />} />
+            <Route path="withdrawals" element={<Withdrawals />} />
             <Route path="settings" element={<SettingsPage />} />
             {/* Thêm các trang quản trị khác ở đây */}
           </Route>

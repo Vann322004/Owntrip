@@ -10,7 +10,8 @@ import {
   Menu,
   Sparkles,
   ClipboardList,
-  Package
+  Package,
+  CreditCard
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
@@ -23,6 +24,7 @@ const navItems = [
   { name: 'Avatar Shop', path: '/avatar-shop', icon: Sparkles },
   { name: 'Gói Creator', path: '/creator-packages', icon: Package },
   { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
+  { name: 'Duyệt Rút Tiền', path: '/withdrawals', icon: CreditCard },
   { name: 'Cài đặt', path: '/settings', icon: Settings },
 ];
 
