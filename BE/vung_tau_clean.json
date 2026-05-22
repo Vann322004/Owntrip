@@ -1,0 +1,1208 @@
+[
+  {
+    "placeId": "ChIJJdVVGydvdTERsqQnw0GdttI",
+    "name": "LEO COFFEE, BEER & WINE-RESTAURANT",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "38A Đ. 30 Tháng 4, Tam Thắng, Hồ Chí Minh 790000, Vietnam",
+    "location": {
+      "lat": 10.3747196,
+      "lng": 107.0900923
+    },
+    "rating": 4.3,
+    "reviewCount": 103,
+    "price": "1–600 000 ₫",
+    "phoneNumber": "+84 869 150 081",
+    "website": "http://oceaninvest.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPKYcYDAdPYnSUYakBVDTOyrTPVVNtD9WSuiZdK=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHOQ9b4jv8zeDAtks5rZGDmtDGCG_dbO8kh6ylmS1y1A5lBf_p3HsQqLqlk7Pa5egLc0LOF8D_zZ6E82qgpot9POae0GT-N3T6Nv4jI7nJRmBlFVAE0TDY7q2UyHAhSux9s05chdg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22, Thứ 4: 06 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Cà phê ngon",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Starksprit",
+      "Vin",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJC1J4Ts9vdTERRj8_CLqVP90",
+    "name": "Bún Chả Hà Nội",
+    "category": "Bistro",
+    "city": "Ho Chi Minh",
+    "address": "30A Ngô Đức Kế, Tam Thắng, Hồ Chí Minh 78212, Vietnam",
+    "location": {
+      "lat": 10.3643782,
+      "lng": 107.0808993
+    },
+    "rating": 4.2,
+    "reviewCount": 188,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMQzc--xqJHKLyUWT15KnhfEaMKoJD2Xu_e87iD=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOgiAnWKcpgM13wJy0tT2y5bLRRzHbBtm2Pirav=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 12, Thứ 6: 06 to 12, Thứ 7: 06 to 12, Chủ nhật: 06 to 12, Thứ 2: 06 to 12, Thứ 3: 06 to 12, Thứ 4: 06 to 12",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Kött",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Frukost",
+      "Snabbmat",
+      "Bữa trưa",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJacl45cVvdTERvR1CgIRJOk4",
+    "name": "Nhà hàng Hữu Nghị",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "36A Nguyễn Thái Học, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3655571,
+      "lng": 107.084118
+    },
+    "rating": 3.9,
+    "reviewCount": 472,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 254 3852 017",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVrZ4lDZWvLWKNBvz56XalcpRu2mlwuZ__5zf3Mus0Sw1mjrii3WMc0XWLqoM7bfs80ZDusFn1IpEew0ZjIUTfuiB6k9Ig90lG731_yLAhOL3oEMnzj86lw2lNQTS3f9Gu12pVEsrg2_RU=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6se0Tqmmah87haj_5S7BdeQzxgzlad08U7UC_norCCFI8c00PRdgb_aHteOiXwhWVhs_ejn7g5rA0xycFXPhAfKiURSGtiV7d3oSNouNPdDPjPx-6uUSukkApHNKW_R4yO7dr=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22, Thứ 4: 06 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Privat matsal",
+      "Smårätter",
+      "Starksprit"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJxRCdzNtvdTERZMLiqhp-eVw",
+    "name": "Quach’s Seafood Restaurant",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Ho Chi Minh",
+    "address": "187 Võ Thị Sáu, Vũng Tàu, Hồ Chí Minh 780000, Vietnam",
+    "location": {
+      "lat": 10.340251,
+      "lng": 107.0882706
+    },
+    "rating": 4.8,
+    "reviewCount": 1414,
+    "price": "200–800 tn ₫",
+    "phoneNumber": "+84 979 870 043",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNRGWMlPvG8OBqxsqgdrbE2AW9lYmJgaKMaRHKv=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCQaEhD517xFM69GKF-S9Yyzny3KfTGmhv7I6zshBkvVSe67_LbnQJzaagIowOqL9oVYNFG_PjDP7M6-DPhGHxAqgE9p4c9gFWKvzq6X8TKBkgr8mH3lkKrGFHeGXlkFUThqgGJ-WHrGA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 09 to 22, Thứ 6: 09 to 22, Thứ 7: 09 to 22, Chủ nhật: 09 to 22, Thứ 2: 09 to 22, Thứ 3: 09 to 22, Thứ 4: 09 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Ostron",
+      "Fisk och skaldjur",
+      "Krabbor",
+      "Eldgryta",
+      "Stekt fisk",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ-bbmAsVvdTEReRdoVUFnf1Y",
+    "name": "Chợ Phiên Quán",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "126 Đường Nguyễn Thị Minh Khai, Tam Thắng, Hồ Chí Minh 78000, Vietnam",
+    "location": {
+      "lat": 10.3541178,
+      "lng": 107.093716
+    },
+    "rating": 4.8,
+    "reviewCount": 956,
+    "price": "100–700 tn ₫",
+    "phoneNumber": "+84 707 585 859",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMRwW6nOXwCFBDaiYD7bvGlD-wGTN118jidFdaX=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEKv9nnjml2BVX9vI3ykM-8XcL7D-MDHNlz6SQ5meb1Ty4LnbZk8vMrFA54y-7jsqGNHbH4VTSP6qIGUcJLQb_xIsMvudwexTZqr2FrEPpd_2zqSvkl_Am4OWoI-2OyhsQQYJKOtOiz4nH0=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23, Thứ 4: 10 to 23",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Crudité",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Starksprit",
+      "Vin"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJhZDnzMdvdTERdMNa9jXskPE",
+    "name": "Sushi Hokkaido Vũng Tàu",
+    "category": "Sushirestaurang",
+    "city": "Ho Chi Minh",
+    "address": "57 Nguyễn Tri Phương, Tam Thắng, Hồ Chí Minh 790000, Vietnam",
+    "location": {
+      "lat": 10.3647588,
+      "lng": 107.082163
+    },
+    "rating": 4.4,
+    "reviewCount": 111,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 979 556 693",
+    "website": "https://sushihokkaido.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGVr0SkvGoGVIThpc-WkXcZD9VRPfpcVoLtcJj9x2THkJ2k825k2Xf7FT5p3KZ3nN2sfZuVessHyJVpk0j7EFlpgNLHEZy4vqqF4gOT-pywoVMwUkZJtL7xjj6cxHpuMYh2PIP4yN15Q34=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzegzzX_SZ2OL46gUBf0XVdMKSjrJK2kQ7Ro0fZaHKn0WfScx1aEN-3jFtCr-6sk3zzF5gBY7UkBltvuzsWMXp6QIZ9-j25mrJDpveLhcPs-Q1btsA9w5wr8OZdFOE-EP03QTl=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10:30 to 14, 16:30 to 22, Thứ 6: 10:30 to 14, 16:30 to 22, Thứ 7: 10:30 to 14, 16:30 to 22, Chủ nhật: 10:30 to 14, 16:30 to 22, Thứ 2: 10:30 to 14, 16:30 to 22, Thứ 3: 10:30 to 14, 16:30 to 22, Thứ 4: 10:30 to 14, 16:30 to 22",
+    "cuisineTags": [
+      "Món Nhật"
+    ],
+    "detailedPreferences": [
+      "Sashimi",
+      "Sushi",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Snabbmat",
+      "Öl",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRZvv-RdvdTERQbQ2OwayJ9Y",
+    "name": "Van Dinh's Duck",
+    "category": "Bistro",
+    "city": "Ho Chi Minh",
+    "address": "50 Nguyễn Hới, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3665445,
+      "lng": 107.0921761
+    },
+    "rating": 4.5,
+    "reviewCount": 56,
+    "price": "1–500 000 ₫",
+    "phoneNumber": "+84 984 602 875",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMiKtnEb0DFPOw1WRqKNd9hvbSfRtJhFhvmmR1m=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjPzLkwOnn_xJCkngrzJ3F3nLyznbOlQH31bvRrovN1KsnKvMA0n1yHf1Bi3OwHmNgcOMvgKkVg83lE30e96nhjEIKW_87w5lHltfBkZ0EXSqL8DBvCiI9-9enUY568o97n8RvbA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 15:30 to 20, Thứ 6: 15:30 to 20, Thứ 7: 15:30 to 20, Chủ nhật: 15:30 to 20, Thứ 2: 15:30 to 20, Thứ 3: 15:30 to 20, Thứ 4: 15:30 to 20",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Öl",
+      "Bữa trưa",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Bordsbokning till middag rekommenderas",
+      "Tar emot bokningar"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJpatO_cVvdTERDf_RkpdiVBk",
+    "name": "Quán Ăn Đệ Nhất Phố Nướng",
+    "category": "Matstånd",
+    "city": "Ho Chi Minh",
+    "address": "6 Nguyễn Thái Học, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3657818,
+      "lng": 107.0835417
+    },
+    "rating": 5,
+    "reviewCount": 1,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 254 3554 232",
+    "website": "",
+    "images": [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=7EPVRId_W2wZqjtKThQHWQ&cb_client=lu.gallery.gps&w=160&h=106&yaw=298.8264&pitch=0&thumbfov=100",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHqQUbSAbS2gs5nkJm3GQyyxSjfFXeFiOHNKc6yBIdw1Yxk4OkFc0OwcwZkE7Eo5HNCuLajh2jwxUqAwfQbQhp0Z_25bVv6XXnf3hU1S7Ga01fmT8vxptGqdvl2S_umuOc3EzRO=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Đồ nướng"
+    ],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Öl",
+      "Bữa trưa",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1VQCP6BvdTERqFq7RNeW1OA",
+    "name": "ốc xoay quán vũng tàu",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "107 Nguyễn Thái Học, Tam Thắng, Hồ Chí Minh 72000, Vietnam",
+    "location": {
+      "lat": 10.3647693,
+      "lng": 107.082712
+    },
+    "rating": 4.3,
+    "reviewCount": 37,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 933 022 205",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGI5scjRhCUeZBXsQI0feC_inVy7TpNq83uqc968XzWmS4ZoFMsZUfM6bq81uyVIXmJzyvwdR-EmhlZqGVSt44FBR3E704tyJ54CXTZlqXUdR0Me0wV-GbxuEVSsdRIAaM8Da7WgCV9xUE9=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEIqi_Zgdl393p72sU4RjbDy2UkoxsbDx_5b89o1tmGdzNzCAHGREqOhzsOz744Dxwm0Tfsz4JSR_EasBpgAkqvBzR7QQa0Ctxvep23CQ2G4pc7VYjt0yLebXXZ9WjzBC6WN-o=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 15 to 23:55, Thứ 6: 15 to 23:55, Thứ 7: 15 to 23:55, Chủ nhật: 15 to 23:55, Thứ 2: 15 to 23:55, Thứ 3: 15 to 23:55, Thứ 4: 15 to 23:55",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Öl",
+      "Bữa tối",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_____8RvdTERMdkott15Jmg",
+    "name": "Ốc Cám",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Ho Chi Minh",
+    "address": "24 Kha Vạn Cân, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3641984,
+      "lng": 107.0867853
+    },
+    "rating": 4.5,
+    "reviewCount": 396,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 933 349 893",
+    "website": "https://www.facebook.com/profile.php?id=100032868531812&mibextid=LQQJ4d",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFsznoWLyDL2TAgS4vEf7sAsKQdm_RbVZeBT6gIfujMRTTGpQzLpe8bCJWdWee7DG5-kC-BQomtuwawArH4pz750c5bKEEa8OdszvW2u3RcvXgqVDqoJVKq5pNJK0eSxeMV3rcQdH4B-yxi=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFXuaxMHqFsdqq41jSeaEs_Hypm1l-9SYIu_YTFAOB98-B3DD1ROcN8zgEIHme12xrsIy59gehbJsHH5j6W3_mMDRabwK3nqTV2nIGn3AAJQEdveTFhDw3eUPpgocLxIcSzCY18pD82AiP3=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 11 to 22, Thứ 6: 11 to 22, Thứ 7: 11 to 22, Chủ nhật: 10 to 22, Thứ 2: 11 to 22, Thứ 3: 11 to 22, Thứ 4: 11 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Fisk och skaldjur",
+      "Escargot",
+      "Sockermajs",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Snabbmat",
+      "Öl",
+      "Bữa trưa",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJjxTtBQBvdTERmxfrX8wVURI",
+    "name": "Bánh căn Thu Hương",
+    "category": "Matstånd",
+    "city": "Ho Chi Minh",
+    "address": "138 Nguyễn Tri Phương, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3632183,
+      "lng": 107.0843484
+    },
+    "rating": 4.8,
+    "reviewCount": 25,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF7kuntQz3uuNblHU_Uh44xxM0Uw7CIwAWylw5MTXISFRM2wfCIQZeIE6bjYQMB-9geDIaIPqjGp7zpFWE3vgfIZCu_5ltsuaWhwl06AS_MXDzqjFm9TOsWdcC0H9dm1URaTCkBsXRw21AA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdaNL7ysNwKXo7Qee5oT5D7ijDDxHcbJz3EdjxooExlxAJrACkO4vX6AjyK8AMUJkuYBszxlibCKGiSZfrDPGeQM4V_CalJNYHtldBbt4kYv3XSfxIB_vgAWTvO5aaDaykFfGcRo-FwwQl=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 16 to 22, Thứ 6: 16 to 22, Thứ 7: 16 to 22, Chủ nhật: 16 to 22, Thứ 2: 16 to 22, Thứ 3: 16 to 22, Thứ 4: 16 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Tröstemat",
+      "Mua mang về",
+      "Catering",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJofvy08hvdTERJCf33qQVSJU",
+    "name": "Bánh Mì Bò Kho",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "254 Nguyễn An Ninh, Bến Đình, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3685123,
+      "lng": 107.0833084
+    },
+    "rating": 4.5,
+    "reviewCount": 11,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEbFJkNhq-R1OKeNXb7vIeQPBg9fVt0DlQzFHdhldKZX2vJFQDrrgBAdVTw2Vu-ZHwG7DqVBlatL0vF-UiFhsVa0xEUoDwLeb9W6R3CObqAIjye_JKhC-uQWyK-oLgYahhw9AI=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEHSzeKosVC9afaJrfe78L4C2zrCOqPxTBtbH-MqHLr0mz9WUQ_U9NheGACAao5fwszpnmIpNsCIXjkwcj5qC5a5JUQOhjB1rfWCBtW5xOI3KI_KZCGd2kB5OCWi5vHEG1ziRA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22, Thứ 4: 06:30 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Phù hợp ăn một mình",
+      "Snabbmat",
+      "Catering",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJP9mwZL5vdTERtjrdNJQXNB0",
+    "name": "Black Pan steak restaurant",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "289 Thống Nhất, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3561275,
+      "lng": 107.0882593
+    },
+    "rating": 4.8,
+    "reviewCount": 1163,
+    "price": "200–600 tn ₫",
+    "phoneNumber": "+84 937 565 691",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMtYHk7bRrTZaH1Uhum8pckZB9XL1kTH7sxAjOG=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNkbXP2TGUT1artXXz89f_4uDGaUs5DEFSxr8jO=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 13:30, 17 to 21:30, Thứ 6: 10 to 13:30, 17 to 21:30, Thứ 7: 10 to 13:30, 17 to 21:30, Chủ nhật: 10 to 13:30, 17 to 21:30, Thứ 2: 10 to 13:30, 17 to 21:30, Thứ 3: 10 to 13:30, 17 to 21:30, Thứ 4: 10 to 13:30, 17 to 21:30",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Món Âu",
+      "Món Nhật"
+    ],
+    "detailedPreferences": [
+      "Sashimi",
+      "Juice",
+      "Mì Ý",
+      "Biff",
+      "Tagliatelle",
+      "Sushi",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJz2aKMudvdTER57ofD2nr3Ik",
+    "name": "Hotdogs Milyka",
+    "category": "Korvstånd",
+    "city": "Ho Chi Minh",
+    "address": "47 Hàn Mặc Tử, Tam Thắng, Hồ Chí Minh 79000, Vietnam",
+    "location": {
+      "lat": 10.3625562,
+      "lng": 107.086777
+    },
+    "rating": 4.9,
+    "reviewCount": 30,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 337 402 928",
+    "website": "https://m.facebook.com/hotdogsmilyka",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMwUMypM6lwYXmf_NmxouF1yLv14B866FQnj5MH=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsmgv59tTWL8NFv9njaAYs9ab2EV553jk_NL2xT6LfI6J6VBQHbkCmDU_2vVEyKD-_MbVLbbRkVA03Sz7mxi6hWA1RoJL_l2fo5DPT4YjLtGPWLIWlDvoja9VWnSuLFUJrbEaCFg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: Öppet dygnet runt, Thứ 6: Öppet dygnet runt, Thứ 7: 00 to 11:30, Chủ nhật: Öppet dygnet runt, Thứ 2: Öppet dygnet runt, Thứ 3: Öppet dygnet runt, Thứ 4: Stängt",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Varmkorv",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Färdiglagad mat",
+      "Giờ vàng đồ uống",
+      "Happy hour på mat",
+      "Kaffe",
+      "Nattmat",
+      "Privat matsal",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5S8EZcNvdTERkljs_pOZCPE",
+    "name": "Nhà hàng Kozak",
+    "category": "Ukrainsk restaurang",
+    "city": "Ho Chi Minh",
+    "address": "Đối diện, 160 Nguyễn Tri Phương, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3645629,
+      "lng": 107.0824585
+    },
+    "rating": 4.2,
+    "reviewCount": 374,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 254 3563 776",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjZh791z0CXY2bKEKv7z5TzhF_a5Bx4icVhvEVfVKYqiz1uVPUmA8g18Mtr5o4jLq4p_bUT0FTJCUNfxLXH6aZvhuSYVFCX7yCmeJd7uXYGyqWz4kMc2EOOhlBuu1hubhI1t9dhg=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAENCzJhfnBNgz0d9ANLwoQJbpimuXEf5O1FhhfF9p6MZW4pAatoecuOSO6luxxodpa9a-p_GjNCeSK5-qz7LVPlRs31NLkSqXrr355UMrHkce_HSSmT7pHi920EqKCb3BBCnSpH8g=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 09 to 23, Thứ 6: 09 to 23, Thứ 7: 09 to 23, Chủ nhật: 09 to 23, Thứ 2: 09 to 23, Thứ 3: 09 to 23, Thứ 4: 09 to 23",
+    "cuisineTags": [
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Borsjtj",
+      "Klimp",
+      "Kringla",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ8yPZaMZvdTERLz4NHlIpLz8",
+    "name": "She's Coffee",
+    "category": "Kafé",
+    "city": "Ho Chi Minh",
+    "address": "55 Nguyễn Tri Phương, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3646379,
+      "lng": 107.0821989
+    },
+    "rating": 4.2,
+    "reviewCount": 202,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9LsaEd6mB76nd9jysIbkqzzwqTdP_XjM61Uy_RFc_C9uAsJ0UP6RnLUcirUJIxR7iUNEQs0a5ct7L6ceJIxS6mnD8DnoBwQrzEeoZWVh95txsYmLXI8uIipdBnC2UkFrGaedv=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGsDrVAvnRt5X4s83LqDx7pt_k9DylzdgkQIwvs-mo8FOWKHhkwjAt1O9tFDO2pNyLhgg3I466eUw11a9ZUtp_9IloyigBehOzfsfNkwcpIYgrQp3ymRuVebnRvoHpXlIK3EIEi=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22, Thứ 4: 06 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Phở",
+      "Iskaffe",
+      "Juice",
+      "Kaffe",
+      "Irish coffee",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Frukost",
+      "Brunch",
+      "Bữa trưa",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJA595wJtvdTERZlF0HpM-Z10",
+    "name": "Bún chả Hồ Tây 2 - CN2",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "25A Lê Văn Lộc, Vũng Tàu, Hồ Chí Minh 790000, Vietnam",
+    "location": {
+      "lat": 10.370081,
+      "lng": 107.0836667
+    },
+    "rating": 4.5,
+    "reviewCount": 65,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 936 891 331",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM9_5P2Xh9J-K2wHk90UupIDn6PTpFK_XbZW19O=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGQmrFa4_cwz1Kw3zJ_Yrzij1SiZhOGBFebR7_spFaUJRp1tjQlO3W0xP9p6LqblEOQOeg1bSrjcCN4ieAeZq1Jk65y1EYbcIZGcQ4KDD5lavi5BAzuXQ_umfdRU90F3RVMGw1WcgSWMx0B=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 20, Thứ 6: 06 to 20, Thứ 7: 06 to 20, Chủ nhật: 06 to 20, Thứ 2: 06 to 20, Thứ 3: 06 to 20, Thứ 4: 06 to 20",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rullstolstillgänglig toalett",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Khách du lịch"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJWaPJK7lvdTERxScy6lFYpNY",
+    "name": "72 Beer Garden",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "03 Lương Thế Vinh, Tam Thắng, Hồ Chí Minh 78000, Vietnam",
+    "location": {
+      "lat": 10.3698427,
+      "lng": 107.0883071
+    },
+    "rating": 4.6,
+    "reviewCount": 19,
+    "price": "300–700 tn ₫",
+    "phoneNumber": "+84 914 531 608",
+    "website": "https://www.facebook.com/72beer?mibextid=2JQ9oc",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNP2ZBvZIlIjgQcmjY6DHmSDU303gVzi_IcEWkl=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCbGUr0Ir7JUE2EOoBrch_WTGjdSn5xf1qIQp2AUUc4OyKV8ioYUNQ6JALIZpAXIlpFxjeA_xHUAVM7XeIpdou0g9lxMa8CvljdcIVwUOt48SJdYWAY7WgZKyhMoU5C7gEE4BXJWKbpfsq=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Sport",
+      "Có đồ uống cồn",
+      "Öl",
+      "Bữa tối",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Wifi"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ7bo0sBRvdTERDfkAqbvK77w",
+    "name": "Ốc Diễm",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "500 Trương Công Định, Tam Thắng, Hồ Chí Minh 78000, Vietnam",
+    "location": {
+      "lat": 10.3632108,
+      "lng": 107.0890342
+    },
+    "rating": 4.8,
+    "reviewCount": 1157,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 933 927 200",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMTxaZHP781p0nGg-eZ1R1FrBk__xU27CUvGbwo=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFjTMeo-j9CNghonfCMIafcGs5cA307AszD7DnAyEiLkgXEtxe6XaVZkj8fI3gwmt_Qg2vqyf8Rym5s8GtWupcQzQ17zdGi2XzwEjgaWaFEMK-WE8ecTEkKTvW8DnHzFru4Tr7LXCKhcVU=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 11 to 14, 16 to 22, Thứ 6: 11 to 22, Thứ 7: 11 to 22, Chủ nhật: 11 to 22, Thứ 2: 11 to 14, 16 to 22, Thứ 3: 11 to 14, 16 to 22, Thứ 4: 11 to 14, 16 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Krabbor",
+      "Tom yum",
+      "Eldgryta",
+      "Räka",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJBevXG-lvdTERM1jJdQstx6I",
+    "name": "Tiệm quay Hồng Anh 999",
+    "category": "Bistro",
+    "city": "Ho Chi Minh",
+    "address": "736 Trần Phú, Vũng Tàu, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3708274,
+      "lng": 107.074118
+    },
+    "rating": 4.9,
+    "reviewCount": 40,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 933 790 887",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPTOw98e2v7bhXBeG2dbimv6Ckv6yeFh-BUraBr=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipN4KT7EqFTydjc24VZ-hnvFuPk8guPutpl8Nxdh=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 09 to 21, Thứ 6: 09 to 21, Thứ 7: 09 to 21, Chủ nhật: 09 to 21, Thứ 2: 09 to 21, Thứ 3: 09 to 21, Thứ 4: 09 to 21",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Kött",
+      "Spädgris",
+      "Arancini",
+      "Pekinganka",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Sittplatser",
+      "Thoải mái",
+      "Familjevänligt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ57qF_MVvdTER35YhRAdKYyo",
+    "name": "Havana Coffee",
+    "category": "Kafé",
+    "city": "Ho Chi Minh",
+    "address": "06k4 Nguyễn Thái Học, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3659788,
+      "lng": 107.0837585
+    },
+    "rating": 4.1,
+    "reviewCount": 299,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 982 198 511",
+    "website": "https://www.facebook.com/havanavtcoffee/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDNaaTasZP7qQuChVF6tgGOnYprzxP6JSvRDFqOufhk4VIMH1ZHY5LrY4OugsdqF9tIXTxrN4ssNi9W2oyzmudt7oy60s7vfAU_ezGwKNbkurHF7kd8S9TlNY6WH4h03AxJtGK=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHyPktsvJNpPaPCCuf8TUQE1qB5H1k5Zazzq0fZwte8IV6MIkzgf5QhyjuJ8bnoKqrcBfXgp5612OOwPWCV-xh8cXHITPPqGxkXGCxhBekzHVOOIqX4znVeaWiq2sYAr7Kyg1YE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22:30, Thứ 6: 07 to 22:30, Thứ 7: 07 to 22:30, Chủ nhật: 07 to 22:30, Thứ 2: 07 to 22:30, Thứ 3: 07 to 22:30, Thứ 4: 07 to 22:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Juice",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJDfkq4D1vdTERkM-uHmuVCJY",
+    "name": "Ngơ Coffee & Workshop",
+    "category": "Konstcafé",
+    "city": "Ho Chi Minh",
+    "address": "8A Pasteur, Phường Tam Thắng, Tam Thắng, Hồ Chí Minh 78000, Vietnam",
+    "location": {
+      "lat": 10.3624047,
+      "lng": 107.08034
+    },
+    "rating": 4.5,
+    "reviewCount": 98,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 365 886 888",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMCTpF3T1DpJAe56iSwrxjC53bfaaP5DRVKrUgC=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGoq9fWHhEjCB8lHvLzbOgZIMK0MHuhZ34HsG6zmGan7MlVtlEELYl6_Y8PvbPbawMPdSu307-_-J8yFoi-H_ejiED3pzSaQAYLFTCROGvFZjEFSXbRCMrcFFHsaIa7YUW0qW64HQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJB6eMe05vdTERJ9P-cevCljY",
+    "name": "Cafe acoustics Đất Kinh Kỳ",
+    "category": "Kaffebar",
+    "city": "Ho Chi Minh",
+    "address": "64 Lê Văn Lộc, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3720927,
+      "lng": 107.0828732
+    },
+    "rating": 4.8,
+    "reviewCount": 13,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 988 507 768",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXsgdaO3XL8kpqtW-SOwcZv-9bF70xcg_q6WiYk4uHoWe8bAHV0B6esvhZ19b6nCNDfoiSwVIVr0iSj4wKjDDWM8DxpbyfiYjb7wNCrAzYtf2I0zq7gXYWxVlIvOj-KBS7HJ12=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHgAoZF73Gk3Y51GoeqgrvSgH2QPQNZO6ZFc7qT15U2Oj3At0FufUnj1r40egv4aFvSts0cJukCyl9JBlkyqN6qms-Fk-K9McKyg1O3fbW_tn0vpBtjGy55FZaL0AoY4Q-1I0Ib=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: Öppet dygnet runt, Thứ 6: Öppet dygnet runt, Thứ 7: Öppet dygnet runt, Chủ nhật: Öppet dygnet runt, Thứ 2: Öppet dygnet runt, Thứ 3: Öppet dygnet runt, Thứ 4: Öppet dygnet runt",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Liveframträdanden",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJqV1R0BtvdTERp6kzFONHC4s",
+    "name": "Phê Nại",
+    "category": "Kaffebar",
+    "city": "Ho Chi Minh",
+    "address": "43 Phạm Hồng Thái, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3661525,
+      "lng": 107.0772865
+    },
+    "rating": 4.7,
+    "reviewCount": 26,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 925 217 117",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPhKGT2Jf8vJI6g5Yi4Q-ijGOcR_PdSbjqWmSXw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAENEx5htTnrOLGaDBa3m3OAlg_3DvnNLxY7rhvy6x36KsJHBALo5boITfZkwLVRMGIM5SYR3qbHzardCI6ElZEx3ctkdaI0H4C64Z241G3o_5aW9idOuEDGfa8z3f4hv2r-VokNJlR1oB2D=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 18, Thứ 6: 06 to 18, Thứ 7: 06 to 18, Chủ nhật: 06 to 18, Thứ 2: 06 to 15, Thứ 3: 06 to 18, Thứ 4: 06 to 18",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJYXj1CUtvdTERDx1cnomHtm8",
+    "name": "KATH - Bakehouse & Coffee",
+    "category": "Bageri",
+    "city": "Ho Chi Minh",
+    "address": "486B Trương Công Định, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3623973,
+      "lng": 107.0886294
+    },
+    "rating": 4.9,
+    "reviewCount": 142,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 706 686 987",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOHV6btQRLieMC1gObtMnSsCOhqzLjy0M1hKFFR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEptHROcsnFDoR9S5jPEuUYriMdAf8JhDVuvSh5Jh_JbboMRxLCA03QRymmfCKzjL1nuh-XH2XSogqAQ1XbnUmzdFQP9H48LtWdM6qWu_4nx6_6x8mBksD4RjIjjQpxm_N6XaETgLa64g0e=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaka",
+      "Matcha",
+      "Juice",
+      "Giao hàng",
+      "Mua mang về",
+      "Kaffe",
+      "Toalett",
+      "Går snabbt",
+      "Kreditkort",
+      "Mobilbetalningar med NFC",
+      "Avgiftsfri parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJr2aKbgBvdTERWQlhw26Ub4o",
+    "name": "Bún riêu cua Chị Gái",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "57 Nguyễn An Ninh, Vũng Tàu, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3702321,
+      "lng": 107.0780228
+    },
+    "rating": 4.7,
+    "reviewCount": 26,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 985 504 906",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0hxLLn29k7alhsJXZSniD22PDnylPo7M7NTG9IQzNUVUhn02vZ_q16y_NAdnuFiKj15mkpR2GdVMHr62ij8c2d2b91nItqAKOWIfZNQrKMc1uoeQWWUuYx0IWhlGzUUoylrzIKCPWePRK=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtkOBrHnKS_wYtwKeHGGIHRm8s1HCuZmPkNGxloew_N5_NDJnsO_IxKYUkLgH3XqOjwMR0M_EtopnyZvedZ0WQd-MSeFh0dMBUkjqrzUej6H50pyApLSTrNbPbhdL0PJnwPguUEd0pOCM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 21, Thứ 6: 06 to 21, Thứ 7: 06 to 21, Chủ nhật: 06 to 21, Thứ 2: 06 to 21, Thứ 3: 06 to 21, Thứ 4: 06 to 21",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Catering",
+      "Bordsservering",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJT8qaNdNvdTER4ZiON2VotFU",
+    "name": "ALEX Restaurant",
+    "category": "Nhà hàng",
+    "city": "Ho Chi Minh",
+    "address": "93/24 Lê Lợi, Vũng Tàu, Hồ Chí Minh 790000, Vietnam",
+    "location": {
+      "lat": 10.3622732,
+      "lng": 107.0746478
+    },
+    "rating": 4.7,
+    "reviewCount": 176,
+    "price": "100–300 tn ₫",
+    "phoneNumber": "+84 948 786 617",
+    "website": "http://alexfoodvietnam.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH6gSppKdEhCE_4Na8bKUJKyMPCXpry6TfAUBuVuicD3C7v2cv94eCVDZWqVoscGijQoOA43CJoZfBGJDFIVASUu6pcQVUZYMAjivO6SmDY2RJwWtNWXx9dfzfR60CsBsXWbXrjsXw3ETFr=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhVn9fZrmJxxkJxMxcG_pdnGMj4UYMd7CTFFiWXo_PGSjGxvZkbUJTcEy4GwROJ-QQS_zR-CRzAWqFKqcazwjJjO8FOBKfUb3VVau9Qlg5Juj9PGf3HeWWv6k2E-XE3zGKycd-lNZEeF4=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 12 to 22, Thứ 6: 12 to 22, Thứ 7: 12 to 22, Chủ nhật: 12 to 22, Thứ 2: 12 to 22, Thứ 3: Stängt, Thứ 4: 12 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Borsjtj",
+      "Bruschetta",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJTUV11OlvdTERgHgLPjGZvpE",
+    "name": "Greensip Matcha",
+    "category": "Kaffebar",
+    "city": "Ho Chi Minh",
+    "address": "65 Nguyễn Tri Phương, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3649542,
+      "lng": 107.081842
+    },
+    "rating": 4.9,
+    "reviewCount": 73,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 931 203 847",
+    "website": "https://www.facebook.com/share/1EPVGkJe6b/?mibextid=wwXIfr",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHO7wPPa0FWTcpF3dJJaPEehbMl1OwgP2k88KGQ14G1rVJ7WMm6qKcVUZC5T9sHHKWcFu3Ut6b63PT8lTA04C3K5xrALk-8PJjd8eVE46ONWXyUKvj698yzYuLR4f2YV5noOxc3z9sjyPNs=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGj5-oGs_s0V71aIFj-aTwJKbC80XL0MPo8dcc7o185tRi2BedfI8LlKCPfVsl9FXsID47Fpd-VUSWLbMt7gAAlTM2_scFFPvr2nDjnA5XjySpZSNDDMtAi2xVBaw_aVK0ZCWo_B-CRXqg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 18, Thứ 6: 08 to 18, Thứ 7: 08 to 18, Chủ nhật: 08 to 18, Thứ 2: 08 to 18, Thứ 3: 08 to 18, Thứ 4: 08 to 18",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Matcha",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Kaffe",
+      "Thoải mái",
+      "Studenter",
+      "Mobilbetalningar med NFC"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJMXiPn29vdTERCCuaX_m09LE",
+    "name": "Quán cafe sách MAKEDO",
+    "category": "Kafé",
+    "city": "Ho Chi Minh",
+    "address": "34 Hoàng Văn Thụ, Tam Thắng, Hồ Chí Minh, Vietnam",
+    "location": {
+      "lat": 10.3631051,
+      "lng": 107.0864796
+    },
+    "rating": 4.8,
+    "reviewCount": 151,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 397 073 369",
+    "website": "http://facebook.com/makedobookcoffee",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNDGGfNRFJ2xW72UuTfmu1oFeNC-smxNRJX6UJu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPZb20bJXg3SsQZEPz60A-KMPglHw7lVcNzCgA4=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig toalett",
+      "Catering",
+      "Bordsservering",
+      "Toalett",
+      "Wifi",
+      "Gratis wifi"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJswaCNgBvdTERuRr6IQVms4A",
+    "name": "Little Seoul Cafe 꼬마서울까페(coffee shop)",
+    "category": "Kaffebar",
+    "city": "Ho Chi Minh",
+    "address": "58 Lê Văn Lộc, Tam Thắng, Hồ Chí Minh 78000, Vietnam",
+    "location": {
+      "lat": 10.3720597,
+      "lng": 107.0829187
+    },
+    "rating": 4.8,
+    "reviewCount": 78,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 888 819 830",
+    "website": "https://www.facebook.com/profile.php?id=61562477627076&mibextid=ZbWKwL",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPuhN0NmMCVTMna-APjBUX5fbxbDyoE91QFGKhS=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNsuM9zPU_Pz09CnuN80yZjLGkb6zSaYoh5wjcI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07:30 to 21:30, Thứ 6: 07:30 to 21:30, Thứ 7: 07:30 to 21:30, Chủ nhật: 07:30 to 21:30, Thứ 2: 07:30 to 21:30, Thứ 3: 07:30 to 21:30, Thứ 4: 07:30 to 21:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Matcha",
+      "Juice",
+      "Cocktail",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  }
+]

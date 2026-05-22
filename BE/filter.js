@@ -8,8 +8,8 @@ const path = require('path');
  * 3. Chạy lệnh: node filter.js
  */
 
-const INPUT_FILE = path.join(__dirname, 'danang.json');
-const OUTPUT_FILE = path.join(__dirname, 'danang_clean.json');
+const INPUT_FILE = path.join(__dirname, 'Gia_Lai.json');
+const OUTPUT_FILE = path.join(__dirname, 'Gia_Lai_clean.json');
 
 
 const TRANSLATIONS = {

@@ -11,6 +11,11 @@ const user_model_1 = __importDefault(require("../models/user.model"));
 const roomInventory_model_1 = __importDefault(require("../models/roomInventory.model"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const emailService_1 = require("../utils/emailService");
+const notification_model_1 = __importDefault(require("../models/notification.model"));
+const order_model_1 = __importDefault(require("../models/order.model"));
+const trip_controller_1 = require("./trip.controller");
+const creatorSubscriptionTransaction_model_1 = __importDefault(require("../models/creatorSubscriptionTransaction.model"));
+const wallet_model_1 = __importDefault(require("../models/wallet.model"));
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 exports.PaymentController = {
     /**
@@ -83,6 +88,43 @@ exports.PaymentController = {
                 message: 'Không thể tạo link thanh toán',
                 error: error.message,
             });
+        }
+    },
+    _handleSuccessfulCreatorSubscription: async (webhookData) => {
+        try {
+            const tx = await creatorSubscriptionTransaction_model_1.default.findOne({ orderCode: webhookData.orderCode }).populate('packageId');
+            if (!tx || tx.status === 'success')
+                return;
+            const pkg = tx.packageId;
+            if (!pkg)
+                return;
+            const user = await user_model_1.default.findOne({ userId: tx.userId });
+            if (!user)
+                return;
+            // Tính ngày hết hạn
+            const now = new Date();
+            let newEndsAt = new Date();
+            if (user.creatorSubscriptionEndsAt && user.creatorSubscriptionEndsAt > now) {
+                newEndsAt = new Date(user.creatorSubscriptionEndsAt);
+            }
+            newEndsAt.setMonth(newEndsAt.getMonth() + pkg.durationInMonths);
+            user.role = 'creator';
+            user.creatorSubscriptionEndsAt = newEndsAt;
+            await user.save();
+            tx.status = 'success';
+            await tx.save();
+            // Update admin wallet (revenue)
+            let adminWallet = await wallet_model_1.default.findOne({ isSystem: true });
+            if (!adminWallet) {
+                adminWallet = new wallet_model_1.default({ isSystem: true, balance: 0 });
+            }
+            adminWallet.balance += tx.amount;
+            await adminWallet.save();
+            console.log(`[PayOS] Mua goi Creator thanh cong cho user: ${user.userId}`);
+        }
+        catch (error) {
+            console.error('[PayOS] handleSuccessfulCreatorSubscription error:', error);
+            throw error;
         }
     },
     /**
@@ -171,7 +213,19 @@ exports.PaymentController = {
                     await exports.PaymentController._handleSuccessfulTopup(webhookData);
                 }
                 else {
-                    await exports.PaymentController._handleSuccessfulPayment(webhookData);
+                    const tripOrder = await order_model_1.default.findOne({ orderCode: webhookData.orderCode });
+                    if (tripOrder) {
+                        await (0, trip_controller_1.processTripOrder)(webhookData.orderCode);
+                    }
+                    else {
+                        const creatorTx = await creatorSubscriptionTransaction_model_1.default.findOne({ orderCode: webhookData.orderCode });
+                        if (creatorTx) {
+                            await exports.PaymentController._handleSuccessfulCreatorSubscription(webhookData);
+                        }
+                        else {
+                            await exports.PaymentController._handleSuccessfulPayment(webhookData);
+                        }
+                    }
                 }
             }
             return res.status(200).json({ success: true, message: 'Webhook processed', data: webhookData });
@@ -215,6 +269,66 @@ exports.PaymentController = {
                         checkoutUrl: null,
                     },
                 });
+            }
+            if (String(bookingId).startsWith('creator_')) {
+                const orderCode = Number(String(bookingId).split('_')[1]);
+                const tx = await creatorSubscriptionTransaction_model_1.default.findOne({ orderCode });
+                if (!tx) {
+                    return res.status(404).json({ success: false, message: 'Không tìm thấy giao dịch mua gói Creator' });
+                }
+                let payosStatus = null;
+                try {
+                    payosStatus = await payos_1.default.paymentRequests.get(tx.orderCode);
+                    if (payosStatus.status === 'PAID' && tx.status !== 'success') {
+                        await exports.PaymentController._handleSuccessfulCreatorSubscription({ orderCode: tx.orderCode });
+                        tx.status = 'success';
+                    }
+                }
+                catch (e) { }
+                return res.status(200).json({
+                    success: true,
+                    data: {
+                        bookingId: `creator_${tx.orderCode}`,
+                        paymentStatus: tx.status === 'success' ? 'paid' : 'unpaid',
+                        bookingStatus: tx.status,
+                        totalPrice: tx.amount,
+                        payosStatus: payosStatus?.status || null,
+                        checkoutUrl: null,
+                    },
+                });
+            }
+            // Check for trip order
+            if (!isNaN(Number(bookingId))) {
+                const order = await order_model_1.default.findOne({ orderCode: Number(bookingId) });
+                if (order) {
+                    let payosStatus = null;
+                    let clonedTripId = null;
+                    try {
+                        payosStatus = await payos_1.default.paymentRequests.get(order.orderCode);
+                        if (payosStatus.status === 'PAID' && order.status !== 'SUCCESS') {
+                            await (0, trip_controller_1.processTripOrder)(order.orderCode);
+                            order.status = 'SUCCESS';
+                        }
+                    }
+                    catch (e) { }
+                    if (order.status === 'SUCCESS') {
+                        const TripModel = require('../models/trip.model').default;
+                        const clonedTrip = await TripModel.findOne({ originalTripId: order.tripTemplateId, userId: order.buyerId, isPurchasedClone: true }).sort({ createdAt: -1 });
+                        clonedTripId = clonedTrip?._id;
+                    }
+                    return res.status(200).json({
+                        success: true,
+                        data: {
+                            bookingId: order.orderCode.toString(),
+                            paymentStatus: order.status === 'SUCCESS' ? 'paid' : 'unpaid',
+                            bookingStatus: order.status,
+                            totalPrice: order.amount,
+                            payosStatus: payosStatus?.status || null,
+                            checkoutUrl: null,
+                            newTripId: clonedTripId
+                        },
+                    });
+                }
             }
             const booking = await booking_model_1.default.findOne({ bookingId });
             if (!booking) {
@@ -307,7 +421,14 @@ exports.PaymentController = {
                 }
                 totalPrice += inventory.priceAtDate * roomCount;
             }
-            // Tạo Booking với status pending (chờ thanh toán)
+            // 4. Kiểm tra số dư người dùng
+            const user = await user_model_1.default.findOne({ userId }).session(session);
+            if (!user) {
+                await session.abortTransaction();
+                return res.status(404).json({ success: false, message: 'Người dùng không tồn tại' });
+            }
+            const isBalanceEnough = user.balance >= totalPrice;
+            // 5. Tạo Booking
             const newBooking = new booking_model_1.default({
                 userId,
                 hotelId,
@@ -317,13 +438,13 @@ exports.PaymentController = {
                 nights,
                 roomCount,
                 totalPrice,
-                status: 'pending',
+                status: isBalanceEnough ? 'confirmed' : 'pending',
                 guestInfo,
-                paymentMethod: 'bank_transfer',
-                paymentStatus: 'unpaid',
+                paymentMethod: isBalanceEnough ? 'balance' : 'bank_transfer',
+                paymentStatus: isBalanceEnough ? 'paid' : 'unpaid',
             });
             await newBooking.save({ session });
-            // Giữ phòng (cập nhật bookedCount)
+            // 6. Giữ phòng (cập nhật bookedCount)
             for (const date of dateRange) {
                 await roomInventory_model_1.default.findOneAndUpdate({
                     hotelId,
@@ -334,8 +455,55 @@ exports.PaymentController = {
                     },
                 }, { $inc: { bookedCount: roomCount } }, { session });
             }
+            // 7. Nếu dùng số dư: Trừ tiền user & Cộng tiền chủ khách sạn
+            if (isBalanceEnough) {
+                const pointsEarned = Math.floor(totalPrice / 1000);
+                await user_model_1.default.findOneAndUpdate({ userId }, {
+                    $inc: {
+                        balance: -totalPrice,
+                        points: pointsEarned
+                    }
+                }, { session });
+                const hotelDoc = await hotel_model_1.default.findOne({ hotelId }).session(session);
+                if (hotelDoc && hotelDoc.ownerId) {
+                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: totalPrice } }, { session });
+                }
+            }
             await session.commitTransaction();
-            // Tạo PayOS payment link sau khi commit
+            // 8. Nếu thanh toán thành công bằng số dư -> Trả kết quả ngay
+            if (isBalanceEnough) {
+                const hotel = await hotel_model_1.default.findOne({ hotelId });
+                const hotelName = hotel?.name || 'khách sạn';
+                // Tạo thông báo trong app
+                await notification_model_1.default.create({
+                    userId,
+                    title: "✅ Đặt phòng thành công",
+                    message: `Bạn đã đặt thành công ${roomCount} phòng tại ${hotelName} (${nights} đêm). Số tiền ${totalPrice.toLocaleString()} VND đã được trừ từ số dư.`,
+                });
+                if (hotel && guestInfo.email) {
+                    (0, emailService_1.sendEmailTemplate)(guestInfo.email, '✅ Xác nhận đặt phòng thành công', 'bookingConfirmation', {
+                        fullName: guestInfo.fullName,
+                        bookingId: newBooking.bookingId,
+                        hotelName: hotel.name,
+                        checkIn: checkIn,
+                        checkOut: checkOut,
+                        roomCount: roomCount.toString(),
+                        totalPrice: totalPrice.toLocaleString()
+                    }).catch((err) => console.error('[Balance Payment] Email error:', err));
+                }
+                return res.status(201).json({
+                    success: true,
+                    message: 'Đặt phòng thành công! Số dư của bạn đã được trừ.',
+                    data: {
+                        bookingId: newBooking.bookingId,
+                        totalPrice,
+                        nights,
+                        status: 'confirmed',
+                        paymentMethod: 'balance',
+                    },
+                });
+            }
+            // 9. Nếu số dư không đủ -> Tạo PayOS payment link
             const hotel = await hotel_model_1.default.findOne({ hotelId });
             const hotelName = hotel?.name || 'OwnTrip';
             const description = `Dat phong ${hotelName}`.slice(0, 25);
@@ -356,18 +524,17 @@ exports.PaymentController = {
                         },
                     ],
                 };
-                // v2 SDK: payOS.paymentRequests.create(...)
                 const paymentLinkRes = await payos_1.default.paymentRequests.create(payosBody);
                 checkoutUrl = paymentLinkRes.checkoutUrl;
                 orderCode = paymentLinkRes.orderCode;
                 await booking_model_1.default.findOneAndUpdate({ bookingId: newBooking.bookingId }, { payosOrderCode: orderCode, payosCheckoutUrl: checkoutUrl });
             }
             catch (payosError) {
-                console.error('[PayOS] Tạo link thất bại, booking vẫn được tạo:', payosError.message);
+                console.error('[PayOS] Tạo link thất bại:', payosError.message);
             }
             return res.status(201).json({
                 success: true,
-                message: 'Tạo đặt phòng thành công. Vui lòng thanh toán để xác nhận.',
+                message: 'Số dư không đủ. Vui lòng thanh toán qua QR để xác nhận đặt phòng.',
                 data: {
                     bookingId: newBooking.bookingId,
                     totalPrice,
@@ -406,6 +573,12 @@ exports.PaymentController = {
         await booking.save();
         // Cộng doanh thu cho chủ khách sạn
         const hotel = await hotel_model_1.default.findOne({ hotelId: booking.hotelId });
+        // Tạo thông báo trong app
+        await notification_model_1.default.create({
+            userId: booking.userId,
+            title: "✅ Thanh toán thành công",
+            message: `Đơn đặt phòng ${booking.bookingId} tại ${hotel?.name || 'khách sạn'} đã được thanh toán thành công qua PayOS.`,
+        });
         if (hotel && hotel.ownerId) {
             await user_model_1.default.findOneAndUpdate({ userId: hotel.ownerId }, { $inc: { balance: booking.totalPrice } });
         }

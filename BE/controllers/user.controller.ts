@@ -160,6 +160,19 @@ export const UserController = {
       res.status(500).json({ success: false, message: error.message });
     }
   },
+  getMe: async (req: AuthRequest, res: Response) => {
+    try {
+      const userId = req.user?.userId;
+      if (!userId) {
+        return res.status(401).json({ success: false, message: "Bạn cần đăng nhập" });
+      }
+      const user = await User.findOne({ userId }).select('-password');
+      if (!user) return res.status(404).json({ message: "User not found" });
+      res.json({ success: true, data: user });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
   login: async (req: Request, res: Response) => {
     try {
       const { email, password } = req.body;

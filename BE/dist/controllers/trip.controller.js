@@ -3,12 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteTripById = exports.updateTripPublishStatus = exports.getPublishedTrips = exports.updateTrip = exports.getProvinceImageCatalog = exports.getMyTrips = exports.getTripDestinations = exports.getTripDetail = exports.createTrip = void 0;
+exports.getTripSalesStats = exports.renderSandboxPayment = exports.processTripOrder = exports.handlePaymentWebhook = exports.createPaymentUrl = exports.publishToMarketplace = exports.getTripPreview = exports.getMarketplaceTrips = exports.deleteTripById = exports.updateTripPublishStatus = exports.getPublishedTrips = exports.updateTrip = exports.getProvinceImageCatalog = exports.getMyTrips = exports.getTripDestinations = exports.getTripDetail = exports.createTrip = void 0;
 const trip_model_1 = __importDefault(require("../models/trip.model"));
 const planDay_model_1 = __importDefault(require("../models/planDay.model"));
 const planPlace_model_1 = __importDefault(require("../models/planPlace.model"));
 const provinceImages_1 = require("../utils/provinceImages");
 const notification_model_1 = __importDefault(require("../models/notification.model"));
+const review_model_1 = __importDefault(require("../models/review.model"));
+const user_model_1 = __importDefault(require("../models/user.model"));
 const createTrip = async (req, res) => {
     try {
         const userId = req.user?.userId;
@@ -85,10 +87,14 @@ const getTripDetail = async (req, res) => {
                 places,
             });
         }
+        const reviews = await review_model_1.default.find({ targetId: tripId, targetType: 'itinerary' })
+            .populate('userId', 'displayName image')
+            .sort({ createdAt: -1 });
         res.json({
             success: true,
             trip,
-            days: result
+            days: result,
+            reviews
         });
     }
     catch (error) {
@@ -206,7 +212,7 @@ const updateTrip = async (req, res) => {
     try {
         const userId = req.user?.userId;
         const tripId = req.params.tripId;
-        const { title, destination, startDate, endDate, description, isPublished } = req.body;
+        const { title, destination, startDate, endDate, description, isPublished, notes, budget } = req.body;
         if (!userId) {
             return res.status(401).json({
                 success: false,
@@ -239,6 +245,14 @@ const updateTrip = async (req, res) => {
             trip.accommodation = req.body.accommodation;
             // Đảm bảo mongoose nhận biết trường này đã thay đổi
             trip.markModified('accommodation');
+        }
+        if (notes !== undefined) {
+            trip.notes = notes;
+            trip.markModified('notes');
+        }
+        if (budget !== undefined) {
+            trip.budget = budget;
+            trip.markModified('budget');
         }
         const nextStartDate = startDate ? new Date(startDate) : new Date(trip.startDate);
         const nextEndDate = endDate ? new Date(endDate) : new Date(trip.endDate);
@@ -441,3 +455,391 @@ const deleteTripById = async (req, res) => {
     }
 };
 exports.deleteTripById = deleteTripById;
+const getMarketplaceTrips = async (req, res) => {
+    try {
+        const { limit, page, sort } = req.query;
+        const parsedLimit = Number(limit);
+        const parsedPage = Number(page);
+        const pageSize = Number.isFinite(parsedLimit)
+            ? Math.min(Math.max(Math.floor(parsedLimit), 1), 50)
+            : 20;
+        const currentPage = Number.isFinite(parsedPage)
+            ? Math.max(Math.floor(parsedPage), 1)
+            : 1;
+        const filters = { isPublished: true, isForSale: true };
+        let sortOption = { createdAt: -1 };
+        if (sort === "top_sold") {
+            sortOption = { soldCount: -1 };
+        }
+        else if (sort === "rating") {
+            sortOption = { averageRating: -1 };
+        }
+        const [trips, total] = await Promise.all([
+            trip_model_1.default.find(filters)
+                .sort(sortOption)
+                .skip((currentPage - 1) * pageSize)
+                .limit(pageSize),
+            trip_model_1.default.countDocuments(filters)
+        ]);
+        return res.json({
+            success: true,
+            page: currentPage,
+            limit: pageSize,
+            total,
+            totalPages: Math.ceil(total / pageSize),
+            trips
+        });
+    }
+    catch (error) {
+        console.error("Get marketplace trips error:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Get marketplace trips failed"
+        });
+    }
+};
+exports.getMarketplaceTrips = getMarketplaceTrips;
+const getTripPreview = async (req, res) => {
+    try {
+        const tripId = req.params.tripId;
+        const trip = await trip_model_1.default.findById(tripId);
+        if (!trip) {
+            return res.status(404).json({
+                success: false,
+                message: "Trip not found"
+            });
+        }
+        const days = await planDay_model_1.default.find({ tripId }).sort({ dayNumber: 1 });
+        const result = [];
+        for (const day of days) {
+            const places = await planPlace_model_1.default.find({ dayId: day._id }).sort({
+                order: 1,
+            });
+            // Mask places data for preview
+            const maskedPlaces = places.map((place) => ({
+                dayId: place.dayId,
+                order: place.order,
+                timeOfDay: place.timeOfDay,
+                name: "Địa điểm đã được khoá 🔒",
+            }));
+            result.push({
+                dayId: day._id,
+                day: day.dayNumber,
+                date: day.date,
+                places: maskedPlaces,
+            });
+        }
+        const reviews = await review_model_1.default.find({ targetId: tripId, targetType: 'itinerary' })
+            .populate('userId', 'displayName image')
+            .sort({ createdAt: -1 });
+        res.json({
+            success: true,
+            trip,
+            days: result,
+            reviews
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Get trip preview failed",
+        });
+    }
+};
+exports.getTripPreview = getTripPreview;
+const mongoose_1 = __importDefault(require("mongoose"));
+const order_model_1 = __importDefault(require("../models/order.model"));
+const wallet_model_1 = __importDefault(require("../models/wallet.model"));
+const payos_1 = __importDefault(require("../utils/payos"));
+const CREATOR_SHARE_RATIO = 0.7;
+const publishToMarketplace = async (req, res) => {
+    try {
+        const userId = req.user?.userId;
+        const tripId = req.params.tripId;
+        const { price } = req.body;
+        if (!userId)
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        const trip = await trip_model_1.default.findOne({ _id: tripId });
+        if (!trip)
+            return res.status(404).json({ success: false, message: "Không tìm thấy lịch trình" });
+        if (trip.userId !== userId) {
+            return res.status(403).json({ success: false, message: "Bạn không có quyền bán lịch trình của người khác." });
+        }
+        const user = await user_model_1.default.findOne({ userId });
+        const now = new Date();
+        if (!user || user.role !== 'creator' || !user.creatorSubscriptionEndsAt || user.creatorSubscriptionEndsAt < now) {
+            return res.status(403).json({
+                success: false,
+                message: "Bạn cần đăng ký hoặc gia hạn gói Creator để được phép bán lịch trình trên Marketplace!",
+                code: "CREATOR_REQUIRED"
+            });
+        }
+        // Anti-Resell Rule
+        if (trip.isPurchasedClone) {
+            return res.status(403).json({ success: false, message: "Bạn không được phép bán lại lịch trình đã mua (Vi phạm bản quyền)." });
+        }
+        // Anti-Duplicate-Sell Rule (Allow Price Update)
+        if (trip.isForSale) {
+            trip.price = price || 0;
+            await trip.save();
+            return res.json({ success: true, message: "Cập nhật giá bán thành công", trip });
+        }
+        trip.isPublished = true;
+        trip.isForSale = true;
+        trip.price = price || 0;
+        await trip.save();
+        return res.json({ success: true, message: "Trip published to marketplace successfully", trip });
+    }
+    catch (error) {
+        console.error("Publish to marketplace error:", error);
+        return res.status(500).json({ success: false, message: "Publish to marketplace failed" });
+    }
+};
+exports.publishToMarketplace = publishToMarketplace;
+const createPaymentUrl = async (req, res) => {
+    try {
+        const buyerId = req.user?.userId;
+        const { tripId } = req.params;
+        if (!buyerId)
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        const templateTrip = await trip_model_1.default.findById(tripId);
+        if (!templateTrip)
+            return res.status(404).json({ success: false, message: "Trip template not found" });
+        if (templateTrip.userId === buyerId) {
+            return res.json({ success: true, message: "Bạn đã sở hữu lịch trình này!", tripId: templateTrip._id });
+        }
+        // Check if buyer has already purchased a clone of this trip
+        const existingPurchase = await trip_model_1.default.findOne({
+            userId: buyerId,
+            originalTripId: templateTrip._id,
+            isPurchasedClone: true
+        });
+        if (existingPurchase) {
+            return res.json({
+                success: true,
+                message: "Bạn đã sở hữu lịch trình này!",
+                tripId: existingPurchase._id
+            });
+        }
+        // Generate unique order code
+        const orderCode = Math.floor(Math.random() * 1000000) + new Date().getTime() % 1000000;
+        // Create PENDING Order
+        const order = new order_model_1.default({
+            orderCode,
+            buyerId,
+            sellerId: templateTrip.userId,
+            tripTemplateId: templateTrip._id,
+            amount: templateTrip.price || 0,
+            status: 'PENDING'
+        });
+        await order.save();
+        // If it's free, we can process it directly, or simulate a free webhook
+        if (order.amount === 0) {
+            // Simulate webhook call directly here if free to unlock instantly
+            return res.json({
+                success: true,
+                message: "Lịch trình miễn phí. Mở khoá thành công!",
+                paymentUrl: `/api/trips/payment-sandbox/${orderCode}?auto=true`
+            });
+        }
+        const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
+        // Generate REAL PayOS link
+        const body = {
+            orderCode,
+            amount: order.amount,
+            description: `Mua plan ${templateTrip.title}`.slice(0, 25),
+            returnUrl: `${YOUR_DOMAIN}/payment/success?orderCode=${orderCode}`,
+            cancelUrl: `${YOUR_DOMAIN}/payment/cancel?orderCode=${orderCode}`,
+            items: [
+                {
+                    name: templateTrip.title.slice(0, 50),
+                    quantity: 1,
+                    price: order.amount,
+                },
+            ],
+        };
+        const paymentLinkRes = await payos_1.default.paymentRequests.create(body);
+        order.providerTransactionId = paymentLinkRes.checkoutUrl;
+        await order.save();
+        // Return REAL Payment URL
+        return res.json({
+            success: true,
+            message: "Đang chuyển hướng tới cổng thanh toán...",
+            paymentUrl: paymentLinkRes.checkoutUrl,
+            orderCode
+        });
+    }
+    catch (error) {
+        console.error("Create Payment URL error:", error);
+        return res.status(500).json({ success: false, message: "Create payment failed" });
+    }
+};
+exports.createPaymentUrl = createPaymentUrl;
+const handlePaymentWebhook = async (req, res) => {
+    try {
+        // Verify Webhook using PayOS SDK
+        const webhookData = await payos_1.default.webhooks.verify(req.body);
+        // Always acknowledge the webhook to prevent retries
+        res.status(200).json({ success: true, message: "Webhook processed" });
+        if (['Ma giao dich thu nghiem', 'VQRIO123'].includes(webhookData.description)) {
+            return;
+        }
+        if (webhookData.code !== '00')
+            return; // Not a successful payment
+        const { orderCode } = webhookData;
+        await (0, exports.processTripOrder)(orderCode);
+        return;
+    }
+    catch (error) {
+        console.error("Webhook processing error:", error);
+        if (!res.headersSent) {
+            return res.status(500).json({ success: false, message: "Webhook error" });
+        }
+    }
+};
+exports.handlePaymentWebhook = handlePaymentWebhook;
+const processTripOrder = async (orderCode) => {
+    const transactionId = "PAYOS_TXN";
+    const session = await mongoose_1.default.startSession();
+    session.startTransaction();
+    try {
+        const order = await order_model_1.default.findOne({ orderCode }).session(session);
+        if (!order || order.status === 'SUCCESS') {
+            await session.abortTransaction();
+            session.endSession();
+            return;
+        }
+        const creatorAmount = Math.floor(order.amount * CREATOR_SHARE_RATIO);
+        const adminAmount = order.amount - creatorAmount;
+        // Revenue split: 70% for creator, 30% for admin system wallet.
+        await user_model_1.default.findOneAndUpdate({ userId: order.sellerId }, { $inc: { balance: creatorAmount } }, { new: true, session });
+        await wallet_model_1.default.findOneAndUpdate({ isSystem: true }, {
+            $inc: { balance: adminAmount },
+            $setOnInsert: { isSystem: true, currency: "VND" }
+        }, { new: true, upsert: true, session });
+        // Clone Trip (Unlock)
+        const templateTrip = await trip_model_1.default.findById(order.tripTemplateId).session(session);
+        if (templateTrip) {
+            const clonedTripData = {
+                userId: order.buyerId,
+                title: `${templateTrip.title} (Đã mua)`,
+                destination: templateTrip.destination,
+                province: templateTrip.province,
+                provinceImage: templateTrip.provinceImage,
+                startDate: templateTrip.startDate,
+                endDate: templateTrip.endDate,
+                totalDays: templateTrip.totalDays,
+                description: templateTrip.description || "",
+                isPublished: false,
+                isForSale: false,
+                isPurchasedClone: true,
+                originalTripId: templateTrip._id,
+                originalCreatorId: templateTrip.userId,
+                price: 0
+            };
+            const newTrip = new trip_model_1.default(clonedTripData);
+            await newTrip.save({ session });
+            const templateDays = await planDay_model_1.default.find({ tripId: templateTrip._id }).session(session).sort({ dayNumber: 1 });
+            for (const day of templateDays) {
+                const clonedDay = new planDay_model_1.default({ tripId: newTrip._id, dayNumber: day.dayNumber, date: day.date });
+                await clonedDay.save({ session });
+                const templatePlaces = await planPlace_model_1.default.find({ dayId: day._id }).session(session).sort({ order: 1 });
+                for (const place of templatePlaces) {
+                    const clonedPlace = new planPlace_model_1.default({
+                        dayId: clonedDay._id,
+                        placeId: place.placeId,
+                        name: place.name,
+                        address: place.address,
+                        photo: place.photo,
+                        latitude: place.latitude,
+                        longitude: place.longitude,
+                        rating: place.rating,
+                        mapUrl: place.mapUrl,
+                        order: place.order,
+                        timeOfDay: place.timeOfDay || "morning"
+                    });
+                    await clonedPlace.save({ session });
+                }
+            }
+            await trip_model_1.default.findByIdAndUpdate(templateTrip._id, { $inc: { soldCount: 1 } }, { session });
+        }
+        order.status = 'SUCCESS';
+        order.providerTransactionId = transactionId || "SANDBOX_TXN";
+        await order.save({ session });
+        await session.commitTransaction();
+        session.endSession();
+        console.log(`[Webhook] Mở khoá thành công cho Order ${orderCode}`);
+    }
+    catch (error) {
+        await session.abortTransaction();
+        session.endSession();
+        console.error("Process trip order error:", error);
+    }
+};
+exports.processTripOrder = processTripOrder;
+const renderSandboxPayment = async (req, res) => {
+    const { orderCode } = req.params;
+    const autoSubmit = req.query.auto === 'true';
+    const html = `
+    <html>
+      <head>
+        <title>Thanh toán Sandbox (Mô phỏng VNPAY/PayOS)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          body { font-family: -apple-system, system-ui, sans-serif; background: #FAFBFC; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+          .card { background: white; padding: 32px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; max-width: 400px; width: 90%; }
+          .title { color: #1A2B4A; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+          .subtitle { color: #718096; margin-bottom: 24px; font-size: 14px; }
+          .btn { background: #4A7CFF; color: white; border: none; padding: 14px 24px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.2s; }
+          .btn:active { background: #3164F4; }
+          .btn-success { background: #38A169; }
+        </style>
+      </head>
+      <body>
+        <div class="card" id="card">
+          <div class="title">Thanh toán Giao dịch #${orderCode}</div>
+          <div class="subtitle">Đóng vai trò là Cổng thanh toán thật (PayOS/VNPAY). Bấm để giả lập khách hàng chuyển khoản thành công.</div>
+          <button class="btn" id="payBtn" onclick="pay()">Xác nhận thanh toán (Mô phỏng)</button>
+        </div>
+        <script>
+          async function pay() {
+            document.getElementById('payBtn').innerText = 'Đang xử lý...';
+            const res = await fetch('/api/trips/payment-webhook', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ orderCode: ${orderCode}, status: 'PAID', transactionId: 'MOCK_' + new Date().getTime() })
+            });
+            if (res.ok) {
+              document.getElementById('card').innerHTML = '<div class="title" style="color: #38A169;">Thanh toán thành công!</div><div class="subtitle">Hệ thống đã cập nhật ví và mở khoá lịch trình. Vui lòng quay lại ứng dụng.</div>';
+            }
+          }
+          ${autoSubmit ? 'setTimeout(pay, 500);' : ''}
+        </script>
+      </body>
+    </html>
+  `;
+    res.send(html);
+};
+exports.renderSandboxPayment = renderSandboxPayment;
+const getTripSalesStats = async (req, res) => {
+    try {
+        const userId = req.user?.userId;
+        const tripId = req.params.tripId;
+        if (!userId)
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        const trip = await trip_model_1.default.findOne({ _id: tripId, userId });
+        if (!trip)
+            return res.status(404).json({ success: false, message: "Trip not found or unauthorized" });
+        const stats = await order_model_1.default.aggregate([
+            { $match: { tripTemplateId: new mongoose_1.default.Types.ObjectId(tripId), status: 'SUCCESS' } },
+            { $group: { _id: null, totalRevenue: { $sum: "$amount" }, totalSales: { $sum: 1 } } }
+        ]);
+        const result = stats.length > 0 ? stats[0] : { totalRevenue: 0, totalSales: 0 };
+        res.json({ success: true, totalSales: result.totalSales, totalRevenue: result.totalRevenue });
+    }
+    catch (error) {
+        console.error("Get trip sales stats error:", error);
+        res.status(500).json({ success: false, message: "Get stats failed" });
+    }
+};
+exports.getTripSalesStats = getTripSalesStats;
