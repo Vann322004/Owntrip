@@ -3,12 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.reorderPlacesInDay = exports.deletePlaceFromDay = exports.addPlaceToDay = void 0;
+exports.reorderPlacesInDay = exports.deletePlaceFromDay = exports.reorderPlaces = exports.addPlaceToDay = void 0;
+const mongoose_1 = __importDefault(require("mongoose"));
 const planPlace_model_1 = __importDefault(require("../models/planPlace.model"));
 const addPlaceToDay = async (req, res) => {
     try {
         const { dayId } = req.params;
-        const { placeId, name, address, latitude, longitude, rating, photo, mapUrl } = req.body;
+        const { placeId, name, address, latitude, longitude, rating, photo, mapUrl, timeOfDay } = req.body;
         const count = await planPlace_model_1.default.countDocuments({ dayId: dayId });
         const place = await planPlace_model_1.default.create({
             dayId: dayId,
@@ -20,6 +21,7 @@ const addPlaceToDay = async (req, res) => {
             rating,
             photo,
             mapUrl,
+            timeOfDay,
             order: count + 1
         });
         res.json({
@@ -35,6 +37,22 @@ const addPlaceToDay = async (req, res) => {
     }
 };
 exports.addPlaceToDay = addPlaceToDay;
+const reorderPlaces = async (req, res) => {
+    try {
+        const { dayId } = req.params;
+        const { placeIds } = req.body;
+        if (!Array.isArray(placeIds)) {
+            return res.status(400).json({ success: false, message: "Invalid data" });
+        }
+        const updates = placeIds.map((id, index) => planPlace_model_1.default.updateOne({ _id: id, dayId: dayId }, { order: index + 1 }));
+        await Promise.all(updates);
+        res.json({ success: true, message: "Reordered successfully" });
+    }
+    catch (error) {
+        res.status(500).json({ success: false, message: "Reorder failed" });
+    }
+};
+exports.reorderPlaces = reorderPlaces;
 const deletePlaceFromDay = async (req, res) => {
     try {
         const { dayId, planPlaceId } = req.params;
@@ -115,7 +133,7 @@ const reorderPlacesInDay = async (req, res) => {
         }
         await planPlace_model_1.default.bulkWrite(orderedPlaces.map((place, index) => ({
             updateOne: {
-                filter: { _id: place._id, dayId: targetDayId },
+                filter: { _id: place._id, dayId: new mongoose_1.default.Types.ObjectId(targetDayId) },
                 update: { $set: { order: index + 1 } }
             }
         })));

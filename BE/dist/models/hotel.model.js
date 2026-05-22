@@ -38,6 +38,13 @@ const hotelSchema = new mongoose_1.Schema({
         type: String,
         ref: "User",
         index: true
+    },
+    businessPolicies: {
+        cancellationPolicy: String,
+        childPolicy: String,
+        checkInTime: String,
+        checkOutTime: String,
+        extraCosts: String
     }
 }, { timestamps: true, versionKey: false });
 hotelSchema.pre('save', async function () {

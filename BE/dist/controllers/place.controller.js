@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPlaceChildren = exports.searchText = exports.searchNearby = exports.searchPlace = exports.getPlacePhoto = void 0;
 const axios_1 = __importDefault(require("axios"));
+const place_model_1 = __importDefault(require("../models/place.model"));
 const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
 const getGoongKey = () => process.env.GOONG_API_KEY;
@@ -183,6 +184,33 @@ const searchPlace = async (req, res) => {
                 message: "Missing query"
             });
         }
+        // 1. Tìm kiếm trong database local trước (Ưu tiên tuyệt đối nếu có dữ liệu)
+        const localPlaces = await place_model_1.default.find({
+            $or: [
+                { name: { $regex: String(q), $options: "i" } },
+                { address: { $regex: String(q), $options: "i" } }
+            ]
+        }).limit(20);
+        if (localPlaces.length > 0) {
+            return res.json({
+                success: true,
+                source: "local-db",
+                total: localPlaces.length,
+                places: localPlaces.map(p => ({
+                    id: p.placeId,
+                    displayName: { text: p.name, languageCode: "vi" },
+                    formattedAddress: p.address,
+                    location: {
+                        latitude: p.location?.lat,
+                        longitude: p.location?.lng
+                    },
+                    rating: p.rating,
+                    userRatingCount: p.reviewCount,
+                    types: p.category ? [p.category] : [],
+                    photos: p.images?.map(img => ({ name: img }))
+                }))
+            });
+        }
         const response = await axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
             params: {
                 api_key: getGoongKey(),
@@ -335,7 +363,7 @@ const searchNearby = async (req, res) => {
         const searchQuery = type
             ? (typeToQuery[String(type).trim().toLowerCase()] || String(type).trim())
             : "địa điểm";
-        const autocompleteRes = await axios_1.default.get(`${GOONG_API_BASE_URL}/v2/Place/AutoComplete `, {
+        const autocompleteRes = await axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
             params: {
                 api_key: getGoongKey(),
                 input: searchQuery,
@@ -348,7 +376,7 @@ const searchNearby = async (req, res) => {
         if (predictions.length === 0) {
             return res.json({ success: true, source: "goong", total: 0, places: [] });
         }
-        const detailResults = await Promise.allSettled(predictions.slice(0, 10).map((p) => axios_1.default.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
+        const detailResults = await Promise.allSettled(predictions.slice(0, 10).map((p) => axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/detail`, {
             params: {
                 api_key: getGoongKey(),
                 place_id: p.place_id
@@ -401,7 +429,7 @@ const searchNearby = async (req, res) => {
         });
     }
     catch (error) {
-        console.error("Goong searchNearby error:", error.message);
+        console.error("Goong searchNearby error:", error?.response?.data || error?.message || error);
         res.status(500).json({ success: false, message: "Search nearby failed" });
     }
 };
@@ -420,6 +448,46 @@ const searchText = async (req, res) => {
             .flatMap((item) => String(item).split(","))
             .map((item) => item.trim())
             .filter((item) => item.length > 0);
+        if (!queryList.length) {
+            return res.status(400).json({
+                success: false,
+                message: "Missing query"
+            });
+        }
+        // 1. Thử tìm kiếm trong database local trước
+        const dbResults = await place_model_1.default.find({
+            $or: queryList.map(queryText => ({
+                $or: [
+                    { name: { $regex: queryText, $options: "i" } },
+                    { address: { $regex: queryText, $options: "i" } },
+                    { city: { $regex: queryText, $options: "i" } }
+                ]
+            }))
+        }).limit(maxResultCount);
+        if (dbResults.length > 0) {
+            const formattedPlaces = dbResults.map(p => ({
+                placeId: p.placeId,
+                name: p.name,
+                address: p.address,
+                latitude: p.location?.lat,
+                longitude: p.location?.lng,
+                rating: p.rating,
+                totalReviews: p.reviewCount,
+                types: p.category ? [p.category] : [],
+                photo: p.images?.[0],
+                photos: p.images
+            }));
+            // Trả về ngay nếu có bất kỳ kết quả nào trong DB local
+            if (formattedPlaces.length > 0) {
+                return res.json({
+                    success: true,
+                    source: "local-db",
+                    queryCount: queryList.length,
+                    total: formattedPlaces.length,
+                    places: formattedPlaces
+                });
+            }
+        }
         const searchResults = await Promise.allSettled(queryList.map((queryText) => axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
             params: {
                 api_key: getGoongKey(),
@@ -483,7 +551,7 @@ const searchText = async (req, res) => {
             if (uniquePredictions.size >= maxResultCount)
                 break;
         }
-        const detailResults = await Promise.allSettled(Array.from(uniquePredictions.values()).map((p) => axios_1.default.get(`${GOONG_API_BASE_URL}/v2/Place/Detail`, {
+        const detailResults = await Promise.allSettled(Array.from(uniquePredictions.values()).map((p) => axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/detail`, {
             params: {
                 api_key: getGoongKey(),
                 place_id: p.place_id

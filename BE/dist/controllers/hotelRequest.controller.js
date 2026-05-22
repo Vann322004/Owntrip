@@ -12,7 +12,7 @@ exports.HotelRequestController = {
     // User submits a registration request
     submitRequest: async (req, res) => {
         try {
-            const { hotelName, address, city, phone, description, images } = req.body;
+            const { hotelName, address, city, phone, description, images, legalDocuments, amenities, businessPolicies } = req.body;
             const userId = req.user?.userId;
             if (!userId) {
                 return res.status(401).json({ success: false, message: 'Không tìm thấy thông tin người dùng' });
@@ -29,7 +29,10 @@ exports.HotelRequestController = {
                 city,
                 phone,
                 description,
-                images
+                images,
+                legalDocuments,
+                amenities,
+                businessPolicies
             });
             await newRequest.save();
             res.status(201).json({
@@ -97,7 +100,8 @@ exports.HotelRequestController = {
                     description: request.description,
                     ownerId: request.userId,
                     starRating: 4, // Default
-                    amenities: [],
+                    amenities: request.amenities || [],
+                    businessPolicies: request.businessPolicies,
                     tags: [],
                     rooms: []
                 });

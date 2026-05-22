@@ -34,24 +34,28 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const placeSchema = new mongoose_1.Schema({
-    placeId: { type: String, unique: true },
-    name: { type: String, required: true },
-    category: String,
-    city: String,
-    address: String,
-    location: {
-        lat: Number,
-        lng: Number
+const checkinSchema = new mongoose_1.Schema({
+    userId: {
+        type: String,
+        ref: "User",
+        required: true
     },
-    rating: { type: Number, default: 0 },
-    reviewCount: { type: Number, default: 0 },
-    price: String,
-    phoneNumber: String,
-    website: String,
-    images: [String],
-    openingHours: String,
-    preferences: [String],
-    source: { type: String, default: "Google Maps" }
+    imageUri: {
+        type: String,
+        required: true
+    },
+    title: {
+        type: String,
+        required: true,
+        default: "Kỷ niệm Check-in"
+    },
+    date: {
+        type: String,
+        required: true
+    },
+    isFavorite: {
+        type: Boolean,
+        default: false
+    }
 }, { timestamps: true });
-exports.default = mongoose_1.default.model("Place", placeSchema);
+exports.default = mongoose_1.default.model("Checkin", checkinSchema);

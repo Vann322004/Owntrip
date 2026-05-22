@@ -1,0 +1,1196 @@
+[
+  {
+    "placeId": "ChIJ-REKHQBtbzERyTws1Wm_GfI",
+    "name": "BEP VIET RESTAURANT - QUY NHON",
+    "category": "Vietnamesisk restaurang",
+    "city": "Khác",
+    "address": "388 Nguyễn Thái Học, Quy Nhơn Nam, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7638964,
+      "lng": 109.2139592
+    },
+    "rating": 4.6,
+    "reviewCount": 166,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 911 292 089",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFghpSfPs62s4Xi-IVJDlrqJQFCEp0b8D3NRUM6Os3s0_rHkD1ZNYJZp6CCbTIQgsEjn9eWGPnYSFbB3TGFqyhoZKAhmOYU_JxM1QlgrYMFoVus3s5pehDQqlMvJedffbJ08fc7=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGXYtV7c_04ArUVBlKSQUGBEL0pyqG_45nRVbOBHGX7L4OYFWhUHDyRVZqTWMmXzWFOv3mXo4b05x8681oF0InapxajkGksK11a-9ztsK2ZDnAf4A-lxmxmc1RhJR1hYKoGo6qolLKiEbA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 23, Thứ 6: 06:30 to 23, Thứ 7: 06:30 to 23, Chủ nhật: 06:30 to 23, Thứ 2: 06:30 to 23, Thứ 3: 06:30 to 23, Thứ 4: 06:30 to 23",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Soppa",
+      "Nudlar",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Öl",
+      "Frukost"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJT28YNZptbzER4936qWPltEM",
+    "name": "Hải Sản Quy Nhơn - 48 Xuân Diệu - Lộc Biển",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Khác",
+    "address": "48 Xuân Diệu, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7712012,
+      "lng": 109.2474539
+    },
+    "rating": 4.6,
+    "reviewCount": 209,
+    "price": "100–600 tn ₫",
+    "phoneNumber": "+84 798 124 567",
+    "website": "https://www.facebook.com/locbienrestaurant",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPq89_t-rAXF8F3_tekSj0D6y2vG1tCVTrBNlzB=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfXAI_UT7WJS-5Q4Y9L-JVX4RlOJR-lwWUpEnJJn7S2W8stZ28P0QRq9gmllSbPJ-HeQIdjAGQLKDRXErcMnT1s_3mKw-3miJcAgwgs0vcWaH6aU_kH4y6v6SaPhkdmrhCQd_5vDwHSH7M=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 00, Thứ 6: 10 to 00, Thứ 7: 10 to 00, Chủ nhật: 10 to 00, Thứ 2: 10 to 00, Thứ 3: 10 to 00, Thứ 4: 10 to 00",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Takterass",
+      "Bữa trưa",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Buffé",
+      "Smårätter",
+      "Starksprit",
+      "Vin"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_9alx2JsbzER9bYk07Rz-5o",
+    "name": "Khách Sạn Sala Quy Nhon Beach",
+    "category": "Hotell",
+    "city": "Khác",
+    "address": "124 Phan Chu Trinh, Quy Nhơn, Gia Lai 55000, Vietnam",
+    "location": {
+      "lat": 13.77218,
+      "lng": 109.2371653
+    },
+    "rating": 4.9,
+    "reviewCount": 627,
+    "price": "41 US$",
+    "phoneNumber": "+84 256 3903 388",
+    "website": "https://salahotelgroup.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGNinm98oFEV6pBiqDiwiatigmghyX_mrDTiHVeLK49YwTrLaHlDuPC1FntCvjbtm5Y-OYtxWHa_UF4KRB8tIl0dj8EtYzPzTzKFS2NMFtN4wKa5_7B0Jr68Kz5XZKxaUym75g6fSr6QG7E=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHm-ud0JfESnO3ZWGJsrjZcaLwVDxUATDcJEynecYo0n14JODW5MxIHjFfRrLZDYh_fXY3dGF7NRS0ehdQXuZkeZPgUK-4RrqIp8lyEf_bNueFH9oKTQp_-v_SF8BEU9KOpaTURqKXBn9M=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Komfort",
+      "Från besökare"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRdx3B9ttbzERlG7E31z0bXc",
+    "name": "Namto House Coffee Quy Nhon",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "Lô 33 Nguyễn Thị Định, Quy Nhơn Nam, Gia Lai 820000, Vietnam",
+    "location": {
+      "lat": 13.7584532,
+      "lng": 109.2146056
+    },
+    "rating": 4.5,
+    "reviewCount": 253,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 946 003 334",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM3lDQVhKqDPH1r3f80IXugVa4mEfG8OmB3MWW0=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEErdDhbztIam2ZefBfDP_R3EXj4BoceusksAR02H3g73XWkMZMMSE_w-Rtp75Yss86-Ibl_YfBMDwPS5j6oSWBhwum0b6jmNj8b9ZPr90NuX-puJspvG1qMOtBN-HweODi5So8=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgängliga sittplatser",
+      "Snabbmat",
+      "Catering",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNd1ZSD9tbzERE2fDm35ezSE",
+    "name": "Bánh canh cá dầm Vân",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "169Â, Lê Lợi, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7763557,
+      "lng": 109.232373
+    },
+    "rating": 4.6,
+    "reviewCount": 216,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 935 332 462",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNrM6s4KHNdmlb1japsBVVWV-6WCgjqYP8-sje1rVUIVyn4N6kCAi3Dfz08wWpF5pj_uJ-7Xda1zWSZuCXtJae9Uqe6RAXtqRjH8EgeEAplzrxpieMkNvwDunQ0tGWqB2mSyhJ6COP8EM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNGFYYb3-hpUe7ShnkXPkhSvn6mQf3g3oJOIGvu=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 10, 14:30 to 20:30, Thứ 6: 06 to 10, 14:30 to 20:30, Thứ 7: 06 to 10, 14:30 to 20:30, Chủ nhật: 06 to 10, 14:30 to 20:30, Thứ 2: 06 to 10, 14:30 to 20:30, Thứ 3: 06 to 10, 14:30 to 20:30, Thứ 4: 06 to 10, 14:30 to 20:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở",
+      "Soppa",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Frukost",
+      "Bữa trưa",
+      "Phù hợp ăn một mình",
+      "Snabbmat",
+      "Brunch",
+      "Bữa tối",
+      "Catering",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJb_WSMABtbzERNIslaRnRKo4",
+    "name": "Donna Coffee & Tea",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "76 Tăng Bạt Hổ, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7731969,
+      "lng": 109.2323091
+    },
+    "rating": 5,
+    "reviewCount": 4,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE05fDAeyVEEahGzgD78cupwbj1DX_2pPEVYSEuVuptYOqo5XKHHQtGYAX_MBPMl7fHVXvp7tzkyir-xM1C2uQ5TdQZtK0U6_vnj19RqKq9jfItay7Z3aYlx7UM6b8q9Md9uEKbG-9_uEvC=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSZmQeN6fLKkTmScvCd45xnENj709E08MwaU29ugRZXNnYOahiRs5tG-FDvBJE4O5RZdZUPTuL6hI8YzmDaCdn5lu4-iWHXLwXDN6DZdhuut1x8dMP2ZjCZ9afq9uHwEQwIAYO5e6BnpO6=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJE9yuh_ttbzER9puHj9kbJ2o",
+    "name": "ADIUVAT COFFEE ROASTERS QUINHON",
+    "category": "Kafferosteri",
+    "city": "Khác",
+    "address": "57 Nguyễn Huệ, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7697041,
+      "lng": 109.23242
+    },
+    "rating": 4.6,
+    "reviewCount": 572,
+    "price": "$$",
+    "phoneNumber": "+84 966 267 722",
+    "website": "https://www.facebook.com/adiuvatcoffeeroasters/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNiFQ4s9pYV8RW6bmaNg0-n_Kkf1c4-ODZQYvls=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpOzk_sSGOZaDmDRpSpuvi653jI3qW0AwUF4Kex2gmK2JdxsHUg2LIBmRwrZQxCxjREagqzSOPHxFcaMOoAHBkDWk_j6JrUiXsDi0gAjzFcnrLtlRPc8k3NjkAf1eAzbvPrGvf1A=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07:30 to 21:30, Thứ 6: 07:30 to 21:30, Thứ 7: 07:30 to 21:30, Chủ nhật: 07:30 to 21:30, Thứ 2: 07:30 to 21:30, Thứ 3: 07:30 to 21:30, Thứ 4: 07:30 to 21:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Identifierar sig som ägt av kvinnor",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Hörslinga",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Könsneutral toalett",
+      "Hbtq+-vänlig",
+      "Trygg plats för transpersoner",
+      "Bankkort"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJVQ3N05RtbzERE_3l5hCuJGY",
+    "name": "ODIN HOTEL QUY NHON",
+    "category": "Hotell",
+    "city": "Khác",
+    "address": "6 Trần Cao Vân, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7708845,
+      "lng": 109.2308608
+    },
+    "rating": 4.5,
+    "reviewCount": 247,
+    "price": "25 US$",
+    "phoneNumber": "+84 256 3893 333",
+    "website": "https://odinhotel.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/proxy/zAhyIrOOzfpDPN7rQTf13_aw5Lj6NMVzZ_etWT7IP-fMk76F32uNDkvUhGJVVV8sRdBqdU4XcbE6asD0CFzI87Gmt1mf0xqhBWjkaZ7ykh0JOk-LUQx2eDPb2T23KiyZxPcwIv0dQw3avoUWp5fmLUyOAIp0ffM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEH2t8Jj0ipAWDzPJqysIinSWxb2W56mgc6EmD0vU8wqCTTNVdLFl-pI6l9cxsyRA45tTFq9y4roeV01QyL6goXh9Cvt7PXVO8B76-k0g4aElkN1ci9hNQQeDw1P9XrLDRB-UKg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Komfort",
+      "Från besökare",
+      "Gratis wifi",
+      "Frukost",
+      "Gratis parkering",
+      "Funktionsanpassat",
+      "Utomhuspool",
+      "Luftkonditionering",
+      "Tvättservice",
+      "Rumsservice",
+      "Nhà hàng",
+      "Flygbuss",
+      "Spa"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJpQHEZdNtbzERQbIXsTNsRuk",
+    "name": "RETRO COFFEE ROASTERY",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "87 Trần Cao Vân, Quy Nhơn, Gia Lai 55000, Vietnam",
+    "location": {
+      "lat": 13.7716502,
+      "lng": 109.2302685
+    },
+    "rating": 4.5,
+    "reviewCount": 111,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 935 632 936",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPObhOUl2ixjfD5S454F7b3GdXb3tWJAr4ZyPQU=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEC1T3Lv7YE3n35qQwBMCPn_MFyybeaVpzWmip3bDQcs3pAqziNMs7QKVugWPJ6YicAK67ClN_ZmbC8T6fPuC5s2jaeZDt8OlGu_TMoK-Kpw68VQpydpHkbEjtDIdUYk5wMF8hf0Z77f6s=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22, Chủ nhật: 06 to 22, Thứ 2: 06 to 22, Thứ 3: 06 to 22, Thứ 4: 06 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJK2XJmNttbzERJNArPIz-j0E",
+    "name": "VVHouse & Cinema | CN1",
+    "category": "Lưu trú nhà dân",
+    "city": "Khác",
+    "address": "41 Nguyễn Tư, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7668548,
+      "lng": 109.2205235
+    },
+    "rating": 4.7,
+    "reviewCount": 255,
+    "price": "22 US$",
+    "phoneNumber": "+84 369 423 723",
+    "website": "http://thevvhouse.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNVaurhnRSGAMEuW82_b3tEfth3lHX5L22cOonT=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGk0_bqKxollifZBWpbWzK2l3cjQGY_4kc0SrTHzkQqtSD1HIW-3F6hDglmJEMOZNuWNm1_--YR3uVwlPnqL3ou-ydyI4-rJfsX8H4j_k-aE7iPGK5joqnt__28VLkqqmNGp_vzpQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Rum",
+      "Exteriör",
+      "Komfort",
+      "Från besökare",
+      "Gratis wifi",
+      "Frukost mot betalning",
+      "Gratis parkering",
+      "Utomhuspool",
+      "Luftkonditionering",
+      "Husdjur tillåtna",
+      "Jacuzzi",
+      "Quán Bar/Club",
+      "Rökfritt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ56AuVQBtbzER5uhHJwk42dQ",
+    "name": "GRIN cafe & stay",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "51 Trần Cao Vân, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7707724,
+      "lng": 109.230649
+    },
+    "rating": 4.6,
+    "reviewCount": 125,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 903 507 699",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNGjrz1THx1Kv8Do3eMnlzWgTWFFwUa97lmqhsu=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF1dUlJ8PYmnD8wQVDgWj5NHJEZNeNdG1bq9ovnFqWBYzWt8ethV_Wfq3P2nj3q6AsMDcyws932HgNfugWo2TQmA7wfhPUehMQS9679xPMDdyqhIBtflr57yNtBXhc9vnJANTvrhA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22, Thứ 4: 06:30 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser",
+      "Bordsservering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5zrRzKZtbzERrV6eFio4o6A",
+    "name": "Bốn Mùa - Four Seasons Quy Nhơn",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Xuân Diệu, Quy Nhơn Nam, Gia Lai 55100, Vietnam",
+    "location": {
+      "lat": 13.7611616,
+      "lng": 109.2225875
+    },
+    "rating": 4.6,
+    "reviewCount": 2736,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 869 003 007",
+    "website": "http://www.bonmuaquynhon.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPxfcQvDITSgGZmBi95d5bI3PhpRRrP5DXGTKFz=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipP2OeSR_aowu7y1SSrNJUthjNrmUExnL54Zol7H=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22:30, Thứ 6: 06 to 22:30, Thứ 7: 06 to 22:30, Chủ nhật: 06 to 22:30, Thứ 2: 06 to 22:30, Thứ 3: 06 to 22:30, Thứ 4: 06 to 22:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Juice",
+      "Fisk och skaldjur",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ9S3MtJRtbzERAKCLHC53uvQ",
+    "name": "Nhậu Tới Sáng Mr Mộc",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "07a Lê Duẩn, Quy Nhơn, Gia Lai 820000, Vietnam",
+    "location": {
+      "lat": 13.7651409,
+      "lng": 109.2213194
+    },
+    "rating": 5,
+    "reviewCount": 3070,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 382 446 320",
+    "website": "https://nhautoisang.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVfIZ0l52SjZWJl4WPwiLJ1ZMbgT1YJwgLBOPlGTyN7LTKhPLVEqZOSE-DMGhrvVdrAl9xCq_SHIqxwDWwMxIb7buPH3ZkWAuUDakB1HaOGNNsIELLqq5pOyaNj6QfpmEcfAQtZJHWIqWj=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMgg2v1wYYE0JQwPQ6Ju0NcWWIpu0AkbKnQy_gm=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 01 to 23:30, Thứ 6: 01 to 23:30, Thứ 7: 01 to 23:30, Chủ nhật: 01 to 23:30, Thứ 2: 01 to 23:30, Thứ 3: 01 to 23:30, Thứ 4: 01 to 23:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Öl",
+      "Bữa trưa",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJz03HwmNtbzERSEfjp0msJoc",
+    "name": "Nhà hàng Hoa Hoa",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "02 Bình Hà, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.780742,
+      "lng": 109.2343289
+    },
+    "rating": 4.5,
+    "reviewCount": 34,
+    "price": "400–500 tn ₫",
+    "phoneNumber": "+84 935 633 667",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM-EiNn58KFS56BBynVzjbagzuyJ965Ty4M-a_L=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhI98oEFTFdxVn7FaxkPGo2_MFSS-YLAZNRnADy-poUnuLkg2guj3cwq8lkfVlBj_d2qPiRSUfIoIppFcqzLL7CbJR3-IGu7_TzlpYikcK3W0o6lBV4CfpykLzs8kinTwx7hXFfhxKyzw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 22, Thứ 6: 08 to 22, Thứ 7: 08 to 22, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22, Thứ 4: 08 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Starksprit",
+      "Öl",
+      "Bữa trưa",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering",
+      "Toalett"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJGyzD1Z1tbzERSPvcHU8J1lI",
+    "name": "The Social - Sports Bar & Grill",
+    "category": "Sportbar",
+    "city": "Khác",
+    "address": "79 Ỷ Lan, Thành phố, Bình Định, Vietnam",
+    "location": {
+      "lat": 13.7815899,
+      "lng": 109.2271431
+    },
+    "rating": 4.6,
+    "reviewCount": 502,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 363 608 479",
+    "website": "http://thesocialqn.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNmW7V1Q_NVnZcSRheg-3qnKeeYSmXx55Vl0Xfj=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUlKk0VzqdzPwaWqFLKR0yShEe3a_z6LRSQ3jBoz5ZRooNWCWFRRaY1dfKLTFDJTULbUjuhFYQRiJlQ2ZhkoG0VTO385Df1j3VOLvYRLcMk7F51_GWaI27OxrKEJAgPBaeZ5SWmQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 00, Thứ 6: 07 to 00, Thứ 7: 07 to 00, Chủ nhật: 07 to 00, Thứ 2: 07 to 00, Thứ 3: 07 to 00, Thứ 4: 07 to 00",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Pool",
+      "Öl",
+      "Bagel",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Bia đa dạng",
+      "Frågesportskvällar",
+      "Levande musik",
+      "Liveframträdanden",
+      "Spel och aktiviteter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJf_D-gKxtbzER_qRtQugegeY",
+    "name": "Nhà Hàng Cá Khói",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "04 Nguyễn Trung Tín, Quy Nhơn Nam, Gia Lai 55113, Vietnam",
+    "location": {
+      "lat": 13.7554896,
+      "lng": 109.2145532
+    },
+    "rating": 4.9,
+    "reviewCount": 2101,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 963 774 377",
+    "website": "https://wa.me/963774377?text=Welcome%20to%20Ca%20Khoi%20Restaurant!How%20may%20I%20help%20you?",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPT5gB4vT0ay6eEJ3cc4gtQ4yCXfenYwMljJOk=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPZakoJC-pitZSvRGYpzd4BSNpkuJtSzXNGXeM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 00, Thứ 6: 10 to 00, Thứ 7: 10 to 00, Chủ nhật: 10 to 00, Thứ 2: 10 to 00, Thứ 3: 10 to 00, Thứ 4: 10 to 00",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Nhật",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Sashimi",
+      "Eldgryta",
+      "Räka",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Takterass",
+      "Bữa trưa",
+      "Bữa tối",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJl4jjEKttbzERulvVNcFNPN8",
+    "name": "OM Vegan Bistro - Ẩm Thực Thuần Chay",
+    "category": "Veganrestaurang",
+    "city": "Khác",
+    "address": "02A Trần Nguyên Đán, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7703525,
+      "lng": 109.2253901
+    },
+    "rating": 5,
+    "reviewCount": 540,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 334 446 768",
+    "website": "https://omveganbistro.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGqSwNu9cPRCZBslNkDUX03MLy4g0fzZ0y7-UenFRCGRj1xks9Mn8Wikmw-qNLjkANKEQvI1N9DdX3MdpvDyPDDwRMVzbzt-eOb1aoZ0tq1dExsIAXPbHnJUySa154iJPVxP2Xaono6yxN-=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHRsLAFNHzP0VuCn0SCgP43gEgrEzoVBiUvuEYE_iAS9ViUJRcpzA42QQ3VAjVjCdz0Rsgt4U4xU7k5PBT3KGZqfDHSZlgYQRWIsLBxq4ZfAGwCTiQVXh4BQ00ygb52wkNCDg5qCSkRn6JG=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 08 to 21, Thứ 3: 08 to 21, Thứ 4: 08 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Eldgryta",
+      "Mì Ý",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJwdaoN2NtbzERMYQw-66Vkdk",
+    "name": "Quán Ăn Thái Lan Kaeng Thai",
+    "category": "Thailändsk restaurang",
+    "city": "Khác",
+    "address": "535 Trần Hưng Đạo, Quy Nhơn, Gia Lai 590000, Vietnam",
+    "location": {
+      "lat": 13.7786433,
+      "lng": 109.2259247
+    },
+    "rating": 4.8,
+    "reviewCount": 471,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 898 086 891",
+    "website": "https://www.facebook.com/quankaengthai",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHQpwtgVyqRu1e9g1EqMJ6uhwn13bWot6T2F8sb39oqTw3U_diCmRkxZYlgfd8MtzBMvOJs3dAk-x2lEsTR3rDViC4oQxcI6hVMPZ3_q_OvezHkL5zyDzSxAn7VqW4ly967kpQUzkK9hD7I=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEeR2GWKd0_mOALB-5N54d_tGA9L2ZMLnJftIo-06jSxaZj02ZIMRfKrOeNy6f71HE1MRIcHF2T_KeNDAvGTbStpyckobUBp8u5RjsilOvjUhjHtpd_RUW6E0VK9qhzUG1Cic5x=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22, Thứ 4: 10 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Soppa",
+      "Kycklingsoppa",
+      "Nudlar",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Happy hour på mat",
+      "Smårätter"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1e3snrdtbzERL-5PNbkeh10",
+    "name": "Nhà hàng Thinai Seafood - Hải sản, cơm đoàn, tiệc liên hoan",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "224 Đống Đa, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7832299,
+      "lng": 109.2291899
+    },
+    "rating": 4.7,
+    "reviewCount": 29,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 795 697 779",
+    "website": "http://thinaiseafood.com.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMYVa6LvlgDc9GN6z2hRpWUZagzbjNdAfg2gag5=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMkq_JVCS0_iZnAWSHQohDoAK4i7aVOIJsn76kJ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 23, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 23, Thứ 3: 10 to 23, Thứ 4: 10 to 23",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Fisk och skaldjur",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Smårätter",
+      "Starksprit",
+      "Vin",
+      "Öl",
+      "Bữa trưa",
+      "Catering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRRPopuxtbzERRIsJ5g00cb0",
+    "name": "Buffet Hải Sản Ố Lè Quy Nhơn",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Lô D5 Nguyễn Trung Tín, Quy Nhơn Nam, Gia Lai 55100, Vietnam",
+    "location": {
+      "lat": 13.7553298,
+      "lng": 109.2139573
+    },
+    "rating": 4.8,
+    "reviewCount": 497,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 907 377 877",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGON7hxFdpver02RwQpyjRf2wh-4fLdO2VgMBNNQZBcD7nyAPBbLAeBT68UfLJcoVsdKxE0IEAW9J82Wx8PZ0CRvlP9jP6DD0s1K9zdjmyeg49x7GzL5zjeu650LPeKscLot5h-0bEUuOIs=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLqlsj_no-0h8r-7XSnA07jRmFknhAJptJvejDX-g3i4JMjvmNQ1tawYb6x9jTFaVtoZjQSSc9gRwM9wK0tPqdPWpvbfuYNyGrp2FtomUO4SIS3zrFlts9SKTX1kkZbT1e-RtfAVV6WXx9=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22, Thứ 4: 10 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Fisk och skaldjur",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Öl",
+      "Catering",
+      "Efterrätt",
+      "Bordsservering",
+      "Toalett",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering",
+      "Betjänad parkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJoR3qfAttbzERJ6j-QtoRYgU",
+    "name": "Coeur",
+    "category": "Quán Bar/Club",
+    "city": "Khác",
+    "address": "228 Xuân Diệu, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7676227,
+      "lng": 109.2298625
+    },
+    "rating": 4.7,
+    "reviewCount": 149,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 775 736 802",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPupW6hYv3ZOAaME33oFsax2OPy4SSJGMtp1Cak=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipM70eHIYjZoU6NeZwJToR2GvPyU4AkENS_pkzxB=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 18:30 to 23:30, Thứ 6: 17 to 23:30, Thứ 7: 17 to 23:30, Chủ nhật: 17 to 23:30, Thứ 2: 17 to 23:30, Thứ 3: 17 to 23:30, Thứ 4: 18 to 23:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Mat",
+      "Mat i baren",
+      "Starksprit",
+      "Vin",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJbZgPOQBtbzERZJBjK9OCdnA",
+    "name": "Góc Phố Bún Đậu - Bún Chả",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "22B Phan Bội Châu, Quy Nhơn, Gia Lai 55000, Vietnam",
+    "location": {
+      "lat": 13.7736952,
+      "lng": 109.2358872
+    },
+    "rating": 5,
+    "reviewCount": 297,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 911 590 268",
+    "website": "https://www.facebook.com/share/1P6JSFK4zq/?mibextid=wwXIfr",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFn7LlqIOQaOeoadh_QV3w2otJfYpOcFDpclRAiuUEncvdKV3GG0MgpjsDS66BOa7-QgBebfE6714QJW26gz4SASFUKdO9LOAavOsxSHV5lonFdI4tRXwS-KTCjnPqswWTc4FfsQ_FDQM4C=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtGm0KYSd9xyWNlqoVX1s0YynT1ciArZ3CAuo03JOiqRikTvySGUeG52kYT4_GU-sw9OdRqBKWKGiX0e9FZ_BfTPdFOevVMugYMIwOXgzO-ofYgKfYxRNoFnTjH6oH62UofpC81m0FPSrt=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 09 to 23, Thứ 6: 09 to 23, Thứ 7: 09 to 23, Chủ nhật: 09 to 23, Thứ 2: 09 to 23, Thứ 3: 09 to 23, Thứ 4: 09 to 23",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Giao hàng",
+      "Drive-through",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Có đồ uống cồn",
+      "Öl",
+      "Catering",
+      "Bordsservering",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Passar för barn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJNzYMOABtbzEReUr8KTKRaok",
+    "name": "Phở Gà Chỉ - Cơm Gà xối mỡ",
+    "category": "Asiatisk restaurang",
+    "city": "Khác",
+    "address": "Q69J+JJX, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7691877,
+      "lng": 109.2315727
+    },
+    "rating": 4.8,
+    "reviewCount": 57,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 369 343 069",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNBvZ0ZDA3iX57dpxdv0HS1JavT247frRLdpOKP=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFUZPDVAUxjbvS2sQA1tYZzqbNy3Gkh5AF4zuWLBwGrXMPkblfozmSt9i9gbROMWZ4yPGC7gaxj-9dR2aCQwS8ZaqzOuxl2b_Cvck1ZRIjKmUYrz9ndjqp1oj4JGeZxbHBkBAmCz2kzgS8=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: Öppet dygnet runt, Thứ 6: Öppet dygnet runt, Thứ 7: Öppet dygnet runt, Chủ nhật: Öppet dygnet runt, Thứ 2: Öppet dygnet runt, Thứ 3: Öppet dygnet runt, Thứ 4: Öppet dygnet runt",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Phở"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJah_9XltbzERICZzDdCLre8",
+    "name": "Tiệm Cà Phơ 108",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "108 Phan Chu Trinh, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7732289,
+      "lng": 109.2372955
+    },
+    "rating": 4.9,
+    "reviewCount": 30,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 902 712 779",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHl4K_O4fxSsnRRVEA3Pgq1GX9n_MpDsuknC_OeArEWXJLgb9-Ak75ACsy52hVKcSrWA2GgVhqlTpJI6lo6N8hoDe-V3NVS9yODqcSDgQ3tTNT9Pz2zAjJc6b4FcdO3s73FeiIl6JjsJ3s=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHXhUmk1wOBD8JQArEZSOJlz9szUSvtOkRQCTrkXgbkX2XXN_-9KrqvARs06JaRDRfxP4eHxtP0pLe5VU053eQQkpJdfgeXy3JWdRCc7PANoKPVr0kxphr3prbyoAcSMjlaMufI01VAjFHE=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 20:30, Thứ 6: 07 to 20:30, Thứ 7: 07 to 20:30, Chủ nhật: 07 to 20:30, Thứ 2: 07 to 20:30, Thứ 3: 07 to 20:30, Thứ 4: 07 to 20:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Drive-through",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ0ebkXwBtbzERItTi0yweBwU",
+    "name": "East West Brewing - Quy Nhon",
+    "category": "Bryggeripub",
+    "city": "Khác",
+    "address": "1b Xuân Diệu, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7703861,
+      "lng": 109.2361516
+    },
+    "rating": 4.8,
+    "reviewCount": 870,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 866 537 768",
+    "website": "https://www.facebook.com/share/16AYaEfvw2/?mibextid=wwXIfr",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipN3ObfBz1afp1WeNxZ38_SS19L1vXU84gtuz4wZ=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHLefpFE2cdmNnLXerNnQs7fGqb4UXUucRGlTdb2aj9gZs-_bPgmdAYkO0RRrbs3d6xi_BUGvfCJu_j4hCaGqmMpIWb0scqWaPylBbHD9p8jJ2BF0rvGB2oSZOzutbtCNYa06H8w=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 10:45, 15 to 23:45, Thứ 6: 06 to 10:45, 15 to 23:45, Thứ 7: 06 to 10:45, 15 to 23:45, Chủ nhật: 06 to 10:45, 15 to 23:45, Thứ 2: 06 to 10:45, 15 to 23:45, Thứ 3: 06 to 10:45, 15 to 23:45, Thứ 4: 06 to 10:45, 15 to 23:45",
+    "cuisineTags": [
+      "Món Âu",
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Öl",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Liveframträdanden",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig toalett",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Mat",
+      "Mat i baren"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5fon3nJtbzERFNQMSSRVE7Q",
+    "name": "Starbucks Xuân Diệu Quy Nhơn",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "160 Xuân Diệu, Quy Nhơn, Gia Lai 72000, Vietnam",
+    "location": {
+      "lat": 13.7687542,
+      "lng": 109.2315694
+    },
+    "rating": 4.7,
+    "reviewCount": 342,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 256 3585 005",
+    "website": "https://www.starbucks.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFT36aZDn0UugtaiVNSOuJM6sRzRbqd8atrlkKYUVE9lZBVeDYnpluD6d27lPvIqQy6CnLepJ19elrEmWMnUfw6nirrWigTsd8OSPD7vP5LYmdUjEWx0GMwR0o6vhykYHHtrMKrGkVif2qt=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPCAia3gKYeu3KIWSAYE6LB2ioP9KArOaaqU-oljlvpDXl6yx0yyRkShVFB6QA3xEfy64uYKvyCN6HM3bQjzqnXWP5_PZyea6OILZazNHrqFOL3CarmoUJt3xeBI5YqVsb7zI=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Snabbmat",
+      "Frukost",
+      "Efterrätt",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJn5OYLV5tbzERi06wbHHBZdk",
+    "name": "Bò Né - Bánh Bèo LĂNG ÔNG",
+    "category": "Frukostrestaurang",
+    "city": "Khác",
+    "address": "Lê lợi nối dài/73b Nguyễn Huệ, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7692724,
+      "lng": 109.2315389
+    },
+    "rating": 4.7,
+    "reviewCount": 53,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPlqB-FWw12NmrLT1UGEFvA2C11Fez0XSA4PsXU7ghmenCHexdWePvA81WI2eprxpX3MKzds5zisMaBVvPpfU455sPp1L6qPtaQQW9v-_0ZAXzynaqhTH4a7GpFZzYOq9fNg4-jizSxhzR=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHO2v-9FIdf_8lwvKGsnFlI12sVmVsVPIanIqMK-2VTzNsBz-TJepOAGXJulrFYF4exg6fLWER_5mwiVWfAwn9VXLMuk-Ne-ERUwgsrCBQYMc1Zk_AoKgAyZkTDu4QNQbCkNjpA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 10:30, Thứ 6: 06 to 10:30, Thứ 7: 06 to 10:30, Chủ nhật: 06 to 10:30, Thứ 2: 06 to 10:30, Thứ 3: 06 to 10:30, Thứ 4: 06 to 10:30",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Frukost",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Kaffe",
+      "Smårätter",
+      "Snabbmat",
+      "Catering",
+      "Sittplatser",
+      "Bordsservering",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Endast kontanter",
+      "Barnmeny"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ7c0wcM9tbzERguyrvcmf9yo",
+    "name": "RELAX COFE",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "65 Lê Hồng Phong, Quy Nhơn, Gia Lai 55000, Vietnam",
+    "location": {
+      "lat": 13.7702443,
+      "lng": 109.2290714
+    },
+    "rating": 4.7,
+    "reviewCount": 10,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFcVSwZpQHwnPAvSj1AjZG3lKtq6zXOrNIVqNyLFX_RxnrV-6ti8o4V0cF01RqOvEdZv7_bAiVLsNf3iasY5kIJfhAWiSyZznli_2dG5rSyvZTw3VTOaNUKPmL9Dmmy6jFq1Hk=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEbbLzOgHy55W1cDkz0cucggLmWp9-Aqbp2FfASkCk-2gS5_OxDYpcuX8fzZBCQU7fYbx0jitBbr18xVOqZ9ZGDfbqxwMP663rACWKYeqcYeVMA9HpBKvd4nOZn2P_7OvyX0OImNW68k31c=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Tar emot bokningar",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJh-hghmJsbzERV5Ulx-9AP5o",
+    "name": "Surf bar 1",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "Q6CP+365, Xuân Diệu, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7701389,
+      "lng": 109.2355944
+    },
+    "rating": 4.1,
+    "reviewCount": 2934,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "https://www.facebook.com/Surf-Bar-1386057031654903/timeline/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGW_lRRjG6QK9W0sNKam2jDuL-4xyafaCkOuiLwtPVzNFuEqDL9OftKiW6VIWewBPI0Xle-NJvpkFk9BcLGSSeUiHWRbLA17-i58J0cwBkhfA0RiJDdqX1VlRwU_3g2Kfh3ZD-uBX8UhEg=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyi-XgQBy5xw7IDMNw4S4LHUC_J5mOjphJUUlQmlMMg_w2xrxm3UJkKsgKvsFgg0GvSVWvzON1QJaYl3gjVW3ulEVS4S9myCYhrh5AGfZvN2I_o27oo3yciIBsXuICaP_fAfq7qQ=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 22, Thứ 6: 08 to 23, Thứ 7: 08 to 23, Chủ nhật: 08 to 22, Thứ 2: 08 to 22, Thứ 3: 08 to 22, Thứ 4: 08 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Mojito",
+      "Öl",
+      "Margarita",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình",
+      "Bra om man vill jobba med laptop"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJRwOQiMFtbzERpDqqinyYgXo",
+    "name": "tree hugger (crafts, café & stay)",
+    "category": "Souvenirbutik",
+    "city": "Khác",
+    "address": "5a Hai Bà Trưng, Quy Nhơn, Gia Lai, Vietnam",
+    "location": {
+      "lat": 13.7719084,
+      "lng": 109.2344284
+    },
+    "rating": 4.9,
+    "reviewCount": 224,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 777 424 333",
+    "website": "http://www.treehugger.vn/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHCR1fW2f95dy-4M1MJnjzeQRWSZqMOhUM8x-o4HALuv0lYEZKbKlZ3s4a0PigM1reFT0k-RwKVwkHL-zyYGaysmCB4btMOSXldakzid9_iYcEe2RByG2SzGz0qHYAdCOKkfpV0jldrAGw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFD-amU2CPHR2z3vo4MdgQ-mITqfIlN26k1rK3oEDQJj8bORcD0g-UnayXqd56oy0C7ggeyC1GobgOkH8CqwzyDsIt7wrR2WebE-z2BmGf2pCWI5QTCFN_Vnt9FxO31__YsYtQf=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Inuti",
+      "Konst",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Bankkort",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  }
+]

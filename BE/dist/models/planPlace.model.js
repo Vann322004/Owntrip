@@ -54,6 +54,11 @@ const planPlaceSchema = new mongoose_1.Schema({
     order: {
         type: Number,
         default: 1
+    },
+    timeOfDay: {
+        type: String,
+        enum: ['morning', 'afternoon', 'evening'],
+        default: 'morning'
     }
 }, { timestamps: true });
 exports.default = mongoose_1.default.model("PlanPlace", planPlaceSchema);

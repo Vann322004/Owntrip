@@ -1,0 +1,1266 @@
+[
+  {
+    "placeId": "ChIJJX-qeatncDERddl2XDT7G7c",
+    "name": "Kintan Dining & Bar",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "32B Trần Phú, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2445911,
+      "lng": 109.1960166
+    },
+    "rating": 4.9,
+    "reviewCount": 509,
+    "price": "1 000 000 ₫+",
+    "phoneNumber": "+84 919 946 133",
+    "website": "https://www.facebook.com/KintanDiningVN",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNs63Ba_R8SY20gwUwKZWvnfVXB-0K25OOCJ-ks=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFC4VgRUbWZsr9spK9noOtwPdxntcvvZO4Pa_M4IDGTiyUryUMf7pN8teDIhuoF8mZnxvx0KWSZPZcuaVdK9Is9jQXP-q_CCTa4iajY36ylqLyIaAm_ZI0S_SHYngbUx9gwK7TcV5pVrcbj=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 15 to 23, Thứ 6: 15 to 23:30, Thứ 7: 15 to 23:30, Chủ nhật: 15 to 23:30, Thứ 2: 15 to 23:30, Thứ 3: 15 to 23:30, Thứ 4: 15 to 23:30",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Fläskkött",
+      "Soba",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Levande musik",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgänglig toalett",
+      "Rullstolstillgängliga sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJA3AqMQBncDERgyP-QlY3zIU",
+    "name": "Ca Phe Nguyen Chat Ba Lang",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "70 Điện Biên Phủ, Ba Làng, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2885297,
+      "lng": 109.2017878
+    },
+    "rating": 5,
+    "reviewCount": 10,
+    "price": "Liên hệ",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGa74ilIW5CYeDT-AA9VZfjRvuJ_wDfx0YS_-XTMLn6XPXXt9jubYYYB4sobdDvdgVl7jpJ0HoTr1xZf71fY2Qfd9hmrvozcfy2YFgv-ermTPmBh7lv1BS32PILsOSi0CkAGLXHIqEwSb6Y=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipMEXZlk0aSmn23uz_sUTPv9iF1TAQAw6gLKcTJR=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 10, Thứ 6: 06 to 10, Thứ 7: 06 to 10, Chủ nhật: 06 to 10, Thứ 2: 06 to 10, Thứ 3: 06 to 10, Thứ 4: 06 to 10",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Kaffe",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJtVn3dLZpcDER_ZhkCSDZGLo",
+    "name": "The Yacht BBQ Buffet - Ambassador Club",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Ana Marina Yacht Club, Đường Nguyễn Cơ Thạch, Bắc Nha Trang, Khánh Hòa 57000, Vietnam",
+    "location": {
+      "lat": 12.2948329,
+      "lng": 109.2227104
+    },
+    "rating": 4.9,
+    "reviewCount": 671,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 822 717 579",
+    "website": "https://ambassadorclubvn.com/Restaurant/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTj18juIM6wW3O1PVlR3wfG2JDZ7mUAV6OVuvkx6k8mUQU7JsJX35FFPZLAsrNiGuLlSE7BW3l609XA1bs0kwCvCANnvXQ_9TNC3_xeUjVQgLDXLYqE8vAiK1msvmJWeQcBPsp=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFdOW9_2hpa2DHR6dknyB1e1-DPLEWkzIbQjqkG8mc6PYPk_x3NyYcMeFEe99ceyQxdqSnzUJooMS-NWlf_RXVaZ6sLVHLuDhBJMOK8H0T4TR0sji5xomSi9tUMRuLvcW1J5iwi=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Đồ nướng"
+    ],
+    "detailedPreferences": [
+      "Fisk och skaldjur",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Tráng miệng ngon",
+      "Bữa tối",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Starksprit",
+      "Öl",
+      "Frukost",
+      "Bữa trưa",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ3fR7EQBpcDERKP9GvJ3gl0s",
+    "name": "Coffe Núi cô tiên",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "27 Ngô Văn Sở, Đường Đệ, Bắc Nha Trang, Khánh Hòa, Vietnam",
+    "location": {
+      "lat": 12.2936343,
+      "lng": 109.2079109
+    },
+    "rating": 4.5,
+    "reviewCount": 36,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "Không có",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtGE-vc9GPAWeMNFzWvmN3E-RRaFjrlKdw46HFsE3Jr5tGW70vKz-S2jWneiN2NwAuKNWePCgDxT6qExT9pxqyLM-QuNN5M1uebUPbKscL0Bx6bRrxj-8JDNIBo80xUUZy3qBXIw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5BKF74sGbhq8v1LBqL2PjOJCEhPRB_rd13piqI1OK54SU4djd13oTLv6dnx-aySDqN4wwjI2EfGU1csneZbcGoxoU4uZSZpzEsHzzHlp5_dwp_OY7T2ypHE7he7A9OpKVsYM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Liên hệ",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Ấm cúng",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ9-M27mlncDERs3dDEfAWtus",
+    "name": "týp coffee & bakery",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "Chung cư Nguyễn Thiện Thuật, Hẻm 7, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2408623,
+      "lng": 109.1936406
+    },
+    "rating": 4.8,
+    "reviewCount": 410,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 984 300 017",
+    "website": "https://www.facebook.com/typcoffebakery/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaPHi40t6lG8eKikiyXwD-77ni7kmzqn1Zs9dSr2UL9y92mdZSGpFXhGupJ8hODXVhGDB2OwAbBpaUym_f4HQE8OnhRwBheExDuaXHCkVBhk16hKBjYgJriI0svo-zaeCq1Uq6mA=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOmXuZzgADMwhKZEF-Se6lGLjmSZCUy1p13py1gtaJRVvd4QyrKLmDKK6Dtj0sIbHRnF8oM5qu9i7DS2Q-BJBl8FfCoOtTlhwPPxRRcMYD1kuXC7f7WdggQ5ZovU-hXvOAYa2h=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Juice",
+      "Kaffe",
+      "Kanelbulle",
+      "Brownie",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJJ_M-oHdpcDERiNZi7aj1tFI",
+    "name": "QUÁN CŨ COFFEE",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "Phạm Văn Đồng, Đường Đệ, Bắc Nha Trang, Khánh Hòa, Vietnam",
+    "location": {
+      "lat": 12.292367,
+      "lng": 109.2092378
+    },
+    "rating": 4.5,
+    "reviewCount": 86,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 903 648 122",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNvcRQkCPDxi9I8V8NWXPeS8gX3zDgmrTHMqNrd5r0LpmQjbJlnQNqXsdTldXGVXsr-vdZDkB7E2VfgHa4cnn7v5daNSuCUrq4qCGOXMqNHIx719jsjiLFyrWBRHyTnJwzVvYk=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMN4LQfDo22Ajzf56f-maJRYWONGnz9NWmHyIRjYMMdBabZjq_5b0Oaw4c_kWrs8EfNuXeRtuXrLOQWSzBKD4mm2cIu5_hGsSQH4vdEhHFDxxq-pkQ83g3m1aUPlBi4_DAh25BNg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 05 to 22, Thứ 6: 05 to 22, Thứ 7: 05 to 22, Chủ nhật: 05 to 22, Thứ 2: 05 to 22, Thứ 3: 05 to 22, Thứ 4: 05 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Kaffe",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Avgiftsfri gatuparkering",
+      "Avgiftsfri parkering",
+      "Gott om parkeringsplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJby5fJ4lncDERAvWrKuwVcws",
+    "name": "Anh Coffee Roasters",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "140 Đ. Hoàng Hoa Thám, Nha Trang, Khánh Hòa 57100, Vietnam",
+    "location": {
+      "lat": 12.2437926,
+      "lng": 109.1937955
+    },
+    "rating": 4.9,
+    "reviewCount": 633,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 563 018 139",
+    "website": "https://m.facebook.com/anhcoffeeroasters/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMRiYnijoiWxtQg5WLgUxtwJOqxvJACFEgUM3MY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE7nL0Q8Q8POx51egY1_mrcKt70SF0c_3H2Hzsge4ONZeKGpvUEZknGx6aQacCZpIU020a9vmZc0HQsMZvcEzFzoikl_btvDUjUb8l3rWHsStmOQVFACJFa0rmK_V2Eh15j316UEg=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 05:30 to 17:30, Thứ 6: 05:30 to 17:30, Thứ 7: 05:30 to 17:30, Chủ nhật: 05:30 to 17:30, Thứ 2: Stängt, Thứ 3: 05:30 to 17:30, Thứ 4: 05:30 to 17:30",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Iskaffe",
+      "Cappuccino",
+      "Juice",
+      "Kaffe",
+      "Espresso",
+      "Iste",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJc92EypFpcDERmNQPd8x7bLQ",
+    "name": "SEAcoffee",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "76X5+CQ8, 01 Nguyễn Thị Ngọc Oanh, Đường Đệ, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2914888,
+      "lng": 109.2076803
+    },
+    "rating": 4.6,
+    "reviewCount": 78,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 397 792 041",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG8XO_jfql-xqdmlVu3ecRT7p9K5j0fN6yQcOGtCKq6zTC6D1deWKfvWIhCE2xf5dBhi8Hg11ErbIuyvarIr9ZKyleyTWX4Oh8aU0U7yGseGlfysANfsycLJ61V1_3dXch0yLLG=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGvcsHWomPbD0WWvrPN46t4LcOOQWEL9yF52HzwKfQl9Pa52vDTQzAVhyqr9Gw3WbgUmhKGJmudly6berWNToo2mf_h29U336gthXGqmXHdvUPTIrt6CNrdDMCh3_mVliIg8RK=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 22, Thứ 6: 06 to 22, Thứ 7: 06 to 22:30, Chủ nhật: 06 to 22:30, Thứ 2: 06 to 22, Thứ 3: 06 to 22, Thứ 4: 06 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Kaffe",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái",
+      "Lugnt och tyst",
+      "Phù hợp nhóm đông",
+      "Studenter",
+      "Mobilbetalningar med NFC",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJOXBiA6tCcDERNCKubow3iFg",
+    "name": "Tom's Coffee House",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "Unnamed Road, Bắc Nha Trang, Khánh Hòa, Vietnam",
+    "location": {
+      "lat": 12.2944009,
+      "lng": 109.1837454
+    },
+    "rating": 4.6,
+    "reviewCount": 337,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 905 779 311",
+    "website": "https://www.facebook.com/homestaycoffeenhatrang/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPn4LvTC0x1Z_5GLj3XpAVLogbqwXP9lW99ivAd=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyXqrCpIpn84nPYNPCqX0FT71ARBHzgP1G_L85Jqo4iTxiW3lbiFDFvjvTYtyDuYIIAxGRuLyKWxHPbF7tAwpZZqUxojhWra01kRCK3M0ofD2jku8dwIUfLrdQRuyE2WF7WdMGUw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cocktail",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Cà phê ngon",
+      "Levande musik",
+      "Liveframträdanden",
+      "Takterass",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Giờ vàng đồ uống",
+      "Kaffe",
+      "Snabbmat"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJq2CP4tFncDERooUd0-XN82A",
+    "name": "LeCafe Roastery_HQ",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "63 Điện Biên Phủ, Ba Làng, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2882967,
+      "lng": 109.2020272
+    },
+    "rating": 4.7,
+    "reviewCount": 253,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 258 3550 088",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPs5p7tBlUsValT2SCcrwHi3fI_0u87y1AJTAoL=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH7ROLRla7EvAgSmT4fasqHwnN5KMEYgfOzOO0pfxMD58-QmmyTHWMGG5mjuwQYExmz8gEUBCTuwBV5afO_Ii54Ub-xky2gNqAyaI_f2nvWuuEtqKJPz8AJ46big7f2I14mmmr6=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06 to 17, Thứ 6: 06 to 17, Thứ 7: 06 to 17, Chủ nhật: 06 to 17, Thứ 2: 06 to 17, Thứ 3: 06 to 17, Thứ 4: 06 to 17",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Kaffe",
+      "Kokospalm",
+      "Espresso",
+      "Cold brew",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgänglig ingång",
+      "Catering",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJcSD1UABpcDERopkhkpES9Sw",
+    "name": "Бургеры Co Mo Bakery",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "107 Lý Thái Tổ, Đường Đệ, Bắc Nha Trang, Khánh Hòa, Vietnam",
+    "location": {
+      "lat": 12.2977553,
+      "lng": 109.2128773
+    },
+    "rating": 4.6,
+    "reviewCount": 130,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 935 543 717",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjEYOm1wLcZ56rZPE95Gezbkp-umt2RpyrFbfaz7hCP4vHiTSnggSKf33OUh0Vp_TqSQonRF5oPUnRmBzOdmaGJsc9cnmwJkZcTaJKhuC7XWwoF3McUHa_tbgHOsZUHZJiD2jT8BaMleEH=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHqbWcMfqXAem6TAJi3QmOI9nR4jPvx8rYuaP2G2G23EqlojpKCRNKb1HDwgGqwbktbejys8DsEEtKxrfocdeXvyVpMY6lLl79Z0okk1G90SkIUWHkLTedTdlGjNJvjdPYJL0w7Ky6eoNOw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 22, Thứ 6: 10 to 22, Thứ 7: 10 to 22, Chủ nhật: 10 to 22, Thứ 2: 10 to 22, Thứ 3: 10 to 22, Thứ 4: 10 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Burrito",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Kaffe",
+      "Snabbmat",
+      "Sittplatser",
+      "Thoải mái",
+      "Phù hợp nhóm đông",
+      "Khách du lịch",
+      "Passar för barn",
+      "Avgiftsfri gatuparkering"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJdw5sc4VdcDER6g97zm6QcXk",
+    "name": "View Tỷ Đô Coffee",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "Đường Nguyễn Cơ Thạch, Đường Đệ, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2926266,
+      "lng": 109.2153668
+    },
+    "rating": 4.8,
+    "reviewCount": 280,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 935 954 499",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPt5FM7sGG-hjvX20yXSS5hFoC_whzvpxdWYDR1=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNkChRixs3IGacmE4ex0z9Z_y36vxfZty8eDWTy=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Cà phê ngon",
+      "Sport",
+      "Bra om man vill jobba med laptop",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Ekologiska rätter",
+      "Giờ vàng đồ uống",
+      "Happy hour på mat",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ1donTgBDcDER45yV7j6Khm0",
+    "name": "Tiệm Cà Phê Rù Rì",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "365 QL1A, Bắc Nha Trang, Khánh Hòa, Vietnam",
+    "location": {
+      "lat": 12.3169983,
+      "lng": 109.187707
+    },
+    "rating": 4.7,
+    "reviewCount": 254,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 938 519 370",
+    "website": "https://www.facebook.com/share/186LdjEgxk/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHo14p6EBX3RMtxNTKEFaf6ehoFnbIW8Nyewek952h36EAQ_DyHOqrAgHMowNA29_dkAhKcSM-CrM9VwZSx3suH1XihE_uYD-zQfVd_TGaITfx6yDMZiooV3T-GOd3232a_TsSV73COuUw=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGVMzeRmtbeUaqZuLTXlfuaRyJmQru5x1F46ksjEHCvItKzscon8-ld70lA1O1LvuAQW7JIZJsVPt5cgjaRHlN8csG6zCYtR0nl0cviPiYBoqyGpXOdOeXCeT8L5lrZ8SEJRBY=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Bra om man vill jobba med laptop",
+      "Rullstolstillgängliga sittplatser",
+      "Kaffe",
+      "Snabbmat",
+      "Bữa trưa",
+      "Catering",
+      "Efterrätt",
+      "Sittplatser"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ2VnGAXtncDERZ2LIZsLLz9c",
+    "name": "Intime Coffee Nha Trang",
+    "category": "Kaffebar",
+    "city": "Khác",
+    "address": "02 Nguyễn Quyền, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2858638,
+      "lng": 109.1910036
+    },
+    "rating": 4.9,
+    "reviewCount": 93,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 774 154 102",
+    "website": "https://www.facebook.com/profile.php?id=61570546589578",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNtvyZGMiu8crjA4lRp66ANAdElYtRqwuPyp3RW=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOyD4ilAdW0BPzi6GqdGzyI9qIgE71TFDsB4mFK=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 21, Thứ 6: 06:30 to 21, Thứ 7: 06:30 to 21, Chủ nhật: 06:30 to 21, Thứ 2: 06:30 to 21, Thứ 3: 06:30 to 21, Thứ 4: 06:30 to 21",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Bra om man vill jobba med laptop",
+      "Sittplatser",
+      "Bordsservering",
+      "Bar på plats",
+      "Toalett",
+      "Wifi",
+      "Gratis wifi",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJf935H-dncDERtieQhpZByr8",
+    "name": "SEASHELL CAFE & RESTAURANT NHA TRANG",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "58 Phạm Văn Đồng, Ba Làng, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2875426,
+      "lng": 109.2050976
+    },
+    "rating": 4.3,
+    "reviewCount": 265,
+    "price": "100–400 tn ₫",
+    "phoneNumber": "+84 905 354 188",
+    "website": "https://www.facebook.com/nhahangBistro.SeashellNhaTrang",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFsP8PLwhCg-zSBNc_R8xuk4ZUtmMY3ZIrgMKD63EyDfqEPuhrCFttxunkSqbjIQkuYm2ZaWVzfW8dF13Kb2neNUA8OwUbuIEQcexjJKdwhecTEX5mN_K153fU_lOhtHIOh_IfldgYYoCtk=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGQ61xCWUiWT6gL99Yhi6Ep1lKQmq-eKifeQTGaBip5vwpid3qesy2rSiYflO-WhbWzYEuHwjjJNaxcf1P_2p5aISci-KsUPIrAYSkoBNkIByy4sKeedw80TP9Wpw2VX--kJy8H9IoC4IM=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 22, Thứ 6: 06:30 to 22, Thứ 7: 06:30 to 22, Chủ nhật: 06:30 to 22, Thứ 2: 06:30 to 22, Thứ 3: 06:30 to 22, Thứ 4: 06:30 to 22",
+    "cuisineTags": [
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Biff",
+      "Cold brew",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_-x3hABpcDERUdE3k55p1GQ",
+    "name": "Veranda - restaurant & bar",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Trần Khát Chân, Đường Đệ, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.3027123,
+      "lng": 109.2073717
+    },
+    "rating": 4.7,
+    "reviewCount": 394,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 396 314 266",
+    "website": "https://www.instagram.com/veranda.my?igsh=MXBmNWRja2YzM3VjNw==",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9rld7_1VyTUOxydnAIw1OkAIYypjIdMXX8Ns4CK3SXbTIDXD6pOVdV3QYET9s18VnP45Khxc2RZc_wd0chJ9rjtFjpzaxKJcz49yVRbtKRJ6g-lS-xFMVJHdo0ad9Is2YqnNMTN9Xju0=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJStFT9Jc-lgVzmeIOg2mD8y-W61Oe9gJPN0AV7s4MW65LCWC60gXyY4OmIw0RyZ-dUTpEmDRd4AogO_nXKILUfJLrv_2JS_6-HnkHcXI9A1AdxZYGQ2P3NBBRCzKYp519gs1SK9AHNcA=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 10 to 22, Thứ 6: 10 to 23, Thứ 7: 10 to 23, Chủ nhật: 10 to 23, Thứ 2: 10 to 22, Thứ 3: 10 to 22, Thứ 4: 10 to 22",
+    "cuisineTags": [],
+    "detailedPreferences": [
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Levande musik",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Kaffe",
+      "Privat matsal",
+      "Smårätter",
+      "Starksprit",
+      "Vin",
+      "Öl",
+      "Frukost",
+      "Brunch",
+      "Efterrätt"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJtTjE3BxncDERNNj6AJyIYXA",
+    "name": "VICE Diner Club",
+    "category": "Hamburgerrestaurang",
+    "city": "Khác",
+    "address": "29 D. Hiến Quyền, Ba Làng, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2845105,
+      "lng": 109.2030155
+    },
+    "rating": 4.7,
+    "reviewCount": 116,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 867 952 300",
+    "website": "https://r.grab.com/g/6-20251119_010208_AC16C5190C914A85B0F43388DC0F003B_MEXMPS-5-C7NDJVBYAE5AR2",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNChIsk2nBHwYZHpf5ta5czG6fZi46ePBkVoGXp=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMLpTH7mTvYV03b_DEdQvlh92mfA8_8eTjd-SRPhLyiTKfqvBKQu4QTZQqzfa1yLZz4PlUH-7cmzz2jlSac2NKYH7DyxAvJIbUtYzLJmop7zr6-zxxLZ9pjARxp1RuAxv7ITEgFJe0rR25=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 17 to 00, Thứ 6: 17 to 00, Thứ 7: 17 to 00, Chủ nhật: 17 to 00, Thứ 2: 17 to 00, Thứ 3: 17 to 00, Thứ 4: 17 to 00",
+    "cuisineTags": [
+      "Đồ ăn nhanh"
+    ],
+    "detailedPreferences": [
+      "Hamburger",
+      "Pommes frites",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Levande musik",
+      "Sport",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Giờ vàng đồ uống",
+      "Nattmat",
+      "Privat matsal"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJDfp-XRVpcDERnyWy7IC6zXk",
+    "name": "LEO ARABICA COFFEE",
+    "category": "Kafé",
+    "city": "Khác",
+    "address": "Phạm Văn Đồng, Hòn Sện, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2958963,
+      "lng": 109.2145216
+    },
+    "rating": 4.5,
+    "reviewCount": 352,
+    "price": "1–100 000 ₫",
+    "phoneNumber": "+84 909 040 450",
+    "website": "http://leoarabica.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFeQ2GI2DWkxm4_-UaP3dikg5HyGHs7NZNXwcH-9vG8LEVJjHgaWoQv2vh8ZD43uyE8Y_dbHJ365vCnSNiEe7AipN5--vxUDPe3u670UFiD7uyuZkVWXgh0Gbdrr8x99qlc2YdynVfrWeqL=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOHetLdjhDmlCQW8m2WgU33eVn0XW4N7nH4xKv_=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 22:30, Thứ 6: 06:30 to 22:30, Thứ 7: 06:30 to 22:30, Chủ nhật: 06:30 to 22:30, Thứ 2: 06:30 to 22:30, Thứ 3: 06:30 to 22:30, Thứ 4: 06:30 to 22:30",
+    "cuisineTags": [
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Trädgård",
+      "Iskaffe",
+      "Cappuccino",
+      "Juice",
+      "Kaffe",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Frukost"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJIROFbgBncDERmOh6YW0rIm4",
+    "name": "MaXi's 1 Steak & Pizza – International Restaurant | 나트랑 맥시1 | Нячанг (1)",
+    "category": "Stekhus",
+    "city": "Khác",
+    "address": "27A Lê Quý Đôn, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2439673,
+      "lng": 109.1914075
+    },
+    "rating": 4.9,
+    "reviewCount": 859,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 367 383 037",
+    "website": "https://www.maxis2.net/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMyhBELxQaOLpyL9C8ikK_ow10dnq0Lme7krugj=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipN7E8Zmb2sdjDc-kVxLq0wKDCC3PHhQoxy9ab1r=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 11 to 23, Thứ 6: 11 to 23, Thứ 7: 11 to 23, Chủ nhật: 11 to 23, Thứ 2: 11 to 23, Thứ 3: 11 to 23, Thứ 4: 11 to 23",
+    "cuisineTags": [
+      "Đồ nướng",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Scampi",
+      "Juice",
+      "Biff",
+      "Mì Ý",
+      "Pumpasoppa",
+      "Pesto",
+      "Rostbiff",
+      "Pommes frites",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ_QLwY2JncDERZJNiZFoxaa8",
+    "name": "I Like Buffet Restaurant",
+    "category": "Fisk- och skaldjursrestaurang",
+    "city": "Khác",
+    "address": "61 Đặng Tất, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2762557,
+      "lng": 109.1992034
+    },
+    "rating": 4.9,
+    "reviewCount": 8450,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 886 838 000",
+    "website": "https://ilikebuffet.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipOIjj5ZbSXXVVoxCypfh3TNhK1uAEwZv4qqEIBh=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipNrvCfmrtOm_Mxz4bOy5UfrbciHFmIBWxc-17By=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 16 to 22, Thứ 6: 16 to 22, Thứ 7: 16 to 22, Chủ nhật: 16 to 22, Thứ 2: 16 to 22, Thứ 3: 16 to 22, Thứ 4: 16 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Ostron",
+      "Paella",
+      "Juice",
+      "Mussla",
+      "Aloo Gobi",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Sport",
+      "Takterass",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig ingång"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJd-srO-VncDERYjAnzQ3W6_I",
+    "name": "SHANTARAM",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "3 Đ. Phạm Ngọc Thạch, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2807677,
+      "lng": 109.2022094
+    },
+    "rating": 4.5,
+    "reviewCount": 879,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 338 724 374",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlgVkUOqOiXp3vYTEX9B8Uln7NpnnosoF6Z21nqaTlsK7oxorZH3bnQr5CnovNJpcWHJ1-JQMFvzI3Ab0sHOUFDP3TKIgyTdK-HrZtUdWI7PA3BopmOisQIP4QICxKbfUMHbJ_=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFyWuSWpaLtqeXwETFtgyH6vDHCKxCdbICCUc7131zrfvnlnmbQnkI69OoiMayGe1TuNh3o1AqzpMS3l25LlikrYW1lT6O-EYJqNo4xkNr5CBsVq0yJ-IPeX1k56lF8-SvgyyG-=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 15 to 23, Thứ 6: 15 to 23, Thứ 7: 15 to 23, Chủ nhật: 15 to 23, Thứ 2: 15 to 23, Thứ 3: Stängt, Thứ 4: 15 to 23",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Calzone",
+      "Cappuccino",
+      "Juice",
+      "Mojito",
+      "Ostron Rockefeller",
+      "Mozzarellasticks",
+      "Quesadilla",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Bia đa dạng",
+      "Cà phê ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJiV3kO81ncDERhDdoyPQqwJE",
+    "name": "AGAVE Tequila Garden Bar & Restaurant",
+    "category": "Mexikansk restaurang",
+    "city": "Khác",
+    "address": "81 Cao Văn Bé, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2732677,
+      "lng": 109.19879
+    },
+    "rating": 4.9,
+    "reviewCount": 108,
+    "price": "200–800 tn ₫",
+    "phoneNumber": "+84 372 846 200",
+    "website": "https://www.facebook.com/profile.php?id=61576894187453&mibextid=ZbWKwL",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZJ8jZgSaU-DVkGLmyx4CkKvgB5Ri9x32R4Kg_YyJqkx0W_5fOTot065jI_-8RGWG5CO_qhsWt3SqYiumDfG5wHsTKYsAjiFAxebrbl85eSA9wqF_wXg3BBsdJxPkCfADO7noX=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGiQDRMhpCfp-PoPYTEyEnsurwQxrNsdvpiSNH22I8eYLRJ84-zMyEcHVJapt2bkI1UYIZrxIask63mb-SN8fMymgpr4KAjlnCav60h60zQjxqda9eX0cVplhVb7fKI2kIflJzrAbjal2A2=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 17 to 00, Thứ 6: 17 to 00, Thứ 7: 17 to 00, Chủ nhật: 17 to 00, Thứ 2: 17 to 00, Thứ 3: Stängt, Thứ 4: 17 to 00",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Pub",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Levande musik",
+      "Phù hợp ăn một mình",
+      "Rullstolstillgänglig ingång",
+      "Rullstolstillgänglig parkering",
+      "Rullstolstillgängliga sittplatser",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống",
+      "Starksprit",
+      "Vin",
+      "Öl"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJaWag191ncDERdSRsfURl8Jc",
+    "name": "indy’s kitchen",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "39 Đ. Phạm Ngọc Thạch, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2807814,
+      "lng": 109.2004504
+    },
+    "rating": 4.7,
+    "reviewCount": 527,
+    "price": "200–300 tn ₫",
+    "phoneNumber": "+84 794 597 559",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfPLdHAQPOqnt7XRMJAJFKEBVOKJqR8iiGggQNwkWj6gWH1c-hxfYPsPacKdwkCCnNz-8sEZyFSWaCPUdtSv0wMYb2ZYO_xWuZr78JUXVnnGMZIGlocogpd_956A_k9PRpFl2Z6CT3sXVC=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhQen6xfT_0cMdnBOqyjr12vS6WGpA5L7TgkAV41vu54dAfvlnfsRKIug4UUs7yT06nJ9FbYq2ZvgTLI4W-TsfSXBCBiPEOZm25ePv8lyT8xlRiAFEBdWH7QivlCTaPX-RZntu=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 09:30 to 15, 17 to 22, Thứ 6: 09:30 to 15, 17 to 22, Thứ 7: 09:30 to 15, 17 to 22, Chủ nhật: 09:30 to 15, 17 to 22, Thứ 2: 09:30 to 15, 17 to 22, Thứ 3: 09:30 to 15, 17 to 22, Thứ 4: 09:30 to 15, 17 to 22",
+    "cuisineTags": [
+      "Quán nhậu"
+    ],
+    "detailedPreferences": [
+      "Juice",
+      "Fisk och skaldjur",
+      "Bulgogi",
+      "Tonkatsu",
+      "Identifierar sig som ägt av kvinnor",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bia đa dạng",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Kaffe"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJGbxRcQBncDERZ_46RHbeR0k",
+    "name": "MIA",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "11 Hải Nam, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2792716,
+      "lng": 109.1996441
+    },
+    "rating": 4.9,
+    "reviewCount": 159,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 931 633 358",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGxR_5sxxnhjgQ257n2wmDQQ6YgRZHF3rcJ_BIpoNde94ydBOalP86raIizbe-eCpm22jNies3aPqxTSmdVo5VjjUxXJWXGx-Irrc3mT-zYaQFgk5zZXdoGatNo52OnIDZVfh-qr0ZLh7bY=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFc4HEncCf8G3pXbUVlBZc85I6tWsia34alVBb65REIsWLf9xdNGCAhLzLUahqYSgQnomc3BgiqjqFa-mVbH3iherjNKyBDTnIAdG-YvZt0bZlKmBIfU1bZA3gLIzslvfYM1tsEY7KRSQo=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 17 to 22, Thứ 6: 17 to 22, Thứ 7: 17 to 22, Chủ nhật: 17 to 22, Thứ 2: Stängt, Thứ 3: 17 to 22, Thứ 4: 17 to 22",
+    "cuisineTags": [
+      "Món Âu"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Fish and chips",
+      "Rostbiff",
+      "Pommes frites",
+      "Chỗ ngồi ngoài trời",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Có đồ uống cồn",
+      "Vin",
+      "Öl",
+      "Bữa tối",
+      "Sittplatser",
+      "Bordsservering",
+      "Toalett",
+      "Thoải mái"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ70j0HMBncDERRLkGjOOxP4w",
+    "name": "Ơi Nha Trang Restaurant",
+    "category": "Vietnamesisk restaurang",
+    "city": "Khác",
+    "address": "11 Yersin, Nha Trang, Khánh Hòa 65000, Vietnam",
+    "location": {
+      "lat": 12.249066,
+      "lng": 109.1945781
+    },
+    "rating": 4.6,
+    "reviewCount": 1777,
+    "price": "100–600 tn ₫",
+    "phoneNumber": "+84 903 669 969",
+    "website": "http://www.oinhatrang.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPMcAadiC69FebVrH1QLJ68_cGjCFakzykL4-pr=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipO5Zd0kH0bcrUy0ppGfedBHObGzxF2V_eGNL1_O=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 06:30 to 22:30, Thứ 6: 06:30 to 22:30, Thứ 7: 06:30 to 22:30, Chủ nhật: 06:30 to 22:30, Thứ 2: 06:30 to 22:30, Thứ 3: 06:30 to 22:30, Thứ 4: 06:30 to 22:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Phở",
+      "Tom yum",
+      "Mì Ý",
+      "Soppa",
+      "Nudlar",
+      "Ananas",
+      "Biff",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJvTzKiE9ncDERS0xPovupQ4s",
+    "name": "Pansy Bistro",
+    "category": "Italiensk restaurang",
+    "city": "Khác",
+    "address": "Phạm Văn Đồng, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2739441,
+      "lng": 109.202274
+    },
+    "rating": 4.8,
+    "reviewCount": 658,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 794 534 868",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMfZBDEiTmkLUzXbGIigksbuz94T5UH5Mx263iU=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfLb_kh0D3rAWEPZf5YCChUvHfK3Vkfk1pexNYmrqOV5Kc7DAkfrSVMMn7fzn3T5t1gARRmzM8lVJlYYJgtY9Pr7AAjgnaRjgGWUtg5L_3xY8bOhBsRwYWe8L91FgCcZiu9-x9r-DdeAw=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 23, Thứ 6: 07 to 23, Thứ 7: 07 to 23, Chủ nhật: 07 to 23, Thứ 2: 07 to 23, Thứ 3: 07 to 23, Thứ 4: 07 to 23",
+    "cuisineTags": [
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cortado",
+      "Rostbiff",
+      "Quesadilla",
+      "Giao hàng không tiếp xúc",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Rượu vang ngon",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn",
+      "Cocktail/Đồ uống"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJBQeZkHtncDERDHPjUfZwEys",
+    "name": "Alpaca homestyle cafe",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "10/1B Nguyễn Thiện Thuật, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2411051,
+      "lng": 109.1932393
+    },
+    "rating": 4.8,
+    "reviewCount": 6290,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 367 282 982",
+    "website": "https://www.facebook.com/alpacanhatrang",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNuJXnyBtXV0MQp-Ab6otdsHsuyLE0wNQOQwxwM=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2mRgiiEm4yo3v-XTnf1qxt7EJ67E55ogZnQuQOIrN986MQ7gN0I2glv8V1Db0Z8k13sxvetGqEcLxkZ1ulA2E3gxfBUwfevMfhtzmgJtBSlN8sqhhwUhlCOoauGzb2bixIn-LYEyyLQao=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 21:30, Thứ 6: 08 to 21:30, Thứ 7: 08 to 21:30, Chủ nhật: 08 to 21:30, Thứ 2: 08 to 21:30, Thứ 3: 08 to 21:30, Thứ 4: 08 to 21:30",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Burrito",
+      "Cappuccino",
+      "Granola",
+      "Pumpasoppa",
+      "Croissant",
+      "Quesadilla",
+      "English muffin",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Trà ngon",
+      "Rượu vang ngon"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ5dy4sElpcDERKfzu88ogGGk",
+    "name": "Marina Beach Club Nha Trang",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Đường Nguyễn Cơ Thạch, Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2933706,
+      "lng": 109.2153665
+    },
+    "rating": 4.4,
+    "reviewCount": 1967,
+    "price": "100–500 tn ₫",
+    "phoneNumber": "+84 935 954 499",
+    "website": "",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM6kcb_QwBFdgUjQWN1BUhXQeAy8OV2pgMy2ryz=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipOFNYokfcWnUEL2f87HciHmdYg58lqObq0wft1k=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22, Thứ 6: 07 to 22, Thứ 7: 07 to 22, Chủ nhật: 07 to 22, Thứ 2: 07 to 22, Thứ 3: 07 to 22, Thứ 4: 07 to 22",
+    "cuisineTags": [
+      "Món Âu",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Pizza",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ093FquZncDER-WJ0HQGGgq0",
+    "name": "Atlas Café",
+    "category": "Fusion, restaurang",
+    "city": "Khác",
+    "address": "17a Cao Văn Bé, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2728882,
+      "lng": 109.2012614
+    },
+    "rating": 4.8,
+    "reviewCount": 1513,
+    "price": "100–200 tn ₫",
+    "phoneNumber": "+84 368 288 030",
+    "website": "https://instagram.com/atlascafe.nhatrang?igshid=NTc4MTIwNjQ2YQ==",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMIrgOOtAlYqCE-o_-vt00jrX5HAwt0mhdnRGYe=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/p/AF1QipPrBAu7V4rvPTTNbZsMqQSdW4OgjO7pIlE27qea=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 08 to 21, Thứ 6: 08 to 21, Thứ 7: 08 to 21, Chủ nhật: 08 to 21, Thứ 2: 08 to 21, Thứ 3: 08 to 21, Thứ 4: 08 to 21",
+    "cuisineTags": [
+      "Ăn chay",
+      "Cà phê"
+    ],
+    "detailedPreferences": [
+      "Cappuccino",
+      "Våffla",
+      "Omelett",
+      "English muffin",
+      "Chỗ ngồi ngoài trời",
+      "Giao hàng",
+      "Mua mang về",
+      "Phục vụ tại chỗ",
+      "Trà ngon",
+      "Cà phê ngon",
+      "Frukost",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình",
+      "Có đồ uống cồn"
+    ],
+    "source": "Google Maps via Apify"
+  },
+  {
+    "placeId": "ChIJ04WF91FpcDER3cWmQ6otwnU",
+    "name": "Ambassador Club, Ana Marina Nha Trang",
+    "category": "Nhà hàng",
+    "city": "Khác",
+    "address": "Đường Nguyễn Cơ Thạch, Bắc Nha Trang, Khánh Hòa 650000, Vietnam",
+    "location": {
+      "lat": 12.2947455,
+      "lng": 109.2223717
+    },
+    "rating": 4.9,
+    "reviewCount": 1841,
+    "price": "Liên hệ",
+    "phoneNumber": "+84 822 717 579",
+    "website": "https://ambassadorclubvn.com/",
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipP138eVgOv-ubYSg54V4w6TIdY5qLwvzCy-cqL7=w1920-h1080-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFz-YEpmAA7bsFefQi_pex24sAC2NGw5MXOoAM3YENwmuUto0PKecZ1HI-ks-G7rmcmkSp1OCGeZQMofJH4NTWFyy8-J6zjNZwTQ31fEF8HOqGapTkEGEXlrYgk-NYNfO9TGyBH43v3oQ_W=w1920-h1080-k-no"
+    ],
+    "openingHours": "Thứ 5: 07 to 22:30, Thứ 6: 07 to 22:30, Thứ 7: 07 to 22:30, Chủ nhật: 07 to 22:30, Thứ 2: 07 to 22:30, Thứ 3: 07 to 22:30, Thứ 4: 07 to 22:30",
+    "cuisineTags": [
+      "Món Nhật",
+      "Cà phê",
+      "Quán nhậu",
+      "Hẹn hò/Sang trọng"
+    ],
+    "detailedPreferences": [
+      "Humrar",
+      "Mango",
+      "Vitlöksbröd",
+      "Sushi",
+      "Chỗ ngồi ngoài trời",
+      "Phục vụ tại chỗ",
+      "Bra drinkar",
+      "Rượu vang ngon",
+      "Bia đa dạng",
+      "Tráng miệng ngon",
+      "Cà phê ngon",
+      "Levande musik",
+      "Bữa trưa",
+      "Bữa tối",
+      "Phù hợp ăn một mình"
+    ],
+    "source": "Google Maps via Apify"
+  }
+]

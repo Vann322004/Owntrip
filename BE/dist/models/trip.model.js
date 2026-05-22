@@ -67,6 +67,16 @@ const tripSchema = new mongoose_1.Schema({
         required: true
     },
     description: String,
+    notes: {
+        type: [String],
+        default: []
+    },
+    budget: {
+        accommodation: { type: Number, default: 0 },
+        food: { type: Number, default: 0 },
+        transport: { type: Number, default: 0 },
+        activities: { type: Number, default: 0 }
+    },
     isPublished: {
         type: Boolean,
         default: false
@@ -79,6 +89,43 @@ const tripSchema = new mongoose_1.Schema({
         checkIn: Date,
         checkOut: Date,
         totalPrice: Number
+    },
+    // Marketplace Fields
+    isForSale: {
+        type: Boolean,
+        default: false
+    },
+    price: {
+        type: Number,
+        default: 0
+    },
+    soldCount: {
+        type: Number,
+        default: 0
+    },
+    averageRating: {
+        type: Number,
+        default: 0
+    },
+    totalReviews: {
+        type: Number,
+        default: 0
+    },
+    isTrusted: {
+        type: Boolean,
+        default: false
+    },
+    isPurchasedClone: {
+        type: Boolean,
+        default: false
+    },
+    originalTripId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: 'Trip'
+    },
+    originalCreatorId: {
+        type: String,
+        ref: 'User'
     }
 }, { timestamps: true });
 exports.default = mongoose_1.default.model("Trip", tripSchema);

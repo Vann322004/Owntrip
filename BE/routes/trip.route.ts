@@ -15,7 +15,10 @@ import {
 	createPaymentUrl,
   handlePaymentWebhook,
   renderSandboxPayment,
-  getTripSalesStats
+	getTripSalesStats,
+	submitItineraryReview,
+	getMyItineraryReview,
+	deleteItineraryReview
 } from "../controllers/trip.controller";
 import { verifyToken } from "../middlewares/auth.middleware";
 
@@ -28,6 +31,9 @@ router.get("/published", getPublishedTrips);
 router.get("/marketplace", getMarketplaceTrips);
 router.get("/marketplace/:tripId/preview", getTripPreview);
 router.post("/marketplace/:tripId/purchase", verifyToken, createPaymentUrl);
+router.post("/:tripId/review", verifyToken, submitItineraryReview);
+router.get("/:tripId/my-review", verifyToken, getMyItineraryReview);
+router.delete("/:tripId/review", verifyToken, deleteItineraryReview);
 router.patch("/:tripId/marketplace", verifyToken, publishToMarketplace);
 router.get("/:tripId/destinations", getTripDestinations);
 router.get("/:tripId/sales-stats", verifyToken, getTripSalesStats);
