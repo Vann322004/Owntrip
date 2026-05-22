@@ -4,7 +4,7 @@ export interface IOrder extends Document {
   orderCode: number;
   buyerId: string;
   sellerId: string;
-  tripTemplateId: Schema.Types.ObjectId;
+  tripTemplateId: mongoose.Types.ObjectId;
   amount: number;
   status: 'PENDING' | 'SUCCESS' | 'FAILED' | 'CANCELLED';
   providerTransactionId?: string;

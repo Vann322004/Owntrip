@@ -34,24 +34,38 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const placeSchema = new mongoose_1.Schema({
-    placeId: { type: String, unique: true },
-    name: { type: String, required: true },
-    category: String,
-    city: String,
-    address: String,
-    location: {
-        lat: Number,
-        lng: Number
+const orderSchema = new mongoose_1.Schema({
+    orderCode: {
+        type: Number,
+        required: true,
+        unique: true
     },
-    rating: { type: Number, default: 0 },
-    reviewCount: { type: Number, default: 0 },
-    price: String,
-    phoneNumber: String,
-    website: String,
-    images: [String],
-    openingHours: String,
-    preferences: [String],
-    source: { type: String, default: "Google Maps" }
+    buyerId: {
+        type: String,
+        ref: 'User',
+        required: true
+    },
+    sellerId: {
+        type: String,
+        ref: 'User',
+        required: true
+    },
+    tripTemplateId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: 'Trip',
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    status: {
+        type: String,
+        enum: ['PENDING', 'SUCCESS', 'FAILED', 'CANCELLED'],
+        default: 'PENDING'
+    },
+    providerTransactionId: {
+        type: String
+    }
 }, { timestamps: true });
-exports.default = mongoose_1.default.model("Place", placeSchema);
+exports.default = mongoose_1.default.model("Order", orderSchema);

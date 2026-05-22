@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_middleware_1 = require("../middlewares/auth.middleware");
+const withdrawal_controller_1 = require("../controllers/withdrawal.controller");
+const router = (0, express_1.Router)();
+router.post("/", auth_middleware_1.verifyToken, (0, auth_middleware_1.authorizeRole)("creator"), withdrawal_controller_1.createWithdrawalRequest);
+router.get("/my", auth_middleware_1.verifyToken, (0, auth_middleware_1.authorizeRole)("creator"), withdrawal_controller_1.getMyWithdrawalRequests);
+router.get("/admin", auth_middleware_1.verifyToken, (0, auth_middleware_1.authorizeRole)("admin"), withdrawal_controller_1.getAllWithdrawalRequestsForAdmin);
+router.put("/admin/:id", auth_middleware_1.verifyToken, (0, auth_middleware_1.authorizeRole)("admin"), withdrawal_controller_1.reviewWithdrawalRequest);
+module.exports = router;

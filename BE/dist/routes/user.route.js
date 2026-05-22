@@ -7,6 +7,7 @@ const router = (0, express_1.Router)();
 router.post('/register', user_controller_1.UserController.register);
 router.post('/login', user_controller_1.UserController.login);
 router.get('/', auth_middleware_1.verifyToken, user_controller_1.UserController.getAllUsers);
+router.get('/me', auth_middleware_1.verifyToken, user_controller_1.UserController.getMe);
 router.post('/', auth_middleware_1.verifyToken, user_controller_1.UserController.createUser);
 router.delete('/:id', auth_middleware_1.verifyToken, user_controller_1.UserController.deleteUser);
 router.put('/:id', auth_middleware_1.verifyToken, user_controller_1.UserController.adminUpdateUser);

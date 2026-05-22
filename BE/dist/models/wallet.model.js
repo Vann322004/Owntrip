@@ -34,24 +34,24 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const placeSchema = new mongoose_1.Schema({
-    placeId: { type: String, unique: true },
-    name: { type: String, required: true },
-    category: String,
-    city: String,
-    address: String,
-    location: {
-        lat: Number,
-        lng: Number
+const walletSchema = new mongoose_1.Schema({
+    userId: {
+        type: String,
+        ref: 'User',
+        sparse: true
     },
-    rating: { type: Number, default: 0 },
-    reviewCount: { type: Number, default: 0 },
-    price: String,
-    phoneNumber: String,
-    website: String,
-    images: [String],
-    openingHours: String,
-    preferences: [String],
-    source: { type: String, default: "Google Maps" }
+    balance: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
+    currency: {
+        type: String,
+        default: 'VND'
+    },
+    isSystem: {
+        type: Boolean,
+        default: false
+    }
 }, { timestamps: true });
-exports.default = mongoose_1.default.model("Place", placeSchema);
+exports.default = mongoose_1.default.model("Wallet", walletSchema);

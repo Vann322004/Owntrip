@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const checkin_controller_1 = require("../controllers/checkin.controller");
+const auth_middleware_1 = require("../middlewares/auth.middleware");
+const router = (0, express_1.Router)();
+router.post("/", auth_middleware_1.verifyToken, checkin_controller_1.createCheckinMemory);
+router.get("/my", auth_middleware_1.verifyToken, checkin_controller_1.getMyCheckins);
+router.patch("/:id/favorite", auth_middleware_1.verifyToken, checkin_controller_1.toggleCheckinFavorite);
+router.delete("/:id", auth_middleware_1.verifyToken, checkin_controller_1.deleteCheckin);
+module.exports = router;

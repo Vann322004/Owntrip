@@ -119,9 +119,23 @@ export const getTripDetail = async (req: AuthRequest, res: Response) => {
       });
     }
 
-    const reviews = await Review.find({ targetId: tripId, targetType: 'itinerary' })
-      .populate('userId', 'displayName image')
-      .sort({ createdAt: -1 });
+    const reviewTargetId = resolveReviewTargetTripId(trip);
+    const reviewDocs = await Review.find({ targetId: reviewTargetId, targetType: 'itinerary' })
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const userIds = reviewDocs.map(r => r.userId);
+    const users = await User.find({ userId: { $in: userIds } }).select('userId displayName image').lean();
+    
+    const userMap = new Map();
+    for (const u of users) {
+      userMap.set(u.userId, { _id: u._id, displayName: u.displayName, image: u.image });
+    }
+
+    const reviews = reviewDocs.map(r => ({
+      ...r,
+      userId: userMap.get(r.userId) || { displayName: "Người dùng ẩn danh", image: "" }
+    }));
 
     res.json({
       success: true,
@@ -641,9 +655,23 @@ export const getTripPreview = async (req: Request, res: Response) => {
       });
     }
 
-    const reviews = await Review.find({ targetId: tripId, targetType: 'itinerary' })
-      .populate('userId', 'displayName image')
-      .sort({ createdAt: -1 });
+    const reviewTargetId = resolveReviewTargetTripId(trip);
+    const reviewDocs = await Review.find({ targetId: reviewTargetId, targetType: 'itinerary' })
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const userIds = reviewDocs.map(r => r.userId);
+    const users = await User.find({ userId: { $in: userIds } }).select('userId displayName image').lean();
+    
+    const userMap = new Map();
+    for (const u of users) {
+      userMap.set(u.userId, { _id: u._id, displayName: u.displayName, image: u.image });
+    }
+
+    const reviews = reviewDocs.map(r => ({
+      ...r,
+      userId: userMap.get(r.userId) || { displayName: "Người dùng ẩn danh", image: "" }
+    }));
 
     res.json({
       success: true,
@@ -651,10 +679,13 @@ export const getTripPreview = async (req: Request, res: Response) => {
       days: result,
       reviews
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.error("Get trip preview failed:", error);
     res.status(500).json({
       success: false,
       message: "Get trip preview failed",
+      errorMsg: error?.message,
+      errorStack: error?.stack,
     });
   }
 };
@@ -663,6 +694,36 @@ import mongoose from "mongoose";
 import Order from "../models/order.model";
 import Wallet from "../models/wallet.model";
 import payOS from "../utils/payos";
+
+const CREATOR_SHARE_RATIO = 0.7;
+
+const resolveReviewTargetTripId = (trip: any): string => {
+  if (trip?.isPurchasedClone && trip?.originalTripId) {
+    return String(trip.originalTripId);
+  }
+  return String(trip?._id);
+};
+
+const syncItineraryReviewStats = async (targetTripId: string) => {
+  const stats = await Review.aggregate([
+    { $match: { targetId: targetTripId, targetType: "itinerary" } },
+    {
+      $group: {
+        _id: "$targetId",
+        avgScore: { $avg: "$rating" },
+        count: { $sum: 1 }
+      }
+    }
+  ]);
+
+  const avgScore = stats.length > 0 ? Number(stats[0].avgScore.toFixed(1)) : 0;
+  const totalReviews = stats.length > 0 ? stats[0].count : 0;
+
+  await Trip.findByIdAndUpdate(targetTripId, {
+    averageRating: avgScore,
+    totalReviews
+  });
+};
 
 export const publishToMarketplace = async (req: AuthRequest, res: Response) => {
   try {
@@ -845,17 +906,31 @@ export const processTripOrder = async (orderCode: number) => {
       return; 
     }
 
-    // Credit Wallet (update User balance)
-    const User = require('../models/user.model').default;
+    const creatorAmount = Math.floor(order.amount * CREATOR_SHARE_RATIO);
+    const adminAmount = order.amount - creatorAmount;
+
+    // Revenue split: 70% for creator, 30% for admin system wallet.
     await User.findOneAndUpdate(
       { userId: order.sellerId },
-      { $inc: { balance: order.amount } },
+      { $inc: { balance: creatorAmount } },
       { new: true, session }
     );
+
+    await Wallet.findOneAndUpdate(
+      { isSystem: true },
+      {
+        $inc: { balance: adminAmount },
+        $setOnInsert: { isSystem: true, currency: "VND" }
+      },
+      { new: true, upsert: true, session }
+    );
+
+    let templateTripTitle = "lịch trình";
 
     // Clone Trip (Unlock)
     const templateTrip = await Trip.findById(order.tripTemplateId).session(session);
     if (templateTrip) {
+      templateTripTitle = templateTrip.title;
       const clonedTripData = {
         userId: order.buyerId,
         title: `${templateTrip.title} (Đã mua)`,
@@ -907,6 +982,22 @@ export const processTripOrder = async (orderCode: number) => {
     order.status = 'SUCCESS';
     order.providerTransactionId = transactionId || "SANDBOX_TXN";
     await order.save({ session });
+
+    await Notification.create(
+      [
+        {
+          userId: order.sellerId,
+          title: "Bạn vừa bán được một Plan",
+          message: `Plan \"${templateTripTitle}\" đã được mua thành công. Bạn nhận ${creatorAmount.toLocaleString('vi-VN')}đ.`
+        },
+        {
+          userId: order.buyerId,
+          title: "Mua Plan thành công",
+          message: `Bạn đã mua thành công plan \"${templateTripTitle}\".`
+        }
+      ],
+      { session }
+    );
 
     await session.commitTransaction();
     session.endSession();
@@ -976,14 +1067,185 @@ export const getTripSalesStats = async (req: AuthRequest, res: Response) => {
 
     const stats = await Order.aggregate([
       { $match: { tripTemplateId: new mongoose.Types.ObjectId(tripId), status: 'SUCCESS' } },
-      { $group: { _id: null, totalRevenue: { $sum: "$amount" }, totalSales: { $sum: 1 } } }
+      {
+        $group: {
+          _id: null,
+          grossRevenue: { $sum: "$amount" },
+          creatorRevenue: { $sum: { $floor: { $multiply: ["$amount", CREATOR_SHARE_RATIO] } } },
+          totalSales: { $sum: 1 }
+        }
+      }
     ]);
 
-    const result = stats.length > 0 ? stats[0] : { totalRevenue: 0, totalSales: 0 };
+    const result = stats.length > 0 ? stats[0] : { grossRevenue: 0, creatorRevenue: 0, totalSales: 0 };
 
-    res.json({ success: true, totalSales: result.totalSales, totalRevenue: result.totalRevenue });
+    res.json({
+      success: true,
+      totalSales: result.totalSales,
+      totalRevenue: result.creatorRevenue,
+      grossRevenue: result.grossRevenue
+    });
   } catch (error) {
     console.error("Get trip sales stats error:", error);
     res.status(500).json({ success: false, message: "Get stats failed" });
+  }
+};
+
+export const submitItineraryReview = async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.user?.userId;
+    const { tripId } = req.params;
+    const { rating, comment } = req.body;
+
+    if (!userId) {
+      return res.status(401).json({ success: false, message: "Unauthorized" });
+    }
+
+    const numericRating = Number(rating);
+    if (!Number.isFinite(numericRating) || numericRating < 1 || numericRating > 10) {
+      return res.status(400).json({ success: false, message: "Điểm đánh giá phải từ 1 đến 10" });
+    }
+
+    if (!comment || !String(comment).trim()) {
+      return res.status(400).json({ success: false, message: "Vui lòng nhập nội dung feedback" });
+    }
+
+    const trip = await Trip.findById(tripId);
+    if (!trip) {
+      return res.status(404).json({ success: false, message: "Trip not found" });
+    }
+
+    const reviewTargetTripId = resolveReviewTargetTripId(trip);
+
+    if (!mongoose.Types.ObjectId.isValid(reviewTargetTripId)) {
+      return res.status(400).json({
+        success: false,
+        message: "Trip không hợp lệ"
+      });
+    }
+
+    const reviewTargetObjectId = new mongoose.Types.ObjectId(reviewTargetTripId);
+
+    const purchasedOrders = await Order.aggregate([
+      {
+        $match: {
+          buyerId: userId,
+          tripTemplateId: reviewTargetObjectId,
+          status: "SUCCESS"
+        }
+      },
+      { $limit: 1 },
+      { $project: { _id: 1 } }
+    ]);
+
+    const hasPurchased = purchasedOrders.length > 0;
+
+    if (!hasPurchased) {
+      return res.status(403).json({
+        success: false,
+        message: "Bạn cần mua lịch trình này trước khi gửi feedback"
+      });
+    }
+
+    let review = await Review.findOne({
+      userId,
+      targetId: reviewTargetTripId,
+      targetType: "itinerary"
+    });
+
+    if (review) {
+      review.rating = numericRating;
+      review.comment = String(comment).trim();
+      await review.save();
+    } else {
+      review = await Review.create({
+        userId,
+        targetId: reviewTargetTripId,
+        targetType: "itinerary",
+        rating: numericRating,
+        comment: String(comment).trim()
+      });
+    }
+
+    await syncItineraryReviewStats(reviewTargetTripId);
+
+    const templateTrip = await Trip.findById(reviewTargetTripId).select("title userId");
+    if (templateTrip && templateTrip.userId !== userId) {
+      await Notification.create({
+        userId: templateTrip.userId,
+        title: "Plan của bạn có feedback mới",
+        message: `Lịch trình \"${templateTrip.title}\" vừa nhận được đánh giá ${numericRating}/10.`
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Gửi feedback thành công",
+      data: review
+    });
+  } catch (error) {
+    console.error("Submit itinerary review error:", error);
+    return res.status(500).json({ success: false, message: "Không thể gửi feedback" });
+  }
+};
+
+export const getMyItineraryReview = async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.user?.userId;
+    const { tripId } = req.params;
+
+    if (!userId) {
+      return res.status(401).json({ success: false, message: "Unauthorized" });
+    }
+
+    const trip = await Trip.findById(tripId);
+    if (!trip) {
+      return res.status(404).json({ success: false, message: "Trip not found" });
+    }
+
+    const reviewTargetTripId = resolveReviewTargetTripId(trip);
+    const review = await Review.findOne({
+      userId,
+      targetId: reviewTargetTripId,
+      targetType: "itinerary"
+    });
+
+    return res.status(200).json({ success: true, data: review });
+  } catch (error) {
+    console.error("Get my itinerary review error:", error);
+    return res.status(500).json({ success: false, message: "Không thể tải feedback" });
+  }
+};
+
+export const deleteItineraryReview = async (req: AuthRequest, res: Response) => {
+  try {
+    const userId = req.user?.userId;
+    const { tripId } = req.params;
+
+    if (!userId) {
+      return res.status(401).json({ success: false, message: "Unauthorized" });
+    }
+
+    const trip = await Trip.findById(tripId);
+    if (!trip) {
+      return res.status(404).json({ success: false, message: "Trip not found" });
+    }
+
+    const reviewTargetTripId = resolveReviewTargetTripId(trip);
+    
+    const result = await Review.findOneAndDelete({
+      userId,
+      targetId: reviewTargetTripId,
+      targetType: "itinerary"
+    });
+
+    if (result) {
+      await syncItineraryReviewStats(reviewTargetTripId);
+    }
+
+    return res.status(200).json({ success: true, message: "Đã xóa đánh giá" });
+  } catch (error) {
+    console.error("Delete itinerary review error:", error);
+    return res.status(500).json({ success: false, message: "Không thể xóa feedback" });
   }
 };

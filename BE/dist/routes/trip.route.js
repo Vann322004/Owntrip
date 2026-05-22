@@ -8,9 +8,17 @@ router.post("/", auth_middleware_1.verifyToken, trip_controller_1.createTrip);
 router.get("/my", auth_middleware_1.verifyToken, trip_controller_1.getMyTrips);
 router.get("/provinces/images", trip_controller_1.getProvinceImageCatalog);
 router.get("/published", trip_controller_1.getPublishedTrips);
+router.get("/marketplace", trip_controller_1.getMarketplaceTrips);
+router.get("/marketplace/:tripId/preview", trip_controller_1.getTripPreview);
+router.post("/marketplace/:tripId/purchase", auth_middleware_1.verifyToken, trip_controller_1.createPaymentUrl);
+router.patch("/:tripId/marketplace", auth_middleware_1.verifyToken, trip_controller_1.publishToMarketplace);
 router.get("/:tripId/destinations", trip_controller_1.getTripDestinations);
+router.get("/:tripId/sales-stats", auth_middleware_1.verifyToken, trip_controller_1.getTripSalesStats);
 router.patch("/:tripId", auth_middleware_1.verifyToken, trip_controller_1.updateTrip);
 router.patch("/:tripId/publish", auth_middleware_1.verifyToken, trip_controller_1.updateTripPublishStatus);
 router.delete("/:tripId", auth_middleware_1.verifyToken, trip_controller_1.deleteTripById);
 router.get("/:tripId", trip_controller_1.getTripDetail);
+// Payment Sandbox Routes
+router.get("/payment-sandbox/:orderCode", trip_controller_1.renderSandboxPayment);
+router.post("/payment-webhook", trip_controller_1.handlePaymentWebhook);
 module.exports = router;
