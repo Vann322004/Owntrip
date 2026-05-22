@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import axios from "axios";
 import Place from "../models/place.model";
+import { findProvinceImageByDestination, normalizeText } from "../utils/provinceImages";
 
 const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
@@ -175,6 +176,51 @@ const buildFallbackRating = (seedBase: string) => {
   };
 };
 
+const buildSearchTerms = (value: string) => {
+  const raw = String(value || "").trim();
+  const normalized = normalizeText(raw);
+  const terms = new Set<string>();
+
+  const addTerm = (term?: string) => {
+    const normalizedTerm = normalizeText(String(term || ""));
+    if (normalizedTerm) {
+      terms.add(normalizedTerm);
+    }
+  };
+
+  addTerm(raw);
+  addTerm(normalized);
+
+  const province = findProvinceImageByDestination(raw);
+  if (province) {
+    addTerm(province.province);
+    province.keywords.forEach(addTerm);
+  }
+
+  const strippedPrefix = normalized
+    .replace(/^(tp|thanh pho|thanh-pho)\s+/i, "")
+    .replace(/^(tp|thanh pho|thanh-pho)\.?\s*/i, "");
+
+  addTerm(strippedPrefix);
+
+  return Array.from(terms);
+};
+
+const isSameLocality = (left?: string | null, right?: string | null) => {
+  const normalizedLeft = normalizeText(String(left || ""));
+  const normalizedRight = normalizeText(String(right || ""));
+
+  if (!normalizedLeft || !normalizedRight) {
+    return false;
+  }
+
+  return (
+    normalizedLeft === normalizedRight ||
+    normalizedLeft.includes(normalizedRight) ||
+    normalizedRight.includes(normalizedLeft)
+  );
+};
+
 export const getPlacePhoto = async (req: Request, res: Response) => {
   try {
     const { name } = req.query;
@@ -206,6 +252,9 @@ export const getPlacePhoto = async (req: Request, res: Response) => {
 export const searchPlace = async (req: Request, res: Response) => {
   try {
     const { q, lat, lng } = req.query;
+    const rawQuery = String(q || "");
+    const searchTerms = buildSearchTerms(rawQuery);
+    const normalizedQuery = normalizeText(rawQuery);
 
     if (!q) {
       return res.status(400).json({
@@ -214,13 +263,12 @@ export const searchPlace = async (req: Request, res: Response) => {
       });
     }
 
-    const searchTerms = String(q).split(",").map(t => t.trim()).filter(Boolean);
-
     // 1. Tìm kiếm trong database local trước (Ưu tiên tuyệt đối nếu có dữ liệu)
     const localPlaces = await Place.find({
       $or: searchTerms.flatMap((term) => [
         { name: { $regex: term, $options: "i" } },
-        { address: { $regex: term, $options: "i" } }
+        { address: { $regex: term, $options: "i" } },
+        { city: { $regex: term, $options: "i" } }
       ])
     }).sort({ addedCount: -1 }).limit(20);
 
@@ -251,7 +299,7 @@ export const searchPlace = async (req: Request, res: Response) => {
       {
         params: {
           api_key: getGoongKey(),
-          input: String(q),
+          input: rawQuery,
           location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
           limit: 20, // Tăng limit lên 20 để có pool kết quả lớn hơn trước khi lọc
           more_compound: true
@@ -260,15 +308,15 @@ export const searchPlace = async (req: Request, res: Response) => {
     );
 
     let predictions = response.data?.predictions || [];
-    const lowerQ = String(q).toLowerCase();
+    const lowerQ = normalizedQuery;
 
     // Tìm xem có kết quả nào là đơn vị hành chính trùng tên với từ khóa tìm kiếm không (ví dụ: tìm "Đà Lạt" ra "Thành phố Đà Lạt")
     const adminUnit = predictions.find((p: any) => {
-      const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+      const mainText = normalizeText(p.structured_formatting?.main_text || "");
       const isLocality = p.types?.some((t: string) => 
         ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t)
       );
-      return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+      return isLocality && isSameLocality(mainText, lowerQ);
     });
 
     if (adminUnit) {
@@ -277,7 +325,7 @@ export const searchPlace = async (req: Request, res: Response) => {
         // Lọc nghiêm ngặt: Chỉ giữ lại các địa điểm thuộc cùng Tỉnh/Thành phố
         predictions = predictions.filter((p: any) => {
           const pProvince = p.compound?.province;
-          return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+          return isSameLocality(pProvince, targetProvince);
         });
       }
     }
@@ -500,9 +548,11 @@ export const searchNearby = async (req: Request, res: Response) => {
 
 export const searchText = async (req: Request, res: Response) => {
   try {
-    const { q, lat, lng, radius, limit } = req.query;
+    const { q, address, lat, lng, radius, limit } = req.query;
+    const rawQuery = q || address;
+    const normalizedQuery = normalizeText(String(rawQuery || ""));
 
-    if (!q) {
+    if (!rawQuery) {
       return res.status(400).json({
         success: false,
         message: "Missing query"
@@ -511,12 +561,14 @@ export const searchText = async (req: Request, res: Response) => {
 
     const maxResultCount = limit ? Math.min(Number(limit), 50) : 20;
 
-    const queryList = (Array.isArray(q) ? q : [q])
+    const queryList = (Array.isArray(rawQuery) ? rawQuery : [rawQuery])
       .flatMap((item) => String(item).split(","))
       .map((item) => item.trim())
       .filter((item) => item.length > 0);
 
-    if (!queryList.length) {
+    const expandedQueryList = Array.from(new Set(queryList.flatMap((item) => buildSearchTerms(item))));
+
+    if (!expandedQueryList.length) {
       return res.status(400).json({
         success: false,
         message: "Missing query"
@@ -525,7 +577,7 @@ export const searchText = async (req: Request, res: Response) => {
 
     // 1. Thử tìm kiếm trong database local trước
     const dbResults = await Place.find({
-      $or: queryList.flatMap((queryText) => [
+      $or: expandedQueryList.flatMap((queryText) => [
         { name: { $regex: queryText, $options: "i" } },
         { address: { $regex: queryText, $options: "i" } },
         { city: { $regex: queryText, $options: "i" } }
@@ -577,15 +629,15 @@ export const searchText = async (req: Request, res: Response) => {
       .filter((result): result is PromiseFulfilledResult<any> => result.status === "fulfilled")
       .flatMap((result) => result.value.data?.predictions || []);
 
-    const lowerQ = String(q).toLowerCase();
+    const lowerQ = normalizedQuery;
     
     // Bổ sung lọc đơn vị hành chính cho searchText tương tự searchPlace
     const adminUnit = allPredictions.find((p: any) => {
-      const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+      const mainText = normalizeText(p.structured_formatting?.main_text || "");
       const isLocality = p.types?.some((t: string) => 
         ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t)
       );
-      return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+      return isLocality && isSameLocality(mainText, lowerQ);
     });
 
     if (adminUnit) {
@@ -593,7 +645,7 @@ export const searchText = async (req: Request, res: Response) => {
       if (targetProvince) {
         allPredictions = allPredictions.filter((p: any) => {
           const pProvince = p.compound?.province;
-          return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+          return isSameLocality(pProvince, targetProvince);
         });
       }
     }
