@@ -28,6 +28,12 @@ router.get("/nearby", searchNearby);
 router.get("/text", searchText);
 
 /**
+ * Tìm kiếm địa điểm theo cụm địa chỉ
+ * GET /api/places/address?address=Kim Bồng Tây, Hội An, Đà Nẵng
+ */
+router.get("/address", searchText);
+
+/**
  * Proxy ảnh địa điểm qua backend (không lộ RapidAPI key)
  * GET /api/places/photo?name=places/.../photos/...&maxHeightPx=400
  */
