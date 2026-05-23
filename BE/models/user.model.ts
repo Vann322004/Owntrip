@@ -10,6 +10,7 @@ const userSchema = new Schema<IUser>({
   password: { type: String, required: true },
   displayName: { type: String, required: true },
   image: { type: String },
+  avatarFrame: { type: String },
   phone: { type: String },
   balance: { type: Number, default: 0 },
   points: { type: Number, default: 0 },
