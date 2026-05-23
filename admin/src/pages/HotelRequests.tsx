@@ -16,7 +16,8 @@ interface HotelRequest {
     businessLicense: string;
     securityCertificate: string;
     pcccCertificate: string;
-    identityCard: string;
+    identityCardFront: string;
+    identityCardBack: string;
     leaseContract?: string;
   };
   amenities: string[];
@@ -238,7 +239,8 @@ export default function HotelRequests() {
                     <DocThumbnail label="GP Kinh doanh" url={selectedRequest.legalDocuments?.businessLicense} />
                     <DocThumbnail label="An ninh trật tự" url={selectedRequest.legalDocuments?.securityCertificate} />
                     <DocThumbnail label="PCCC" url={selectedRequest.legalDocuments?.pcccCertificate} />
-                    <DocThumbnail label="CCCD/Passport" url={selectedRequest.legalDocuments?.identityCard} />
+                    <DocThumbnail label="CCCD (Mặt trước)" url={selectedRequest.legalDocuments?.identityCardFront} />
+                    <DocThumbnail label="CCCD (Mặt sau)" url={selectedRequest.legalDocuments?.identityCardBack} />
                     {selectedRequest.legalDocuments?.leaseContract && (
                       <DocThumbnail label="Hợp đồng/Sổ đỏ" url={selectedRequest.legalDocuments.leaseContract} />
                     )}

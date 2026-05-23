@@ -15,7 +15,8 @@ const hotelRequestSchema = new Schema<IHotelRequest>({
     businessLicense: { type: String },
     securityCertificate: { type: String },
     pcccCertificate: { type: String },
-    identityCard: { type: String },
+    identityCardFront: { type: String },
+    identityCardBack: { type: String },
     leaseContract: { type: String }
   },
   amenities: [String],
