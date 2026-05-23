@@ -13,7 +13,8 @@ export interface IHotelRequest extends Document {
     businessLicense: string;
     securityCertificate: string;
     pcccCertificate: string;
-    identityCard: string;
+    identityCardFront: string;
+    identityCardBack: string;
     leaseContract?: string;
   };
   amenities: string[];
