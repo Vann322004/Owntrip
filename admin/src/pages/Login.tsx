@@ -10,6 +10,7 @@ export default function Login() { // Login Component
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -31,7 +32,7 @@ export default function Login() { // Login Component
           role: response.data.role
         };
         
-        login(userData, response.data.token);
+        login(userData, response.data.token, rememberMe);
         navigate('/dashboard');
       }
     } catch (err: any) {
@@ -101,7 +102,12 @@ export default function Login() { // Login Component
 
           <div className="flex items-center justify-between">
             <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500/20" />
+              <input 
+                type="checkbox" 
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500/20" 
+              />
               <span className="text-sm text-gray-600">Ghi nhớ đăng nhập</span>
             </label>
             <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">

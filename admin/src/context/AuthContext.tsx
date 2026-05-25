@@ -13,37 +13,42 @@ interface AuthContextType {
   user: User | null;
   token: string | null;
   isAuthenticated: boolean;
-  login: (userData: User, token: string) => void;
+  login: (userData: User, token: string, remember?: boolean) => void;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Khôi phục trạng thái đăng nhập từ localStorage khi app khởi động
-    const storedToken = localStorage.getItem('token');
-    const storedUser = localStorage.getItem('user');
-
-    if (storedToken && storedUser) {
-      setToken(storedToken);
+  const [user, setUser] = useState<User | null>(() => {
+    const storedUser = sessionStorage.getItem('user') || localStorage.getItem('user');
+    if (storedUser) {
       try {
-        setUser(JSON.parse(storedUser));
+        return JSON.parse(storedUser);
       } catch (e) {
-        console.error("Lỗi parse user data", e);
+        return null;
       }
     }
-  }, []);
+    return null;
+  });
+  const [token, setToken] = useState<string | null>(() => sessionStorage.getItem('token') || localStorage.getItem('token'));
+  const navigate = useNavigate();
 
-  const login = (userData: User, authToken: string) => {
+  // Token is already loaded synchronously, so no need for useEffect to do it.
+  // We can just keep an empty useEffect or remove it entirely.
+
+
+  const login = (userData: User, authToken: string, remember: boolean = false) => {
     setUser(userData);
     setToken(authToken);
-    localStorage.setItem('token', authToken);
-    localStorage.setItem('user', JSON.stringify(userData));
+    
+    const storage = remember ? localStorage : sessionStorage;
+    // Clear the other storage just in case
+    (remember ? sessionStorage : localStorage).removeItem('token');
+    (remember ? sessionStorage : localStorage).removeItem('user');
+    
+    storage.setItem('token', authToken);
+    storage.setItem('user', JSON.stringify(userData));
   };
 
   const logout = () => {
@@ -51,6 +56,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setToken(null);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
     navigate('/login');
   };
 
