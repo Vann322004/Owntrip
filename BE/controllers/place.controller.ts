@@ -460,6 +460,44 @@ export const searchNearby = async (req: Request, res: Response) => {
       ? (typeToQuery[String(type).trim().toLowerCase()] || String(type).trim())
       : "địa điểm";
 
+    const searchTerms = buildSearchTerms(searchQuery);
+
+    // 1. Tìm kiếm trong database local trước
+    const localPlaces = await Place.find({
+      $or: searchTerms.flatMap((term) => [
+        { name: { $regex: term, $options: "i" } },
+        { address: { $regex: term, $options: "i" } },
+        { category: { $regex: term, $options: "i" } },
+        { city: { $regex: term, $options: "i" } }
+      ])
+    }).sort({ addedCount: -1 }).limit(10);
+
+    if (localPlaces.length > 0) {
+      const formattedPlaces = localPlaces.map(p => ({
+        placeId: p.placeId,
+        name: p.name,
+        address: p.address,
+        latitude: p.location?.lat,
+        longitude: p.location?.lng,
+        rating: p.rating,
+        totalReviews: p.reviewCount,
+        types: p.category ? [p.category] : [],
+        mapUrl: p.location?.lat
+          ? `https://www.google.com/maps/search/?api=1&query=${p.location.lat},${p.location.lng}`
+          : null,
+        photo: p.images?.[0] || null,
+        photos: p.images || [],
+        addedCount: p.addedCount || 0
+      }));
+
+      return res.json({
+        success: true,
+        source: "local-db",
+        total: formattedPlaces.length,
+        places: formattedPlaces
+      });
+    }
+
     const autocompleteRes = await axios.get(
       `${GOONG_API_BASE_URL}/v2/place/autocomplete`,
       {
@@ -785,5 +823,42 @@ export const getPlaceChildren = async (req: Request, res: Response) => {
       success: false,
       message: "Failed to fetch place children"
     });
+  }
+};
+
+/**
+ * Get top places by `addedCount`.
+ * Query params:
+ * - `minAddedCount` (number, default 1): minimal addedCount to include
+ * - `limit` (number, default 10, max 50): number of results to return
+ */
+export const getTopAddedPlaces = async (req: Request, res: Response) => {
+  try {
+    const { minAddedCount = "1", limit = "10" } = req.query;
+    const min = Math.max(0, Number(minAddedCount) || 1);
+    const lim = Math.min(50, Math.max(1, Number(limit) || 10));
+
+    const results = await Place.find({ addedCount: { $gte: min } })
+      .sort({ addedCount: -1 })
+      .limit(lim);
+
+    const places = results.map((p) => ({
+      placeId: p.placeId,
+      name: p.name,
+      address: p.address,
+      latitude: p.location?.lat,
+      longitude: p.location?.lng,
+      rating: p.rating,
+      totalReviews: p.reviewCount,
+      types: p.category ? [p.category] : [],
+      photo: p.images?.[0],
+      photos: p.images,
+      addedCount: p.addedCount || 0
+    }));
+
+    return res.json({ success: true, total: places.length, places });
+  } catch (error: any) {
+    console.error("Get top added places failed:", error?.message || error);
+    return res.status(500).json({ success: false, message: "Get top added places failed" });
   }
 };

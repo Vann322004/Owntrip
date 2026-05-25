@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getPlacePhoto, searchPlace, searchNearby, searchText, getPlaceChildren } from "../controllers/place.controller";
+import { getPlacePhoto, searchPlace, searchNearby, searchText, getPlaceChildren, getTopAddedPlaces } from "../controllers/place.controller";
 
 const router = Router();
 
@@ -38,5 +38,7 @@ router.get("/address", searchText);
  * GET /api/places/photo?name=places/.../photos/...&maxHeightPx=400
  */
 router.get("/photo", getPlacePhoto);
+
+router.get("/gettopplaces", getTopAddedPlaces);
 
 module.exports = router;
