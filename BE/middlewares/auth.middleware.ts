@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import 'multer';
 import jwt from 'jsonwebtoken';
 
 
@@ -8,6 +9,8 @@ export interface AuthRequest extends Request {
     email: string;
     role: string;
   };
+  file?: Express.Multer.File;
+  files?: Express.Multer.File[] | { [fieldname: string]: Express.Multer.File[] };
 }
 
 export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction) => {
