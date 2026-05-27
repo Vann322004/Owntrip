@@ -29,8 +29,11 @@ const navItems = [
   { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
   { name: 'Duyệt Rút Tiền', path: '/withdrawals', icon: CreditCard },
   { name: 'Nạp Điểm', path: '/point-topups', icon: Star },
+  { name: 'Quản lý Owner', path: '/hotel-owners', icon: Users },
   { name: 'Cài đặt', path: '/settings', icon: Settings },
 ];
+
+
 
 export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);

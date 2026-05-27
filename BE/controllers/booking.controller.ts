@@ -489,6 +489,53 @@ export const BookingController = {
   },
 
   /**
+   * API 5.5: Cập nhật trạng thái đặt phòng (cho Hotel Owner / Admin)
+   * PATCH /api/bookings/:id/status
+   */
+  updateBookingStatus: async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const { status, paymentStatus } = req.body;
+      const userId = (req as any).user.userId;
+      const userRole = (req as any).user.role;
+
+      const booking = await Booking.findOne({ bookingId: id });
+      if (!booking) {
+        return res.status(404).json({ success: false, message: "Không tìm thấy đơn đặt phòng" });
+      }
+
+      const hotel = await Hotel.findOne({ hotelId: booking.hotelId });
+      if (!hotel) {
+        return res.status(404).json({ success: false, message: "Khách sạn không tồn tại" });
+      }
+
+      if (userRole !== 'admin' && hotel.ownerId !== userId) {
+        return res.status(403).json({ success: false, message: "Bạn không có quyền cập nhật đơn đặt phòng này" });
+      }
+
+      if (status) {
+        if (!['pending', 'confirmed', 'cancelled', 'completed', 'no-show'].includes(status)) {
+          return res.status(400).json({ success: false, message: "Trạng thái không hợp lệ" });
+        }
+        booking.status = status as any;
+      }
+
+      if (paymentStatus) {
+        if (!['unpaid', 'paid', 'refunded'].includes(paymentStatus)) {
+          return res.status(400).json({ success: false, message: "Trạng thái thanh toán không hợp lệ" });
+        }
+        booking.paymentStatus = paymentStatus as any;
+      }
+
+      await booking.save();
+      res.status(200).json({ success: true, message: "Cập nhật trạng thái thành công!", data: booking });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  /**
+
    * API 6: Lấy danh sách booking cho khách sạn (dành cho Hotel Owner)
    * GET /api/bookings/hotel/:hotelId
    */
