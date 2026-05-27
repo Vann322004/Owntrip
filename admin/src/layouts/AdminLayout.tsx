@@ -12,7 +12,8 @@ import {
   ClipboardList,
   Package,
   CreditCard,
-  Image
+  Image,
+  Star
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '../lib/utils';
@@ -27,6 +28,7 @@ const navItems = [
   { name: 'Gói Creator', path: '/creator-packages', icon: Package },
   { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
   { name: 'Duyệt Rút Tiền', path: '/withdrawals', icon: CreditCard },
+  { name: 'Nạp Điểm', path: '/point-topups', icon: Star },
   { name: 'Cài đặt', path: '/settings', icon: Settings },
 ];
 

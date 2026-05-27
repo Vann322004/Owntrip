@@ -245,6 +245,65 @@ export const SystemController = {
       console.error('[Dashboard] Error:', error);
       res.status(500).json({ success: false, message: error.message });
     }
-  }
+  },
+
+  // GET /api/system/point-topups
+  getPointTopups: async (req: Request, res: Response) => {
+    try {
+      const Topup = require('../models/topup.model').default;
+      const User = require('../models/user.model').default;
+
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const status = req.query.status as string | undefined;
+      const skip = (page - 1) * limit;
+
+      // Lọc các giao dịch nạp điểm từ store (bookingId bắt đầu bằng "topup_points_")
+      const filter: any = {
+        bookingId: { $regex: /^topup_points_/ }
+      };
+      if (status && ['pending', 'paid', 'cancelled'].includes(status)) {
+        filter.status = status;
+      }
+
+      const [transactions, total] = await Promise.all([
+        Topup.find(filter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
+        Topup.countDocuments(filter),
+      ]);
+
+      // Join thông tin user
+      const enriched = await Promise.all(
+        transactions.map(async (t: any) => {
+          const user = await User.findOne({ userId: t.userId }).select('displayName email').lean();
+          return {
+            _id: t._id,
+            bookingId: t.bookingId,
+            orderCode: t.orderCode,
+            userId: t.userId,
+            displayName: (user as any)?.displayName || 'N/A',
+            email: (user as any)?.email || 'N/A',
+            amount: t.amount,
+            pointsEarned: Math.floor(t.amount / 1000), // 1,000 VND = 1 điểm
+            status: t.status,
+            createdAt: t.createdAt,
+          };
+        })
+      );
+
+      res.json({
+        success: true,
+        data: enriched,
+        pagination: {
+          page,
+          limit,
+          total,
+          totalPages: Math.ceil(total / limit),
+        },
+      });
+    } catch (error: any) {
+      console.error('[PointTopups] Error:', error);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
 };
 
