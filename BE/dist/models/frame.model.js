@@ -34,25 +34,52 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const placeSchema = new mongoose_1.Schema({
-    placeId: { type: String, unique: true },
-    name: { type: String, required: true },
-    category: String,
-    city: String,
-    address: String,
-    location: {
-        lat: Number,
-        lng: Number
+// Schema Mongoose cho Frame ảnh check-in
+const frameSchema = new mongoose_1.Schema({
+    // Tên hiển thị của frame
+    name: {
+        type: String,
+        required: true,
+        trim: true
     },
-    rating: { type: Number, default: 0 },
-    reviewCount: { type: Number, default: 0 },
-    price: String,
-    phoneNumber: String,
-    website: String,
-    images: [String],
-    openingHours: String,
-    preferences: [String],
-    source: { type: String, default: "Google Maps" },
-    addedCount: { type: Number, default: 0 }
-}, { timestamps: true });
-exports.default = mongoose_1.default.model("Place", placeSchema);
+    // URL ảnh frame đầy đủ (upload lên Cloudinary)
+    imageUrl: {
+        type: String,
+        required: true
+    },
+    // URL ảnh thu nhỏ để preview nhanh (tùy chọn)
+    thumbnailUrl: {
+        type: String,
+        default: ""
+    },
+    // Danh mục frame (general, travel, holiday, seasonal...)
+    category: {
+        type: String,
+        default: "general",
+        trim: true
+    },
+    // Kiểu bố cục: 'single' (1 ô) hoặc 'filmstrip-4' (4 ô dạng dải film)
+    layoutType: {
+        type: String,
+        enum: ["single", "filmstrip-4"],
+        default: "single"
+    },
+    // Số lượng ô ảnh tương ứng với layoutType
+    slotsCount: {
+        type: Number,
+        default: 1
+    },
+    // Trạng thái hiển thị: true = đang kích hoạt, false = ẩn
+    isActive: {
+        type: Boolean,
+        default: true
+    },
+    // Thứ tự sắp xếp (số càng nhỏ hiển thị càng trước)
+    order: {
+        type: Number,
+        default: 0
+    }
+}, 
+// Tự động thêm createdAt và updatedAt
+{ timestamps: true });
+exports.default = mongoose_1.default.model("Frame", frameSchema);

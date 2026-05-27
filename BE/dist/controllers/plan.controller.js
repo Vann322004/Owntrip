@@ -6,11 +6,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.reorderPlacesInDay = exports.deletePlaceFromDay = exports.reorderPlaces = exports.addPlaceToDay = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const planPlace_model_1 = __importDefault(require("../models/planPlace.model"));
+const place_model_1 = __importDefault(require("../models/place.model"));
 const addPlaceToDay = async (req, res) => {
     try {
         const { dayId } = req.params;
         const { placeId, name, address, latitude, longitude, rating, photo, mapUrl, timeOfDay } = req.body;
         const count = await planPlace_model_1.default.countDocuments({ dayId: dayId });
+        // Cập nhật bộ đếm độ phổ biến của địa điểm
+        await place_model_1.default.findOneAndUpdate({ placeId }, {
+            $inc: { addedCount: 1 },
+            $setOnInsert: { name, address, location: { lat: latitude, lng: longitude } }
+        }, { upsert: true, new: true });
         const place = await planPlace_model_1.default.create({
             dayId: dayId,
             placeId,

@@ -213,8 +213,18 @@ export const UserController = {
   },
   loginwithgoogle: async (req: Request, res: Response) => {
   try {
-    const { email, displayName, avatar, image } = req.body;
-    const profileImage = image || avatar;
+    const { idToken } = req.body;
+    if (!idToken) {
+      return res.status(400).json({ success: false, message: "Missing idToken" });
+    }
+    const decoded: any = jwt.decode(idToken);
+    if (!decoded || !decoded.email) {
+      return res.status(400).json({ success: false, message: "Invalid idToken" });
+    }
+    
+    const email = decoded.email;
+    const displayName = decoded.name || email.split('@')[0];
+    const profileImage = decoded.picture;
     let user = await User.findOne({ email });
 
     if (!user) {
@@ -540,6 +550,70 @@ export const UserController = {
           newBalance: updatedUser.balance
         }
       });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  /**
+   * API: Quên mật khẩu - Gửi OTP qua Email
+   * POST /api/users/forgot-password/send-otp
+   * Body: { email }
+   */
+  forgotPasswordSendOTP: async (req: Request, res: Response) => {
+    try {
+      const { email } = req.body;
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ success: false, message: "Không tìm thấy người dùng với email này" });
+      }
+
+      const otp = generateOTP();
+      const otpExpires = getOTPExpiration();
+      user.otp = otp;
+      user.otpExpires = otpExpires;
+      await user.save();
+
+      await sendEmailTemplate(
+        user.email,
+        'Xác minh quên mật khẩu',
+        'otpTemplate',
+        {
+          DISPLAY_NAME: user.displayName,
+          OTP_CODE: otp
+        }
+      );
+
+      res.json({ success: true, message: "Mã OTP đã được gửi đến email của bạn" });
+    } catch (error: any) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  /**
+   * API: Quên mật khẩu - Đặt lại mật khẩu với OTP
+   * POST /api/users/forgot-password/reset
+   * Body: { email, otp, newPassword }
+   */
+  forgotPasswordReset: async (req: Request, res: Response) => {
+    try {
+      const { email, otp, newPassword } = req.body;
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ success: false, message: "Không tìm thấy người dùng với email này" });
+      }
+
+      if (user.otp !== otp || !user.otpExpires || user.otpExpires < new Date()) {
+        return res.status(400).json({ success: false, message: "Mã OTP không hợp lệ hoặc đã hết hạn" });
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+      user.password = hashedPassword;
+      user.otp = undefined;
+      user.otpExpires = undefined;
+      await user.save();
+
+      res.json({ success: true, message: "Đặt lại mật khẩu thành công" });
     } catch (error: any) {
       res.status(500).json({ success: false, message: error.message });
     }

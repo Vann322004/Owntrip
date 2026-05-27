@@ -16,6 +16,9 @@ router.put('/updateProfile/:id', auth_middleware_1.verifyToken, user_controller_
 router.put('/updatePassword/:id', auth_middleware_1.verifyToken, user_controller_1.UserController.updatePassword);
 router.post('/verifyEmail', user_controller_1.UserController.verifyEmail);
 router.post('/resendOTP', user_controller_1.UserController.resendOTP);
+// Forgot Password
+router.post('/forgot-password/send-otp', user_controller_1.UserController.forgotPasswordSendOTP);
+router.post('/forgot-password/reset', user_controller_1.UserController.forgotPasswordReset);
 router.post('/top-up', auth_middleware_1.verifyToken, user_controller_1.UserController.topUpBalance);
 router.post('/pay-with-points', auth_middleware_1.verifyToken, user_controller_1.UserController.payWithPoints);
 // VNPay
