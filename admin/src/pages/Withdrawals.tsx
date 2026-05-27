@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, CheckCircle2, XCircle, Loader2, CreditCard, Building2, User } from 'lucide-react';
+import { Search, XCircle, Loader2, CreditCard, Building2, User } from 'lucide-react';
 import api from '../lib/axios';
 
 interface WithdrawalRequest {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Users, Map, DollarSign, TrendingUp, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet } from 'lucide-react';
-import axios from 'axios';
+import { Users, Map, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet } from 'lucide-react';
+import api from '../lib/axios';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -60,10 +60,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:3000/api/system/dashboard-stats', {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const response = await api.get('/system/dashboard-stats');
         setData(response.data.data);
       } catch (error) {
         console.error('Failed to fetch dashboard data', error);
