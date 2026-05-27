@@ -12,6 +12,7 @@ import HotelRequests from './pages/HotelRequests';
 import CreatorPackages from './pages/CreatorPackages';
 import Withdrawals from './pages/Withdrawals';
 import Frames from './pages/Frames';
+import PointTopups from './pages/PointTopups';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="creator-packages" element={<CreatorPackages />} />
             <Route path="hotel-requests" element={<HotelRequests />} />
             <Route path="withdrawals" element={<Withdrawals />} />
+            <Route path="point-topups" element={<PointTopups />} />
             <Route path="settings" element={<SettingsPage />} />
             {/* Thêm các trang quản trị khác ở đây */}
           </Route>

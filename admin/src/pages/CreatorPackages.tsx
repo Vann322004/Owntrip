@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Package, Plus, Edit, Trash2 } from 'lucide-react';
-import axios from 'axios';
+import api from '../lib/axios';
 
 interface CreatorPackage {
   _id: string;
@@ -26,10 +26,7 @@ export default function CreatorPackages() {
 
   const fetchPackages = async () => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:3000/api/creator-packages/admin', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      const response = await api.get('/creator-packages/admin');
       setPackages(response.data.data);
     } catch (error) {
       console.error('Error fetching packages', error);
@@ -45,15 +42,10 @@ export default function CreatorPackages() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
       if (editingId) {
-        await axios.put(`http://localhost:3000/api/creator-packages/admin/${editingId}`, formData, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        await api.put(`/creator-packages/admin/${editingId}`, formData);
       } else {
-        await axios.post('http://localhost:3000/api/creator-packages/admin', formData, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        await api.post('/creator-packages/admin', formData);
       }
       setShowModal(false);
       fetchPackages();
@@ -66,10 +58,7 @@ export default function CreatorPackages() {
   const handleDelete = async (id: string) => {
     if (!window.confirm('Bạn có chắc muốn xóa gói này?')) return;
     try {
-      const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:3000/api/creator-packages/admin/${id}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await api.delete(`/creator-packages/admin/${id}`);
       fetchPackages();
     } catch (error) {
       console.error('Error deleting package', error);
