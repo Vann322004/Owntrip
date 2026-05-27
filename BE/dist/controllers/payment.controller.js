@@ -610,7 +610,18 @@ exports.PaymentController = {
             return;
         topup.status = 'paid';
         await topup.save();
-        if (topup.bookingId.startsWith('topup_')) {
+        if (topup.bookingId.startsWith('topup_points_')) {
+            const pointsEarned = Math.floor(topup.amount / 1000);
+            await user_model_1.default.findOneAndUpdate({ userId: topup.userId }, { $inc: { points: pointsEarned } });
+            // Add to admin wallet
+            let adminWallet = await wallet_model_1.default.findOne({ isSystem: true });
+            if (!adminWallet) {
+                adminWallet = new wallet_model_1.default({ isSystem: true, balance: 0 });
+            }
+            adminWallet.balance += topup.amount;
+            await adminWallet.save();
+        }
+        else if (topup.bookingId.startsWith('topup_')) {
             await user_model_1.default.findOneAndUpdate({ userId: topup.userId }, { $inc: { balance: topup.amount } });
         }
         else if (topup.bookingId.startsWith('temp_') && topup.hotelId) {

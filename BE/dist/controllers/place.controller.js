@@ -3,9 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPlaceChildren = exports.searchText = exports.searchNearby = exports.searchPlace = exports.getPlacePhoto = void 0;
+exports.getTopAddedPlaces = exports.getPlaceChildren = exports.searchText = exports.searchNearby = exports.searchPlace = exports.getPlacePhoto = void 0;
 const axios_1 = __importDefault(require("axios"));
 const place_model_1 = __importDefault(require("../models/place.model"));
+const provinceImages_1 = require("../utils/provinceImages");
 const GOONG_API_BASE_URL = "https://rsapi.goong.io";
 const DEFAULT_PUBLIC_API_BASE_URL = "https://owntrip.vercel.app";
 const getGoongKey = () => process.env.GOONG_API_KEY;
@@ -149,6 +150,39 @@ const buildFallbackRating = (seedBase) => {
         totalReviews
     };
 };
+const buildSearchTerms = (value) => {
+    const raw = String(value || "").trim();
+    const normalized = (0, provinceImages_1.normalizeText)(raw);
+    const terms = new Set();
+    const addTerm = (term) => {
+        const normalizedTerm = (0, provinceImages_1.normalizeText)(String(term || ""));
+        if (normalizedTerm) {
+            terms.add(normalizedTerm);
+        }
+    };
+    addTerm(raw);
+    addTerm(normalized);
+    const province = (0, provinceImages_1.findProvinceImageByDestination)(raw);
+    if (province) {
+        addTerm(province.province);
+        province.keywords.forEach(addTerm);
+    }
+    const strippedPrefix = normalized
+        .replace(/^(tp|thanh pho|thanh-pho)\s+/i, "")
+        .replace(/^(tp|thanh pho|thanh-pho)\.?\s*/i, "");
+    addTerm(strippedPrefix);
+    return Array.from(terms);
+};
+const isSameLocality = (left, right) => {
+    const normalizedLeft = (0, provinceImages_1.normalizeText)(String(left || ""));
+    const normalizedRight = (0, provinceImages_1.normalizeText)(String(right || ""));
+    if (!normalizedLeft || !normalizedRight) {
+        return false;
+    }
+    return (normalizedLeft === normalizedRight ||
+        normalizedLeft.includes(normalizedRight) ||
+        normalizedRight.includes(normalizedLeft));
+};
 const getPlacePhoto = async (req, res) => {
     try {
         const { name } = req.query;
@@ -178,6 +212,9 @@ exports.getPlacePhoto = getPlacePhoto;
 const searchPlace = async (req, res) => {
     try {
         const { q, lat, lng } = req.query;
+        const rawQuery = String(q || "");
+        const searchTerms = buildSearchTerms(rawQuery);
+        const normalizedQuery = (0, provinceImages_1.normalizeText)(rawQuery);
         if (!q) {
             return res.status(400).json({
                 success: false,
@@ -186,11 +223,12 @@ const searchPlace = async (req, res) => {
         }
         // 1. Tìm kiếm trong database local trước (Ưu tiên tuyệt đối nếu có dữ liệu)
         const localPlaces = await place_model_1.default.find({
-            $or: [
-                { name: { $regex: String(q), $options: "i" } },
-                { address: { $regex: String(q), $options: "i" } }
-            ]
-        }).limit(20);
+            $or: searchTerms.flatMap((term) => [
+                { name: { $regex: term, $options: "i" } },
+                { address: { $regex: term, $options: "i" } },
+                { city: { $regex: term, $options: "i" } }
+            ])
+        }).sort({ addedCount: -1 }).limit(20);
         if (localPlaces.length > 0) {
             return res.json({
                 success: true,
@@ -207,26 +245,27 @@ const searchPlace = async (req, res) => {
                     rating: p.rating,
                     userRatingCount: p.reviewCount,
                     types: p.category ? [p.category] : [],
-                    photos: p.images?.map(img => ({ name: img }))
+                    photos: p.images?.map(img => ({ name: img })),
+                    addedCount: p.addedCount || 0
                 }))
             });
         }
         const response = await axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
             params: {
                 api_key: getGoongKey(),
-                input: String(q),
+                input: rawQuery,
                 location: lat && lng ? `${String(lat)},${String(lng)}` : undefined,
                 limit: 20, // Tăng limit lên 20 để có pool kết quả lớn hơn trước khi lọc
                 more_compound: true
             }
         });
         let predictions = response.data?.predictions || [];
-        const lowerQ = String(q).toLowerCase();
+        const lowerQ = normalizedQuery;
         // Tìm xem có kết quả nào là đơn vị hành chính trùng tên với từ khóa tìm kiếm không (ví dụ: tìm "Đà Lạt" ra "Thành phố Đà Lạt")
         const adminUnit = predictions.find((p) => {
-            const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+            const mainText = (0, provinceImages_1.normalizeText)(p.structured_formatting?.main_text || "");
             const isLocality = p.types?.some((t) => ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t));
-            return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+            return isLocality && isSameLocality(mainText, lowerQ);
         });
         if (adminUnit) {
             const targetProvince = adminUnit.compound?.province;
@@ -234,7 +273,7 @@ const searchPlace = async (req, res) => {
                 // Lọc nghiêm ngặt: Chỉ giữ lại các địa điểm thuộc cùng Tỉnh/Thành phố
                 predictions = predictions.filter((p) => {
                     const pProvince = p.compound?.province;
-                    return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+                    return isSameLocality(pProvince, targetProvince);
                 });
             }
         }
@@ -363,6 +402,40 @@ const searchNearby = async (req, res) => {
         const searchQuery = type
             ? (typeToQuery[String(type).trim().toLowerCase()] || String(type).trim())
             : "địa điểm";
+        const searchTerms = buildSearchTerms(searchQuery);
+        // 1. Tìm kiếm trong database local trước
+        const localPlaces = await place_model_1.default.find({
+            $or: searchTerms.flatMap((term) => [
+                { name: { $regex: term, $options: "i" } },
+                { address: { $regex: term, $options: "i" } },
+                { category: { $regex: term, $options: "i" } },
+                { city: { $regex: term, $options: "i" } }
+            ])
+        }).sort({ addedCount: -1 }).limit(10);
+        if (localPlaces.length > 0) {
+            const formattedPlaces = localPlaces.map(p => ({
+                placeId: p.placeId,
+                name: p.name,
+                address: p.address,
+                latitude: p.location?.lat,
+                longitude: p.location?.lng,
+                rating: p.rating,
+                totalReviews: p.reviewCount,
+                types: p.category ? [p.category] : [],
+                mapUrl: p.location?.lat
+                    ? `https://www.google.com/maps/search/?api=1&query=${p.location.lat},${p.location.lng}`
+                    : null,
+                photo: p.images?.[0] || null,
+                photos: p.images || [],
+                addedCount: p.addedCount || 0
+            }));
+            return res.json({
+                success: true,
+                source: "local-db",
+                total: formattedPlaces.length,
+                places: formattedPlaces
+            });
+        }
         const autocompleteRes = await axios_1.default.get(`${GOONG_API_BASE_URL}/v2/place/autocomplete`, {
             params: {
                 api_key: getGoongKey(),
@@ -436,19 +509,22 @@ const searchNearby = async (req, res) => {
 exports.searchNearby = searchNearby;
 const searchText = async (req, res) => {
     try {
-        const { q, lat, lng, radius, limit } = req.query;
-        if (!q) {
+        const { q, address, lat, lng, radius, limit } = req.query;
+        const rawQuery = q || address;
+        const normalizedQuery = (0, provinceImages_1.normalizeText)(String(rawQuery || ""));
+        if (!rawQuery) {
             return res.status(400).json({
                 success: false,
                 message: "Missing query"
             });
         }
         const maxResultCount = limit ? Math.min(Number(limit), 50) : 20;
-        const queryList = (Array.isArray(q) ? q : [q])
+        const queryList = (Array.isArray(rawQuery) ? rawQuery : [rawQuery])
             .flatMap((item) => String(item).split(","))
             .map((item) => item.trim())
             .filter((item) => item.length > 0);
-        if (!queryList.length) {
+        const expandedQueryList = Array.from(new Set(queryList.flatMap((item) => buildSearchTerms(item))));
+        if (!expandedQueryList.length) {
             return res.status(400).json({
                 success: false,
                 message: "Missing query"
@@ -456,14 +532,12 @@ const searchText = async (req, res) => {
         }
         // 1. Thử tìm kiếm trong database local trước
         const dbResults = await place_model_1.default.find({
-            $or: queryList.map(queryText => ({
-                $or: [
-                    { name: { $regex: queryText, $options: "i" } },
-                    { address: { $regex: queryText, $options: "i" } },
-                    { city: { $regex: queryText, $options: "i" } }
-                ]
-            }))
-        }).limit(maxResultCount);
+            $or: expandedQueryList.flatMap((queryText) => [
+                { name: { $regex: queryText, $options: "i" } },
+                { address: { $regex: queryText, $options: "i" } },
+                { city: { $regex: queryText, $options: "i" } }
+            ])
+        }).sort({ addedCount: -1 }).limit(maxResultCount);
         if (dbResults.length > 0) {
             const formattedPlaces = dbResults.map(p => ({
                 placeId: p.placeId,
@@ -475,7 +549,8 @@ const searchText = async (req, res) => {
                 totalReviews: p.reviewCount,
                 types: p.category ? [p.category] : [],
                 photo: p.images?.[0],
-                photos: p.images
+                photos: p.images,
+                addedCount: p.addedCount || 0
             }));
             // Trả về ngay nếu có bất kỳ kết quả nào trong DB local
             if (formattedPlaces.length > 0) {
@@ -500,19 +575,19 @@ const searchText = async (req, res) => {
         let allPredictions = searchResults
             .filter((result) => result.status === "fulfilled")
             .flatMap((result) => result.value.data?.predictions || []);
-        const lowerQ = String(q).toLowerCase();
+        const lowerQ = normalizedQuery;
         // Bổ sung lọc đơn vị hành chính cho searchText tương tự searchPlace
         const adminUnit = allPredictions.find((p) => {
-            const mainText = (p.structured_formatting?.main_text || "").toLowerCase();
+            const mainText = (0, provinceImages_1.normalizeText)(p.structured_formatting?.main_text || "");
             const isLocality = p.types?.some((t) => ["province", "district", "locality", "administrative_area_level_1", "administrative_area_level_2"].includes(t));
-            return isLocality && (mainText === lowerQ || lowerQ.includes(mainText));
+            return isLocality && isSameLocality(mainText, lowerQ);
         });
         if (adminUnit) {
             const targetProvince = adminUnit.compound?.province;
             if (targetProvince) {
                 allPredictions = allPredictions.filter((p) => {
                     const pProvince = p.compound?.province;
-                    return pProvince === targetProvince || (pProvince && targetProvince.includes(pProvince));
+                    return isSameLocality(pProvince, targetProvince);
                 });
             }
         }
@@ -637,3 +712,38 @@ const getPlaceChildren = async (req, res) => {
     }
 };
 exports.getPlaceChildren = getPlaceChildren;
+/**
+ * Get top places by `addedCount`.
+ * Query params:
+ * - `minAddedCount` (number, default 1): minimal addedCount to include
+ * - `limit` (number, default 10, max 50): number of results to return
+ */
+const getTopAddedPlaces = async (req, res) => {
+    try {
+        const { minAddedCount = "1", limit = "10" } = req.query;
+        const min = Math.max(0, Number(minAddedCount) || 1);
+        const lim = Math.min(50, Math.max(1, Number(limit) || 10));
+        const results = await place_model_1.default.find({ addedCount: { $gte: min } })
+            .sort({ addedCount: -1 })
+            .limit(lim);
+        const places = results.map((p) => ({
+            placeId: p.placeId,
+            name: p.name,
+            address: p.address,
+            latitude: p.location?.lat,
+            longitude: p.location?.lng,
+            rating: p.rating,
+            totalReviews: p.reviewCount,
+            types: p.category ? [p.category] : [],
+            photo: p.images?.[0],
+            photos: p.images,
+            addedCount: p.addedCount || 0
+        }));
+        return res.json({ success: true, total: places.length, places });
+    }
+    catch (error) {
+        console.error("Get top added places failed:", error?.message || error);
+        return res.status(500).json({ success: false, message: "Get top added places failed" });
+    }
+};
+exports.getTopAddedPlaces = getTopAddedPlaces;

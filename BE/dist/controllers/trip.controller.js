@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTripSalesStats = exports.renderSandboxPayment = exports.processTripOrder = exports.handlePaymentWebhook = exports.createPaymentUrl = exports.publishToMarketplace = exports.getTripPreview = exports.getMarketplaceTrips = exports.deleteTripById = exports.updateTripPublishStatus = exports.getPublishedTrips = exports.updateTrip = exports.getProvinceImageCatalog = exports.getMyTrips = exports.getTripDestinations = exports.getTripDetail = exports.createTrip = void 0;
+exports.deleteItineraryReview = exports.getMyItineraryReview = exports.submitItineraryReview = exports.getTripSalesStats = exports.renderSandboxPayment = exports.processTripOrder = exports.handlePaymentWebhook = exports.createPaymentUrl = exports.publishToMarketplace = exports.getTripPreview = exports.getMarketplaceTrips = exports.deleteTripById = exports.updateTripPublishStatus = exports.getPublishedTrips = exports.updateTrip = exports.getProvinceImageCatalog = exports.getMyTrips = exports.getTripDestinations = exports.getTripDetail = exports.createTrip = void 0;
 const trip_model_1 = __importDefault(require("../models/trip.model"));
 const planDay_model_1 = __importDefault(require("../models/planDay.model"));
 const planPlace_model_1 = __importDefault(require("../models/planPlace.model"));
@@ -87,9 +87,20 @@ const getTripDetail = async (req, res) => {
                 places,
             });
         }
-        const reviews = await review_model_1.default.find({ targetId: tripId, targetType: 'itinerary' })
-            .populate('userId', 'displayName image')
-            .sort({ createdAt: -1 });
+        const reviewTargetId = resolveReviewTargetTripId(trip);
+        const reviewDocs = await review_model_1.default.find({ targetId: reviewTargetId, targetType: 'itinerary' })
+            .sort({ createdAt: -1 })
+            .lean();
+        const userIds = reviewDocs.map(r => r.userId);
+        const users = await user_model_1.default.find({ userId: { $in: userIds } }).select('userId displayName image').lean();
+        const userMap = new Map();
+        for (const u of users) {
+            userMap.set(u.userId, { _id: u._id, displayName: u.displayName, image: u.image });
+        }
+        const reviews = reviewDocs.map(r => ({
+            ...r,
+            userId: userMap.get(r.userId) || { displayName: "Người dùng ẩn danh", image: "" }
+        }));
         res.json({
             success: true,
             trip,
@@ -529,9 +540,20 @@ const getTripPreview = async (req, res) => {
                 places: maskedPlaces,
             });
         }
-        const reviews = await review_model_1.default.find({ targetId: tripId, targetType: 'itinerary' })
-            .populate('userId', 'displayName image')
-            .sort({ createdAt: -1 });
+        const reviewTargetId = resolveReviewTargetTripId(trip);
+        const reviewDocs = await review_model_1.default.find({ targetId: reviewTargetId, targetType: 'itinerary' })
+            .sort({ createdAt: -1 })
+            .lean();
+        const userIds = reviewDocs.map(r => r.userId);
+        const users = await user_model_1.default.find({ userId: { $in: userIds } }).select('userId displayName image').lean();
+        const userMap = new Map();
+        for (const u of users) {
+            userMap.set(u.userId, { _id: u._id, displayName: u.displayName, image: u.image });
+        }
+        const reviews = reviewDocs.map(r => ({
+            ...r,
+            userId: userMap.get(r.userId) || { displayName: "Người dùng ẩn danh", image: "" }
+        }));
         res.json({
             success: true,
             trip,
@@ -540,9 +562,12 @@ const getTripPreview = async (req, res) => {
         });
     }
     catch (error) {
+        console.error("Get trip preview failed:", error);
         res.status(500).json({
             success: false,
             message: "Get trip preview failed",
+            errorMsg: error?.message,
+            errorStack: error?.stack,
         });
     }
 };
@@ -552,6 +577,30 @@ const order_model_1 = __importDefault(require("../models/order.model"));
 const wallet_model_1 = __importDefault(require("../models/wallet.model"));
 const payos_1 = __importDefault(require("../utils/payos"));
 const CREATOR_SHARE_RATIO = 0.7;
+const resolveReviewTargetTripId = (trip) => {
+    if (trip?.isPurchasedClone && trip?.originalTripId) {
+        return String(trip.originalTripId);
+    }
+    return String(trip?._id);
+};
+const syncItineraryReviewStats = async (targetTripId) => {
+    const stats = await review_model_1.default.aggregate([
+        { $match: { targetId: targetTripId, targetType: "itinerary" } },
+        {
+            $group: {
+                _id: "$targetId",
+                avgScore: { $avg: "$rating" },
+                count: { $sum: 1 }
+            }
+        }
+    ]);
+    const avgScore = stats.length > 0 ? Number(stats[0].avgScore.toFixed(1)) : 0;
+    const totalReviews = stats.length > 0 ? stats[0].count : 0;
+    await trip_model_1.default.findByIdAndUpdate(targetTripId, {
+        averageRating: avgScore,
+        totalReviews
+    });
+};
 const publishToMarketplace = async (req, res) => {
     try {
         const userId = req.user?.userId;
@@ -717,9 +766,11 @@ const processTripOrder = async (orderCode) => {
             $inc: { balance: adminAmount },
             $setOnInsert: { isSystem: true, currency: "VND" }
         }, { new: true, upsert: true, session });
+        let templateTripTitle = "lịch trình";
         // Clone Trip (Unlock)
         const templateTrip = await trip_model_1.default.findById(order.tripTemplateId).session(session);
         if (templateTrip) {
+            templateTripTitle = templateTrip.title;
             const clonedTripData = {
                 userId: order.buyerId,
                 title: `${templateTrip.title} (Đã mua)`,
@@ -766,6 +817,18 @@ const processTripOrder = async (orderCode) => {
         order.status = 'SUCCESS';
         order.providerTransactionId = transactionId || "SANDBOX_TXN";
         await order.save({ session });
+        await notification_model_1.default.create([
+            {
+                userId: order.sellerId,
+                title: "Bạn vừa bán được một Plan",
+                message: `Plan \"${templateTripTitle}\" đã được mua thành công. Bạn nhận ${creatorAmount.toLocaleString('vi-VN')}đ.`
+            },
+            {
+                userId: order.buyerId,
+                title: "Mua Plan thành công",
+                message: `Bạn đã mua thành công plan \"${templateTripTitle}\".`
+            }
+        ], { session });
         await session.commitTransaction();
         session.endSession();
         console.log(`[Webhook] Mở khoá thành công cho Order ${orderCode}`);
@@ -832,10 +895,22 @@ const getTripSalesStats = async (req, res) => {
             return res.status(404).json({ success: false, message: "Trip not found or unauthorized" });
         const stats = await order_model_1.default.aggregate([
             { $match: { tripTemplateId: new mongoose_1.default.Types.ObjectId(tripId), status: 'SUCCESS' } },
-            { $group: { _id: null, totalRevenue: { $sum: "$amount" }, totalSales: { $sum: 1 } } }
+            {
+                $group: {
+                    _id: null,
+                    grossRevenue: { $sum: "$amount" },
+                    creatorRevenue: { $sum: { $floor: { $multiply: ["$amount", CREATOR_SHARE_RATIO] } } },
+                    totalSales: { $sum: 1 }
+                }
+            }
         ]);
-        const result = stats.length > 0 ? stats[0] : { totalRevenue: 0, totalSales: 0 };
-        res.json({ success: true, totalSales: result.totalSales, totalRevenue: result.totalRevenue });
+        const result = stats.length > 0 ? stats[0] : { grossRevenue: 0, creatorRevenue: 0, totalSales: 0 };
+        res.json({
+            success: true,
+            totalSales: result.totalSales,
+            totalRevenue: result.creatorRevenue,
+            grossRevenue: result.grossRevenue
+        });
     }
     catch (error) {
         console.error("Get trip sales stats error:", error);
@@ -843,3 +918,141 @@ const getTripSalesStats = async (req, res) => {
     }
 };
 exports.getTripSalesStats = getTripSalesStats;
+const submitItineraryReview = async (req, res) => {
+    try {
+        const userId = req.user?.userId;
+        const { tripId } = req.params;
+        const { rating, comment } = req.body;
+        if (!userId) {
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        }
+        const numericRating = Number(rating);
+        if (!Number.isFinite(numericRating) || numericRating < 1 || numericRating > 10) {
+            return res.status(400).json({ success: false, message: "Điểm đánh giá phải từ 1 đến 10" });
+        }
+        if (!comment || !String(comment).trim()) {
+            return res.status(400).json({ success: false, message: "Vui lòng nhập nội dung feedback" });
+        }
+        const trip = await trip_model_1.default.findById(tripId);
+        if (!trip) {
+            return res.status(404).json({ success: false, message: "Trip not found" });
+        }
+        const reviewTargetTripId = resolveReviewTargetTripId(trip);
+        if (!mongoose_1.default.Types.ObjectId.isValid(reviewTargetTripId)) {
+            return res.status(400).json({
+                success: false,
+                message: "Trip không hợp lệ"
+            });
+        }
+        const reviewTargetObjectId = new mongoose_1.default.Types.ObjectId(reviewTargetTripId);
+        const purchasedOrders = await order_model_1.default.aggregate([
+            {
+                $match: {
+                    buyerId: userId,
+                    tripTemplateId: reviewTargetObjectId,
+                    status: "SUCCESS"
+                }
+            },
+            { $limit: 1 },
+            { $project: { _id: 1 } }
+        ]);
+        const hasPurchased = purchasedOrders.length > 0;
+        if (!hasPurchased) {
+            return res.status(403).json({
+                success: false,
+                message: "Bạn cần mua lịch trình này trước khi gửi feedback"
+            });
+        }
+        let review = await review_model_1.default.findOne({
+            userId,
+            targetId: reviewTargetTripId,
+            targetType: "itinerary"
+        });
+        if (review) {
+            review.rating = numericRating;
+            review.comment = String(comment).trim();
+            await review.save();
+        }
+        else {
+            review = await review_model_1.default.create({
+                userId,
+                targetId: reviewTargetTripId,
+                targetType: "itinerary",
+                rating: numericRating,
+                comment: String(comment).trim()
+            });
+        }
+        await syncItineraryReviewStats(reviewTargetTripId);
+        const templateTrip = await trip_model_1.default.findById(reviewTargetTripId).select("title userId");
+        if (templateTrip && templateTrip.userId !== userId) {
+            await notification_model_1.default.create({
+                userId: templateTrip.userId,
+                title: "Plan của bạn có feedback mới",
+                message: `Lịch trình \"${templateTrip.title}\" vừa nhận được đánh giá ${numericRating}/10.`
+            });
+        }
+        return res.status(200).json({
+            success: true,
+            message: "Gửi feedback thành công",
+            data: review
+        });
+    }
+    catch (error) {
+        console.error("Submit itinerary review error:", error);
+        return res.status(500).json({ success: false, message: "Không thể gửi feedback" });
+    }
+};
+exports.submitItineraryReview = submitItineraryReview;
+const getMyItineraryReview = async (req, res) => {
+    try {
+        const userId = req.user?.userId;
+        const { tripId } = req.params;
+        if (!userId) {
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        }
+        const trip = await trip_model_1.default.findById(tripId);
+        if (!trip) {
+            return res.status(404).json({ success: false, message: "Trip not found" });
+        }
+        const reviewTargetTripId = resolveReviewTargetTripId(trip);
+        const review = await review_model_1.default.findOne({
+            userId,
+            targetId: reviewTargetTripId,
+            targetType: "itinerary"
+        });
+        return res.status(200).json({ success: true, data: review });
+    }
+    catch (error) {
+        console.error("Get my itinerary review error:", error);
+        return res.status(500).json({ success: false, message: "Không thể tải feedback" });
+    }
+};
+exports.getMyItineraryReview = getMyItineraryReview;
+const deleteItineraryReview = async (req, res) => {
+    try {
+        const userId = req.user?.userId;
+        const { tripId } = req.params;
+        if (!userId) {
+            return res.status(401).json({ success: false, message: "Unauthorized" });
+        }
+        const trip = await trip_model_1.default.findById(tripId);
+        if (!trip) {
+            return res.status(404).json({ success: false, message: "Trip not found" });
+        }
+        const reviewTargetTripId = resolveReviewTargetTripId(trip);
+        const result = await review_model_1.default.findOneAndDelete({
+            userId,
+            targetId: reviewTargetTripId,
+            targetType: "itinerary"
+        });
+        if (result) {
+            await syncItineraryReviewStats(reviewTargetTripId);
+        }
+        return res.status(200).json({ success: true, message: "Đã xóa đánh giá" });
+    }
+    catch (error) {
+        console.error("Delete itinerary review error:", error);
+        return res.status(500).json({ success: false, message: "Không thể xóa feedback" });
+    }
+};
+exports.deleteItineraryReview = deleteItineraryReview;
