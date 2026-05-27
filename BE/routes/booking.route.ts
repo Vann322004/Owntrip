@@ -25,5 +25,7 @@ router.get('/:id', verifyToken, BookingController.getBookingDetail);
 
 
 router.post('/:id/cancel', verifyToken, BookingController.cancelBooking);
+router.patch('/:id/status', verifyToken, BookingController.updateBookingStatus);
 
 module.exports = router;
+

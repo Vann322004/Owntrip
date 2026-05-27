@@ -113,9 +113,9 @@ export const SystemController = {
         { $group: { _id: null, total: { $sum: '$amount' } } }
       ]);
 
-      const totalRevenue = 
-        (bookingRevenue[0]?.total || 0) + 
-        (orderRevenue[0]?.total || 0) + 
+      const totalRevenue =
+        (bookingRevenue[0]?.total || 0) +
+        (orderRevenue[0]?.total || 0) +
         (creatorRevenue[0]?.total || 0);
 
       // Revenue this month
@@ -131,9 +131,9 @@ export const SystemController = {
         { $match: { status: 'success', createdAt: { $gte: startOfMonth } } },
         { $group: { _id: null, total: { $sum: '$amount' } } }
       ]);
-      const revenueThisMonth = 
-        (bookingRevenueThisMonth[0]?.total || 0) + 
-        (orderRevenueThisMonth[0]?.total || 0) + 
+      const revenueThisMonth =
+        (bookingRevenueThisMonth[0]?.total || 0) +
+        (orderRevenueThisMonth[0]?.total || 0) +
         (creatorRevenueThisMonth[0]?.total || 0);
 
       // Revenue last month
@@ -149,9 +149,9 @@ export const SystemController = {
         { $match: { status: 'success', createdAt: { $gte: startOfLastMonth, $lte: endOfLastMonth } } },
         { $group: { _id: null, total: { $sum: '$amount' } } }
       ]);
-      const revLastMonth = 
-        (bookingRevenueLastMonth[0]?.total || 0) + 
-        (orderRevenueLastMonth[0]?.total || 0) + 
+      const revLastMonth =
+        (bookingRevenueLastMonth[0]?.total || 0) +
+        (orderRevenueLastMonth[0]?.total || 0) +
         (creatorRevenueLastMonth[0]?.total || 0);
       const revenueChange = revLastMonth > 0 ? Math.round(((revenueThisMonth - revLastMonth) / revLastMonth) * 100) : 0;
 
@@ -166,7 +166,7 @@ export const SystemController = {
         .sort({ createdAt: -1 })
         .limit(5)
         .lean();
-      
+
       // Populate user info
       const Hotel = require('../models/hotel.model').default;
       const populatedBookings = await Promise.all(
@@ -179,9 +179,9 @@ export const SystemController = {
             destination: (hotel as any)?.name || 'N/A',
             date: new Date(b.createdAt).toLocaleDateString('vi-VN'),
             amount: b.totalPrice,
-            status: b.status === 'confirmed' || b.status === 'completed' ? 'Hoàn thành' 
-              : b.status === 'pending' ? 'Đang xử lý' 
-              : b.status === 'cancelled' ? 'Hủy' : b.status,
+            status: b.status === 'confirmed' || b.status === 'completed' ? 'Hoàn thành'
+              : b.status === 'pending' ? 'Đang xử lý'
+                : b.status === 'cancelled' ? 'Hủy' : b.status,
           };
         })
       );
@@ -191,7 +191,7 @@ export const SystemController = {
       for (let i = 11; i >= 0; i--) {
         const mStart = new Date(now.getFullYear(), now.getMonth() - i, 1);
         const mEnd = new Date(now.getFullYear(), now.getMonth() - i + 1, 0, 23, 59, 59);
-        
+
         const bRev = await Booking.aggregate([
           { $match: { paymentStatus: 'paid', createdAt: { $gte: mStart, $lte: mEnd } } },
           { $group: { _id: null, total: { $sum: '$totalPrice' } } }
@@ -204,7 +204,7 @@ export const SystemController = {
           { $match: { status: 'success', createdAt: { $gte: mStart, $lte: mEnd } } },
           { $group: { _id: null, total: { $sum: '$amount' } } }
         ]);
-        
+
         monthlyRevenue.push(
           (bRev[0]?.total || 0) + (oRev[0]?.total || 0) + (cRev[0]?.total || 0)
         );
@@ -212,14 +212,14 @@ export const SystemController = {
 
       // --- 7. Admin System Wallet balance ---
       const Wallet = require('../models/wallet.model').default;
-      
+
       // Drop stale unique index on userId if exists (one-time fix)
       try {
         await Wallet.collection.dropIndex('userId_1');
       } catch (e) {
         // index already dropped or doesn't exist, ignore
       }
-      
+
       const adminWallet = await Wallet.findOne({ isSystem: true });
       const adminWalletBalance = adminWallet?.balance || 0;
 

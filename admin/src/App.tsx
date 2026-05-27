@@ -19,7 +19,7 @@ function App() {
     <AuthProvider>
       <Routes>
         <Route path="/login" element={<Login />} />
-        
+
         {/* Các route yêu cầu đăng nhập */}
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<AdminLayout />}>
