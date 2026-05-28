@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
   CalendarDays, Search, Loader2, AlertCircle, 
-  CheckCircle, XCircle, Moon, RefreshCw, Eye,
+  CheckCircle, XCircle, RefreshCw, Eye,
   Building, User, Phone, Mail, Clock
 } from 'lucide-react';
 import api from '../lib/axios';

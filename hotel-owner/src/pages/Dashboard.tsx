@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
   Building2, CalendarDays, TrendingUp, Star, Loader2, 
-  ArrowUpRight, AlertCircle, ShoppingBag, ShieldAlert
+  ArrowUpRight, AlertCircle, ShoppingBag
 } from 'lucide-react';
 import api from '../lib/axios';
 
@@ -87,7 +87,6 @@ export default function Dashboard() {
     .reduce((sum, b) => sum + b.totalPrice, 0);
 
   const pendingBookings = bookings.filter(b => b.status === 'pending').length;
-  const confirmedBookings = bookings.filter(b => b.status === 'confirmed').length;
 
   function formatCurrency(val: number) {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(val);
