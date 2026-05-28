@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Lock, Mail, Loader2, Hotel } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Eye, EyeOff, Lock, Mail, Loader2, Hotel, ArrowLeft } from 'lucide-react';
 import api from '../lib/axios';
 import { useAuth } from '../context/AuthContext';
 
@@ -54,7 +54,16 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 relative">
+      {/* Back to App Download button */}
+      <Link 
+        to="/" 
+        className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2.5 bg-white/80 hover:bg-white text-slate-600 hover:text-slate-900 rounded-xl text-xs font-semibold shadow-sm border border-slate-100 hover:border-slate-200 transition-all z-20 group"
+      >
+        <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+        Trở về trang tải ứng dụng
+      </Link>
+
       {/* Background decorations */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-400/20 blur-[120px]"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-400/20 blur-[120px]"></div>

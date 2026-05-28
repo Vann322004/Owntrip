@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { 
-  User, Mail, Phone, Lock, Save, Loader2, AlertCircle, 
+  User, Mail, Lock, Save, Loader2, AlertCircle, 
   CheckCircle, Key, Wallet
 } from 'lucide-react';
 import api from '../lib/axios';

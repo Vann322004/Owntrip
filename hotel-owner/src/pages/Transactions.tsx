@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { 
   TrendingUp, ArrowDownLeft, ArrowUpRight, Loader2, 
-  AlertCircle, RefreshCw, DollarSign, Calendar
+  AlertCircle, RefreshCw, DollarSign
 } from 'lucide-react';
 import api from '../lib/axios';
 

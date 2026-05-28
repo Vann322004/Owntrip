@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardLayout from './layouts/DashboardLayout';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import MyHotels from './pages/MyHotels';
@@ -14,6 +15,9 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* Public Home / Download page */}
+          <Route path="/" element={<Home />} />
+
           {/* Public login page */}
           <Route path="/login" element={<Login />} />
 
