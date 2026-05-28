@@ -333,13 +333,18 @@ export const PaymentController = {
           let payosStatus = null;
           let clonedTripId = null;
 
+          let processError = null;
           try {
             payosStatus = await payOS.paymentRequests.get(order.orderCode);
             if (payosStatus.status === 'PAID' && order.status !== 'SUCCESS') {
               await processTripOrder(order.orderCode);
               order.status = 'SUCCESS';
             }
-          } catch (e) {}
+          } catch (e: any) {
+            console.error('[PayOS] checkPaymentStatus error processing trip order:', e);
+            processError = e.message || String(e);
+            // If processTripOrder fails, we should not consider the order as SUCCESS in memory.
+          }
 
           if (order.status === 'SUCCESS') {
             const TripModel = require('../models/trip.model').default;
@@ -356,7 +361,8 @@ export const PaymentController = {
               totalPrice: order.amount,
               payosStatus: payosStatus?.status || null,
               checkoutUrl: null,
-              newTripId: clonedTripId
+              newTripId: clonedTripId,
+              processError: processError
             },
           });
         }

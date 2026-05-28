@@ -895,7 +895,18 @@ export const handlePaymentWebhook = async (req: Request, res: Response) => {
 export const processTripOrder = async (orderCode: number) => {
   const transactionId = "PAYOS_TXN";
 
-    const session = await mongoose.startSession();
+  // Ensure collections exist before transaction to prevent MongoServerError
+  try {
+    await Wallet.createCollection();
+    await Trip.createCollection();
+    await PlanDay.createCollection();
+    await PlanPlace.createCollection();
+    await Notification.createCollection();
+  } catch (e) {
+    // Ignore collection already exists error
+  }
+
+  const session = await mongoose.startSession();
   session.startTransaction();
 
   try {
@@ -983,21 +994,19 @@ export const processTripOrder = async (orderCode: number) => {
     order.providerTransactionId = transactionId || "SANDBOX_TXN";
     await order.save({ session });
 
-    await Notification.create(
-      [
-        {
-          userId: order.sellerId,
-          title: "Bạn vừa bán được một Plan",
-          message: `Plan \"${templateTripTitle}\" đã được mua thành công. Bạn nhận ${creatorAmount.toLocaleString('vi-VN')}đ.`
-        },
-        {
-          userId: order.buyerId,
-          title: "Mua Plan thành công",
-          message: `Bạn đã mua thành công plan \"${templateTripTitle}\".`
-        }
-      ],
-      { session }
-    );
+    const sellerNotification = new Notification({
+      userId: order.sellerId,
+      title: "Bạn vừa bán được một Plan",
+      message: `Plan "${templateTripTitle}" đã được mua thành công. Bạn nhận ${creatorAmount.toLocaleString('vi-VN')}đ.`
+    });
+    await sellerNotification.save({ session });
+
+    const buyerNotification = new Notification({
+      userId: order.buyerId,
+      title: "Mua Plan thành công",
+      message: `Bạn đã mua thành công plan "${templateTripTitle}".`
+    });
+    await buyerNotification.save({ session });
 
     await session.commitTransaction();
     session.endSession();
@@ -1007,6 +1016,7 @@ export const processTripOrder = async (orderCode: number) => {
     await session.abortTransaction();
     session.endSession();
     console.error("Process trip order error:", error);
+    throw error;
   }
 };
 
