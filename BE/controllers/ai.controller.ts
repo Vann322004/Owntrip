@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import axios from 'axios';
 
 const apiKey = process.env.GEMINI_API_KEY || '';
 
@@ -34,25 +35,18 @@ export const rearrangeItinerary = async (req: Request, res: Response) => {
       }
     `;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-    
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     try {
-      const response = await fetch(url, {
-        method: 'POST',
+      const response = await axios.post(url, {
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { temperature: 0.2 }
+      }, {
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.2 }
-        }),
-        signal: controller.signal
+        timeout: 30000
       });
 
-      clearTimeout(timeoutId);
-
-      const data = await response.json();
+      const data = response.data;
       const responseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (!responseText) {
@@ -67,15 +61,14 @@ export const rearrangeItinerary = async (req: Request, res: Response) => {
       }
 
       return res.status(500).json({ message: "Dữ liệu trả về từ AI không hợp lệ" });
-    } catch (fetchError: any) {
-      clearTimeout(timeoutId);
-      if (fetchError.name === 'AbortError') {
+    } catch (axiosError: any) {
+      if (axiosError.code === 'ECONNABORTED') {
         return res.status(504).json({ message: "Gateway Timeout: Gọi Gemini AI quá lâu" });
       }
-      throw fetchError;
+      throw axiosError;
     }
   } catch (error: any) {
-    console.error("Lỗi BE AI Rearrange:", error?.response?.data || error);
+    console.error("Lỗi BE AI Rearrange:", error?.response?.data || error?.message || error);
     return res.status(500).json({ code: "500", message: "A server error has occurred" });
   }
 };
@@ -124,23 +117,18 @@ export const autoGenerateTrip = async (req: Request, res: Response) => {
       }
     `;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 12000);
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     try {
-      const response = await fetch(url, {
-        method: 'POST',
+      const response = await axios.post(url, {
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: { temperature: 0.4 }
+      }, {
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.4 }
-        }),
-        signal: controller.signal
+        timeout: 30000
       });
 
-      clearTimeout(timeoutId);
-      const data = await response.json();
+      const data = response.data;
       const responseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
       
       if (!responseText) {
@@ -155,15 +143,14 @@ export const autoGenerateTrip = async (req: Request, res: Response) => {
       }
       
       return res.status(500).json({ message: "Dữ liệu trả về từ AI không hợp lệ" });
-    } catch (fetchError: any) {
-      clearTimeout(timeoutId);
-      if (fetchError.name === 'AbortError') {
+    } catch (axiosError: any) {
+      if (axiosError.code === 'ECONNABORTED') {
         return res.status(504).json({ message: "Gateway Timeout: Gọi Gemini AI quá lâu" });
       }
-      throw fetchError;
+      throw axiosError;
     }
   } catch (error: any) {
-    console.error("Lỗi BE Auto Generate AI:", error?.response?.data || error);
+    console.error("Lỗi BE Auto Generate AI:", error?.response?.data || error?.message || error);
     return res.status(500).json({ code: "500", message: "A server error has occurred" });
   }
 };
