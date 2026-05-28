@@ -136,6 +136,7 @@ export default function Users() {
     admin: 'bg-indigo-100 text-indigo-700',
     hotel_owner: 'bg-amber-100 text-amber-700',
     user: 'bg-gray-100 text-gray-700',
+    creator: 'bg-amber-100 text-amber-700',
   };
 
   return (
@@ -293,6 +294,7 @@ export default function Users() {
                   <option value="user">User — Người dùng thường</option>
                   <option value="hotel_owner">Hotel Owner — Chủ khách sạn</option>
                   <option value="admin">Admin — Quản trị viên</option>
+                  <option value="creator">Creator — Sáng tạo nội dung</option>
                 </select>
               </div>
               <div className="pt-3 flex gap-3">
@@ -331,6 +333,7 @@ export default function Users() {
                   <option value="user">User — Người dùng thường</option>
                   <option value="hotel_owner">Hotel Owner — Chủ khách sạn</option>
                   <option value="admin">Admin — Quản trị viên</option>
+                  <option value="creator">Creator — Sáng tạo nội dung</option>
                 </select>
               </div>
               <div className="pt-3 flex gap-3">
