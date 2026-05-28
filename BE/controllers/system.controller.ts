@@ -247,6 +247,92 @@ export const SystemController = {
     }
   },
 
+  // GET /api/system/hotel-owners
+  getHotelOwners: async (req: Request, res: Response) => {
+    try {
+      const User = require('../models/user.model').default;
+      const Hotel = require('../models/hotel.model').default;
+      const Booking = require('../models/booking.model').default;
+
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const search = req.query.search as string | undefined;
+      const skip = (page - 1) * limit;
+
+      const userFilter: any = { role: 'hotel_owner' };
+      if (search) {
+        userFilter.$or = [
+          { displayName: { $regex: search, $options: 'i' } },
+          { email: { $regex: search, $options: 'i' } },
+        ];
+      }
+
+      const [owners, total] = await Promise.all([
+        User.find(userFilter).sort({ createdAt: -1 }).skip(skip).limit(limit).lean(),
+        User.countDocuments(userFilter),
+      ]);
+
+      const enriched = await Promise.all(
+        owners.map(async (owner: any) => {
+          const hotels = await Hotel.find({ ownerId: owner.userId })
+            .select('hotelId name address.city starRating reviewSummary images')
+            .lean();
+
+          const hotelIds = hotels.map((h: any) => h.hotelId);
+
+          const bookingStats = await Booking.aggregate([
+            { $match: { hotelId: { $in: hotelIds } } },
+            {
+              $group: {
+                _id: null,
+                totalBookings: { $sum: 1 },
+                totalRevenue: {
+                  $sum: { $cond: [{ $eq: ['$paymentStatus', 'paid'] }, '$totalPrice', 0] }
+                },
+                paidBookings: {
+                  $sum: { $cond: [{ $eq: ['$paymentStatus', 'paid'] }, 1, 0] }
+                }
+              }
+            }
+          ]);
+
+          const stats = bookingStats[0] || { totalBookings: 0, totalRevenue: 0, paidBookings: 0 };
+
+          return {
+            userId: owner.userId,
+            displayName: owner.displayName,
+            email: owner.email,
+            image: owner.image,
+            phone: owner.phone,
+            createdAt: owner.createdAt,
+            hotelCount: hotels.length,
+            hotels: hotels.map((h: any) => ({
+              hotelId: h.hotelId,
+              name: h.name,
+              city: h.address?.city || 'N/A',
+              starRating: h.starRating,
+              reviewScore: h.reviewSummary?.score || 0,
+              reviewCount: h.reviewSummary?.count || 0,
+              thumbnail: h.images?.[0] || null,
+            })),
+            totalBookings: stats.totalBookings,
+            paidBookings: stats.paidBookings,
+            totalRevenue: stats.totalRevenue,
+          };
+        })
+      );
+
+      res.json({
+        success: true,
+        data: enriched,
+        pagination: { page, limit, total, totalPages: Math.ceil(total / limit) },
+      });
+    } catch (error: any) {
+      console.error('[HotelOwners] Error:', error);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
   // GET /api/system/point-topups
   getPointTopups: async (req: Request, res: Response) => {
     try {
@@ -302,6 +388,23 @@ export const SystemController = {
       });
     } catch (error: any) {
       console.error('[PointTopups] Error:', error);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  },
+
+  // POST /api/system/upload-image
+  // Upload ảnh lên Cloudinary, trả về URL
+  uploadImage: async (req: Request, res: Response) => {
+    try {
+      const file = (req as any).file;
+      if (!file) {
+        return res.status(400).json({ success: false, message: 'Không có file nào được gửi lên' });
+      }
+      // multer-storage-cloudinary đã upload xong, URL nằm ở file.path
+      const imageUrl = file.path || file.secure_url;
+      res.json({ success: true, url: imageUrl });
+    } catch (error: any) {
+      console.error('[UploadImage] Error:', error);
       res.status(500).json({ success: false, message: error.message });
     }
   },
