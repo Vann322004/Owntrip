@@ -20,7 +20,7 @@ export const UserController = {
         ...req.body,
         otp,
         otpExpires,
-        isVerified: true
+        isVerified: false
       });
       await user.save();
       
