@@ -695,6 +695,17 @@ import Order from "../models/order.model";
 import Wallet from "../models/wallet.model";
 import payOS from "../utils/payos";
 
+const getTripCommissionRates = async () => {
+  const SystemConfig = require('../models/systemConfig.model').default;
+  const configs = await SystemConfig.find({ key: { $in: ['commission_trip_creator_percent', 'commission_trip_admin_percent'] } });
+  const configMap: any = {};
+  configs.forEach((c: any) => { configMap[c.key] = c.value; });
+  return {
+    creatorPercent: (configMap['commission_trip_creator_percent'] ?? 70) / 100,
+    adminPercent: (configMap['commission_trip_admin_percent'] ?? 30) / 100,
+  };
+};
+
 const CREATOR_SHARE_RATIO = 0.7;
 
 const resolveReviewTargetTripId = (trip: any): string => {
@@ -803,6 +814,8 @@ export const createPaymentUrl = async (req: AuthRequest, res: Response) => {
       });
     }
 
+    const price = templateTrip.price || 0;
+
     // Generate unique order code
     const orderCode = Math.floor(Math.random() * 1000000) + new Date().getTime() % 1000000;
 
@@ -812,27 +825,155 @@ export const createPaymentUrl = async (req: AuthRequest, res: Response) => {
       buyerId,
       sellerId: templateTrip.userId,
       tripTemplateId: templateTrip._id,
-      amount: templateTrip.price || 0,
+      amount: price,
       status: 'PENDING'
     });
     await order.save();
 
-    // If it's free, we can process it directly, or simulate a free webhook
-    if (order.amount === 0) {
-      // Simulate webhook call directly here if free to unlock instantly
+    // If it's free, unlock instantly
+    if (price === 0) {
+      await processTripOrder(orderCode);
+      const clonedTrip = await Trip.findOne({
+        originalTripId: templateTrip._id,
+        userId: buyerId,
+        isPurchasedClone: true
+      }).sort({ createdAt: -1 });
       return res.json({ 
         success: true, 
-        message: "Lịch trình miễn phí. Mở khoá thành công!", 
-        paymentUrl: `/api/trips/payment-sandbox/${orderCode}?auto=true` 
+        message: "Lịch trình miễn phí. Mở khoá thành công!",
+        paymentMethod: 'free',
+        newTripId: clonedTrip?._id
       });
     }
 
+    // ── ƯU TIÊN: Kiểm tra số dư ví của buyer ──
+    const buyer = await User.findOne({ userId: buyerId });
+    if (buyer && buyer.balance >= price) {
+      // Đủ số dư → Thanh toán bằng số dư, chia tiền luôn
+      const session = await mongoose.startSession();
+      session.startTransaction();
+      try {
+        const tripRates = await getTripCommissionRates();
+        const creatorAmount = Math.floor(price * tripRates.creatorPercent);
+        const adminAmount = price - creatorAmount;
+
+        // Trừ tiền buyer
+        await User.findOneAndUpdate(
+          { userId: buyerId },
+          { $inc: { balance: -price } },
+          { session }
+        );
+
+        // Cộng tiền creator (70%)
+        await User.findOneAndUpdate(
+          { userId: templateTrip.userId },
+          { $inc: { balance: creatorAmount } },
+          { new: true, session }
+        );
+
+        // Cộng tiền admin (30%)
+        await Wallet.findOneAndUpdate(
+          { isSystem: true },
+          {
+            $inc: { balance: adminAmount },
+            $setOnInsert: { isSystem: true, currency: "VND" }
+          },
+          { new: true, upsert: true, session }
+        );
+
+        // Clone lịch trình cho buyer
+        let clonedTripId = null;
+        const clonedTripData = {
+          userId: buyerId,
+          title: `${templateTrip.title} (Đã mua)`,
+          destination: templateTrip.destination,
+          province: templateTrip.province,
+          provinceImage: templateTrip.provinceImage,
+          startDate: templateTrip.startDate,
+          endDate: templateTrip.endDate,
+          totalDays: templateTrip.totalDays,
+          description: templateTrip.description || "",
+          isPublished: false,
+          isForSale: false,
+          isPurchasedClone: true,
+          originalTripId: templateTrip._id,
+          originalCreatorId: templateTrip.userId,
+          price: 0
+        };
+        const newTrip = new Trip(clonedTripData);
+        await newTrip.save({ session });
+        clonedTripId = newTrip._id;
+
+        const templateDays = await PlanDay.find({ tripId: templateTrip._id }).session(session).sort({ dayNumber: 1 });
+        for (const day of templateDays) {
+          const clonedDay = new PlanDay({ tripId: newTrip._id, dayNumber: day.dayNumber, date: day.date });
+          await clonedDay.save({ session });
+          const templatePlaces = await PlanPlace.find({ dayId: day._id }).session(session).sort({ order: 1 });
+          for (const place of templatePlaces) {
+            const clonedPlace = new PlanPlace({
+              dayId: clonedDay._id,
+              placeId: (place as any).placeId,
+              name: place.name,
+              address: place.address,
+              photo: place.photo,
+              latitude: (place as any).latitude,
+              longitude: (place as any).longitude,
+              rating: place.rating,
+              mapUrl: (place as any).mapUrl,
+              order: place.order,
+              timeOfDay: place.timeOfDay || "morning"
+            });
+            await clonedPlace.save({ session });
+          }
+        }
+
+        await Trip.findByIdAndUpdate(templateTrip._id, { $inc: { soldCount: 1 } }, { session });
+
+        // Cập nhật order thành công
+        order.status = 'SUCCESS';
+        order.providerTransactionId = 'BALANCE_PAYMENT';
+        await order.save({ session });
+
+        // Gửi thông báo
+        const sellerNotification = new Notification({
+          userId: templateTrip.userId,
+          title: "Bạn vừa bán được một Plan",
+          message: `Plan "${templateTrip.title}" đã được mua thành công. Bạn nhận ${creatorAmount.toLocaleString('vi-VN')}đ.`
+        });
+        await sellerNotification.save({ session });
+
+        const buyerNotification = new Notification({
+          userId: buyerId,
+          title: "Mua Plan thành công",
+          message: `Bạn đã mua thành công plan "${templateTrip.title}" bằng số dư ví.`
+        });
+        await buyerNotification.save({ session });
+
+        await session.commitTransaction();
+        session.endSession();
+
+        return res.json({
+          success: true,
+          message: "Mua lịch trình thành công bằng số dư ví!",
+          paymentMethod: 'balance',
+          newTripId: clonedTripId,
+          orderCode
+        });
+
+      } catch (err) {
+        await session.abortTransaction();
+        session.endSession();
+        console.error("Balance payment for trip error:", err);
+        return res.status(500).json({ success: false, message: "Thanh toán bằng số dư thất bại" });
+      }
+    }
+
+    // ── DỰ PHÒNG: Số dư không đủ → Tạo link PayOS ──
     const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 
-    // Generate REAL PayOS link
     const body = {
       orderCode,
-      amount: order.amount,
+      amount: price,
       description: `Mua plan ${templateTrip.title}`.slice(0, 25),
       returnUrl: `${YOUR_DOMAIN}/payment/success?orderCode=${orderCode}`,
       cancelUrl: `${YOUR_DOMAIN}/payment/cancel?orderCode=${orderCode}`,
@@ -840,7 +981,7 @@ export const createPaymentUrl = async (req: AuthRequest, res: Response) => {
         {
           name: templateTrip.title.slice(0, 50),
           quantity: 1,
-          price: order.amount,
+          price: price,
         },
       ],
     };
@@ -850,10 +991,10 @@ export const createPaymentUrl = async (req: AuthRequest, res: Response) => {
     order.providerTransactionId = paymentLinkRes.checkoutUrl;
     await order.save();
 
-    // Return REAL Payment URL
     return res.json({
       success: true,
-      message: "Đang chuyển hướng tới cổng thanh toán...",
+      message: "Số dư không đủ. Đang chuyển hướng tới cổng thanh toán...",
+      paymentMethod: 'payos',
       paymentUrl: paymentLinkRes.checkoutUrl,
       orderCode
     });
@@ -863,6 +1004,7 @@ export const createPaymentUrl = async (req: AuthRequest, res: Response) => {
     return res.status(500).json({ success: false, message: "Create payment failed" });
   }
 };
+
 
 export const handlePaymentWebhook = async (req: Request, res: Response) => {
   try {
@@ -917,7 +1059,8 @@ export const processTripOrder = async (orderCode: number) => {
       return; 
     }
 
-    const creatorAmount = Math.floor(order.amount * CREATOR_SHARE_RATIO);
+    const tripRates = await getTripCommissionRates();
+    const creatorAmount = Math.floor(order.amount * tripRates.creatorPercent);
     const adminAmount = order.amount - creatorAmount;
 
     // Revenue split: 70% for creator, 30% for admin system wallet.

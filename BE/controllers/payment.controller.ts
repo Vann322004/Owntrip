@@ -13,6 +13,17 @@ import CreatorSubscriptionTransaction from '../models/creatorSubscriptionTransac
 import CreatorPackage from '../models/creatorPackage.model';
 import Wallet from '../models/wallet.model';
 
+const getCommissionRates = async () => {
+  const SystemConfig = require('../models/systemConfig.model').default;
+  const configs = await SystemConfig.find({ key: { $in: ['commission_hotel_owner_percent', 'commission_hotel_admin_percent'] } });
+  const configMap: any = {};
+  configs.forEach((c: any) => { configMap[c.key] = c.value; });
+  return {
+    ownerPercent: (configMap['commission_hotel_owner_percent'] ?? 90) / 100,
+    adminPercent: (configMap['commission_hotel_admin_percent'] ?? 10) / 100,
+  };
+};
+
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 
 export const PaymentController = {
@@ -530,10 +541,23 @@ export const PaymentController = {
 
         const hotelDoc = await Hotel.findOne({ hotelId }).session(session);
         if (hotelDoc && hotelDoc.ownerId) {
+          const rates = await getCommissionRates();
+          const ownerAmount = Math.floor(totalPrice * rates.ownerPercent);
+          const adminAmount = totalPrice - ownerAmount;
+
           await User.findOneAndUpdate(
             { userId: hotelDoc.ownerId },
-            { $inc: { balance: totalPrice } },
+            { $inc: { balance: ownerAmount } },
             { session }
+          );
+
+          await Wallet.findOneAndUpdate(
+            { isSystem: true },
+            {
+              $inc: { balance: adminAmount },
+              $setOnInsert: { isSystem: true, currency: "VND" }
+            },
+            { new: true, upsert: true, session }
           );
         }
       }
@@ -672,9 +696,22 @@ export const PaymentController = {
 
 
     if (hotel && hotel.ownerId) {
+      const rates = await getCommissionRates();
+      const ownerAmount = Math.floor(booking.totalPrice * rates.ownerPercent);
+      const adminAmount = booking.totalPrice - ownerAmount;
+
       await User.findOneAndUpdate(
         { userId: hotel.ownerId },
-        { $inc: { balance: booking.totalPrice } }
+        { $inc: { balance: ownerAmount } }
+      );
+
+      await Wallet.findOneAndUpdate(
+        { isSystem: true },
+        {
+          $inc: { balance: adminAmount },
+          $setOnInsert: { isSystem: true, currency: "VND" }
+        },
+        { new: true, upsert: true }
       );
     }
 
@@ -741,9 +778,22 @@ export const PaymentController = {
       // Trường hợp gia hạn phòng (Edit stay): Chuyển tiền cho chủ khách sạn
       const hotel = await Hotel.findOne({ $or: [{ hotelId: topup.hotelId }, { _id: topup.hotelId }] });
       if (hotel && (hotel as any).ownerId) {
+        const rates = await getCommissionRates();
+        const ownerAmount = Math.floor(topup.amount * rates.ownerPercent);
+        const adminAmount = topup.amount - ownerAmount;
+
         await User.findOneAndUpdate(
           { userId: (hotel as any).ownerId },
-          { $inc: { balance: topup.amount } }
+          { $inc: { balance: ownerAmount } }
+        );
+
+        await Wallet.findOneAndUpdate(
+          { isSystem: true },
+          {
+            $inc: { balance: adminAmount },
+            $setOnInsert: { isSystem: true, currency: "VND" }
+          },
+          { new: true, upsert: true }
         );
 
         // Tạo một Booking giả để nó xuất hiện trong danh sách Giao dịch của chủ khách sạn
