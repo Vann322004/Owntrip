@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { 
   User, Lock, Trophy, Info, Save, Loader2, 
   CheckCircle2, AlertCircle, Shield, Database, 
-  Cpu, HardDrive, RefreshCw, Package, Plus, Edit, Trash2
+  Cpu, HardDrive, RefreshCw, Package, Plus, Edit, Trash2, Percent
 } from 'lucide-react';
 import api from '../lib/axios';
 import { useAuth } from '../context/AuthContext';
 
 export default function Settings() {
   const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState<'profile' | 'password' | 'points' | 'packages' | 'system'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'password' | 'points' | 'packages' | 'commission' | 'system'>('profile');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
@@ -39,17 +39,49 @@ export default function Settings() {
   const [editingPkgId, setEditingPkgId] = useState<string | null>(null);
   const [pkgForm, setPkgForm] = useState({ name: '', durationInMonths: 1, price: 0, description: '', isActive: true });
 
+  // Commission Config State
+  const [commissionConfig, setCommissionConfig] = useState({
+    commission_hotel_owner_percent: 90,
+    commission_hotel_admin_percent: 10,
+    commission_trip_creator_percent: 70,
+    commission_trip_admin_percent: 30,
+  });
+
   useEffect(() => {
     if (activeTab === 'points') fetchPointsConfig();
     if (activeTab === 'system') fetchSystemInfo();
     if (activeTab === 'packages') fetchPackages();
+    if (activeTab === 'commission') fetchCommissionConfig();
   }, [activeTab]);
 
   const fetchPointsConfig = async () => {
     try {
       setLoading(true);
       const res = await api.get('/system/config');
-      if (res.data?.success) setPointsConfig(res.data.data);
+      if (res.data?.success) {
+        setPointsConfig(p => ({ ...p, ...res.data.data }));
+        setCommissionConfig(c => ({ ...c, ...res.data.data }));
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const fetchCommissionConfig = async () => {
+    try {
+      setLoading(true);
+      const res = await api.get('/system/config');
+      if (res.data?.success) {
+        const d = res.data.data;
+        setCommissionConfig({
+          commission_hotel_owner_percent: d.commission_hotel_owner_percent ?? 90,
+          commission_hotel_admin_percent: d.commission_hotel_admin_percent ?? 10,
+          commission_trip_creator_percent: d.commission_trip_creator_percent ?? 70,
+          commission_trip_admin_percent: d.commission_trip_admin_percent ?? 30,
+        });
+      }
     } catch (err) {
       console.error(err);
     } finally {
@@ -133,6 +165,30 @@ export default function Settings() {
     }
   };
 
+  const handleUpdateCommissionConfig = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Validate: hotel must sum to 100, trip must sum to 100
+    if (commissionConfig.commission_hotel_owner_percent + commissionConfig.commission_hotel_admin_percent !== 100) {
+      setError('Tổng % đặt phòng khách sạn phải bằng 100%');
+      return;
+    }
+    if (commissionConfig.commission_trip_creator_percent + commissionConfig.commission_trip_admin_percent !== 100) {
+      setError('Tổng % mua lịch trình phải bằng 100%');
+      return;
+    }
+    setLoading(true);
+    setSuccess('');
+    setError('');
+    try {
+      const res = await api.post('/system/config', commissionConfig);
+      if (res.data?.success) setSuccess('Cập nhật cấu hình hoa hồng thành công! Sẽ áp dụng cho các giao dịch mới.');
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Lỗi cập nhật cấu hình');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const fetchPackages = async () => {
     try {
       setLoading(true);
@@ -188,11 +244,12 @@ export default function Settings() {
         {/* Sidebar Tabs */}
         <div className="w-full md:w-64 space-y-1">
           {[
-            { id: 'profile',  label: 'Hồ sơ Admin', icon: User },
-            { id: 'password', label: 'Mật khẩu',    icon: Lock },
-            { id: 'points',   label: 'Cấu hình Điểm', icon: Trophy },
-            { id: 'packages', label: 'Gói Creator', icon: Package },
-            { id: 'system',   label: 'Thông tin hệ thống', icon: Info },
+        { id: 'profile',    label: 'Hồ sơ Admin',          icon: User },
+            { id: 'password',   label: 'Mật khẩu',              icon: Lock },
+            { id: 'points',     label: 'Cấu hình Điểm',        icon: Trophy },
+            { id: 'packages',   label: 'Gói Creator',           icon: Package },
+            { id: 'commission', label: 'Cấu hình Hoa hồng',    icon: Percent },
+            { id: 'system',     label: 'Thông tin hệ thống',   icon: Info },
           ].map((tab) => {
             const Icon = tab.icon;
             return (
@@ -493,6 +550,113 @@ export default function Settings() {
                   </div>
                 )}
               </div>
+            )}
+
+            {/* Commission Config Tab */}
+            {activeTab === 'commission' && (
+              <form onSubmit={handleUpdateCommissionConfig} className="space-y-8 max-w-lg">
+                <div className="p-4 bg-violet-50 text-violet-700 rounded-xl text-sm flex gap-2">
+                  <Percent className="w-5 h-5 shrink-0 mt-0.5" />
+                  <p>Cấu hình tỷ lệ phân chia doanh thu cho từng loại giao dịch. Thay đổi sẽ áp dụng cho <strong>các giao dịch mới</strong>, không ảnh hưởng đến giao dịch đã hoàn thành.</p>
+                </div>
+
+                {/* Hotel Booking */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 pb-2 border-b border-gray-100">
+                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                    <h3 className="font-bold text-gray-800 text-sm">🏨 Đặt phòng Khách sạn</h3>
+                  </div>
+
+                  {/* Hotel Owner Percent */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <label className="text-sm font-semibold text-gray-700">Chủ khách sạn nhận</label>
+                      <span className="text-lg font-bold text-blue-600">{commissionConfig.commission_hotel_owner_percent}%</span>
+                    </div>
+                    <input
+                      type="range" min={50} max={99} step={1}
+                      value={commissionConfig.commission_hotel_owner_percent}
+                      onChange={(e) => {
+                        const v = Number(e.target.value);
+                        setCommissionConfig(c => ({ ...c, commission_hotel_owner_percent: v, commission_hotel_admin_percent: 100 - v }));
+                      }}
+                      className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                    />
+                    <div className="flex justify-between text-xs text-gray-400">
+                      <span>50%</span><span>99%</span>
+                    </div>
+                  </div>
+
+                  {/* Hotel Admin Percent */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Admin (Nền tảng) nhận</p>
+                      <p className="text-xs text-gray-400">Tự động tính = 100% - phần chủ khách sạn</p>
+                    </div>
+                    <span className="text-lg font-bold text-emerald-600">{commissionConfig.commission_hotel_admin_percent}%</span>
+                  </div>
+
+                  {/* Preview */}
+                  <div className="p-3 bg-blue-50 rounded-xl text-xs text-blue-700 space-y-1">
+                    <p className="font-semibold">Ví dụ với đơn 1,000,000đ:</p>
+                    <p>• Chủ khách sạn nhận: <strong>{(1000000 * commissionConfig.commission_hotel_owner_percent / 100).toLocaleString('vi-VN')}đ</strong></p>
+                    <p>• Admin nhận: <strong>{(1000000 * commissionConfig.commission_hotel_admin_percent / 100).toLocaleString('vi-VN')}đ</strong></p>
+                  </div>
+                </div>
+
+                {/* Trip Marketplace */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 pb-2 border-b border-gray-100">
+                    <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+                    <h3 className="font-bold text-gray-800 text-sm">🗺️ Mua lịch trình (Marketplace)</h3>
+                  </div>
+
+                  {/* Trip Creator Percent */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <label className="text-sm font-semibold text-gray-700">Creator nhận</label>
+                      <span className="text-lg font-bold text-violet-600">{commissionConfig.commission_trip_creator_percent}%</span>
+                    </div>
+                    <input
+                      type="range" min={50} max={99} step={1}
+                      value={commissionConfig.commission_trip_creator_percent}
+                      onChange={(e) => {
+                        const v = Number(e.target.value);
+                        setCommissionConfig(c => ({ ...c, commission_trip_creator_percent: v, commission_trip_admin_percent: 100 - v }));
+                      }}
+                      className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-violet-600"
+                    />
+                    <div className="flex justify-between text-xs text-gray-400">
+                      <span>50%</span><span>99%</span>
+                    </div>
+                  </div>
+
+                  {/* Trip Admin Percent */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                    <div>
+                      <p className="text-sm font-semibold text-gray-700">Admin (Nền tảng) nhận</p>
+                      <p className="text-xs text-gray-400">Tự động tính = 100% - phần Creator</p>
+                    </div>
+                    <span className="text-lg font-bold text-emerald-600">{commissionConfig.commission_trip_admin_percent}%</span>
+                  </div>
+
+                  {/* Preview */}
+                  <div className="p-3 bg-violet-50 rounded-xl text-xs text-violet-700 space-y-1">
+                    <p className="font-semibold">Ví dụ với giao dịch 500,000đ:</p>
+                    <p>• Creator nhận: <strong>{(500000 * commissionConfig.commission_trip_creator_percent / 100).toLocaleString('vi-VN')}đ</strong></p>
+                    <p>• Admin nhận: <strong>{(500000 * commissionConfig.commission_trip_admin_percent / 100).toLocaleString('vi-VN')}đ</strong></p>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white py-2.5 rounded-xl font-semibold transition-all disabled:opacity-70"
+                >
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+                  Lưu cấu hình hoa hồng
+                </button>
+              </form>
             )}
 
             {/* System Info Tab */}
