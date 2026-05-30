@@ -44,6 +44,10 @@ export const SystemController = {
             points_per_vnpay_1000: 1,
             points_daily_login: 10,
             points_review_bonus: 50,
+            commission_hotel_owner_percent: 90,
+            commission_hotel_admin_percent: 10,
+            commission_trip_creator_percent: 70,
+            commission_trip_admin_percent: 30,
           }
         });
       }

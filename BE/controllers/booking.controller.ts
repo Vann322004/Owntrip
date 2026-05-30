@@ -4,7 +4,20 @@ import Booking from '../models/booking.model';
 import RoomInventory from '../models/roomInventory.model';
 import Hotel from '../models/hotel.model';
 import User from '../models/user.model';
+import Wallet from '../models/wallet.model';
 import { sendEmailTemplate } from '../utils/emailService';
+
+const getCommissionRates = async () => {
+  const SystemConfig = require('../models/systemConfig.model').default;
+  const configs = await SystemConfig.find({ key: { $in: ['commission_hotel_owner_percent', 'commission_hotel_admin_percent'] } });
+  const configMap: any = {};
+  configs.forEach((c: any) => { configMap[c.key] = c.value; });
+  return {
+    ownerPercent: (configMap['commission_hotel_owner_percent'] ?? 90) / 100,
+    adminPercent: (configMap['commission_hotel_admin_percent'] ?? 10) / 100,
+  };
+};
+
 
 export const BookingController = {
   /**
@@ -237,10 +250,23 @@ export const BookingController = {
         // 7.5 Cộng tiền cho chủ khách sạn (Revenue)
         const hotelDoc = await Hotel.findOne({ hotelId }).session(session);
         if (hotelDoc && hotelDoc.ownerId) {
+          const rates = await getCommissionRates();
+          const ownerAmount = Math.floor(totalPrice * rates.ownerPercent);
+          const adminAmount = totalPrice - ownerAmount;
+
           await User.findOneAndUpdate(
             { userId: hotelDoc.ownerId },
-            { $inc: { balance: totalPrice } },
+            { $inc: { balance: ownerAmount } },
             { session }
+          );
+
+          await Wallet.findOneAndUpdate(
+            { isSystem: true },
+            {
+              $inc: { balance: adminAmount },
+              $setOnInsert: { isSystem: true, currency: "VND" }
+            },
+            { new: true, upsert: true, session }
           );
         }
       }
@@ -563,6 +589,9 @@ export const BookingController = {
         .limit(Number(limit))
         .skip((Number(page) - 1) * Number(limit));
 
+      // Lấy tỷ lệ hoa hồng từ DB để hiển thị đúng
+      const displayRates = await getCommissionRates();
+
       // Populate thông tin user
       const enrichedBookings = await Promise.all(
         bookings.map(async (booking) => {
@@ -590,7 +619,7 @@ export const BookingController = {
             checkOut: booking.checkOut,
             nights: booking.nights,
             roomCount: booking.roomCount,
-            totalPrice: booking.totalPrice,
+            totalPrice: Math.floor(booking.totalPrice * displayRates.ownerPercent),
             status: booking.status,
             paymentMethod: booking.paymentMethod,
             paymentStatus: booking.paymentStatus,
@@ -599,6 +628,7 @@ export const BookingController = {
           };
         })
       );
+
 
       const total = await Booking.countDocuments(query);
 
@@ -612,7 +642,7 @@ export const BookingController = {
         pending: allBookings.filter(b => b.status === 'pending').length,
         totalRevenue: allBookings
           .filter(b => b.status !== 'cancelled' && b.paymentStatus === 'paid')
-          .reduce((sum, b) => sum + b.totalPrice, 0),
+          .reduce((sum, b) => sum + Math.floor(b.totalPrice * displayRates.ownerPercent), 0),
       };
 
       res.status(200).json({
@@ -661,6 +691,9 @@ export const BookingController = {
         .limit(Number(limit))
         .skip((Number(page) - 1) * Number(limit));
 
+      // Lấy tỷ lệ hoa hồng từ DB để hiển thị đúng
+      const displayRates = await getCommissionRates();
+
       const transactions = await Promise.all(
         bookings.map(async (booking) => {
           const user = await User.findOne({ userId: booking.userId })
@@ -674,7 +707,7 @@ export const BookingController = {
             checkIn: booking.checkIn,
             checkOut: booking.checkOut,
             nights: booking.nights,
-            amount: booking.totalPrice,
+            amount: Math.floor(booking.totalPrice * displayRates.ownerPercent),
             paymentMethod: booking.paymentMethod,
             paymentStatus: booking.paymentStatus,
             bookingStatus: booking.status,
@@ -683,6 +716,7 @@ export const BookingController = {
           };
         })
       );
+
 
       const total = await Booking.countDocuments({ 
         hotelId, 
@@ -693,7 +727,7 @@ export const BookingController = {
       const paidBookings = await Booking.find({ hotelId, paymentStatus: 'paid', status: { $ne: 'cancelled' } });
       const refundedBookings = await Booking.find({ hotelId, paymentStatus: 'refunded' });
       
-      const totalRevenue = paidBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+      const totalRevenue = paidBookings.reduce((sum, b) => sum + Math.floor(b.totalPrice * displayRates.ownerPercent), 0);
       const totalRefunded = refundedBookings.reduce((sum, b) => sum + (b.refundAmount || 0), 0);
 
       res.status(200).json({
