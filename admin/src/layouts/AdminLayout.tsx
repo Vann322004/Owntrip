@@ -29,7 +29,6 @@ const navItems = [
   { name: 'Duyệt Hotel Owner', path: '/hotel-requests', icon: ClipboardList },
   { name: 'Duyệt Rút Tiền', path: '/withdrawals', icon: CreditCard },
   { name: 'Nạp Điểm', path: '/point-topups', icon: Star },
-  { name: 'Quản lý Owner', path: '/hotel-owners', icon: Users },
   { name: 'Cài đặt', path: '/settings', icon: Settings },
 ];
 
@@ -54,10 +53,8 @@ export default function AdminLayout() {
       >
         <div className="flex items-center justify-center h-20 border-b border-gray-50 px-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30">
-              O
-            </div>
-            {sidebarOpen && <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 tracking-tight">Owntrip</span>}
+            <img src="/logo.png" alt="OwnTrip Logo" className="w-10 h-10 object-contain" />
+            {sidebarOpen && <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 tracking-tight">OwnTrip</span>}
           </div>
         </div>
 
