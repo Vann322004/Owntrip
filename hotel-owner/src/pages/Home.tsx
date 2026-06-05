@@ -18,7 +18,6 @@ import {
   Clock,
   Menu,
   X,
-  Award,
   Download
 } from 'lucide-react';
 import qrCodeImg from '../assets/qr-code.png';
@@ -236,11 +235,11 @@ export default function Home() {
 
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-none sm:leading-[1.1]">
-                Đặt phòng dễ dàng <br />
-                Đồng hành mọi <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Chuyến Đi</span>
+                Tự lập kế hoạch <br />
+                Làm chủ mọi <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Chuyến Đi</span>
               </h1>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Tải ngay ứng dụng di động Owntrip. Khám phá hàng ngàn phòng khách sạn chất lượng tốt, homestay xinh xắn với mức giá cực kỳ ưu đãi và quản lý lịch trình trong tầm tay.
+                Tải ngay ứng dụng di động Owntrip. Công cụ thiết lập lịch trình du lịch thông minh, giúp bạn tự tạo kế hoạch chi tiết, đặt phòng khách sạn nhanh chóng và làm chủ trọn vẹn hành trình.
               </p>
             </div>
 
@@ -625,7 +624,7 @@ export default function Home() {
               Mọi thứ bạn cần cho một chuyến đi trọn vẹn
             </p>
             <p className="text-base text-slate-500">
-              Được thiết kế để tối ưu hóa trải nghiệm tìm kiếm, lựa chọn phòng và quản lý đặt phòng một cách trơn tru, hiện đại.
+              Được thiết kế để tối ưu hóa trải nghiệm tự lên lịch trình, thiết lập kế hoạch và đặt các dịch vụ du lịch một cách trơn tru, hiện đại.
             </p>
           </div>
 
@@ -633,12 +632,12 @@ export default function Home() {
             {/* Feature 1 */}
             <div className="p-8 bg-slate-50 hover:bg-slate-50/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 rounded-3xl border border-transparent hover:border-slate-100 flex flex-col gap-6">
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-700 shadow-inner">
-                <Search className="w-6 h-6" />
+                <Compass className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Tìm kiếm phòng thông minh</h3>
+                <h3 className="text-lg font-bold text-slate-900">Lập kế hoạch thông minh</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Lọc phòng theo địa điểm, mức giá, số sao, tiện ích (hồ bơi, wifi, bữa sáng free...) dễ dàng và nhanh chóng trong nháy mắt.
+                  Tự tạo lộ trình chi tiết từng ngày, quản lý điểm đến, ẩm thực, vui chơi và tối ưu đường đi cực kỳ dễ dàng.
                 </p>
               </div>
             </div>
@@ -646,12 +645,12 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="p-8 bg-slate-50 hover:bg-slate-50/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 rounded-3xl border border-transparent hover:border-slate-100 flex flex-col gap-6">
               <div className="w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-700 shadow-inner">
-                <Percent className="w-6 h-6" />
+                <Hotel className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Ưu đãi độc quyền App</h3>
+                <h3 className="text-lg font-bold text-slate-900">Đặt phòng & dịch vụ nhanh chóng</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Nhận các mã giảm giá Flashsale theo khung giờ vàng và voucher đặc quyền thành viên khi hoàn thành đặt phòng lần đầu.
+                  Tích hợp đặt phòng khách sạn chất lượng tốt, homestay xinh xắn ngay trên lộ trình chuyến đi của bạn với giá ưu đãi.
                 </p>
               </div>
             </div>
@@ -659,12 +658,12 @@ export default function Home() {
             {/* Feature 3 */}
             <div className="p-8 bg-slate-50 hover:bg-slate-50/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 rounded-3xl border border-transparent hover:border-slate-100 flex flex-col gap-6">
               <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-700 shadow-inner">
-                <ShieldCheck className="w-6 h-6" />
+                <Percent className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Thanh toán bảo mật, đa dạng</h3>
+                <h3 className="text-lg font-bold text-slate-900">Ưu đãi độc quyền App</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Hỗ trợ thanh toán nhanh qua MoMo, ZaloPay, chuyển khoản ngân hàng qua mã QR và thẻ thanh toán quốc tế Visa/Mastercard.
+                  Nhận mã giảm giá và voucher đặc quyền thành viên ngay sau khi tạo và hoàn thành kế hoạch chuyến đi của bạn.
                 </p>
               </div>
             </div>
@@ -675,9 +674,9 @@ export default function Home() {
                 <Clock className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Thông báo thời gian thực</h3>
+                <h3 className="text-lg font-bold text-slate-900">Đồng hành thời gian thực</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Cập nhật ngay tức thời trạng thái phòng (đã xác nhận, chuẩn bị phòng) và thông tin giờ giấc check-in, check-out từ khách sạn.
+                  Cập nhật nhắc nhở thời gian lịch trình, thông báo điểm đến tiếp theo và giờ check-in, check-out từ khách sạn.
                 </p>
               </div>
             </div>
@@ -688,9 +687,9 @@ export default function Home() {
                 <Map className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Hành trình thông minh</h3>
+                <h3 className="text-lg font-bold text-slate-900">Bản đồ & Gợi ý điểm đến</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Tích hợp bản đồ dẫn đường trực quan, gợi ý các nhà hàng, quán cafe, điểm du lịch hot gần khách sạn bạn chọn lưu trú.
+                  Tích hợp bản đồ trực quan gợi ý các nhà hàng, quán cafe, điểm tham quan hot nhất dọc theo hành trình của bạn.
                 </p>
               </div>
             </div>
@@ -698,12 +697,12 @@ export default function Home() {
             {/* Feature 6 */}
             <div className="p-8 bg-slate-50 hover:bg-slate-50/50 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 rounded-3xl border border-transparent hover:border-slate-100 flex flex-col gap-6">
               <div className="w-12 h-12 rounded-2xl bg-rose-100 flex items-center justify-center text-rose-700 shadow-inner">
-                <Award className="w-6 h-6" />
+                <Sparkles className="w-6 h-6" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-slate-900">Tích lũy điểm Owntrip</h3>
+                <h3 className="text-lg font-bold text-slate-900">Chia sẻ & Tương tác nhóm</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Mỗi lần đặt phòng thành công, bạn sẽ nhận được điểm thưởng để thăng hạng thành viên và đổi các phần quà/đêm nghỉ miễn phí.
+                  Dễ dàng chia sẻ kế hoạch hành trình cho bạn bè, người thân hoặc mời họ cùng tham gia thiết kế lịch trình nhóm.
                 </p>
               </div>
             </div>
@@ -762,9 +761,9 @@ export default function Home() {
                     3
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-base">Đăng ký & Nhận voucher chào mừng</h4>
+                    <h4 className="font-bold text-slate-900 text-base">Lập kế hoạch & Nhận voucher chào mừng</h4>
                     <p className="text-sm text-slate-500 mt-1">
-                      Mở ứng dụng, tạo tài khoản mới bằng Email/Số điện thoại để được nhận ngay Voucher giảm 50% cho lần đặt phòng đầu tiên!
+                      Tạo tài khoản mới, lên lịch trình chuyến đi đầu tiên và nhận ngay ưu đãi đặt phòng đặc quyền chào mừng thành viên mới!
                     </p>
                   </div>
                 </div>
