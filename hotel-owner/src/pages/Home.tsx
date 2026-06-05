@@ -98,9 +98,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-emerald-500 selection:text-white relative font-sans">
-      {/* Background Blobs */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-emerald-200/30 to-teal-200/30 blur-[130px] -z-10 pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-blue-200/20 to-emerald-200/20 blur-[130px] -z-10 pointer-events-none"></div>
+      {/* Background Blobs Wrapper */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-emerald-200/30 to-teal-200/30 blur-[130px]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-tr from-blue-200/20 to-emerald-200/20 blur-[130px]"></div>
+      </div>
 
       {/* STICKY HEADER */}
       <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/75 border-b border-slate-100/80 transition-all duration-300">
@@ -862,7 +864,7 @@ export default function Home() {
                 <img src={logoImg} alt="Owntrip Logo" className="h-10 object-contain bg-white p-1 rounded-lg" />
               </div>
               <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
-                Owntrip là nền tảng đặt phòng khách sạn và dịch vụ du lịch trực tuyến hàng đầu Việt Nam. Chúng tôi kết nối hàng ngàn du khách với các điểm lưu trú tuyệt vời nhất.
+                Owntrip là nền tảng lập kế hoạch du lịch thông minh và đặt phòng trực tuyến hàng đầu. Chúng tôi giúp bạn dễ dàng tự thiết kế lịch trình hành trình và kết nối với các điểm lưu trú tuyệt vời nhất.
               </p>
             </div>
 
