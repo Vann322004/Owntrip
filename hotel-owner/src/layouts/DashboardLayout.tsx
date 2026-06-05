@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import logoImg from '../assets/logo.png';
 
 const navItems = [
   { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
@@ -35,13 +36,12 @@ export default function DashboardLayout() {
       >
         <div className="flex items-center justify-between h-20 px-6 border-b border-slate-50">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-500/30">
-              H
-            </div>
-            {sidebarOpen && (
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 tracking-tight">
-                Owntrip Host
-              </span>
+            {sidebarOpen ? (
+              <img src={logoImg} alt="Owntrip Logo" className="h-9 object-contain" />
+            ) : (
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-500/30">
+                H
+              </div>
             )}
           </div>
         </div>

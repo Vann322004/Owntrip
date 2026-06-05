@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Eye, EyeOff, Lock, Mail, Loader2, Hotel, ArrowLeft } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail, Loader2, ArrowLeft } from 'lucide-react';
 import api from '../lib/axios';
 import { useAuth } from '../context/AuthContext';
+import logoImg from '../assets/logo.png';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -70,9 +71,7 @@ export default function Login() {
 
       <div className="w-full max-w-md bg-white rounded-3xl p-10 shadow-xl border border-white relative z-10 animate-in fade-in zoom-in-95 duration-500">
         <div className="text-center mb-10">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-blue-500 flex items-center justify-center text-white font-bold mx-auto shadow-lg shadow-emerald-500/30 mb-6">
-            <Hotel className="w-8 h-8" />
-          </div>
+          <img src={logoImg} alt="Owntrip Logo" className="h-16 mx-auto mb-6 object-contain" />
           <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Kênh Đối Tác Khách Sạn</h1>
           <p className="text-slate-500 text-sm mt-2">Đăng nhập vào hệ thống quản lý phòng của bạn</p>
         </div>

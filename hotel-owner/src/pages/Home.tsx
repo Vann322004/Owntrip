@@ -18,9 +18,11 @@ import {
   Clock,
   Menu,
   X,
-  Award
+  Award,
+  Download
 } from 'lucide-react';
 import qrCodeImg from '../assets/qr-code.png';
+import logoImg from '../assets/logo.png';
 
 const QRCodeImg = ({ className = "w-full h-full object-contain rounded-lg" }: { className?: string }) => (
   <img 
@@ -62,6 +64,21 @@ const GooglePlayBadge = () => (
   </a>
 );
 
+const ExpoBuildBadge = () => (
+  <a 
+    href="https://expo.dev/accounts/khoale3004/projects/owntrip/builds/36906c47-0020-45b8-bfbb-11186dee3365" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl transition-all shadow-md hover:shadow-lg active:scale-95 border border-emerald-500 duration-200"
+  >
+    <Download className="w-6 h-6 text-white" />
+    <div className="text-left leading-none">
+      <p className="text-[10px] text-emerald-100 font-medium uppercase tracking-wider">Tải bản thử nghiệm</p>
+      <p className="text-sm font-semibold mt-1 font-sans">Expo EAS Build</p>
+    </div>
+  </a>
+);
+
 export default function Home() {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -92,12 +109,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/25">
-                <Hotel className="w-5 h-5" />
-              </div>
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-800 bg-clip-text text-transparent tracking-tight">
-                Owntrip
-              </span>
+              <img src={logoImg} alt="Owntrip Logo" className="h-10 sm:h-12 object-contain" />
             </div>
 
             {/* Desktop Navigation Links */}
@@ -264,6 +276,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                   <AppStoreBadge />
                   <GooglePlayBadge />
+                  <ExpoBuildBadge />
                 </div>
               </div>
             </div>
@@ -772,9 +785,10 @@ export default function Home() {
                 <QRCodeImg />
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-wrap gap-4 justify-center items-center">
                 <AppStoreBadge />
                 <GooglePlayBadge />
+                <ExpoBuildBadge />
               </div>
 
               <p className="text-xs text-slate-400">Phiên bản hiện tại: v2.4.0 • Cập nhật gần nhất: Hôm qua</p>
@@ -792,8 +806,8 @@ export default function Home() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl pointer-events-none"></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/30">
-            <Hotel className="w-8 h-8 text-white" />
+          <div className="w-20 h-20 rounded-2xl bg-white p-2 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
+            <img src={logoImg} alt="Owntrip Logo" className="w-full h-full object-contain" />
           </div>
           <div className="space-y-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -846,10 +860,7 @@ export default function Home() {
           <div className="grid md:grid-cols-12 gap-8 items-start">
             <div className="md:col-span-5 space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white shadow-md">
-                  <Hotel className="w-4 h-4" />
-                </div>
-                <span className="text-lg font-bold text-white tracking-tight">Owntrip</span>
+                <img src={logoImg} alt="Owntrip Logo" className="h-10 object-contain bg-white p-1 rounded-lg" />
               </div>
               <p className="text-sm text-slate-500 leading-relaxed max-w-sm">
                 Owntrip là nền tảng đặt phòng khách sạn và dịch vụ du lịch trực tuyến hàng đầu Việt Nam. Chúng tôi kết nối hàng ngàn du khách với các điểm lưu trú tuyệt vời nhất.
