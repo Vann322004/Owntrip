@@ -335,6 +335,72 @@ export default function MyHotels() {
     }
   };
 
+  const renderRequestCard = (r: HotelRequest) => (
+    <div
+      key={r.requestId}
+      className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row justify-between gap-4"
+    >
+      <div className="space-y-3">
+        <div className="flex items-center gap-3">
+          <h3 className="text-base font-bold text-slate-900">
+            {r.hotelName}
+          </h3>
+          <span
+            className={`inline-flex px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
+              r.status === "approved"
+                ? "bg-emerald-50 text-emerald-700"
+                : r.status === "rejected"
+                  ? "bg-red-50 text-red-700"
+                  : "bg-amber-50 text-amber-700"
+            }`}
+          >
+            {r.status === "pending"
+              ? "Chờ kiểm duyệt"
+              : r.status === "approved"
+                ? "Đã duyệt"
+                : "Từ chối"}
+          </span>
+        </div>
+
+        <div className="text-xs text-slate-500 space-y-1">
+          <p>
+            <span className="font-semibold text-slate-700">
+              Địa chỉ:
+            </span>{" "}
+            {r.address}, {r.city}
+          </p>
+          <p>
+            <span className="font-semibold text-slate-700">
+              Điện thoại:
+            </span>{" "}
+            {r.phone}
+          </p>
+          {r.adminComment && (
+            <p className="mt-2 p-3 bg-slate-50 rounded-xl text-slate-600 border border-slate-100 italic">
+              <span className="font-bold text-slate-700 not-italic">
+                Lưu ý của Admin:
+              </span>{" "}
+              "{r.adminComment}"
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className="flex-shrink-0 text-right text-xs text-slate-400 flex flex-col justify-between">
+        <p>
+          Mã đơn:{" "}
+          <span className="font-mono font-bold text-slate-700">
+            {r.requestId}
+          </span>
+        </p>
+        <p className="mt-1">
+          Gửi ngày:{" "}
+          {new Date(r.createdAt).toLocaleDateString("vi-VN")}
+        </p>
+      </div>
+    </div>
+  );
+
   if (loading && hotels.length === 0 && requests.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] text-slate-400">
@@ -1162,7 +1228,7 @@ export default function MyHotels() {
                   : "text-slate-400 hover:text-slate-600"
               }`}
             >
-              Yêu cầu chờ duyệt ({requests.length})
+              Yêu cầu duyệt ({requests.length})
               {activeTab === "requests" && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600" />
               )}
@@ -1242,7 +1308,7 @@ export default function MyHotels() {
 
           {/* TAB 2: Submitted Requests list */}
           {activeTab === "requests" && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               {requests.length === 0 ? (
                 <div className="bg-white border border-slate-100 rounded-3xl p-16 text-center shadow-sm">
                   <Clock className="w-16 h-16 text-slate-200 mx-auto mb-4" />
@@ -1255,71 +1321,64 @@ export default function MyHotels() {
                   </p>
                 </div>
               ) : (
-                requests.map((r) => (
-                  <div
-                    key={r.requestId}
-                    className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row justify-between gap-4"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <h3 className="text-base font-bold text-slate-900">
-                          {r.hotelName}
-                        </h3>
-                        <span
-                          className={`inline-flex px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                            r.status === "approved"
-                              ? "bg-emerald-50 text-emerald-700"
-                              : r.status === "rejected"
-                                ? "bg-red-50 text-red-700"
-                                : "bg-amber-50 text-amber-700"
-                          }`}
-                        >
-                          {r.status === "pending"
-                            ? "Chờ kiểm duyệt"
-                            : r.status === "approved"
-                              ? "Đã duyệt"
-                              : "Từ chối"}
-                        </span>
-                      </div>
-
-                      <div className="text-xs text-slate-500 space-y-1">
-                        <p>
-                          <span className="font-semibold text-slate-700">
-                            Địa chỉ:
-                          </span>{" "}
-                          {r.address}, {r.city}
-                        </p>
-                        <p>
-                          <span className="font-semibold text-slate-700">
-                            Điện thoại:
-                          </span>{" "}
-                          {r.phone}
-                        </p>
-                        {r.adminComment && (
-                          <p className="mt-2 p-3 bg-slate-50 rounded-xl text-slate-600 border border-slate-100 italic">
-                            <span className="font-bold text-slate-700 not-italic">
-                              Lưu ý của Admin:
-                            </span>{" "}
-                            "{r.adminComment}"
-                          </p>
-                        )}
-                      </div>
+                <div className="space-y-8 animate-in fade-in duration-300">
+                  {/* Part 1: Pending */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Đang chờ duyệt ({requests.filter(r => r.status === "pending").length})
+                      </h4>
                     </div>
-
-                    <div className="flex-shrink-0 text-right text-xs text-slate-400 flex flex-col justify-between">
-                      <p>
-                        Mã đơn:{" "}
-                        <span className="font-mono font-bold text-slate-700">
-                          {r.requestId}
-                        </span>
-                      </p>
-                      <p className="mt-1">
-                        Gửi ngày:{" "}
-                        {new Date(r.createdAt).toLocaleDateString("vi-VN")}
-                      </p>
-                    </div>
+                    {requests.filter(r => r.status === "pending").length === 0 ? (
+                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
+                        Không có yêu cầu nào đang chờ duyệt.
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        {requests.filter(r => r.status === "pending").map(renderRequestCard)}
+                      </div>
+                    )}
                   </div>
-                ))
+
+                  {/* Part 2: Approved */}
+                  <div className="space-y-3 pt-4 border-t border-slate-100">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Đã duyệt ({requests.filter(r => r.status === "approved").length})
+                      </h4>
+                    </div>
+                    {requests.filter(r => r.status === "approved").length === 0 ? (
+                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
+                        Không có yêu cầu nào đã duyệt.
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        {requests.filter(r => r.status === "approved").map(renderRequestCard)}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Part 3: Rejected */}
+                  <div className="space-y-3 pt-4 border-t border-slate-100">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Từ chối ({requests.filter(r => r.status === "rejected").length})
+                      </h4>
+                    </div>
+                    {requests.filter(r => r.status === "rejected").length === 0 ? (
+                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
+                        Không có yêu cầu nào bị từ chối.
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        {requests.filter(r => r.status === "rejected").map(renderRequestCard)}
+                      </div>
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           )}
