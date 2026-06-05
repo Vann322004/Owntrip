@@ -20,51 +20,14 @@ import {
   X,
   Award
 } from 'lucide-react';
+import qrCodeImg from '../assets/qr-code.png';
 
-const QRCodeSVG = () => (
-  <svg width="120" height="120" viewBox="0 0 120 120" className="w-full h-full text-slate-800">
-    <rect width="120" height="120" fill="white" rx="12" />
-    {/* QR code outer frame corners */}
-    <rect x="12" y="12" width="28" height="28" fill="currentColor" rx="4" />
-    <rect x="16" y="16" width="20" height="20" fill="white" rx="2" />
-    <rect x="20" y="20" width="12" height="12" fill="currentColor" rx="1" />
-
-    <rect x="80" y="12" width="28" height="28" fill="currentColor" rx="4" />
-    <rect x="84" y="16" width="20" height="20" fill="white" rx="2" />
-    <rect x="88" y="20" width="12" height="12" fill="currentColor" rx="1" />
-
-    <rect x="12" y="80" width="28" height="28" fill="currentColor" rx="4" />
-    <rect x="16" y="84" width="20" height="20" fill="white" rx="2" />
-    <rect x="20" y="88" width="12" height="12" fill="currentColor" rx="1" />
-
-    {/* Small alignment pattern */}
-    <rect x="84" y="84" width="16" height="16" fill="currentColor" rx="2" />
-    <rect x="89" y="89" width="6" height="6" fill="white" rx="1" />
-
-    {/* Random bits */}
-    <rect x="48" y="12" width="8" height="16" fill="currentColor" rx="1" />
-    <rect x="60" y="16" width="12" height="8" fill="currentColor" rx="1" />
-    <rect x="48" y="32" width="20" height="8" fill="currentColor" rx="1" />
-    <rect x="72" y="24" width="4" height="20" fill="currentColor" rx="1" />
-    
-    <rect x="12" y="48" width="16" height="8" fill="currentColor" rx="1" />
-    <rect x="20" y="60" width="8" height="12" fill="currentColor" rx="1" />
-    <rect x="36" y="52" width="12" height="8" fill="currentColor" rx="1" />
-    
-    <rect x="80" y="48" width="24" height="8" fill="currentColor" rx="1" />
-    <rect x="92" y="60" width="8" height="16" fill="currentColor" rx="1" />
-    <rect x="104" y="52" width="4" height="20" fill="currentColor" rx="1" />
-
-    <rect x="48" y="80" width="16" height="8" fill="currentColor" rx="1" />
-    <rect x="56" y="92" width="8" height="16" fill="currentColor" rx="1" />
-    <rect x="44" y="104" width="24" height="4" fill="currentColor" rx="1" />
-    <rect x="72" y="100" width="8" height="12" fill="currentColor" rx="1" />
-
-    {/* Center logo background & icon */}
-    <rect x="46" y="46" width="28" height="28" fill="white" rx="6" className="shadow-md" />
-    <rect x="50" y="50" width="20" height="20" fill="#10b981" rx="4" /> {/* emerald-500 */}
-    <path d="M56 64v-6h8v6h-8zM60 54l-5 4h10l-5-4z" fill="white" />
-  </svg>
+const QRCodeImg = ({ className = "w-full h-full object-contain rounded-lg" }: { className?: string }) => (
+  <img 
+    src={qrCodeImg} 
+    alt="QR Code" 
+    className={className}
+  />
 );
 
 const AppStoreBadge = () => (
@@ -289,8 +252,8 @@ export default function Home() {
 
             {/* QR + Store Buttons */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-8 bg-white/40 border border-slate-100 rounded-3xl p-6 backdrop-blur-sm max-w-xl mx-auto lg:mx-0 shadow-sm">
-              <div className="flex-shrink-0 bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex items-center justify-center group relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
-                <QRCodeSVG />
+              <div className="w-36 h-36 flex-shrink-0 bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex items-center justify-center group relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+                <QRCodeImg />
               </div>
               
               <div className="space-y-4 text-center sm:text-left flex-1">
@@ -806,7 +769,7 @@ export default function Home() {
 
               {/* Huge QR Code Box */}
               <div className="w-48 h-48 bg-slate-50 rounded-2xl p-4 mx-auto flex items-center justify-center border border-slate-100 shadow-inner group">
-                <QRCodeSVG />
+                <QRCodeImg />
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
