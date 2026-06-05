@@ -90,6 +90,9 @@ export default function MyHotels() {
   const [activeTab, setActiveTab] = useState<"approved" | "requests">(
     "approved",
   );
+  const [requestSubTab, setRequestSubTab] = useState<"pending" | "approved" | "rejected">(
+    "pending",
+  );
 
   // --- Step Wizard State for Hotel Request ---
   const [step, setStep] = useState(1);
@@ -1321,60 +1324,106 @@ export default function MyHotels() {
                   </p>
                 </div>
               ) : (
-                <div className="space-y-8 animate-in fade-in duration-300">
-                  {/* Part 1: Pending */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                        Đang chờ duyệt ({requests.filter(r => r.status === "pending").length})
-                      </h4>
-                    </div>
-                    {requests.filter(r => r.status === "pending").length === 0 ? (
-                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
-                        Không có yêu cầu nào đang chờ duyệt.
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        {requests.filter(r => r.status === "pending").map(renderRequestCard)}
-                      </div>
-                    )}
+                <div className="space-y-6">
+                  {/* Horizontal Sub-tabs */}
+                  <div className="flex flex-wrap gap-2 p-1 bg-slate-100/80 rounded-2xl w-fit">
+                    <button
+                      type="button"
+                      onClick={() => setRequestSubTab("pending")}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                        requestSubTab === "pending"
+                          ? "bg-white text-amber-700 shadow-sm"
+                          : "text-slate-500 hover:text-slate-800"
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                      Đang chờ duyệt ({requests.filter(r => r.status === "pending").length})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRequestSubTab("approved")}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                        requestSubTab === "approved"
+                          ? "bg-white text-emerald-700 shadow-sm"
+                          : "text-slate-500 hover:text-slate-800"
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                      Đã duyệt ({requests.filter(r => r.status === "approved").length})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRequestSubTab("rejected")}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                        requestSubTab === "rejected"
+                          ? "bg-white text-red-700 shadow-sm"
+                          : "text-slate-500 hover:text-slate-800"
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                      Từ chối ({requests.filter(r => r.status === "rejected").length})
+                    </button>
                   </div>
 
-                  {/* Part 2: Approved */}
-                  <div className="space-y-3 pt-4 border-t border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                        Đã duyệt ({requests.filter(r => r.status === "approved").length})
-                      </h4>
-                    </div>
-                    {requests.filter(r => r.status === "approved").length === 0 ? (
-                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
-                        Không có yêu cầu nào đã duyệt.
-                      </div>
-                    ) : (
+                  {/* Sub-tab Content */}
+                  <div className="mt-2 animate-in fade-in duration-300">
+                    {requestSubTab === "pending" && (
                       <div className="space-y-4">
-                        {requests.filter(r => r.status === "approved").map(renderRequestCard)}
+                        {requests.filter(r => r.status === "pending").length === 0 ? (
+                          <div className="bg-white border border-slate-100 rounded-3xl p-16 text-center shadow-sm">
+                            <Clock className="w-16 h-16 text-slate-200 mx-auto mb-4" />
+                            <h3 className="text-base font-bold text-slate-800">
+                              Không có yêu cầu đang chờ duyệt
+                            </h3>
+                            <p className="text-slate-400 text-xs mt-1">
+                              Các yêu cầu mới gửi duyệt sẽ xuất hiện tại đây.
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="space-y-4">
+                            {requests.filter(r => r.status === "pending").map(renderRequestCard)}
+                          </div>
+                        )}
                       </div>
                     )}
-                  </div>
 
-                  {/* Part 3: Rejected */}
-                  <div className="space-y-3 pt-4 border-t border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                        Từ chối ({requests.filter(r => r.status === "rejected").length})
-                      </h4>
-                    </div>
-                    {requests.filter(r => r.status === "rejected").length === 0 ? (
-                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-center text-slate-400 text-xs italic">
-                        Không có yêu cầu nào bị từ chối.
-                      </div>
-                    ) : (
+                    {requestSubTab === "approved" && (
                       <div className="space-y-4">
-                        {requests.filter(r => r.status === "rejected").map(renderRequestCard)}
+                        {requests.filter(r => r.status === "approved").length === 0 ? (
+                          <div className="bg-white border border-slate-100 rounded-3xl p-16 text-center shadow-sm">
+                            <CheckCircle2 className="w-16 h-16 text-slate-200 mx-auto mb-4" />
+                            <h3 className="text-base font-bold text-slate-800">
+                              Chưa có yêu cầu nào được duyệt
+                            </h3>
+                            <p className="text-slate-400 text-xs mt-1">
+                              Khi yêu cầu được duyệt, thông tin sẽ được cập nhật tại đây.
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="space-y-4">
+                            {requests.filter(r => r.status === "approved").map(renderRequestCard)}
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {requestSubTab === "rejected" && (
+                      <div className="space-y-4">
+                        {requests.filter(r => r.status === "rejected").length === 0 ? (
+                          <div className="bg-white border border-slate-100 rounded-3xl p-16 text-center shadow-sm">
+                            <AlertCircle className="w-16 h-16 text-slate-200 mx-auto mb-4" />
+                            <h3 className="text-base font-bold text-slate-800">
+                              Không có yêu cầu nào bị từ chối
+                            </h3>
+                            <p className="text-slate-400 text-xs mt-1">
+                              Các yêu cầu bị từ chối sẽ hiển thị tại đây kèm lý do của Admin.
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="space-y-4">
+                            {requests.filter(r => r.status === "rejected").map(renderRequestCard)}
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
