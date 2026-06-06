@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Users, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet, Hotel, FileCheck, Landmark, ShoppingBag, Sparkles, X } from 'lucide-react';
+import { Users, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet, Hotel, ShoppingBag, Sparkles, X } from 'lucide-react';
 import api from '../lib/axios';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";

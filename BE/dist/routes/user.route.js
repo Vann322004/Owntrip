@@ -6,6 +6,19 @@ const auth_middleware_1 = require("../middlewares/auth.middleware");
 const router = (0, express_1.Router)();
 router.post('/register', user_controller_1.UserController.register);
 router.post('/login', user_controller_1.UserController.login);
+router.post('/login/google', user_controller_1.UserController.loginwithgoogle);
+// Proxy cho Google Auth Expo Go
+router.get('/google-proxy', (req, res) => {
+    const deepLink = req.query.state;
+    if (deepLink) {
+        const qs = new URLSearchParams(req.query).toString();
+        const redirectUrl = deepLink.includes('?') ? `${deepLink}&${qs}` : `${deepLink}?${qs}`;
+        res.redirect(redirectUrl);
+    }
+    else {
+        res.send("Missing state parameter for deep linking");
+    }
+});
 router.get('/', auth_middleware_1.verifyToken, user_controller_1.UserController.getAllUsers);
 router.get('/me', auth_middleware_1.verifyToken, user_controller_1.UserController.getMe);
 router.post('/', auth_middleware_1.verifyToken, user_controller_1.UserController.createUser);

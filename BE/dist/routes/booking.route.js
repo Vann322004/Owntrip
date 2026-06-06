@@ -14,4 +14,5 @@ router.get('/hotel/:hotelId', auth_middleware_1.verifyToken, booking_controller_
 router.get('/hotel/:hotelId/transactions', auth_middleware_1.verifyToken, booking_controller_1.BookingController.getHotelTransactions);
 router.get('/:id', auth_middleware_1.verifyToken, booking_controller_1.BookingController.getBookingDetail);
 router.post('/:id/cancel', auth_middleware_1.verifyToken, booking_controller_1.BookingController.cancelBooking);
+router.patch('/:id/status', auth_middleware_1.verifyToken, booking_controller_1.BookingController.updateBookingStatus);
 module.exports = router;
