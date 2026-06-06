@@ -50,11 +50,17 @@ export default function Withdrawals() {
   const [processingStatus, setProcessingStatus] = useState<'approved' | 'rejected' | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  useEffect(() => { fetchRequests(); }, []);
+  useEffect(() => {
+    fetchRequests(true);
+    const interval = setInterval(() => {
+      fetchRequests(false);
+    }, 15000); // Poll every 15 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-  const fetchRequests = async () => {
+  const fetchRequests = async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
       const res = await api.get('/withdrawals/admin');
       if (res.data?.success) {
         setRequests(res.data.data || []);
@@ -64,7 +70,7 @@ export default function Withdrawals() {
     } catch (err: any) {
       setError('Lỗi khi tải danh sách nạp/rút tiền');
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
   };
 
@@ -149,7 +155,7 @@ export default function Withdrawals() {
           <p className="text-gray-500 text-sm mt-1 font-medium">Quản lý dòng tiền nạp và yêu cầu rút tiền của người dùng</p>
         </div>
         <button
-          onClick={fetchRequests}
+          onClick={() => fetchRequests(true)}
           className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-xl text-sm font-semibold transition-colors shadow-sm"
         >
           Làm mới

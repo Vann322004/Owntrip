@@ -7,6 +7,7 @@ exports.HotelRequestController = void 0;
 const hotelRequest_model_1 = __importDefault(require("../models/hotelRequest.model"));
 const user_model_1 = __importDefault(require("../models/user.model"));
 const hotel_model_1 = __importDefault(require("../models/hotel.model"));
+const notification_model_1 = __importDefault(require("../models/notification.model"));
 exports.HotelRequestController = {
     // POST /api/hotel-requests
     // User submits a registration request
@@ -35,6 +36,21 @@ exports.HotelRequestController = {
                 businessPolicies
             });
             await newRequest.save();
+            // Create notifications for all admin users
+            try {
+                const admins = await user_model_1.default.find({ role: 'admin' });
+                const user = await user_model_1.default.findOne({ userId });
+                for (const admin of admins) {
+                    await notification_model_1.default.create({
+                        userId: admin.userId,
+                        title: "Đơn đăng ký đối tác mới",
+                        message: `Khách sạn ${hotelName} được đăng ký bởi ${user?.displayName || user?.email || 'N/A'}.`
+                    });
+                }
+            }
+            catch (err) {
+                console.error("Failed to notify admins about hotel request:", err);
+            }
             res.status(201).json({
                 success: true,
                 message: 'Đơn đăng ký của bạn đã được gửi và đang chờ duyệt',
@@ -86,6 +102,19 @@ exports.HotelRequestController = {
                 request.adminComment = adminComment;
             }
             await request.save();
+            // Create notification for the user about the status update
+            try {
+                await notification_model_1.default.create({
+                    userId: request.userId,
+                    title: status === 'approved' ? "🎉 Đăng ký đối tác thành công" : "❌ Đơn đăng ký đối tác bị từ chối",
+                    message: status === 'approved'
+                        ? `Chúc mừng! Yêu cầu đăng ký đối tác cho khách sạn ${request.hotelName} của bạn đã được duyệt.`
+                        : `Yêu cầu đăng ký đối tác cho khách sạn ${request.hotelName} đã bị từ chối. Lý do: ${adminComment || 'Không có lý do cụ thể'}.`
+                });
+            }
+            catch (err) {
+                console.error("Failed to notify user about hotel request update:", err);
+            }
             // If approved, update user role AND create hotel record
             if (status === 'approved') {
                 await user_model_1.default.findOneAndUpdate({ userId: request.userId }, { role: 'hotel_owner' });

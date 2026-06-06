@@ -9,6 +9,7 @@ const user_model_1 = __importDefault(require("../models/user.model"));
 const withdrawalRequest_model_1 = __importDefault(require("../models/withdrawalRequest.model"));
 const wallet_model_1 = __importDefault(require("../models/wallet.model"));
 const topup_model_1 = __importDefault(require("../models/topup.model"));
+const notification_model_1 = __importDefault(require("../models/notification.model"));
 const normalizeAmount = (raw) => Number(raw);
 const createWithdrawalRequest = async (req, res) => {
     const userId = req.user?.userId;
@@ -55,6 +56,20 @@ const createWithdrawalRequest = async (req, res) => {
         ], { session });
         await session.commitTransaction();
         session.endSession();
+        // Create notifications for all admin users
+        try {
+            const admins = await user_model_1.default.find({ role: "admin" });
+            for (const admin of admins) {
+                await notification_model_1.default.create({
+                    userId: admin.userId,
+                    title: "Yêu cầu rút tiền mới",
+                    message: `Creator ${user.displayName || user.email} đã yêu cầu rút ${parsedAmount.toLocaleString("vi-VN")}đ.`
+                });
+            }
+        }
+        catch (err) {
+            console.error("Failed to notify admins about withdrawal request:", err);
+        }
         return res.status(201).json({
             success: true,
             message: "Tạo yêu cầu rút tiền thành công",

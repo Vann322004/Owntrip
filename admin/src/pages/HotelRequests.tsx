@@ -38,6 +38,7 @@ export default function HotelRequests() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState<'pending' | 'approved' | 'rejected'>('pending');
 
   // === Modal: Xem chi tiết & Duyệt ===
   const [selectedRequest, setSelectedRequest] = useState<HotelRequest | null>(null);
@@ -46,17 +47,23 @@ export default function HotelRequests() {
   const [processingStatus, setProcessingStatus] = useState<'approved' | 'rejected' | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  useEffect(() => { fetchRequests(); }, []);
+  useEffect(() => {
+    fetchRequests(true);
+    const interval = setInterval(() => {
+      fetchRequests(false);
+    }, 15000); // Poll every 15 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-  const fetchRequests = async () => {
+  const fetchRequests = async (showLoading = true) => {
     try {
-      setLoading(true);
+      if (showLoading) setLoading(true);
       const res = await api.get('/hotel-requests');
       if (res.data?.success) setRequests(res.data.data);
     } catch (err: any) {
       setError('Lỗi khi tải danh sách đơn đăng ký');
     } finally {
-      setLoading(false);
+      if (showLoading) setLoading(false);
     }
   };
 
@@ -83,11 +90,17 @@ export default function HotelRequests() {
     }
   };
 
-  const filteredRequests = requests.filter(r =>
-    r.hotelName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    r.phone.includes(searchTerm) ||
-    r.city.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const countPending = requests.filter(r => r.status === 'pending').length;
+  const countApproved = requests.filter(r => r.status === 'approved').length;
+  const countRejected = requests.filter(r => r.status === 'rejected').length;
+
+  const filteredRequests = requests.filter(r => {
+    const matchesTab = r.status === activeTab;
+    const matchesSearch = r.hotelName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      r.phone.includes(searchTerm) ||
+      r.city.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesTab && matchesSearch;
+  });
 
   const statusColors: Record<string, string> = {
     pending: 'bg-amber-100 text-amber-700',
@@ -109,6 +122,66 @@ export default function HotelRequests() {
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Quản lý đơn đăng ký Hotel Owner</h1>
           <p className="text-gray-500 text-sm mt-1">Duyệt các đơn đăng ký trở thành chủ khách sạn</p>
         </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex border-b border-gray-200 gap-6">
+        <button
+          onClick={() => setActiveTab('pending')}
+          className={`pb-3 text-sm font-semibold transition-all relative flex items-center gap-2 focus:outline-none cursor-pointer ${
+            activeTab === 'pending'
+              ? 'text-blue-600'
+              : 'text-gray-500 hover:text-gray-900'
+          }`}
+        >
+          Chờ duyệt
+          <span className={`px-2 py-0.5 text-xs rounded-full font-bold transition-colors ${
+            activeTab === 'pending' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600'
+          }`}>
+            {countPending}
+          </span>
+          {activeTab === 'pending' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full animate-in fade-in duration-200" />
+          )}
+        </button>
+
+        <button
+          onClick={() => setActiveTab('approved')}
+          className={`pb-3 text-sm font-semibold transition-all relative flex items-center gap-2 focus:outline-none cursor-pointer ${
+            activeTab === 'approved'
+              ? 'text-blue-600'
+              : 'text-gray-500 hover:text-gray-900'
+          }`}
+        >
+          Đã duyệt
+          <span className={`px-2 py-0.5 text-xs rounded-full font-bold transition-colors ${
+            activeTab === 'approved' ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
+          }`}>
+            {countApproved}
+          </span>
+          {activeTab === 'approved' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full animate-in fade-in duration-200" />
+          )}
+        </button>
+
+        <button
+          onClick={() => setActiveTab('rejected')}
+          className={`pb-3 text-sm font-semibold transition-all relative flex items-center gap-2 focus:outline-none cursor-pointer ${
+            activeTab === 'rejected'
+              ? 'text-blue-600'
+              : 'text-gray-500 hover:text-gray-900'
+          }`}
+        >
+          Từ chối
+          <span className={`px-2 py-0.5 text-xs rounded-full font-bold transition-colors ${
+            activeTab === 'rejected' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-600'
+          }`}>
+            {countRejected}
+          </span>
+          {activeTab === 'rejected' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full animate-in fade-in duration-200" />
+          )}
+        </button>
       </div>
 
       {/* Table Card */}

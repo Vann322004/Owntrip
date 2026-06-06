@@ -14,9 +14,10 @@ import {
   CreditCard,
   Image
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '../lib/utils';
 import { useAuth } from '../context/AuthContext';
+import api from '../lib/axios';
 
 const navItems = [
   { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
@@ -35,6 +36,62 @@ const navItems = [
 export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const { user, logout } = useAuth();
+
+  const [notifications, setNotifications] = useState<any[]>([]);
+  const [showNotiDropdown, setShowNotiDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const fetchNotifications = async () => {
+    try {
+      const response = await api.get('/notifications');
+      if (response.data.success) {
+        setNotifications(response.data.notifications);
+      }
+    } catch (error) {
+      console.error('Error fetching notifications:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      fetchNotifications();
+      const interval = setInterval(fetchNotifications, 20000); // Poll every 20 seconds
+      return () => clearInterval(interval);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowNotiDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleMarkAsRead = async (id: string) => {
+    try {
+      const response = await api.patch(`/notifications/${id}/read`);
+      if (response.data.success) {
+        setNotifications(prev => prev.map(n => n._id === id ? { ...n, isRead: true } : n));
+      }
+    } catch (error) {
+      console.error('Error marking notification as read:', error);
+    }
+  };
+
+  const handleMarkAllAsRead = async () => {
+    try {
+      const unreadNotis = notifications.filter(n => !n.isRead);
+      await Promise.all(unreadNotis.map(n => api.patch(`/notifications/${n._id}/read`)));
+      setNotifications(prev => prev.map(n => ({ ...n, isRead: true })));
+    } catch (error) {
+      console.error('Error marking all as read:', error);
+    }
+  };
+
+  const unreadCount = notifications.filter(n => !n.isRead).length;
 
   const handleLogout = () => {
     logout();
@@ -116,10 +173,68 @@ export default function AdminLayout() {
           </div>
 
           <div className="flex items-center gap-5">
-            <button className="relative p-2.5 rounded-full hover:bg-gray-100 text-gray-500 transition-colors">
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
-            </button>
+            <div ref={dropdownRef} className="relative">
+              <button 
+                onClick={() => setShowNotiDropdown(!showNotiDropdown)}
+                className="relative p-2.5 rounded-full hover:bg-gray-100 text-gray-500 transition-colors focus:outline-none"
+              >
+                <Bell className="w-5 h-5" />
+                {unreadCount > 0 && (
+                  <span className="absolute top-2 right-2.5 min-w-[16px] h-4 bg-red-500 rounded-full border-2 border-white text-[9px] font-bold text-white flex items-center justify-center px-0.5">
+                    {unreadCount}
+                  </span>
+                )}
+              </button>
+
+              {showNotiDropdown && (
+                <div className="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 animate-in fade-in slide-in-from-top-3 duration-200">
+                  <div className="flex items-center justify-between px-4 py-2 border-b border-gray-50 mb-1">
+                    <span className="font-bold text-gray-900 text-sm">Thông báo ({unreadCount})</span>
+                    {unreadCount > 0 && (
+                      <button 
+                        onClick={handleMarkAllAsRead}
+                        className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                      >
+                        Đọc tất cả
+                      </button>
+                    )}
+                  </div>
+                  <div className="max-h-64 overflow-y-auto">
+                    {notifications.length === 0 ? (
+                      <div className="py-8 text-center text-gray-400 text-xs font-medium">
+                        Không có thông báo nào
+                      </div>
+                    ) : (
+                      notifications.map((noti) => (
+                        <div 
+                          key={noti._id} 
+                          onClick={() => handleMarkAsRead(noti._id)}
+                          className={cn(
+                            "px-4 py-3 hover:bg-gray-50 transition-colors cursor-pointer flex gap-3 relative border-b border-gray-50 last:border-b-0",
+                            !noti.isRead && "bg-blue-50/40"
+                          )}
+                        >
+                          <div className="flex-1 min-w-0">
+                            <p className={cn("text-xs text-gray-900 mb-0.5", !noti.isRead ? "font-semibold" : "font-medium")}>
+                              {noti.title}
+                            </p>
+                            <p className="text-[11px] text-gray-500 leading-normal line-clamp-2">
+                              {noti.message}
+                            </p>
+                            <p className="text-[9px] text-gray-400 mt-1.5 font-medium">
+                              {new Date(noti.createdAt).toLocaleString('vi-VN')}
+                            </p>
+                          </div>
+                          {!noti.isRead && (
+                            <span className="w-2 h-2 bg-blue-600 rounded-full self-center flex-shrink-0" />
+                          )}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
             <div className="h-8 w-px bg-gray-200"></div>
             <div className="flex items-center gap-3 cursor-pointer">
               <img 
