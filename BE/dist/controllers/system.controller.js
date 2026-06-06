@@ -117,7 +117,7 @@ exports.SystemController = {
                 { $match: { status: 'success' } },
                 { $group: { _id: null, total: { $sum: '$amount' } } }
             ]);
-            const totalRevenue = (bookingRevenue[0]?.total || 0) +
+            const totalRevenue = ((bookingRevenue[0]?.total || 0) * 0.1) +
                 (orderRevenue[0]?.total || 0) +
                 (creatorRevenue[0]?.total || 0);
             // Revenue this month
@@ -133,7 +133,7 @@ exports.SystemController = {
                 { $match: { status: 'success', createdAt: { $gte: startOfMonth } } },
                 { $group: { _id: null, total: { $sum: '$amount' } } }
             ]);
-            const revenueThisMonth = (bookingRevenueThisMonth[0]?.total || 0) +
+            const revenueThisMonth = ((bookingRevenueThisMonth[0]?.total || 0) * 0.1) +
                 (orderRevenueThisMonth[0]?.total || 0) +
                 (creatorRevenueThisMonth[0]?.total || 0);
             // Revenue last month
@@ -149,7 +149,7 @@ exports.SystemController = {
                 { $match: { status: 'success', createdAt: { $gte: startOfLastMonth, $lte: endOfLastMonth } } },
                 { $group: { _id: null, total: { $sum: '$amount' } } }
             ]);
-            const revLastMonth = (bookingRevenueLastMonth[0]?.total || 0) +
+            const revLastMonth = ((bookingRevenueLastMonth[0]?.total || 0) * 0.1) +
                 (orderRevenueLastMonth[0]?.total || 0) +
                 (creatorRevenueLastMonth[0]?.total || 0);
             const revenueChange = revLastMonth > 0 ? Math.round(((revenueThisMonth - revLastMonth) / revLastMonth) * 100) : 0;
@@ -180,6 +180,7 @@ exports.SystemController = {
             }));
             // --- 6. Monthly revenue chart (12 months) ---
             const monthlyRevenue = [];
+            const monthlyRevenueBreakdown = [];
             for (let i = 11; i >= 0; i--) {
                 const mStart = new Date(now.getFullYear(), now.getMonth() - i, 1);
                 const mEnd = new Date(now.getFullYear(), now.getMonth() - i + 1, 0, 23, 59, 59);
@@ -195,7 +196,17 @@ exports.SystemController = {
                     { $match: { status: 'success', createdAt: { $gte: mStart, $lte: mEnd } } },
                     { $group: { _id: null, total: { $sum: '$amount' } } }
                 ]);
-                monthlyRevenue.push((bRev[0]?.total || 0) + (oRev[0]?.total || 0) + (cRev[0]?.total || 0));
+                const bookingVal = (bRev[0]?.total || 0) * 0.1;
+                const orderVal = oRev[0]?.total || 0;
+                const creatorVal = cRev[0]?.total || 0;
+                const totalVal = bookingVal + orderVal + creatorVal;
+                monthlyRevenue.push(totalVal);
+                monthlyRevenueBreakdown.push({
+                    booking: bookingVal,
+                    order: orderVal,
+                    creator: creatorVal,
+                    total: totalVal
+                });
             }
             // --- 7. Admin System Wallet balance ---
             const Wallet = require('../models/wallet.model').default;
@@ -227,6 +238,7 @@ exports.SystemController = {
                     bookingsChange,
                     recentBookings: populatedBookings,
                     monthlyRevenue,
+                    monthlyRevenueBreakdown,
                     adminWalletBalance,
                 }
             });
