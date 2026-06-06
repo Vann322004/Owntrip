@@ -18,6 +18,9 @@ interface DashboardData {
   tripsThisMonth: number;
   tripsChange: number;
   totalRevenue: number;
+  totalBookingRevenue?: number;
+  totalOrderRevenue?: number;
+  totalCreatorRevenue?: number;
   revenueThisMonth: number;
   revenueChange: number;
   totalBookings: number;
@@ -67,6 +70,7 @@ export default function Dashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedMonthIndex, setSelectedMonthIndex] = useState<number | null>(null);
+  const [isTotalRevenueModalOpen, setIsTotalRevenueModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchDashboard = async () => {
@@ -122,7 +126,14 @@ export default function Dashboard() {
         {stats.map((stat) => {
           const isPositive = stat.change >= 0;
           return (
-            <div key={stat.name} className="bg-white rounded-2xl p-6 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 group">
+            <div 
+              key={stat.name} 
+              className={cn(
+                "bg-white rounded-2xl p-6 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 group",
+                stat.name === 'Tổng doanh thu' && "cursor-pointer hover:border-violet-200 hover:shadow-[0_8px_30px_rgba(109,40,217,0.08)]"
+              )}
+              onClick={stat.name === 'Tổng doanh thu' ? () => setIsTotalRevenueModalOpen(true) : undefined}
+            >
               <div className="flex justify-between items-start">
                 <div className={`p-3 rounded-xl ${stat.bg} ${stat.color} group-hover:scale-110 transition-transform duration-300`}>
                   <stat.icon className="w-6 h-6" />
@@ -138,8 +149,16 @@ export default function Dashboard() {
                 )}
               </div>
               <div className="mt-5">
-                <h3 className="text-gray-500 text-sm font-medium">{stat.name}</h3>
+                <div className="flex items-center gap-1.5">
+                  <h3 className="text-gray-500 text-sm font-medium">{stat.name}</h3>
+                  {stat.name === 'Tổng doanh thu' && (
+                    <span className="text-[10px] text-violet-500 font-semibold bg-violet-50 px-1.5 py-0.5 rounded">Chi tiết</span>
+                  )}
+                </div>
                 <p className="text-3xl font-bold text-gray-900 mt-1 tracking-tight">{stat.value}</p>
+                {stat.name === 'Tổng doanh thu' && (
+                  <p className="text-[11px] text-gray-400 mt-1 group-hover:text-violet-500 transition-colors">Nhấp để xem nguồn thu</p>
+                )}
               </div>
             </div>
           );
@@ -326,6 +345,123 @@ export default function Dashboard() {
                       <button 
                         onClick={() => setSelectedMonthIndex(null)}
                         className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-sm transition-colors shadow-lg shadow-blue-600/20"
+                      >
+                        Đóng
+                      </button>
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Total Revenue Breakdown Modal */}
+      {isTotalRevenueModalOpen && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200" onClick={() => setIsTotalRevenueModalOpen(false)}>
+          <div 
+            className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsTotalRevenueModalOpen(false)}
+              className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Modal Header */}
+            <div className="mb-6">
+              <span className="text-[11px] font-bold text-violet-600 uppercase tracking-wider">Tổng quan tài chính</span>
+              <h3 className="text-2xl font-bold text-gray-900 mt-1">
+                Phân tích tổng doanh thu
+              </h3>
+              <p className="text-gray-500 text-sm mt-1">
+                Thống kê lũy kế các nguồn thu nhập từ trước đến nay.
+              </p>
+            </div>
+
+            {/* Breakdown Content */}
+            <div className="space-y-5">
+              {(() => {
+                const totalBookingVal = data.totalBookingRevenue || 0;
+                const totalOrderVal = data.totalOrderRevenue || 0;
+                const totalCreatorVal = data.totalCreatorRevenue || 0;
+                const totalVal = data.totalRevenue || 1; // avoid division by zero
+                
+                const bookingPercent = Math.round((totalBookingVal / totalVal) * 100);
+                const orderPercent = Math.round((totalOrderVal / totalVal) * 100);
+                const creatorPercent = Math.round((totalCreatorVal / totalVal) * 100);
+
+                const items = [
+                  { 
+                    name: 'Hoa hồng đặt phòng (10%)', 
+                    value: totalBookingVal, 
+                    percent: bookingPercent,
+                    color: 'bg-violet-600',
+                    textColor: 'text-violet-600',
+                    bgColor: 'bg-violet-50',
+                    icon: Hotel 
+                  },
+                  { 
+                    name: 'Mua vật phẩm Shop', 
+                    value: totalOrderVal, 
+                    percent: orderPercent,
+                    color: 'bg-blue-600',
+                    textColor: 'text-blue-600',
+                    bgColor: 'bg-blue-50',
+                    icon: ShoppingBag 
+                  },
+                  { 
+                    name: 'Gói Creator', 
+                    value: totalCreatorVal, 
+                    percent: creatorPercent,
+                    color: 'bg-amber-600',
+                    textColor: 'text-amber-600',
+                    bgColor: 'bg-amber-50',
+                    icon: Sparkles 
+                  },
+                ];
+
+                return (
+                  <>
+                    <div className="space-y-4">
+                      {items.map((item) => (
+                        <div key={item.name} className="p-4 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+                          <div className="flex justify-between items-center mb-2">
+                            <div className="flex items-center gap-3">
+                              <div className={`p-2 rounded-xl ${item.bgColor} ${item.textColor}`}>
+                                <item.icon className="w-5 h-5" />
+                              </div>
+                              <span className="text-sm font-bold text-gray-800">{item.name}</span>
+                            </div>
+                            <span className="text-sm font-bold text-gray-900">{item.value.toLocaleString()}đ</span>
+                          </div>
+                          
+                          {/* Progress bar */}
+                          <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full ${item.color} rounded-full transition-all duration-500`}
+                              style={{ width: `${item.percent}%` }}
+                            ></div>
+                          </div>
+                          <div className="flex justify-end mt-1">
+                            <span className="text-[10px] font-bold text-gray-400">{item.percent}% tổng doanh thu</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="border-t border-gray-100 pt-6 mt-6 flex justify-between items-center">
+                      <div>
+                        <span className="text-gray-500 text-xs font-medium">Tổng doanh thu lũy kế</span>
+                        <p className="text-2xl font-bold text-gray-900 tracking-tight">{data.totalRevenue.toLocaleString()}đ</p>
+                      </div>
+                      <button 
+                        onClick={() => setIsTotalRevenueModalOpen(false)}
+                        className="px-6 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-semibold text-sm transition-colors shadow-lg shadow-violet-600/20"
                       >
                         Đóng
                       </button>
