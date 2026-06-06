@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Users, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet, Hotel, FileCheck, Landmark } from 'lucide-react';
+import { Users, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet, Hotel, FileCheck, Landmark, ShoppingBag, Sparkles, X } from 'lucide-react';
 import api from '../lib/axios';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -32,6 +32,12 @@ interface DashboardData {
     status: string;
   }[];
   monthlyRevenue: number[];
+  monthlyRevenueBreakdown?: {
+    booking: number;
+    order: number;
+    creator: number;
+    total: number;
+  }[];
   adminWalletBalance: number;
 }
 
@@ -60,6 +66,7 @@ function getMonthLabels(): string[] {
 export default function Dashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedMonthIndex, setSelectedMonthIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchDashboard = async () => {
@@ -154,11 +161,12 @@ export default function Dashboard() {
           <div className="h-64 flex items-end justify-between gap-2">
             {data.monthlyRevenue.map((revenue, i) => {
               const heightPercent = maxRevenue > 0 ? (revenue / maxRevenue) * 100 : 0;
+              const barHeight = revenue > 0 ? Math.max(heightPercent, 2) : 0;
               return (
-                <div key={i} className="h-full w-full bg-blue-50 rounded-t-lg relative group cursor-pointer">
+                <div key={i} className="h-full w-full bg-blue-50 rounded-t-lg relative group cursor-pointer" onClick={() => setSelectedMonthIndex(i)}>
                   <div
                     className="absolute bottom-0 w-full bg-blue-600 rounded-t-lg group-hover:bg-blue-500 transition-colors"
-                    style={{ height: `${Math.max(heightPercent, 2)}%` }}
+                    style={{ height: `${barHeight}%` }}
                   ></div>
                   
                   {/* Premium Hover Tooltip */}
@@ -215,6 +223,120 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Revenue Breakdown Modal */}
+      {selectedMonthIndex !== null && data.monthlyRevenueBreakdown && data.monthlyRevenueBreakdown[selectedMonthIndex] && (
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200" onClick={() => setSelectedMonthIndex(null)}>
+          <div 
+            className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedMonthIndex(null)}
+              className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-600"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Modal Header */}
+            <div className="mb-6">
+              <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider">Chi tiết doanh thu</span>
+              <h3 className="text-2xl font-bold text-gray-900 mt-1">
+                Tháng {chartLabels[selectedMonthIndex]}
+              </h3>
+              <p className="text-gray-500 text-sm mt-1">
+                Phân tích các nguồn thu nhập thực tế trong tháng.
+              </p>
+            </div>
+
+            {/* Breakdown Content */}
+            <div className="space-y-5">
+              {(() => {
+                const breakdown = data.monthlyRevenueBreakdown[selectedMonthIndex];
+                const total = breakdown.total || 1; // avoid division by zero
+                const bookingPercent = Math.round((breakdown.booking / total) * 100);
+                const orderPercent = Math.round((breakdown.order / total) * 100);
+                const creatorPercent = Math.round((breakdown.creator / total) * 100);
+
+                const items = [
+                  { 
+                    name: 'Hoa hồng đặt phòng (10%)', 
+                    value: breakdown.booking, 
+                    percent: bookingPercent,
+                    color: 'bg-violet-600',
+                    textColor: 'text-violet-600',
+                    bgColor: 'bg-violet-50',
+                    icon: Hotel 
+                  },
+                  { 
+                    name: 'Mua vật phẩm Shop', 
+                    value: breakdown.order, 
+                    percent: orderPercent,
+                    color: 'bg-blue-600',
+                    textColor: 'text-blue-600',
+                    bgColor: 'bg-blue-50',
+                    icon: ShoppingBag 
+                  },
+                  { 
+                    name: 'Gói Creator', 
+                    value: breakdown.creator, 
+                    percent: creatorPercent,
+                    color: 'bg-amber-600',
+                    textColor: 'text-amber-600',
+                    bgColor: 'bg-amber-50',
+                    icon: Sparkles 
+                  },
+                ];
+
+                return (
+                  <>
+                    <div className="space-y-4">
+                      {items.map((item) => (
+                        <div key={item.name} className="p-4 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+                          <div className="flex justify-between items-center mb-2">
+                            <div className="flex items-center gap-3">
+                              <div className={`p-2 rounded-xl ${item.bgColor} ${item.textColor}`}>
+                                <item.icon className="w-5 h-5" />
+                              </div>
+                              <span className="text-sm font-bold text-gray-800">{item.name}</span>
+                            </div>
+                            <span className="text-sm font-bold text-gray-900">{item.value.toLocaleString()}đ</span>
+                          </div>
+                          
+                          {/* Progress bar */}
+                          <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full ${item.color} rounded-full transition-all duration-500`}
+                              style={{ width: `${item.percent}%` }}
+                            ></div>
+                          </div>
+                          <div className="flex justify-end mt-1">
+                            <span className="text-[10px] font-bold text-gray-400">{item.percent}% doanh thu</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="border-t border-gray-100 pt-6 mt-6 flex justify-between items-center">
+                      <div>
+                        <span className="text-gray-500 text-xs font-medium">Tổng doanh thu tháng</span>
+                        <p className="text-2xl font-bold text-gray-900 tracking-tight">{breakdown.total.toLocaleString()}đ</p>
+                      </div>
+                      <button 
+                        onClick={() => setSelectedMonthIndex(null)}
+                        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-sm transition-colors shadow-lg shadow-blue-600/20"
+                      >
+                        Đóng
+                      </button>
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
