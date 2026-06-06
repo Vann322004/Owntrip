@@ -81,6 +81,9 @@ exports.SystemController = {
             const Booking = require('../models/booking.model').default;
             const Order = require('../models/order.model').default;
             const CreatorSubscriptionTransaction = require('../models/creatorSubscriptionTransaction.model').default;
+            const Hotel = require('../models/hotel.model').default;
+            const HotelRequest = require('../models/hotelRequest.model').default;
+            const WithdrawalRequest = require('../models/withdrawalRequest.model').default;
             const now = new Date();
             const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
             const startOfLastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
@@ -89,7 +92,15 @@ exports.SystemController = {
             const totalUsers = await User.countDocuments();
             const usersLastMonth = await User.countDocuments({ createdAt: { $lt: startOfMonth } });
             const usersChange = usersLastMonth > 0 ? Math.round(((totalUsers - usersLastMonth) / usersLastMonth) * 100) : 0;
-            // --- 2. Chuyến đi tháng này ---
+            // --- 2. Tổng khách sạn ---
+            const totalHotels = await Hotel.countDocuments();
+            const hotelsLastMonth = await Hotel.countDocuments({ createdAt: { $lt: startOfMonth } });
+            const hotelsChange = hotelsLastMonth > 0 ? Math.round(((totalHotels - hotelsLastMonth) / hotelsLastMonth) * 100) : 0;
+            // --- 2.1 Yêu cầu duyệt Hotel Owner chờ duyệt ---
+            const pendingHotelRequests = await HotelRequest.countDocuments({ status: 'pending' });
+            // --- 2.2 Yêu cầu rút tiền chờ duyệt ---
+            const pendingWithdrawals = await WithdrawalRequest.countDocuments({ status: 'pending' });
+            // Keep trips count for API backwards-compatibility
             const tripsThisMonth = await Trip.countDocuments({ createdAt: { $gte: startOfMonth } });
             const tripsLastMonth = await Trip.countDocuments({ createdAt: { $gte: startOfLastMonth, $lte: endOfLastMonth } });
             const tripsChange = tripsLastMonth > 0 ? Math.round(((tripsThisMonth - tripsLastMonth) / tripsLastMonth) * 100) : 0;
@@ -153,7 +164,6 @@ exports.SystemController = {
                 .limit(5)
                 .lean();
             // Populate user info
-            const Hotel = require('../models/hotel.model').default;
             const populatedBookings = await Promise.all(recentBookings.map(async (b) => {
                 const user = await User.findOne({ userId: b.userId }).lean();
                 const hotel = await Hotel.findOne({ hotelId: b.hotelId }).lean();
@@ -203,6 +213,10 @@ exports.SystemController = {
                 data: {
                     totalUsers,
                     usersChange,
+                    totalHotels,
+                    hotelsChange,
+                    pendingHotelRequests,
+                    pendingWithdrawals,
                     tripsThisMonth,
                     tripsChange,
                     totalRevenue,

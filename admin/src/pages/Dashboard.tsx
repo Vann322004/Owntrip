@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Users, Map, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet } from 'lucide-react';
+import { Users, DollarSign, MoreHorizontal, ArrowUpRight, ArrowDownRight, Loader2, Wallet, Hotel, FileCheck, Landmark } from 'lucide-react';
 import api from '../lib/axios';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -11,6 +11,10 @@ function cn(...inputs: ClassValue[]) {
 interface DashboardData {
   totalUsers: number;
   usersChange: number;
+  totalHotels: number;
+  hotelsChange: number;
+  pendingHotelRequests: number;
+  pendingWithdrawals: number;
   tripsThisMonth: number;
   tripsChange: number;
   totalRevenue: number;
@@ -89,7 +93,7 @@ export default function Dashboard() {
 
   const stats = [
     { name: 'Tổng người dùng', value: data.totalUsers.toLocaleString(), change: data.usersChange, icon: Users, color: 'text-blue-600', bg: 'bg-blue-100' },
-    { name: 'Chuyến đi tháng này', value: data.tripsThisMonth.toLocaleString(), change: data.tripsChange, icon: Map, color: 'text-emerald-600', bg: 'bg-emerald-100' },
+    { name: 'Tổng khách sạn', value: data.totalHotels.toLocaleString(), change: data.hotelsChange, icon: Hotel, color: 'text-emerald-600', bg: 'bg-emerald-100' },
     { name: 'Tổng doanh thu', value: `${formatCurrency(data.totalRevenue)}đ`, change: data.revenueChange, icon: DollarSign, color: 'text-violet-600', bg: 'bg-violet-100' },
     { name: 'Số dư ví hệ thống', value: `${formatCurrency(data.adminWalletBalance)}đ`, change: null as any, icon: Wallet, color: 'text-orange-600', bg: 'bg-orange-100' },
   ];
@@ -151,11 +155,18 @@ export default function Dashboard() {
             {data.monthlyRevenue.map((revenue, i) => {
               const heightPercent = maxRevenue > 0 ? (revenue / maxRevenue) * 100 : 0;
               return (
-                <div key={i} className="w-full bg-blue-50 rounded-t-lg relative group cursor-pointer" title={`${chartLabels[i]}: ${revenue.toLocaleString()}đ`}>
+                <div key={i} className="h-full w-full bg-blue-50 rounded-t-lg relative group cursor-pointer">
                   <div
                     className="absolute bottom-0 w-full bg-blue-600 rounded-t-lg group-hover:bg-blue-500 transition-colors"
                     style={{ height: `${Math.max(heightPercent, 2)}%` }}
                   ></div>
+                  
+                  {/* Premium Hover Tooltip */}
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[11px] font-semibold px-2 py-1 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-10 flex flex-col items-center scale-95 group-hover:scale-100">
+                    <span className="text-gray-400 text-[9px]">{chartLabels[i]}</span>
+                    <span className="text-white font-bold">{revenue.toLocaleString()}đ</span>
+                    <div className="w-1.5 h-1.5 bg-gray-900 rotate-45 absolute left-1/2 -translate-x-1/2" style={{ bottom: '-3px' }}></div>
+                  </div>
                 </div>
               );
             })}
