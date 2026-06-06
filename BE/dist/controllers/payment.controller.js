@@ -16,6 +16,16 @@ const order_model_1 = __importDefault(require("../models/order.model"));
 const trip_controller_1 = require("./trip.controller");
 const creatorSubscriptionTransaction_model_1 = __importDefault(require("../models/creatorSubscriptionTransaction.model"));
 const wallet_model_1 = __importDefault(require("../models/wallet.model"));
+const getCommissionRates = async () => {
+    const SystemConfig = require('../models/systemConfig.model').default;
+    const configs = await SystemConfig.find({ key: { $in: ['commission_hotel_owner_percent', 'commission_hotel_admin_percent'] } });
+    const configMap = {};
+    configs.forEach((c) => { configMap[c.key] = c.value; });
+    return {
+        ownerPercent: (configMap['commission_hotel_owner_percent'] ?? 90) / 100,
+        adminPercent: (configMap['commission_hotel_admin_percent'] ?? 10) / 100,
+    };
+};
 const YOUR_DOMAIN = process.env.FRONTEND_URL || 'http://192.168.1.3:8081';
 exports.PaymentController = {
     /**
@@ -303,6 +313,7 @@ exports.PaymentController = {
                 if (order) {
                     let payosStatus = null;
                     let clonedTripId = null;
+                    let processError = null;
                     try {
                         payosStatus = await payos_1.default.paymentRequests.get(order.orderCode);
                         if (payosStatus.status === 'PAID' && order.status !== 'SUCCESS') {
@@ -310,7 +321,11 @@ exports.PaymentController = {
                             order.status = 'SUCCESS';
                         }
                     }
-                    catch (e) { }
+                    catch (e) {
+                        console.error('[PayOS] checkPaymentStatus error processing trip order:', e);
+                        processError = e.message || String(e);
+                        // If processTripOrder fails, we should not consider the order as SUCCESS in memory.
+                    }
                     if (order.status === 'SUCCESS') {
                         const TripModel = require('../models/trip.model').default;
                         const clonedTrip = await TripModel.findOne({ originalTripId: order.tripTemplateId, userId: order.buyerId, isPurchasedClone: true }).sort({ createdAt: -1 });
@@ -325,7 +340,8 @@ exports.PaymentController = {
                             totalPrice: order.amount,
                             payosStatus: payosStatus?.status || null,
                             checkoutUrl: null,
-                            newTripId: clonedTripId
+                            newTripId: clonedTripId,
+                            processError: processError
                         },
                     });
                 }
@@ -466,7 +482,14 @@ exports.PaymentController = {
                 }, { session });
                 const hotelDoc = await hotel_model_1.default.findOne({ hotelId }).session(session);
                 if (hotelDoc && hotelDoc.ownerId) {
-                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: totalPrice } }, { session });
+                    const rates = await getCommissionRates();
+                    const ownerAmount = Math.floor(totalPrice * rates.ownerPercent);
+                    const adminAmount = totalPrice - ownerAmount;
+                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: ownerAmount } }, { session });
+                    await wallet_model_1.default.findOneAndUpdate({ isSystem: true }, {
+                        $inc: { balance: adminAmount },
+                        $setOnInsert: { isSystem: true, currency: "VND" }
+                    }, { new: true, upsert: true, session });
                 }
             }
             await session.commitTransaction();
@@ -580,7 +603,14 @@ exports.PaymentController = {
             message: `Đơn đặt phòng ${booking.bookingId} tại ${hotel?.name || 'khách sạn'} đã được thanh toán thành công qua PayOS.`,
         });
         if (hotel && hotel.ownerId) {
-            await user_model_1.default.findOneAndUpdate({ userId: hotel.ownerId }, { $inc: { balance: booking.totalPrice } });
+            const rates = await getCommissionRates();
+            const ownerAmount = Math.floor(booking.totalPrice * rates.ownerPercent);
+            const adminAmount = booking.totalPrice - ownerAmount;
+            await user_model_1.default.findOneAndUpdate({ userId: hotel.ownerId }, { $inc: { balance: ownerAmount } });
+            await wallet_model_1.default.findOneAndUpdate({ isSystem: true }, {
+                $inc: { balance: adminAmount },
+                $setOnInsert: { isSystem: true, currency: "VND" }
+            }, { new: true, upsert: true });
         }
         // Tích điểm cho người dùng (1 điểm / 1000 VND)
         const pointsEarned = Math.floor(booking.totalPrice / 1000);
@@ -628,7 +658,14 @@ exports.PaymentController = {
             // Trường hợp gia hạn phòng (Edit stay): Chuyển tiền cho chủ khách sạn
             const hotel = await hotel_model_1.default.findOne({ $or: [{ hotelId: topup.hotelId }, { _id: topup.hotelId }] });
             if (hotel && hotel.ownerId) {
-                await user_model_1.default.findOneAndUpdate({ userId: hotel.ownerId }, { $inc: { balance: topup.amount } });
+                const rates = await getCommissionRates();
+                const ownerAmount = Math.floor(topup.amount * rates.ownerPercent);
+                const adminAmount = topup.amount - ownerAmount;
+                await user_model_1.default.findOneAndUpdate({ userId: hotel.ownerId }, { $inc: { balance: ownerAmount } });
+                await wallet_model_1.default.findOneAndUpdate({ isSystem: true }, {
+                    $inc: { balance: adminAmount },
+                    $setOnInsert: { isSystem: true, currency: "VND" }
+                }, { new: true, upsert: true });
                 // Tạo một Booking giả để nó xuất hiện trong danh sách Giao dịch của chủ khách sạn
                 try {
                     await booking_model_1.default.create({

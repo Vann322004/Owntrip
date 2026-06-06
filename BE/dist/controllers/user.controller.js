@@ -20,7 +20,7 @@ exports.UserController = {
                 ...req.body,
                 otp,
                 otpExpires,
-                isVerified: true
+                isVerified: false
             });
             await user.save();
             await (0, emailService_1.sendEmailTemplate)(user.email, 'Xác thực tài khoản của bạn', 'otpTemplate', {
@@ -195,8 +195,17 @@ exports.UserController = {
     },
     loginwithgoogle: async (req, res) => {
         try {
-            const { email, displayName, avatar, image } = req.body;
-            const profileImage = image || avatar;
+            const { idToken } = req.body;
+            if (!idToken) {
+                return res.status(400).json({ success: false, message: "Missing idToken" });
+            }
+            const decoded = jsonwebtoken_1.default.decode(idToken);
+            if (!decoded || !decoded.email) {
+                return res.status(400).json({ success: false, message: "Invalid idToken" });
+            }
+            const email = decoded.email;
+            const displayName = decoded.name || email.split('@')[0];
+            const profileImage = decoded.picture;
             let user = await user_model_1.default.findOne({ email });
             if (!user) {
                 user = new user_model_1.default({

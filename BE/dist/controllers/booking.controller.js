@@ -9,7 +9,18 @@ const booking_model_1 = __importDefault(require("../models/booking.model"));
 const roomInventory_model_1 = __importDefault(require("../models/roomInventory.model"));
 const hotel_model_1 = __importDefault(require("../models/hotel.model"));
 const user_model_1 = __importDefault(require("../models/user.model"));
+const wallet_model_1 = __importDefault(require("../models/wallet.model"));
 const emailService_1 = require("../utils/emailService");
+const getCommissionRates = async () => {
+    const SystemConfig = require('../models/systemConfig.model').default;
+    const configs = await SystemConfig.find({ key: { $in: ['commission_hotel_owner_percent', 'commission_hotel_admin_percent'] } });
+    const configMap = {};
+    configs.forEach((c) => { configMap[c.key] = c.value; });
+    return {
+        ownerPercent: (configMap['commission_hotel_owner_percent'] ?? 90) / 100,
+        adminPercent: (configMap['commission_hotel_admin_percent'] ?? 10) / 100,
+    };
+};
 exports.BookingController = {
     /**
      * API 1: Kiểm tra tình trạng phòng trống
@@ -202,7 +213,14 @@ exports.BookingController = {
                 // 7.5 Cộng tiền cho chủ khách sạn (Revenue)
                 const hotelDoc = await hotel_model_1.default.findOne({ hotelId }).session(session);
                 if (hotelDoc && hotelDoc.ownerId) {
-                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: totalPrice } }, { session });
+                    const rates = await getCommissionRates();
+                    const ownerAmount = Math.floor(totalPrice * rates.ownerPercent);
+                    const adminAmount = totalPrice - ownerAmount;
+                    await user_model_1.default.findOneAndUpdate({ userId: hotelDoc.ownerId }, { $inc: { balance: ownerAmount } }, { session });
+                    await wallet_model_1.default.findOneAndUpdate({ isSystem: true }, {
+                        $inc: { balance: adminAmount },
+                        $setOnInsert: { isSystem: true, currency: "VND" }
+                    }, { new: true, upsert: true, session });
                 }
             }
             // 8. Commit transaction
@@ -405,6 +423,47 @@ exports.BookingController = {
         }
     },
     /**
+     * API 5.5: Cập nhật trạng thái đặt phòng (cho Hotel Owner / Admin)
+     * PATCH /api/bookings/:id/status
+     */
+    updateBookingStatus: async (req, res) => {
+        try {
+            const { id } = req.params;
+            const { status, paymentStatus } = req.body;
+            const userId = req.user.userId;
+            const userRole = req.user.role;
+            const booking = await booking_model_1.default.findOne({ bookingId: id });
+            if (!booking) {
+                return res.status(404).json({ success: false, message: "Không tìm thấy đơn đặt phòng" });
+            }
+            const hotel = await hotel_model_1.default.findOne({ hotelId: booking.hotelId });
+            if (!hotel) {
+                return res.status(404).json({ success: false, message: "Khách sạn không tồn tại" });
+            }
+            if (userRole !== 'admin' && hotel.ownerId !== userId) {
+                return res.status(403).json({ success: false, message: "Bạn không có quyền cập nhật đơn đặt phòng này" });
+            }
+            if (status) {
+                if (!['pending', 'confirmed', 'cancelled', 'completed', 'no-show'].includes(status)) {
+                    return res.status(400).json({ success: false, message: "Trạng thái không hợp lệ" });
+                }
+                booking.status = status;
+            }
+            if (paymentStatus) {
+                if (!['unpaid', 'paid', 'refunded'].includes(paymentStatus)) {
+                    return res.status(400).json({ success: false, message: "Trạng thái thanh toán không hợp lệ" });
+                }
+                booking.paymentStatus = paymentStatus;
+            }
+            await booking.save();
+            res.status(200).json({ success: true, message: "Cập nhật trạng thái thành công!", data: booking });
+        }
+        catch (error) {
+            res.status(500).json({ success: false, message: error.message });
+        }
+    },
+    /**
+  
      * API 6: Lấy danh sách booking cho khách sạn (dành cho Hotel Owner)
      * GET /api/bookings/hotel/:hotelId
      */
@@ -429,6 +488,8 @@ exports.BookingController = {
                 .sort({ createdAt: -1 })
                 .limit(Number(limit))
                 .skip((Number(page) - 1) * Number(limit));
+            // Lấy tỷ lệ hoa hồng từ DB để hiển thị đúng
+            const displayRates = await getCommissionRates();
             // Populate thông tin user
             const enrichedBookings = await Promise.all(bookings.map(async (booking) => {
                 const user = await user_model_1.default.findOne({ userId: booking.userId })
@@ -453,7 +514,7 @@ exports.BookingController = {
                     checkOut: booking.checkOut,
                     nights: booking.nights,
                     roomCount: booking.roomCount,
-                    totalPrice: booking.totalPrice,
+                    totalPrice: Math.floor(booking.totalPrice * displayRates.ownerPercent),
                     status: booking.status,
                     paymentMethod: booking.paymentMethod,
                     paymentStatus: booking.paymentStatus,
@@ -472,7 +533,7 @@ exports.BookingController = {
                 pending: allBookings.filter(b => b.status === 'pending').length,
                 totalRevenue: allBookings
                     .filter(b => b.status !== 'cancelled' && b.paymentStatus === 'paid')
-                    .reduce((sum, b) => sum + b.totalPrice, 0),
+                    .reduce((sum, b) => sum + Math.floor(b.totalPrice * displayRates.ownerPercent), 0),
             };
             res.status(200).json({
                 success: true,
@@ -516,6 +577,8 @@ exports.BookingController = {
                 .sort({ createdAt: -1 })
                 .limit(Number(limit))
                 .skip((Number(page) - 1) * Number(limit));
+            // Lấy tỷ lệ hoa hồng từ DB để hiển thị đúng
+            const displayRates = await getCommissionRates();
             const transactions = await Promise.all(bookings.map(async (booking) => {
                 const user = await user_model_1.default.findOne({ userId: booking.userId })
                     .select('displayName email');
@@ -527,7 +590,7 @@ exports.BookingController = {
                     checkIn: booking.checkIn,
                     checkOut: booking.checkOut,
                     nights: booking.nights,
-                    amount: booking.totalPrice,
+                    amount: Math.floor(booking.totalPrice * displayRates.ownerPercent),
                     paymentMethod: booking.paymentMethod,
                     paymentStatus: booking.paymentStatus,
                     bookingStatus: booking.status,
@@ -542,7 +605,7 @@ exports.BookingController = {
             // Tổng doanh thu
             const paidBookings = await booking_model_1.default.find({ hotelId, paymentStatus: 'paid', status: { $ne: 'cancelled' } });
             const refundedBookings = await booking_model_1.default.find({ hotelId, paymentStatus: 'refunded' });
-            const totalRevenue = paidBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+            const totalRevenue = paidBookings.reduce((sum, b) => sum + Math.floor(b.totalPrice * displayRates.ownerPercent), 0);
             const totalRefunded = refundedBookings.reduce((sum, b) => sum + (b.refundAmount || 0), 0);
             res.status(200).json({
                 success: true,
