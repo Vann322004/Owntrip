@@ -199,6 +199,7 @@ exports.SystemController = {
                 return {
                     id: b.bookingId,
                     user: user?.displayName || b.guestInfo?.fullName || 'N/A',
+                    userAvatar: user?.image || null,
                     destination: hotel?.name || 'N/A',
                     date: new Date(b.createdAt).toLocaleDateString('vi-VN'),
                     amount: b.totalPrice,

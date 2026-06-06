@@ -3,6 +3,7 @@ import { AuthRequest } from '../middlewares/auth.middleware';
 import HotelRequest from '../models/hotelRequest.model';
 import User from '../models/user.model';
 import Hotel from '../models/hotel.model';
+import Notification from '../models/notification.model';
 
 export const HotelRequestController = {
   // POST /api/hotel-requests
@@ -39,6 +40,21 @@ export const HotelRequestController = {
       });
 
       await newRequest.save();
+
+      // Create notifications for all admin users
+      try {
+        const admins = await User.find({ role: 'admin' });
+        const user = await User.findOne({ userId });
+        for (const admin of admins) {
+          await Notification.create({
+            userId: admin.userId,
+            title: "Đơn đăng ký đối tác mới",
+            message: `Khách sạn ${hotelName} được đăng ký bởi ${user?.displayName || user?.email || 'N/A'}.`
+          });
+        }
+      } catch (err) {
+        console.error("Failed to notify admins about hotel request:", err);
+      }
 
       res.status(201).json({
         success: true,
@@ -95,6 +111,19 @@ export const HotelRequestController = {
       }
 
       await request.save();
+
+      // Create notification for the user about the status update
+      try {
+        await Notification.create({
+          userId: request.userId,
+          title: status === 'approved' ? "🎉 Đăng ký đối tác thành công" : "❌ Đơn đăng ký đối tác bị từ chối",
+          message: status === 'approved'
+            ? `Chúc mừng! Yêu cầu đăng ký đối tác cho khách sạn ${request.hotelName} của bạn đã được duyệt.`
+            : `Yêu cầu đăng ký đối tác cho khách sạn ${request.hotelName} đã bị từ chối. Lý do: ${adminComment || 'Không có lý do cụ thể'}.`
+        });
+      } catch (err) {
+        console.error("Failed to notify user about hotel request update:", err);
+      }
 
       // If approved, update user role AND create hotel record
       if (status === 'approved') {

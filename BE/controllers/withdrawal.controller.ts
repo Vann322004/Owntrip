@@ -4,6 +4,7 @@ import User from "../models/user.model";
 import WithdrawalRequest from "../models/withdrawalRequest.model";
 import Wallet from "../models/wallet.model";
 import Topup from "../models/topup.model";
+import Notification from "../models/notification.model";
 import { AuthRequest } from "../middlewares/auth.middleware";
 
 const normalizeAmount = (raw: any) => Number(raw);
@@ -67,6 +68,20 @@ export const createWithdrawalRequest = async (req: AuthRequest, res: Response) =
 
     await session.commitTransaction();
     session.endSession();
+
+    // Create notifications for all admin users
+    try {
+      const admins = await User.find({ role: "admin" });
+      for (const admin of admins) {
+        await Notification.create({
+          userId: admin.userId,
+          title: "Yêu cầu rút tiền mới",
+          message: `Creator ${user.displayName || user.email} đã yêu cầu rút ${parsedAmount.toLocaleString("vi-VN")}đ.`
+        });
+      }
+    } catch (err) {
+      console.error("Failed to notify admins about withdrawal request:", err);
+    }
 
     return res.status(201).json({
       success: true,

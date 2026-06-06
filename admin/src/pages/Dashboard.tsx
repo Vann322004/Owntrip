@@ -29,6 +29,7 @@ interface DashboardData {
   recentBookings: {
     id: string;
     user: string;
+    userAvatar?: string | null;
     destination: string;
     date: string;
     amount: number;
@@ -217,9 +218,17 @@ export default function Dashboard() {
               data.recentBookings.map((booking, i) => (
                 <div key={i} className="flex items-center justify-between group">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-600 text-sm">
-                      {booking.user.charAt(0)}
-                    </div>
+                    {booking.userAvatar ? (
+                      <img 
+                        src={booking.userAvatar} 
+                        alt={booking.user} 
+                        className="w-10 h-10 rounded-full object-cover border border-gray-100 shadow-sm"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-gray-600 text-sm">
+                        {booking.user.charAt(0)}
+                      </div>
+                    )}
                     <div>
                       <p className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{booking.user}</p>
                       <p className="text-xs text-gray-500 mt-0.5">{booking.destination}</p>
