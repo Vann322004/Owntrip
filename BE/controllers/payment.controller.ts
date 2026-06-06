@@ -774,6 +774,14 @@ export const PaymentController = {
         { userId: topup.userId },
         { $inc: { balance: topup.amount } }
       );
+
+      // Add to admin/system wallet
+      let adminWallet = await Wallet.findOne({ isSystem: true });
+      if (!adminWallet) {
+        adminWallet = new Wallet({ isSystem: true, balance: 0 });
+      }
+      adminWallet.balance += topup.amount;
+      await adminWallet.save();
     } else if (topup.bookingId.startsWith('temp_') && topup.hotelId) {
       // Trường hợp gia hạn phòng (Edit stay): Chuyển tiền cho chủ khách sạn
       const hotel = await Hotel.findOne({ $or: [{ hotelId: topup.hotelId }, { _id: topup.hotelId }] });

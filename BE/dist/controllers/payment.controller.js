@@ -653,6 +653,13 @@ exports.PaymentController = {
         }
         else if (topup.bookingId.startsWith('topup_')) {
             await user_model_1.default.findOneAndUpdate({ userId: topup.userId }, { $inc: { balance: topup.amount } });
+            // Add to admin/system wallet
+            let adminWallet = await wallet_model_1.default.findOne({ isSystem: true });
+            if (!adminWallet) {
+                adminWallet = new wallet_model_1.default({ isSystem: true, balance: 0 });
+            }
+            adminWallet.balance += topup.amount;
+            await adminWallet.save();
         }
         else if (topup.bookingId.startsWith('temp_') && topup.hotelId) {
             // Trường hợp gia hạn phòng (Edit stay): Chuyển tiền cho chủ khách sạn

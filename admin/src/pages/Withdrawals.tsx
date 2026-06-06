@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Search, XCircle, Loader2, CreditCard, Building2, User } from 'lucide-react';
+import { Search, XCircle, Loader2, CreditCard, Building2, User, Wallet, Star } from 'lucide-react';
 import api from '../lib/axios';
+
+interface UserInfo {
+  displayName: string;
+  email: string;
+  image?: string;
+}
 
 interface WithdrawalRequest {
   _id: string;
@@ -12,13 +18,30 @@ interface WithdrawalRequest {
   status: 'pending' | 'approved' | 'rejected';
   adminNote?: string;
   createdAt: string;
+  user?: UserInfo | null;
+}
+
+interface DepositTransaction {
+  _id: string;
+  bookingId: string;
+  orderCode: number;
+  userId: string;
+  displayName: string;
+  email: string;
+  amount: number;
+  pointsEarned: number;
+  status: 'pending' | 'paid' | 'cancelled';
+  createdAt: string;
 }
 
 export default function Withdrawals() {
   const [requests, setRequests] = useState<WithdrawalRequest[]>([]);
+  const [deposits, setDeposits] = useState<DepositTransaction[]>([]);
+  const [systemWalletBalance, setSystemWalletBalance] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState<'withdrawals' | 'deposits'>('withdrawals');
 
   // === Modal: Xem chi tiết & Duyệt ===
   const [selectedRequest, setSelectedRequest] = useState<WithdrawalRequest | null>(null);
@@ -33,9 +56,13 @@ export default function Withdrawals() {
     try {
       setLoading(true);
       const res = await api.get('/withdrawals/admin');
-      if (res.data?.success) setRequests(res.data.data);
+      if (res.data?.success) {
+        setRequests(res.data.data || []);
+        setDeposits(res.data.deposits || []);
+        setSystemWalletBalance(res.data.systemWalletBalance || 0);
+      }
     } catch (err: any) {
-      setError('Lỗi khi tải danh sách rút tiền');
+      setError('Lỗi khi tải danh sách nạp/rút tiền');
     } finally {
       setLoading(false);
     }
@@ -52,6 +79,10 @@ export default function Withdrawals() {
       });
       if (res.data?.success) {
         setRequests(prev => prev.map(r => r._id === selectedRequest._id ? { ...r, status, adminNote: adminNote.trim() } : r));
+        // Update local system wallet balance on approval
+        if (status === 'approved') {
+          setSystemWalletBalance(prev => prev - selectedRequest.amount);
+        }
         setIsModalOpen(false);
         setSelectedRequest(null);
         setAdminNote('');
@@ -64,10 +95,21 @@ export default function Withdrawals() {
     }
   };
 
+  // Filter requests based on search term
   const filteredRequests = requests.filter(r =>
     r.bankName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     r.accountNumber.includes(searchTerm) ||
-    r.accountName.toLowerCase().includes(searchTerm.toLowerCase())
+    r.accountName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (r.user?.displayName || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (r.user?.email || '').toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Filter deposits based on search term
+  const filteredDeposits = deposits.filter(d =>
+    d.displayName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    d.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    d.bookingId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    String(d.orderCode).includes(searchTerm)
   );
 
   const statusColors: Record<string, string> = {
@@ -82,6 +124,18 @@ export default function Withdrawals() {
     rejected: 'Từ chối',
   };
 
+  const depositStatusColors: Record<string, string> = {
+    pending: 'bg-amber-100 text-amber-700',
+    paid: 'bg-emerald-100 text-emerald-700',
+    cancelled: 'bg-red-100 text-red-700',
+  };
+
+  const depositStatusLabels: Record<string, string> = {
+    pending: 'Đang xử lý',
+    paid: 'Thành công',
+    cancelled: 'Đã hủy',
+  };
+
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
   };
@@ -91,9 +145,78 @@ export default function Withdrawals() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Duyệt yêu cầu rút tiền</h1>
-          <p className="text-gray-500 text-sm mt-1">Quản lý và chuyển khoản cho Creator</p>
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Nạp rút tiền</h1>
+          <p className="text-gray-500 text-sm mt-1 font-medium">Quản lý dòng tiền nạp và yêu cầu rút tiền của người dùng</p>
         </div>
+        <button
+          onClick={fetchRequests}
+          className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-xl text-sm font-semibold transition-colors shadow-sm"
+        >
+          Làm mới
+        </button>
+      </div>
+
+      {/* Summary Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Wallet Balance Card */}
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-3xl p-6 shadow-[0_8px_30px_rgba(59,130,246,0.15)] relative overflow-hidden group">
+          <div className="absolute right-0 bottom-0 translate-x-4 translate-y-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+            <Wallet className="w-36 h-36" />
+          </div>
+          <p className="text-blue-100 text-xs font-bold uppercase tracking-wider">Số dư Ví Hệ Thống</p>
+          <p className="text-3xl font-black mt-2 tracking-tight">{formatCurrency(systemWalletBalance)}</p>
+          <div className="mt-4 flex items-center gap-1.5 text-xs text-blue-200 font-medium">
+            <span>Dùng để đối soát & chi trả yêu cầu rút tiền</span>
+          </div>
+        </div>
+
+        {/* Pending Withdrawals Card */}
+        <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-[0_2px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+          <div>
+            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Yêu cầu rút chờ duyệt</p>
+            <p className="text-3xl font-extrabold text-amber-600 mt-2">
+              {requests.filter(r => r.status === 'pending').length} <span className="text-sm font-semibold text-gray-400">yêu cầu</span>
+            </p>
+          </div>
+          <p className="text-[11px] text-gray-400 font-medium mt-4">Cần chuyển khoản và phê duyệt cho Creator</p>
+        </div>
+
+        {/* Total Deposits Card */}
+        <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-[0_2px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+          <div>
+            <p className="text-gray-400 text-xs font-bold uppercase tracking-wider">Tổng nạp thành công</p>
+            <p className="text-3xl font-extrabold text-emerald-600 mt-2">
+              {formatCurrency(deposits.filter(d => d.status === 'paid').reduce((s, t) => s + t.amount, 0))}
+            </p>
+          </div>
+          <p className="text-[11px] text-gray-400 font-medium mt-4">Tổng tiền người dùng đã nạp vào hệ thống</p>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex border-b border-gray-100 gap-6">
+        <button
+          onClick={() => { setActiveTab('withdrawals'); setSearchTerm(''); }}
+          className={`pb-4 text-sm font-bold transition-all relative ${
+            activeTab === 'withdrawals' ? 'text-blue-600' : 'text-gray-400 hover:text-gray-600'
+          }`}
+        >
+          Yêu cầu Rút Tiền ({filteredRequests.length})
+          {activeTab === 'withdrawals' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
+          )}
+        </button>
+        <button
+          onClick={() => { setActiveTab('deposits'); setSearchTerm(''); }}
+          className={`pb-4 text-sm font-bold transition-all relative ${
+            activeTab === 'deposits' ? 'text-blue-600' : 'text-gray-400 hover:text-gray-600'
+          }`}
+        >
+          Lịch sử Nạp Tiền ({filteredDeposits.length})
+          {activeTab === 'deposits' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
+          )}
+        </button>
       </div>
 
       {/* Table Card */}
@@ -104,13 +227,15 @@ export default function Withdrawals() {
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
             <input
               type="text"
-              placeholder="Tìm theo ngân hàng, STK, Tên..."
+              placeholder={activeTab === 'withdrawals' ? "Tìm theo ngân hàng, STK, Tên, User..." : "Tìm tên, email, mã giao dịch..."}
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
               className="w-full pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none"
             />
           </div>
-          <span className="text-sm text-gray-500 font-medium whitespace-nowrap">Tổng cộng: {filteredRequests.length}</span>
+          <span className="text-sm text-gray-500 font-medium whitespace-nowrap">
+            Kết quả: {activeTab === 'withdrawals' ? filteredRequests.length : filteredDeposits.length}
+          </span>
         </div>
 
         {/* Table */}
@@ -122,54 +247,142 @@ export default function Withdrawals() {
             </div>
           ) : error ? (
             <div className="py-20 text-center text-red-500 font-medium">{error}</div>
-          ) : filteredRequests.length === 0 ? (
-            <div className="py-20 text-center text-gray-400 text-sm">Không tìm thấy yêu cầu rút tiền nào.</div>
-          ) : (
-            <table className="w-full text-left">
-              <thead>
-                <tr className="bg-gray-50/80 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-100">
-                  <th className="px-6 py-3.5 font-semibold">Tài khoản nhận</th>
-                  <th className="px-6 py-3.5 font-semibold">Số tiền</th>
-                  <th className="px-6 py-3.5 font-semibold">Trạng thái</th>
-                  <th className="px-6 py-3.5 font-semibold">Ngày gửi</th>
-                  <th className="px-6 py-3.5 font-semibold text-right">Hành động</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {filteredRequests.map(req => (
-                  <tr key={req._id} className="hover:bg-blue-50/20 transition-colors group">
-                    <td className="px-6 py-4">
-                      <div>
-                        <p className="text-sm font-bold text-gray-900">{req.accountName}</p>
-                        <p className="text-xs font-medium text-gray-500 mt-0.5">{req.bankName} - {req.accountNumber}</p>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className="text-sm font-bold text-blue-600">{formatCurrency(req.amount)}</span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${statusColors[req.status]}`}>
-                        {statusLabels[req.status]}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-600">
-                      {new Date(req.createdAt).toLocaleDateString('vi-VN')}
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center justify-end gap-1.5">
-                        <button
-                          onClick={() => { setSelectedRequest(req); setIsModalOpen(true); setAdminNote(req.adminNote || ''); }}
-                          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg text-xs font-semibold transition-colors"
-                        >
-                          <CreditCard className="w-3.5 h-3.5" />
-                          Xử lý
-                        </button>
-                      </div>
-                    </td>
+          ) : activeTab === 'withdrawals' ? (
+            // ================= WITHDRAWALS TABLE =================
+            filteredRequests.length === 0 ? (
+              <div className="py-20 text-center text-gray-400 text-sm">Không tìm thấy yêu cầu rút tiền nào.</div>
+            ) : (
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-gray-50/80 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-100">
+                    <th className="px-6 py-3.5 font-semibold">Creator</th>
+                    <th className="px-6 py-3.5 font-semibold">Tài khoản nhận</th>
+                    <th className="px-6 py-3.5 font-semibold">Số tiền</th>
+                    <th className="px-6 py-3.5 font-semibold">Trạng thái</th>
+                    <th className="px-6 py-3.5 font-semibold">Ngày gửi</th>
+                    <th className="px-6 py-3.5 font-semibold text-right">Hành động</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {filteredRequests.map(req => (
+                    <tr key={req._id} className="hover:bg-blue-50/20 transition-colors group">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          {req.user?.image ? (
+                            <img src={req.user.image} alt={req.user.displayName} className="w-9 h-9 rounded-full object-cover border border-gray-100 bg-gray-50" />
+                          ) : (
+                            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">
+                              {(req.user?.displayName || 'C').charAt(0).toUpperCase()}
+                            </div>
+                          )}
+                          <div>
+                            <p className="text-sm font-semibold text-gray-900">{req.user?.displayName || 'Chưa cập nhật'}</p>
+                            <p className="text-xs text-gray-500">{req.user?.email || 'N/A'}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div>
+                          <p className="text-sm font-bold text-gray-900">{req.accountName}</p>
+                          <p className="text-xs font-medium text-gray-500 mt-0.5">{req.bankName} - <span className="font-semibold text-gray-700">{req.accountNumber}</span></p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className="text-sm font-extrabold text-blue-600">{formatCurrency(req.amount)}</span>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${statusColors[req.status]}`}>
+                          {statusLabels[req.status]}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-600">
+                        {new Date(req.createdAt).toLocaleDateString('vi-VN')}
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center justify-end gap-1.5">
+                          <button
+                            onClick={() => { setSelectedRequest(req); setIsModalOpen(true); setAdminNote(req.adminNote || ''); }}
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg text-xs font-semibold transition-colors"
+                          >
+                            <CreditCard className="w-3.5 h-3.5" />
+                            Xử lý
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )
+          ) : (
+            // ================= DEPOSITS TABLE =================
+            filteredDeposits.length === 0 ? (
+              <div className="py-20 text-center text-gray-400 text-sm">Không tìm thấy lịch sử nạp tiền nào.</div>
+            ) : (
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-gray-50/80 text-gray-500 text-xs uppercase tracking-wider border-b border-gray-100">
+                    <th className="px-6 py-3.5 font-semibold">Người dùng</th>
+                    <th className="px-6 py-3.5 font-semibold">Mã giao dịch</th>
+                    <th className="px-6 py-3.5 font-semibold">Số tiền</th>
+                    <th className="px-6 py-3.5 font-semibold">Loại nạp</th>
+                    <th className="px-6 py-3.5 font-semibold">Trạng thái</th>
+                    <th className="px-6 py-3.5 font-semibold">Thời gian</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {filteredDeposits.map(dep => (
+                    <tr key={dep._id} className="hover:bg-blue-50/20 transition-colors group">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white font-bold text-sm">
+                            {(dep.displayName || 'U').charAt(0).toUpperCase()}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-gray-900">{dep.displayName}</p>
+                            <p className="text-xs text-gray-500">{dep.email}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div>
+                          <p className="text-xs font-mono text-gray-600 bg-gray-50 px-2 py-1 rounded-md inline-block">
+                            {dep.orderCode ? `#${dep.orderCode}` : '—'}
+                          </p>
+                          <p className="text-[10px] text-gray-400 mt-1 font-mono truncate max-w-[160px]" title={dep.bookingId}>
+                            {dep.bookingId}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className="text-sm font-extrabold text-emerald-600">{formatCurrency(dep.amount)}</span>
+                      </td>
+                      <td className="px-6 py-4">
+                        {dep.bookingId.startsWith('topup_points_') ? (
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-100">
+                            <Star className="w-3 h-3 fill-amber-400" />
+                            Nạp Điểm ({dep.pointsEarned.toLocaleString()})
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+                            <Wallet className="w-3 h-3" />
+                            Nạp Số Dư Virtual
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${depositStatusColors[dep.status]}`}>
+                          {depositStatusLabels[dep.status]}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                        {new Date(dep.createdAt).toLocaleString('vi-VN')}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )
           )}
         </div>
       </div>
@@ -186,6 +399,22 @@ export default function Withdrawals() {
             </div>
             
             <div className="p-6">
+              {/* Creator details in modal */}
+              <div className="mb-4 flex items-center gap-3 bg-blue-50/30 p-4 rounded-2xl border border-blue-100/50">
+                {selectedRequest.user?.image ? (
+                  <img src={selectedRequest.user.image} alt={selectedRequest.user.displayName} className="w-10 h-10 rounded-full object-cover border border-white shadow-sm" />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                    {(selectedRequest.user?.displayName || 'C').charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <div>
+                  <p className="text-xs font-bold text-blue-500 uppercase tracking-wider">Người yêu cầu rút</p>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{selectedRequest.user?.displayName || 'N/A'}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{selectedRequest.user?.email || 'N/A'}</p>
+                </div>
+              </div>
+
               {/* Box thông tin chuyển khoản */}
               <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 space-y-4 mb-6">
                 <div className="flex items-start gap-3">
@@ -218,6 +447,24 @@ export default function Withdrawals() {
                 <p className="text-sm font-semibold text-gray-500">Số tiền cần chuyển:</p>
                 <p className="text-2xl font-black text-blue-600">{formatCurrency(selectedRequest.amount)}</p>
               </div>
+
+              {/* System Balance check message */}
+              {selectedRequest.status === 'pending' && (
+                <div className={`p-3.5 rounded-xl border text-xs font-semibold flex items-center gap-2 mb-4 ${
+                  systemWalletBalance < selectedRequest.amount
+                    ? 'bg-red-50 border-red-100 text-red-700'
+                    : 'bg-emerald-50 border-emerald-100 text-emerald-700'
+                }`}>
+                  <Wallet className="w-4.5 h-4.5 flex-shrink-0" />
+                  <div>
+                    <span>Số dư ví hệ thống hiện có: </span>
+                    <span className="font-bold">{formatCurrency(systemWalletBalance)}</span>
+                    {systemWalletBalance < selectedRequest.amount && (
+                      <p className="mt-1 font-bold text-red-500">Cảnh báo: Không đủ số dư hệ thống để duyệt!</p>
+                    )}
+                  </div>
+                </div>
+              )}
               
               {/* Lời nhắn admin */}
               <div>
@@ -250,8 +497,8 @@ export default function Withdrawals() {
                   </button>
                   <button 
                     onClick={() => handleUpdateStatus('approved')} 
-                    disabled={isProcessing}
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/25"
+                    disabled={isProcessing || systemWalletBalance < selectedRequest.amount}
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed disabled:shadow-none text-white font-bold rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/25"
                   >
                     {isProcessing && processingStatus === 'approved' ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Đã chuyển tiền'}
                   </button>
