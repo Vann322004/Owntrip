@@ -132,10 +132,11 @@ export const SystemController = {
         { $group: { _id: null, total: { $sum: '$amount' } } }
       ]);
 
-      const totalRevenue =
-        ((bookingRevenue[0]?.total || 0) * 0.1) +
-        (orderRevenue[0]?.total || 0) +
-        (creatorRevenue[0]?.total || 0);
+      const totalBookingRevenue = (bookingRevenue[0]?.total || 0) * 0.1;
+      const totalOrderRevenue = orderRevenue[0]?.total || 0;
+      const totalCreatorRevenue = creatorRevenue[0]?.total || 0;
+
+      const totalRevenue = totalBookingRevenue + totalOrderRevenue + totalCreatorRevenue;
 
       // Revenue this month
       const bookingRevenueThisMonth = await Booking.aggregate([
@@ -263,6 +264,9 @@ export const SystemController = {
           tripsThisMonth,
           tripsChange,
           totalRevenue,
+          totalBookingRevenue,
+          totalOrderRevenue,
+          totalCreatorRevenue,
           revenueThisMonth,
           revenueChange,
           totalBookings,
